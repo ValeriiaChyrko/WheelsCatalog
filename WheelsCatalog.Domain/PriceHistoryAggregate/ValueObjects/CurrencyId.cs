@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.PriceHistory.ValueObjects;
+namespace WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 public class CurrencyId : ValueObject
 {
@@ -11,6 +11,11 @@ public class CurrencyId : ValueObject
         Value = value;
     }
 
+    public static CurrencyId Create(Guid value)
+    {
+        return new CurrencyId(value);
+    }
+    
     public static CurrencyId CreateUnique()
     {
         return new CurrencyId(Guid.NewGuid());
@@ -20,4 +25,8 @@ public class CurrencyId : ValueObject
     {
         yield return Value;
     }
+    
+#pragma warning disable CS8618 
+    private CurrencyId() { }
+#pragma warning restore CS8618
 }

@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.Brand.ValueObjects;
+namespace WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 
 public class BrandId : ValueObject
 {
@@ -11,6 +11,11 @@ public class BrandId : ValueObject
         Value = value;
     }
 
+    public static BrandId Create(Guid value)
+    {
+        return new BrandId(value);
+    }
+    
     public static BrandId CreateUnique()
     {
         return new BrandId(Guid.NewGuid());
@@ -20,4 +25,8 @@ public class BrandId : ValueObject
     {
         yield return Value;
     }
+    
+#pragma warning disable CS8618 
+    private BrandId() { }
+#pragma warning restore CS8618
 }

@@ -1,11 +1,11 @@
-﻿using WheelsCatalog.Domain.Car.ValueObjects;
+﻿using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.Car.Entities;
+namespace WheelsCatalog.Domain.CarAggregate.Entities;
 
 public class CarPhotoEntity : Entity<CarPhotoId>
 {
-    public string PhotoUrl { get; }
+    public string PhotoUrl { get; private set; }
 
     private CarPhotoEntity(CarPhotoId id, string photoUrl) : base(id)
     {
@@ -16,4 +16,8 @@ public class CarPhotoEntity : Entity<CarPhotoId>
     {
         return new CarPhotoEntity(CarPhotoId.CreateUnique(), photoUrl);
     }
+    
+#pragma warning disable CS8618 
+    private CarPhotoEntity() { }
+#pragma warning restore CS8618
 }

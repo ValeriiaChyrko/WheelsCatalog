@@ -1,11 +1,11 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
-using WheelsCatalog.Domain.PriceHistory.ValueObjects;
+using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
-namespace WheelsCatalog.Domain.PriceHistory.Entities;
+namespace WheelsCatalog.Domain.PriceHistoryAggregate.Entities;
 
 public class CurrencyEntity : Entity<CurrencyId>
 {
-    public string Acronym { get; }
+    public string Acronym { get; private set; }
 
     public CurrencyEntity(CurrencyId id, string acronym) : base(id)
     {
@@ -16,4 +16,8 @@ public class CurrencyEntity : Entity<CurrencyId>
     {
         return new CurrencyEntity(CurrencyId.CreateUnique(), acronym);
     }
+    
+#pragma warning disable CS8618 
+    private CurrencyEntity() { }
+#pragma warning restore CS8618
 }

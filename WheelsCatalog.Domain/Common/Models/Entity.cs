@@ -33,6 +33,8 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
     {
         return !Equals(left, right);
     }
-
+    
+#pragma warning disable CS8618 
     protected Entity() { }
+#pragma warning restore CS8618
 }

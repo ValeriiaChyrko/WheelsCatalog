@@ -31,4 +31,8 @@ public abstract class ValueObject : IEquatable<ValueObject>
     {
         return !Equals(left, right);
     }
+    
+#pragma warning disable CS8618 
+    protected ValueObject() { }
+#pragma warning restore CS8618
 }

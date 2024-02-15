@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.PriceHistory.ValueObjects;
+namespace WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 public class PriceHistoryId : ValueObject
 {
@@ -11,6 +11,11 @@ public class PriceHistoryId : ValueObject
         Value = value;
     }
 
+    public static PriceHistoryId Create(Guid value)
+    {
+        return new PriceHistoryId(value);
+    }
+    
     public static PriceHistoryId CreateUnique()
     {
         return new PriceHistoryId(Guid.NewGuid());
@@ -20,4 +25,8 @@ public class PriceHistoryId : ValueObject
     {
         yield return Value;
     }
+    
+#pragma warning disable CS8618 
+    private PriceHistoryId() { }
+#pragma warning restore CS8618
 }

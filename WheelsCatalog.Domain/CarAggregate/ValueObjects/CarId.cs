@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.Car.ValueObjects;
+namespace WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
 public sealed class CarId : ValueObject
 {
@@ -9,6 +9,11 @@ public sealed class CarId : ValueObject
     private CarId(Guid value)
     {
         Value = value;
+    }
+    
+    public static CarId Create(Guid value)
+    {
+        return new CarId(value);
     }
 
     public static CarId CreateUnique()
@@ -20,4 +25,8 @@ public sealed class CarId : ValueObject
     {
         yield return Value;
     }
+    
+#pragma warning disable CS8618 
+    private CarId() { }
+#pragma warning restore CS8618
 }

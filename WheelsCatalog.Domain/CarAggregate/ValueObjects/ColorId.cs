@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.Car.ValueObjects;
+namespace WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
 public sealed class ColorId : ValueObject
 {
@@ -11,6 +11,11 @@ public sealed class ColorId : ValueObject
         Value = value;
     }
 
+    public static ColorId Create(Guid value)
+    {
+        return new ColorId(value);
+    }
+    
     public static ColorId CreateUnique()
     {
         return new ColorId(Guid.NewGuid());
@@ -20,4 +25,8 @@ public sealed class ColorId : ValueObject
     {
         yield return Value;
     }
+    
+#pragma warning disable CS8618 
+    private ColorId() { }
+#pragma warning restore CS8618
 }

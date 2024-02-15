@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.Model.ValueObjects;
+namespace WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 public class ModelId : ValueObject
 {
@@ -9,6 +9,11 @@ public class ModelId : ValueObject
     private ModelId(Guid value)
     {
         Value = value;
+    }
+    
+    public static ModelId Create(Guid value)
+    {
+        return new ModelId(value);
     }
 
     public static ModelId CreateUnique()
@@ -20,4 +25,8 @@ public class ModelId : ValueObject
     {
         yield return Value;
     }
+    
+#pragma warning disable CS8618 
+    private ModelId() { }
+#pragma warning restore CS8618
 }
