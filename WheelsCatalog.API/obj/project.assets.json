@@ -1,0 +1,110 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "WheelsCatalog.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "WheelsCatalog.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WheelsCatalog.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WheelsCatalog.Application.dll": {}
+        }
+      },
+      "WheelsCatalog.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/WheelsCatalog.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WheelsCatalog.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WheelsCatalog.Application/1.0.0": {
+      "type": "project",
+      "path": "../WheelsCatalog.Application/WheelsCatalog.Application.csproj",
+      "msbuildProject": "../WheelsCatalog.Application/WheelsCatalog.Application.csproj"
+    },
+    "WheelsCatalog.Domain/1.0.0": {
+      "type": "project",
+      "path": "../WheelsCatalog.Domain/WheelsCatalog.Domain.csproj",
+      "msbuildProject": "../WheelsCatalog.Domain/WheelsCatalog.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "WheelsCatalog.Application >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Valeriia\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\WheelsCatalog.API.csproj",
+      "projectName": "WheelsCatalog.API",
+      "projectPath": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\WheelsCatalog.API.csproj",
+      "packagesPath": "C:\\Users\\Valeriia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Valeriia\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.Application\\WheelsCatalog.Application.csproj": {
+              "projectPath": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.Application\\WheelsCatalog.Application.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
