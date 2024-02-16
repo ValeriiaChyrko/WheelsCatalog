@@ -5,14 +5,13 @@ using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.ModelAggregate;
 
-public sealed class Model : AggregateRoot<ModelId>
+public sealed class Model : AggregateRoot<ModelId, Guid>
 {
     public string Name { get; private set; } 
     public string? Description { get; private set; }
     public BrandId BrandId { get; private set; }
     public DateTime CreateDateTime { get; private set; }
     public DateTime UpdateDateTime { get; private set; }
-    
     
     private readonly List<Car>? _cars = new();
     public IReadOnlyCollection<Car>? Cars => _cars.AsReadOnly();

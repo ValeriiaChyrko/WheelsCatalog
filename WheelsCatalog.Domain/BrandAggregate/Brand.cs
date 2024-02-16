@@ -1,11 +1,11 @@
 ﻿using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
-using WheelsCatalog.Domain.CarAggregate;
 using WheelsCatalog.Domain.Common.Models;
 using WheelsCatalog.Domain.ModelAggregate;
+using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.BrandAggregate;
 
-public sealed class Brand : AggregateRoot<BrandId>
+public sealed class Brand : AggregateRoot<BrandId, Guid>
 {
     public string Name { get; private set; }
     public string LogoUrl { get; private set; }
@@ -15,9 +15,6 @@ public sealed class Brand : AggregateRoot<BrandId>
 
     private readonly List<Model> _models = new();
     public IReadOnlyCollection<Model> Models => _models.AsReadOnly();
-    private readonly List<Car>? _cars = new();
-    public IReadOnlyCollection<Car>? Cars => _cars.AsReadOnly();
-
 
     public Brand(BrandId id, string name, string logoUrl, string? description, DateTime createDateTime,
         DateTime updateDateTime) : base(id)

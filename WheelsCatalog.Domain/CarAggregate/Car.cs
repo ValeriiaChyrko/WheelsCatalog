@@ -7,7 +7,7 @@ using WheelsCatalog.Domain.PriceHistoryAggregate;
 
 namespace WheelsCatalog.Domain.CarAggregate;
 
-public sealed class Car : AggregateRoot<CarId>
+public sealed class Car : AggregateRoot<CarId, Guid>
 {
     public int EngineVolume { get; private set; }
     public string? Description { get; private set; }

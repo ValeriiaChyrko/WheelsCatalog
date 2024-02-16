@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WheelsCatalog.Domain.BrandAggregate;
-using WheelsCatalog.Domain.CarAggregate;
 using WheelsCatalog.Domain.ModelAggregate;
 
 namespace WheelsCatalog.Persistence;
@@ -16,7 +15,7 @@ public class WheelsCatalogDbContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(WheelsCatalogDbContext).Assembly);
     }
 
-    public DbSet<Car> Cars { get; set; } = null!;
+    //public DbSet<Car> Cars { get; set; } = null!;
     public DbSet<Brand> Brands { get; set; } = null!;
     public DbSet<Model> Models { get; set; } = null!;
 }

@@ -3,7 +3,7 @@ using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.PriceHistoryAggregate;
 
-public sealed class PriceHistory : AggregateRoot<PriceHistoryId>
+public sealed class PriceHistory : AggregateRoot<PriceHistoryId, Guid>
 {
     public double Price { get; private set; }
     public DateTime StartDate { get; private set; }
