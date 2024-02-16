@@ -3,7 +3,7 @@ using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.PriceHistoryAggregate;
 
-public sealed class PriceHistory : AggregateRoot<PriceHistoryId>
+public sealed class PriceHistory : AggregateRoot<PriceHistoryId, Guid>
 {
     public double Price { get; private set; }
     public DateTime StartDate { get; private set; }
@@ -24,8 +24,10 @@ public sealed class PriceHistory : AggregateRoot<PriceHistoryId>
     {
         return new PriceHistory(PriceHistoryId.CreateUnique(), price, startDate, currencyId, createDateTime, updateDateTime);
     }
-    
-#pragma warning disable CS8618 
-    private PriceHistory() { }
-#pragma warning restore CS8618
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    public PriceHistory()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    {
+    }
 }

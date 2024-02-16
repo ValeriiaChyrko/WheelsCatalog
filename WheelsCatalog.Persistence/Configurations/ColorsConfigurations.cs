@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using WheelsCatalog.Domain.CarAggregate;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
@@ -27,5 +28,10 @@ public class ColorsConfigurations : IEntityTypeConfiguration<ColorEntity>
         builder.Property(c => c.Name).HasMaxLength(255);
         
         builder.Property(c => c.HexCode).HasMaxLength(127).IsRequired(false);
+        
+        builder.HasMany<Car>()
+            .WithOne()
+            .HasForeignKey(ph => ph.ColorId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

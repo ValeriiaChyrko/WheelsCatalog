@@ -16,8 +16,8 @@ public class CurrencyEntity : Entity<CurrencyId>
     {
         return new CurrencyEntity(CurrencyId.CreateUnique(), acronym);
     }
-    
+
 #pragma warning disable CS8618 
-    private CurrencyEntity() { }
-#pragma warning restore CS8618
+    public CurrencyEntity() { }
+#pragma warning restore CS8618 
 }

@@ -7,9 +7,6 @@ public sealed class ColorEntity : Entity<ColorId>
 {
     public string Name { get; private set; }
     public string HexCode { get; private set; }
-    
-    private readonly List<Car>? _cars = new();
-    public IReadOnlyCollection<Car>? Cars => _cars.AsReadOnly();
 
     private ColorEntity(ColorId id, string name, string hexCode) : base(id)
     {
@@ -21,8 +18,9 @@ public sealed class ColorEntity : Entity<ColorId>
     {
         return new ColorEntity(ColorId.CreateUnique(), name, hexCode);
     }
-    
+
 #pragma warning disable CS8618 
-    private ColorEntity() { }
-#pragma warning restore CS8618
+    public ColorEntity() { }
+#pragma warning restore CS8618 
+
 }

@@ -1,0 +1,17 @@
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Persistence.deps.json
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Persistence.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Persistence.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Application.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Application.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalog.Domain.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.csproj.AssemblyReference.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.AssemblyInfoInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.AssemblyInfo.cs
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.csproj.CopyComplete
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\refint\WheelsCatalog.Persistence.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\ref\WheelsCatalog.Persistence.dll

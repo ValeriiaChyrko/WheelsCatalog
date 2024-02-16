@@ -1,22 +1,34 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WheelsCatalog.Domain.BrandAggregate;
-using WheelsCatalog.Domain.CarAggregate;
-using WheelsCatalog.Domain.ModelAggregate;
+using WheelsCatalog.Domain.Common.Models;
+using WheelsCatalog.Domain.PriceHistoryAggregate;
+using WheelsCatalog.Persistence.Interceptors;
 
-namespace WheelsCatalog.Persistence;
-
-public class WheelsCatalogDbContext : DbContext
+namespace WheelsCatalog.Persistence
 {
-    public WheelsCatalogDbContext(DbContextOptions<WheelsCatalogDbContext> options) : base(options)
+    public class WheelsCatalogDbContext : DbContext
     {
-    }
+        private readonly PublishDomainEventsInterceptor _publishDomainEventsInterceptor;
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(WheelsCatalogDbContext).Assembly);
-    }
+        public WheelsCatalogDbContext(DbContextOptions<WheelsCatalogDbContext> options, PublishDomainEventsInterceptor publishDomainEventsInterceptor) : base(options)
+        {
+            _publishDomainEventsInterceptor = publishDomainEventsInterceptor;
+        }
 
-    public DbSet<Car> Cars { get; set; } = null!;
-    public DbSet<Brand> Brands { get; set; } = null!;
-    public DbSet<Model> Models { get; set; } = null!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Ignore<List<IDomainEvent>>()
+                .ApplyConfigurationsFromAssembly(typeof(WheelsCatalogDbContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<PriceHistory> PriceHistories { get; set; } = null!;
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.AddInterceptors(_publishDomainEventsInterceptor);
+            base.OnConfiguring(optionsBuilder);
+        }
+    }
 }

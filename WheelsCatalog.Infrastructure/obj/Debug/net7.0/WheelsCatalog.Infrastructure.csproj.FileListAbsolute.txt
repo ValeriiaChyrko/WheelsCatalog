@@ -1,0 +1,17 @@
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Infrastructure.deps.json
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Infrastructure.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Infrastructure.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Application.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Application.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\bin\Debug\net7.0\WheelsCatalog.Domain.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.AssemblyInfo.cs
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.csproj.CopyComplete
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\refint\WheelsCatalog.Infrastructure.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\WheelsCatalog.Infrastructure.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Infrastructure\obj\Debug\net7.0\ref\WheelsCatalog.Infrastructure.dll

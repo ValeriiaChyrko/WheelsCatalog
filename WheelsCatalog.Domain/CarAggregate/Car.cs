@@ -1,13 +1,12 @@
 ﻿using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
-using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.Common.Models;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
-using WheelsCatalog.Domain.PriceHistoryAggregate;
+using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.CarAggregate;
 
-public sealed class Car : AggregateRoot<CarId>
+public sealed class Car : AggregateRoot<CarId, Guid>
 {
     public int EngineVolume { get; private set; }
     public string? Description { get; private set; }
@@ -15,11 +14,11 @@ public sealed class Car : AggregateRoot<CarId>
     public BrandId BrandId { get; private set; }
     public ModelId ModelId { get; private set; }
 
-    private readonly List<CarPhotoEntity> _photos = new();
-    public IReadOnlyCollection<CarPhotoEntity> Photos => _photos.AsReadOnly();
+    private readonly List<CarPhotoId> _photoIds = new();
+    public IReadOnlyCollection<CarPhotoId> CarPhotoIds => _photoIds.AsReadOnly();
     
-    private readonly List<PriceHistory> _priceHistories = new();
-    public IReadOnlyCollection<PriceHistory> PriceHistories => _priceHistories.AsReadOnly();
+    private readonly List<PriceHistoryId> _priceHistoryIds = new();
+    public IReadOnlyCollection<PriceHistoryId> PriceHistoryIds => _priceHistoryIds.AsReadOnly();
     
     public DateTime CreateDateTime { get; private set; }
     public DateTime UpdateDateTime { get; private set; }
@@ -40,7 +39,17 @@ public sealed class Car : AggregateRoot<CarId>
         return new Car(CarId.CreateUnique(), engineVolume, description, colorId, brandId, modelId, createDateTime, updateDateTime);
     }
     
+    public void AddPhotoId(CarPhotoId photoId)
+    {
+        _photoIds.Add(photoId);
+    }
+    
+    public void AddPriceHistory(PriceHistoryId priceHistoryId)
+    {
+        _priceHistoryIds.Add(priceHistoryId);
+    }
+
 #pragma warning disable CS8618 
-    private Car() { }
-#pragma warning restore CS8618
+    public Car(){}
+#pragma warning restore CS8618 
 }

@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.CarAggregate;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
-using WheelsCatalog.Domain.PriceHistoryAggregate;
-using WheelsCatalog.Domain.PriceHistoryAggregate.Entities;
-using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 namespace WheelsCatalog.Persistence.Configurations;
 
@@ -18,67 +14,24 @@ public class CarConfigurations : IEntityTypeConfiguration<Car>
     {
         ConfigureCarsTable(builder);
         ConfigureCarPhotosTable(builder);
-        ConfigurePriceHistoryTable(builder);
-    }
-
-    private static void ConfigurePriceHistoryTable(EntityTypeBuilder<Car> builder)
-    {
-        builder.OwnsMany(c => c.PriceHistories, sb =>
-        {
-            sb.ToTable("PriceHistory");
-
-            sb.HasKey(  nameof(PriceHistory.Id));
-            sb.WithOwner().HasForeignKey("CarId");
-            
-            sb.Property(s=>s.Id)
-                .HasColumnName(nameof(PriceHistory.Id))
-                .ValueGeneratedNever()
-                .HasConversion(
-                    id => id.Value,
-                    value => PriceHistoryId.Create(value)
-                );
-
-            sb.Property(c => c.Price);
-            sb.Property(c => c.StartDate);
-            
-            sb.Property(c => c.CurrencyId);
-            sb.Property(c => c.CurrencyId)
-                .ValueGeneratedNever()
-                .HasConversion(
-                    id => id.Value,
-                    value => CurrencyId.Create(value)
-                );
-            
-            sb.HasOne<CurrencyEntity>()
-                .WithMany()
-                .HasForeignKey(ph => ph.CurrencyId);
-        });
-        
-        builder.Metadata.FindNavigation(nameof(Car.PriceHistories))!.SetPropertyAccessMode(PropertyAccessMode.Field);
     }
 
     private static void ConfigureCarPhotosTable(EntityTypeBuilder<Car> builder)
     {
-        builder.OwnsMany(c => c.Photos, sb =>
+        builder.OwnsMany(c => c.CarPhotoIds, sb =>
             {
                 sb.ToTable("CarPhotos");
 
                 sb.HasKey(nameof(CarPhotoEntity.Id));
-                sb.WithOwner().HasForeignKey("CarId"); 
-            
-                sb.Property(s=>s.Id)
+                sb.WithOwner().HasForeignKey("CarId");
+
+                sb.Property(s => s.Value)
                     .HasColumnName(nameof(CarPhotoEntity.Id))
-                    .ValueGeneratedNever()
-                    .HasConversion(
-                        id => id.Value,
-                        value => CarPhotoId.Create(value)
-                    );
-                
-                sb.Property(c => c.PhotoUrl).HasMaxLength(512);
+                    .ValueGeneratedNever();
             }
         );
 
-        builder.Metadata.FindNavigation(nameof(Car.Photos))!.SetPropertyAccessMode(PropertyAccessMode.Field);
+        builder.Metadata.FindNavigation(nameof(Car.CarPhotoIds))!.SetPropertyAccessMode(PropertyAccessMode.Field);
     }
 
     private static void ConfigureCarsTable(EntityTypeBuilder<Car> builder)

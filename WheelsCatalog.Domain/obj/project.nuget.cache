@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "v7vr3ufC8Yv3AfHOJFuUqJ6/ZRygECl+pNzLw6mkHFVToQi6RJLc7Bz7UiL/tfrrbpNZmXzta/QkXjo99jl1kg==",
+  "dgSpecHash": "NdbfG6Y16Ygba7zAULOaqDtWpLB3N56p6X9b7puSQWbPIvqjvYtNyXJqg9mSIMbdLA7QxI3FlV6glX8kSlyBPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.Domain\\WheelsCatalog.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Valeriia\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\Valeriia\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\Valeriia\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\Valeriia\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

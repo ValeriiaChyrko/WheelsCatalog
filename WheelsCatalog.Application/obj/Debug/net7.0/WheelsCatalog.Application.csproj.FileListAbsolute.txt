@@ -1,0 +1,15 @@
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\bin\Debug\net7.0\WheelsCatalog.Application.deps.json
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\bin\Debug\net7.0\WheelsCatalog.Application.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\bin\Debug\net7.0\WheelsCatalog.Application.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\bin\Debug\net7.0\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\bin\Debug\net7.0\WheelsCatalog.Domain.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.csproj.AssemblyReference.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.AssemblyInfoInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.AssemblyInfo.cs
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.csproj.CoreCompileInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.csproj.CopyComplete
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\refint\WheelsCatalog.Application.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\WheelsCatalog.Application.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Application\obj\Debug\net7.0\ref\WheelsCatalog.Application.dll

@@ -2,9 +2,9 @@
 
 namespace WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 
-public class BrandId : ValueObject
+public class BrandId : AggregateRootId<Guid>
 {
-    public Guid Value { get; }
+    public override Guid Value { get; protected set; }
 
     private BrandId(Guid value)
     {

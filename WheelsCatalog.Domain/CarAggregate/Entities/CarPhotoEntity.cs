@@ -11,13 +11,13 @@ public class CarPhotoEntity : Entity<CarPhotoId>
     {
         PhotoUrl = photoUrl;
     }
-    
+
     public static CarPhotoEntity Create(string photoUrl)
     {
         return new CarPhotoEntity(CarPhotoId.CreateUnique(), photoUrl);
     }
-    
-#pragma warning disable CS8618 
-    private CarPhotoEntity() { }
-#pragma warning restore CS8618
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+    public CarPhotoEntity() { }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 }

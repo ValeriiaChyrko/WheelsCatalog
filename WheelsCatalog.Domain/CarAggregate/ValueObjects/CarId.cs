@@ -2,9 +2,9 @@
 
 namespace WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
-public sealed class CarId : ValueObject
+public sealed class CarId : AggregateRootId<Guid>
 {
-    public Guid Value { get; }
+    public override Guid Value { get; protected set; }
 
     private CarId(Guid value)
     {

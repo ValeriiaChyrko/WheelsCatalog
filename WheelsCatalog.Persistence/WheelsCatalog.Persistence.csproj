@@ -7,13 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.16" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.16" />
+        <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
+        <Compile Remove="Configurations\DatabaseInitializer.cs" />
+        <None Include="Configurations\DatabaseInitializer.cs" />
+        <Compile Remove="Configurations\DataSeeds\CarDataSeed.cs" />
+        <None Include="Configurations\DataSeeds\CarDataSeed.cs" />
+        <Compile Remove="Configurations\DataSeeds\ModelDataTableSeed.cs" />
+        <None Include="Configurations\DataSeeds\ModelDataTableSeed.cs" />
     </ItemGroup>
-
 
 </Project>

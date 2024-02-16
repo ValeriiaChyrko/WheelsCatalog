@@ -1,0 +1,12 @@
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\bin\Debug\net7.0\WheelsCatalog.Domain.deps.json
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\bin\Debug\net7.0\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\bin\Debug\net7.0\WheelsCatalog.Domain.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.AssemblyInfoInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.AssemblyInfo.cs
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\refint\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\ref\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.csproj.AssemblyReference.cache

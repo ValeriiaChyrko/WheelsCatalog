@@ -37,9 +37,9 @@ public class ModelsConfigurations : IEntityTypeConfiguration<Model>
                 value => BrandId.Create(value)
             );
         
-        builder.HasMany(b => b.Cars)
+        builder.HasMany<Model>()
             .WithOne()
-            .HasForeignKey(c => c.ModelId)
-            .OnDelete(DeleteBehavior.NoAction);
+            .HasForeignKey(ph => ph.BrandId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
