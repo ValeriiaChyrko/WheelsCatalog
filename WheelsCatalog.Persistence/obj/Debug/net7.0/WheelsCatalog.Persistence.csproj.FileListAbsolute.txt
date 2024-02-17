@@ -15,3 +15,4 @@ C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\refint\WheelsCatalog.Persistence.dll
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\WheelsCatalog.Persistence.pdb
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\obj\Debug\net7.0\ref\WheelsCatalog.Persistence.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence\bin\Debug\net7.0\WheelsCatalogDbContext.cs

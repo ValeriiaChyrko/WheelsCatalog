@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WheelsCatalog.Persistence.Configurations;
 using WheelsCatalog.Persistence.Interceptors;
+using WheelsCatalog.Persistence.Profiles;
 
 namespace WheelsCatalog.Persistence;
 
@@ -16,10 +17,22 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString));
 
         services.AddScoped<PublishDomainEventsInterceptor>();
+        
+        services.AddScoped(_ =>
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new BrandMappingProfile()); 
+                cfg.AddProfile(new ModelMappingProfile()); 
+                cfg.AddProfile(new ColorEntityMappingProfile()); 
+                cfg.AddProfile(new CarMappingProfile()); 
+                cfg.AddProfile(new PriceHistoryMappingProfile()); 
+                cfg.AddProfile(new CurrencyMappingProfile()); 
+                cfg.AddProfile(new CarPhotoEntityMappingProfile()); 
+            });
 
-        using var serviceProvider = services.BuildServiceProvider();
-        var dbContext = serviceProvider.GetRequiredService<WheelsCatalogDbContext>();
-        //DatabaseInitializer.SeedData(dbContext);
+            return config.CreateMapper();
+        });
 
         return services;
     }

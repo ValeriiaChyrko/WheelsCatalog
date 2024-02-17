@@ -1,20 +1,30 @@
-﻿using WheelsCatalog.Domain.CarAggregate.Entities;
+﻿using WheelsCatalog.Persistence.Models;
 
-namespace WheelsCatalog.Persistence.Configurations.DataSeeds;
-
-public static class CarPhotoEntityDataSeed
+namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
-    public static List<CarPhotoEntity> SeedCarPhotos()
+    public static class CarPhotoDataSeed
     {
-        var carPhotos = new List<CarPhotoEntity>
+        public static List<CarPhotoEntityModel> SeedCarPhotos(List<CarEntityModel> cars)
         {
-            CarPhotoEntity.Create("https://example.com/photo1.jpg"),
-            CarPhotoEntity.Create("https://example.com/photo2.jpg"),
-            CarPhotoEntity.Create("https://example.com/photo3.jpg"),
-            CarPhotoEntity.Create("https://example.com/photo4.jpg"),
-            CarPhotoEntity.Create("https://example.com/photo5.jpg")
-        };
+            var random = new Random();
+            var photos = new List<CarPhotoEntityModel>();
 
-        return carPhotos;
+            foreach (var car in cars)
+            {
+                var numPhotos = random.Next(0, 5); 
+                
+                for (var i = 0; i < numPhotos; i++)
+                {
+                    photos.Add(new CarPhotoEntityModel
+                    {
+                        Id = Guid.NewGuid(),
+                        PhotoUrl = $"https://example.com/photo{i + 1}.jpg",
+                        CarId = car.Id 
+                    });
+                }
+            }
+
+            return photos;
+        }
     }
 }

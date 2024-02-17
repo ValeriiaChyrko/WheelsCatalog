@@ -1,13 +1,12 @@
-﻿using WheelsCatalog.Domain.BrandAggregate;
-using WheelsCatalog.Domain.ModelAggregate;
+﻿using WheelsCatalog.Persistence.Models;
 
 namespace WheelsCatalog.Persistence.Configurations.DataSeeds;
 
 public static class ModelDataSeed
 {
-    public static List<Model> SeedModels(List<Brand> brands)
+    public static List<ModelEntityModel> SeedModels(List<BrandEntityModel> brands)
     {
-        var models = new List<Model>();
+        var models = new List<ModelEntityModel>();
 
         var random = new Random();
 
@@ -21,7 +20,15 @@ public static class ModelDataSeed
                 var createDateTime = DateTime.UtcNow.AddDays(-random.Next(1, 365));
                 var updateDateTime = createDateTime.AddDays(random.Next(1, 365));
 
-                var model = Model.Create(modelName, modelDescription, createDateTime, updateDateTime, brand.Id);
+                var model = new ModelEntityModel
+                {
+                    Id = Guid.NewGuid(),
+                    Name = modelName,
+                    Description = modelDescription,
+                    CreateDateTime = createDateTime,
+                    UpdateDateTime = updateDateTime,
+                    BrandId = brand.Id
+                };
                 models.Add(model);
             }
         }

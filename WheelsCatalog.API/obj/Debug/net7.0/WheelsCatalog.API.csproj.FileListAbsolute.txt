@@ -89,3 +89,6 @@ C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\WheelsCatalogDbContext.cs
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
