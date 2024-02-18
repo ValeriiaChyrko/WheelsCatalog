@@ -50,6 +50,7 @@ namespace WheelsCatalog.Persistence
         public DbSet<PriceHistoryEntityModel> PriceHistories { get; set; } = null!;
         public DbSet<CarPhotoEntityModel> CarPhotos { get; set; } = null!;
         public DbSet<ColorEntityModel> Colors { get; set; } = null!;
+        public DbSet<CurrencyEntityModel> Currencies { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

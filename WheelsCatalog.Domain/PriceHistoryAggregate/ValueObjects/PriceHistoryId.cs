@@ -2,9 +2,9 @@
 
 namespace WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
-public class PriceHistoryId : AggregateRootId<Guid>
+public class PriceHistoryId : ValueObject
 {
-    public override Guid Value { get; protected set; }
+    public Guid Value { get; protected set; }
 
     private PriceHistoryId(Guid value)
     {

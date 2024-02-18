@@ -18,6 +18,12 @@ public sealed class ColorEntity : Entity<ColorId>
     {
         return new ColorEntity(ColorId.CreateUnique(), name, hexCode);
     }
+    
+    public void Update(string name, string hexCode)
+    {
+        Name = name;
+        HexCode = hexCode;
+    }
 
 #pragma warning disable CS8618 
     public ColorEntity() { }

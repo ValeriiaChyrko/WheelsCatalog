@@ -5,7 +5,7 @@ using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.ModelAggregate;
 
-public sealed class Model : AggregateRoot<ModelId, Guid>
+public sealed class Model : AggregateRoot<ModelId>
 {
     public string Name { get; private set; } 
     public string? Description { get; private set; }
@@ -30,9 +30,19 @@ public sealed class Model : AggregateRoot<ModelId, Guid>
         _carIds.Add(carId);
     }
     
-    public static Model Create(string name, string? description, DateTime createDateTime, DateTime updateDateTime, BrandId brandId)
+    public static Model Create(string name, string? description, BrandId brandId)
     {
-        return new Model(ModelId.CreateUnique(), name, description, createDateTime, updateDateTime, brandId);
+        var modelId = ModelId.CreateUnique();
+        var recordDateTime = DateTime.Now;
+        return new Model(modelId, name, description, recordDateTime, recordDateTime, brandId);
+    }
+    
+    public void Update(string name, string? description, BrandId brandId)
+    {
+        Name = name;
+        Description = description;
+        BrandId = brandId;
+        UpdateDateTime = DateTime.Now;
     }
 
 #pragma warning disable CS8618

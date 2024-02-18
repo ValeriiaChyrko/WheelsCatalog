@@ -55,138 +55,138 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("39cca2f8-3359-4172-bfa9-7a25beb333cc"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8831),
+                            Id = new Guid("4f945a9f-adcd-4e44-b6dc-c5373a8518a3"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9299),
                             Description = "Description for Brand 1",
                             LogoUrl = "https://example.com/logo1.png",
                             Name = "Brand 1",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8833)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9301)
                         },
                         new
                         {
-                            Id = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8837),
+                            Id = new Guid("703583da-5da7-4165-ac0c-3d0da79727f5"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9305),
                             Description = "Description for Brand 2",
                             LogoUrl = "https://example.com/logo2.png",
                             Name = "Brand 2",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8838)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9305)
                         },
                         new
                         {
-                            Id = new Guid("4eed6de0-4430-435c-9994-b0b81717c6ee"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8840),
+                            Id = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9307),
                             Description = "Description for Brand 3",
                             LogoUrl = "https://example.com/logo3.png",
                             Name = "Brand 3",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8840)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9308)
                         },
                         new
                         {
-                            Id = new Guid("47c27c13-bc6b-4054-87f0-5b6758a61ef9"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8855),
+                            Id = new Guid("3441174b-9655-4480-9d48-575ba2cc3c82"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9311),
                             Description = "Description for Brand 4",
                             LogoUrl = "https://example.com/logo4.png",
                             Name = "Brand 4",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8856)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9312)
                         },
                         new
                         {
-                            Id = new Guid("eb208759-7d7f-4d80-b6e3-fae451be526c"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8858),
+                            Id = new Guid("6bcac112-ea17-495a-a018-5142cb27a4ea"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9314),
                             Description = "Description for Brand 5",
                             LogoUrl = "https://example.com/logo5.png",
                             Name = "Brand 5",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8858)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9314)
                         },
                         new
                         {
-                            Id = new Guid("664f8cd0-f992-4b55-818e-3465cf55ed4c"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8862),
+                            Id = new Guid("141d7fc7-3bfa-4f3b-88ad-ad5671553a23"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9321),
                             Description = "Description for Brand 6",
                             LogoUrl = "https://example.com/logo6.png",
                             Name = "Brand 6",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8863)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9321)
                         },
                         new
                         {
-                            Id = new Guid("b977a908-ee1e-4f26-afc5-ae9947ca0965"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8865),
+                            Id = new Guid("5f20fefc-1fff-44e9-a6b6-60d7b6be0abf"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9323),
                             Description = "Description for Brand 7",
                             LogoUrl = "https://example.com/logo7.png",
                             Name = "Brand 7",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8865)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9324)
                         },
                         new
                         {
-                            Id = new Guid("78938ae2-2895-48e5-b60a-166e5d01f27e"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8867),
+                            Id = new Guid("f7d7de6d-92b3-4c60-9145-8a06b1315d24"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9326),
                             Description = "Description for Brand 8",
                             LogoUrl = "https://example.com/logo8.png",
                             Name = "Brand 8",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8867)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9326)
                         },
                         new
                         {
-                            Id = new Guid("8b9fdb4f-4d9c-437a-8569-e753578d87b8"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8869),
+                            Id = new Guid("24bf2e02-967f-4111-966e-69de98e0e5bc"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9331),
                             Description = "Description for Brand 9",
                             LogoUrl = "https://example.com/logo9.png",
                             Name = "Brand 9",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8870)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9331)
                         },
                         new
                         {
-                            Id = new Guid("155dff8e-91a2-4cf6-ae38-34a948580506"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8898),
+                            Id = new Guid("5c13c439-0ac2-4722-b874-a49f7a218fac"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9339),
                             Description = "Description for Brand 10",
                             LogoUrl = "https://example.com/logo10.png",
                             Name = "Brand 10",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8898)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9339)
                         },
                         new
                         {
-                            Id = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8901),
+                            Id = new Guid("bd1b0a3e-8292-401b-96c5-32f2acc443f1"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9341),
                             Description = "Description for Brand 11",
                             LogoUrl = "https://example.com/logo11.png",
                             Name = "Brand 11",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8901)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9341)
                         },
                         new
                         {
-                            Id = new Guid("356c58b1-b9f1-420a-b4af-87d9c4c1075d"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8906),
+                            Id = new Guid("e221fa33-60d4-4e82-b121-93034ccdfe1c"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9343),
                             Description = "Description for Brand 12",
                             LogoUrl = "https://example.com/logo12.png",
                             Name = "Brand 12",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8907)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9344)
                         },
                         new
                         {
-                            Id = new Guid("e8c2e5ef-ca3c-4f58-9c44-b0a8d2010699"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8909),
+                            Id = new Guid("154a5f51-05db-41a7-b61f-fd7e84b83f38"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9346),
                             Description = "Description for Brand 13",
                             LogoUrl = "https://example.com/logo13.png",
                             Name = "Brand 13",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8909)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9346)
                         },
                         new
                         {
-                            Id = new Guid("2aa1683d-dad3-4822-a0bd-f89349878072"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8911),
+                            Id = new Guid("a58faf4c-6100-42fc-9c6b-cdda5013d3aa"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9348),
                             Description = "Description for Brand 14",
                             LogoUrl = "https://example.com/logo14.png",
                             Name = "Brand 14",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8911)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9348)
                         },
                         new
                         {
-                            Id = new Guid("10b7f847-f9df-4a7b-97f5-7bc9aa108d0d"),
-                            CreateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8913),
+                            Id = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            CreateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9350),
                             Description = "Description for Brand 15",
                             LogoUrl = "https://example.com/logo15.png",
                             Name = "Brand 15",
-                            UpdateDateTime = new DateTime(2024, 2, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(8914)
+                            UpdateDateTime = new DateTime(2024, 2, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9351)
                         });
                 });
 
@@ -231,223 +231,223 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2687ac4e-1226-4ec6-bd9f-78e37d0d81a4"),
-                            BrandId = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            ColorId = new Guid("df7f9131-6db0-4031-8c6e-ec6f64888be5"),
-                            CreateDateTime = new DateTime(2023, 5, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9448),
+                            Id = new Guid("c8018f6a-88e2-4350-87f2-d946ab0afd1e"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            ColorId = new Guid("c34cfb4c-753c-4829-8b90-1bca57f69b9c"),
+                            CreateDateTime = new DateTime(2023, 4, 17, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(179),
                             Description = "Description for car 1",
-                            EngineVolume = 4922,
-                            ModelId = new Guid("91cbb861-918e-4cf5-a8ad-af0b9f2c67cf"),
-                            UpdateDateTime = new DateTime(2023, 5, 3, 6, 53, 6, 668, DateTimeKind.Utc).AddTicks(9448)
+                            EngineVolume = 1874,
+                            ModelId = new Guid("f369a620-2265-423f-af6f-9afca53ab9d7"),
+                            UpdateDateTime = new DateTime(2023, 4, 18, 0, 7, 15, 443, DateTimeKind.Utc).AddTicks(179)
                         },
                         new
                         {
-                            Id = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
-                            BrandId = new Guid("39cca2f8-3359-4172-bfa9-7a25beb333cc"),
-                            ColorId = new Guid("19698506-7011-49b0-8ac0-4a75d91e2b23"),
-                            CreateDateTime = new DateTime(2023, 3, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9455),
+                            Id = new Guid("d5755b57-1f8b-482a-aee1-80f401bf60e8"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            ColorId = new Guid("1248b1a0-7a29-4435-bf21-2e4951863ba3"),
+                            CreateDateTime = new DateTime(2023, 7, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(242),
                             Description = "Description for car 2",
-                            EngineVolume = 4268,
-                            ModelId = new Guid("be028e7e-f334-4c56-8e33-a6e435a257a7"),
-                            UpdateDateTime = new DateTime(2023, 3, 24, 8, 53, 6, 668, DateTimeKind.Utc).AddTicks(9455)
+                            EngineVolume = 3307,
+                            ModelId = new Guid("f369a620-2265-423f-af6f-9afca53ab9d7"),
+                            UpdateDateTime = new DateTime(2023, 7, 6, 11, 7, 15, 443, DateTimeKind.Utc).AddTicks(242)
                         },
                         new
                         {
-                            Id = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
-                            BrandId = new Guid("2aa1683d-dad3-4822-a0bd-f89349878072"),
-                            ColorId = new Guid("563f905d-75a9-47d5-b6fa-71c95d356f9e"),
-                            CreateDateTime = new DateTime(2023, 5, 15, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9458),
+                            Id = new Guid("6cc85e0b-2ab2-4cd3-8097-15639fc54aec"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            ColorId = new Guid("4caba5e5-eb09-4e4f-a59c-104708827c3c"),
+                            CreateDateTime = new DateTime(2023, 12, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(248),
                             Description = "Description for car 3",
-                            EngineVolume = 2933,
-                            ModelId = new Guid("97a08df7-3b6f-466b-be2c-a04bb5f4009c"),
-                            UpdateDateTime = new DateTime(2023, 5, 16, 11, 53, 6, 668, DateTimeKind.Utc).AddTicks(9458)
+                            EngineVolume = 4970,
+                            ModelId = new Guid("4572ebe4-c7d9-4309-84c9-bd661c5c3fcb"),
+                            UpdateDateTime = new DateTime(2023, 12, 12, 15, 7, 15, 443, DateTimeKind.Utc).AddTicks(248)
                         },
                         new
                         {
-                            Id = new Guid("b701b263-430a-487b-9a5f-c8fd77fe41f0"),
-                            BrandId = new Guid("356c58b1-b9f1-420a-b4af-87d9c4c1075d"),
-                            ColorId = new Guid("f62aad82-1809-4afa-8a88-95c88a197da7"),
-                            CreateDateTime = new DateTime(2023, 3, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9460),
+                            Id = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            ColorId = new Guid("df287d40-c6c7-4866-89bc-baeba3df1e96"),
+                            CreateDateTime = new DateTime(2023, 10, 26, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(251),
                             Description = "Description for car 4",
-                            EngineVolume = 4533,
-                            ModelId = new Guid("606ff679-394a-485f-b880-7cddc4d77ee5"),
-                            UpdateDateTime = new DateTime(2023, 3, 22, 3, 53, 6, 668, DateTimeKind.Utc).AddTicks(9460)
+                            EngineVolume = 3865,
+                            ModelId = new Guid("82285818-fb6a-4505-a7a6-e8d4e045e122"),
+                            UpdateDateTime = new DateTime(2023, 10, 27, 9, 7, 15, 443, DateTimeKind.Utc).AddTicks(251)
                         },
                         new
                         {
-                            Id = new Guid("508b2912-bd42-4480-95fb-73a432ba8276"),
-                            BrandId = new Guid("39cca2f8-3359-4172-bfa9-7a25beb333cc"),
-                            ColorId = new Guid("3b272e08-8c06-4102-8fdd-87e0cf9022a6"),
-                            CreateDateTime = new DateTime(2024, 2, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9463),
+                            Id = new Guid("619c48a5-bdd0-4431-9ed5-cb637566bf88"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            ColorId = new Guid("c34cfb4c-753c-4829-8b90-1bca57f69b9c"),
+                            CreateDateTime = new DateTime(2023, 3, 19, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(253),
                             Description = "Description for car 5",
-                            EngineVolume = 4959,
-                            ModelId = new Guid("ca0a0bd3-0d5c-4a8e-81d9-5b8b56003c56"),
-                            UpdateDateTime = new DateTime(2024, 2, 2, 18, 53, 6, 668, DateTimeKind.Utc).AddTicks(9463)
+                            EngineVolume = 1849,
+                            ModelId = new Guid("0fc4269f-f6f2-45ce-a342-a5e68e92c151"),
+                            UpdateDateTime = new DateTime(2023, 3, 20, 18, 7, 15, 443, DateTimeKind.Utc).AddTicks(253)
                         },
                         new
                         {
-                            Id = new Guid("fd09842c-7cc9-4d7a-9c3e-aec4038a313e"),
-                            BrandId = new Guid("8b9fdb4f-4d9c-437a-8569-e753578d87b8"),
-                            ColorId = new Guid("d01dc53e-6814-44af-b131-0caa5a9dc784"),
-                            CreateDateTime = new DateTime(2023, 7, 15, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9468),
+                            Id = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            BrandId = new Guid("a58faf4c-6100-42fc-9c6b-cdda5013d3aa"),
+                            ColorId = new Guid("c34cfb4c-753c-4829-8b90-1bca57f69b9c"),
+                            CreateDateTime = new DateTime(2023, 8, 25, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(257),
                             Description = "Description for car 6",
-                            EngineVolume = 2622,
-                            ModelId = new Guid("c00512a4-f7d8-421f-be3e-c0ec8b97d63c"),
-                            UpdateDateTime = new DateTime(2023, 7, 16, 2, 53, 6, 668, DateTimeKind.Utc).AddTicks(9468)
+                            EngineVolume = 2501,
+                            ModelId = new Guid("23200dbd-b9d8-42a8-9407-af29b7669595"),
+                            UpdateDateTime = new DateTime(2023, 8, 26, 7, 7, 15, 443, DateTimeKind.Utc).AddTicks(257)
                         },
                         new
                         {
-                            Id = new Guid("d518b5d6-43e5-4418-b9d5-f975e673f822"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            ColorId = new Guid("eb8f2007-c5ea-44c5-b2a1-24c62f16f945"),
-                            CreateDateTime = new DateTime(2023, 7, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9471),
+                            Id = new Guid("8f0c07b1-9dc5-43b6-a023-a53fb6f7edbf"),
+                            BrandId = new Guid("24bf2e02-967f-4111-966e-69de98e0e5bc"),
+                            ColorId = new Guid("ac07541c-0d23-4239-9313-d122a3dac44f"),
+                            CreateDateTime = new DateTime(2023, 10, 14, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(260),
                             Description = "Description for car 7",
-                            EngineVolume = 3844,
-                            ModelId = new Guid("90ae9dfa-b32f-4464-8793-70abd08263ac"),
-                            UpdateDateTime = new DateTime(2023, 7, 2, 18, 53, 6, 668, DateTimeKind.Utc).AddTicks(9471)
+                            EngineVolume = 3948,
+                            ModelId = new Guid("52b33edb-41ea-4db5-8824-31c0cf915940"),
+                            UpdateDateTime = new DateTime(2023, 10, 15, 4, 7, 15, 443, DateTimeKind.Utc).AddTicks(260)
                         },
                         new
                         {
-                            Id = new Guid("c15df684-32c4-4d8d-9bdb-ab8f7dcd23b7"),
-                            BrandId = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            ColorId = new Guid("7b84e2a6-d492-4d0e-8640-aea37efc2b8f"),
-                            CreateDateTime = new DateTime(2023, 8, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9474),
+                            Id = new Guid("ececdd8b-4da4-4d37-b675-175c56f53fe4"),
+                            BrandId = new Guid("154a5f51-05db-41a7-b61f-fd7e84b83f38"),
+                            ColorId = new Guid("df21f197-7a86-419c-a7eb-787449a4488f"),
+                            CreateDateTime = new DateTime(2023, 7, 13, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(266),
                             Description = "Description for car 8",
-                            EngineVolume = 2721,
-                            ModelId = new Guid("bc45c316-d145-49a4-aee3-50b0626f2bc3"),
-                            UpdateDateTime = new DateTime(2023, 8, 23, 18, 53, 6, 668, DateTimeKind.Utc).AddTicks(9474)
+                            EngineVolume = 1352,
+                            ModelId = new Guid("e4be6211-05f1-4aaf-afc8-f60a32ba6f44"),
+                            UpdateDateTime = new DateTime(2023, 7, 13, 22, 7, 15, 443, DateTimeKind.Utc).AddTicks(266)
                         },
                         new
                         {
-                            Id = new Guid("965b61dc-ff72-4408-a9de-626686ee572f"),
-                            BrandId = new Guid("664f8cd0-f992-4b55-818e-3465cf55ed4c"),
-                            ColorId = new Guid("359beace-45a4-415c-833d-fd1a75fa82ce"),
-                            CreateDateTime = new DateTime(2023, 10, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9476),
+                            Id = new Guid("e81865c8-7db0-4238-8df5-e8a25f6fc469"),
+                            BrandId = new Guid("5f20fefc-1fff-44e9-a6b6-60d7b6be0abf"),
+                            ColorId = new Guid("b16e6e7c-7444-49c7-b3cd-c291e2cc14ed"),
+                            CreateDateTime = new DateTime(2023, 10, 7, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(272),
                             Description = "Description for car 9",
-                            EngineVolume = 1727,
-                            ModelId = new Guid("9384afcd-1605-4142-a4cf-7dd6fd22c994"),
-                            UpdateDateTime = new DateTime(2023, 11, 1, 6, 53, 6, 668, DateTimeKind.Utc).AddTicks(9476)
+                            EngineVolume = 1325,
+                            ModelId = new Guid("20e092ec-df9e-403d-ac2c-e386210ea548"),
+                            UpdateDateTime = new DateTime(2023, 10, 7, 20, 7, 15, 443, DateTimeKind.Utc).AddTicks(272)
                         },
                         new
                         {
-                            Id = new Guid("0e8da9b4-2a32-4ea4-b678-518e5e7f1ae0"),
-                            BrandId = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            ColorId = new Guid("7b84e2a6-d492-4d0e-8640-aea37efc2b8f"),
-                            CreateDateTime = new DateTime(2024, 1, 7, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9480),
+                            Id = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
+                            BrandId = new Guid("3441174b-9655-4480-9d48-575ba2cc3c82"),
+                            ColorId = new Guid("72063e3d-ec54-428b-9f70-b438cdf58be7"),
+                            CreateDateTime = new DateTime(2023, 8, 2, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(275),
                             Description = "Description for car 10",
-                            EngineVolume = 2116,
-                            ModelId = new Guid("f9930db5-086b-43bb-87c0-675ddade664c"),
-                            UpdateDateTime = new DateTime(2024, 1, 7, 20, 53, 6, 668, DateTimeKind.Utc).AddTicks(9480)
+                            EngineVolume = 1994,
+                            ModelId = new Guid("89358834-0068-44fa-8097-1f5756e1660a"),
+                            UpdateDateTime = new DateTime(2023, 8, 3, 18, 7, 15, 443, DateTimeKind.Utc).AddTicks(275)
                         },
                         new
                         {
-                            Id = new Guid("52e1c94d-5c7b-449d-819b-ebd5e7fb9ce5"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            ColorId = new Guid("3b272e08-8c06-4102-8fdd-87e0cf9022a6"),
-                            CreateDateTime = new DateTime(2023, 8, 9, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9483),
+                            Id = new Guid("b9c55f44-e0a4-4997-8670-1d8c35e38437"),
+                            BrandId = new Guid("bd1b0a3e-8292-401b-96c5-32f2acc443f1"),
+                            ColorId = new Guid("4caba5e5-eb09-4e4f-a59c-104708827c3c"),
+                            CreateDateTime = new DateTime(2023, 5, 3, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(280),
                             Description = "Description for car 11",
-                            EngineVolume = 3389,
-                            ModelId = new Guid("9b1dd26e-f944-4495-9646-6d3848d94579"),
-                            UpdateDateTime = new DateTime(2023, 8, 9, 18, 53, 6, 668, DateTimeKind.Utc).AddTicks(9483)
+                            EngineVolume = 2432,
+                            ModelId = new Guid("62bb7a40-1d57-4dea-8369-84c85231c455"),
+                            UpdateDateTime = new DateTime(2023, 5, 4, 11, 7, 15, 443, DateTimeKind.Utc).AddTicks(280)
                         },
                         new
                         {
-                            Id = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            ColorId = new Guid("97116f83-8542-407a-8b9c-38e3a7eff574"),
-                            CreateDateTime = new DateTime(2023, 12, 20, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9485),
+                            Id = new Guid("ccbbdac5-7557-438a-8551-ac5901e2b587"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            ColorId = new Guid("72063e3d-ec54-428b-9f70-b438cdf58be7"),
+                            CreateDateTime = new DateTime(2023, 3, 12, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(282),
                             Description = "Description for car 12",
-                            EngineVolume = 2540,
-                            ModelId = new Guid("da668d2b-e22d-4d41-a14f-b25875375f6e"),
-                            UpdateDateTime = new DateTime(2023, 12, 21, 6, 53, 6, 668, DateTimeKind.Utc).AddTicks(9485)
+                            EngineVolume = 3006,
+                            ModelId = new Guid("82285818-fb6a-4505-a7a6-e8d4e045e122"),
+                            UpdateDateTime = new DateTime(2023, 3, 13, 14, 7, 15, 443, DateTimeKind.Utc).AddTicks(282)
                         },
                         new
                         {
-                            Id = new Guid("2e66b8bc-2274-498c-909d-5b444ef3ea37"),
-                            BrandId = new Guid("b977a908-ee1e-4f26-afc5-ae9947ca0965"),
-                            ColorId = new Guid("d01dc53e-6814-44af-b131-0caa5a9dc784"),
-                            CreateDateTime = new DateTime(2024, 2, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9488),
+                            Id = new Guid("6a192eaf-47eb-4899-aa33-3732c1d5328a"),
+                            BrandId = new Guid("141d7fc7-3bfa-4f3b-88ad-ad5671553a23"),
+                            ColorId = new Guid("1248b1a0-7a29-4435-bf21-2e4951863ba3"),
+                            CreateDateTime = new DateTime(2023, 3, 12, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(285),
                             Description = "Description for car 13",
-                            EngineVolume = 2689,
-                            ModelId = new Guid("82bb343c-033d-475e-b6b9-ac37eed141d3"),
-                            UpdateDateTime = new DateTime(2024, 2, 2, 23, 53, 6, 668, DateTimeKind.Utc).AddTicks(9488)
+                            EngineVolume = 4993,
+                            ModelId = new Guid("43f26955-00cd-4b38-888c-83ab1f1b642a"),
+                            UpdateDateTime = new DateTime(2023, 3, 12, 20, 7, 15, 443, DateTimeKind.Utc).AddTicks(285)
                         },
                         new
                         {
-                            Id = new Guid("6b912a89-4cd1-4cc2-b02c-018de5837fec"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            ColorId = new Guid("563f905d-75a9-47d5-b6fa-71c95d356f9e"),
-                            CreateDateTime = new DateTime(2023, 9, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9492),
+                            Id = new Guid("3fbfca05-c56d-4f9b-b064-5095cf13b65e"),
+                            BrandId = new Guid("6bcac112-ea17-495a-a018-5142cb27a4ea"),
+                            ColorId = new Guid("ac07541c-0d23-4239-9313-d122a3dac44f"),
+                            CreateDateTime = new DateTime(2023, 12, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(288),
                             Description = "Description for car 14",
-                            EngineVolume = 2472,
-                            ModelId = new Guid("0614e76c-1403-4a78-a236-c393c3816634"),
-                            UpdateDateTime = new DateTime(2023, 9, 11, 13, 53, 6, 668, DateTimeKind.Utc).AddTicks(9492)
+                            EngineVolume = 4371,
+                            ModelId = new Guid("06733028-9994-4311-8dcf-ba2593ce8680"),
+                            UpdateDateTime = new DateTime(2023, 12, 6, 13, 7, 15, 443, DateTimeKind.Utc).AddTicks(288)
                         },
                         new
                         {
-                            Id = new Guid("3d97e820-b2a3-443a-8bf1-3a7d707b863a"),
-                            BrandId = new Guid("664f8cd0-f992-4b55-818e-3465cf55ed4c"),
-                            ColorId = new Guid("08ba557c-950e-4a03-9df1-609abf1cb4b7"),
-                            CreateDateTime = new DateTime(2023, 8, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9495),
+                            Id = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            ColorId = new Guid("72063e3d-ec54-428b-9f70-b438cdf58be7"),
+                            CreateDateTime = new DateTime(2023, 5, 17, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(290),
                             Description = "Description for car 15",
-                            EngineVolume = 3312,
-                            ModelId = new Guid("3288807c-903a-475f-969b-f00f2b3244bc"),
-                            UpdateDateTime = new DateTime(2023, 8, 31, 22, 53, 6, 668, DateTimeKind.Utc).AddTicks(9495)
+                            EngineVolume = 1737,
+                            ModelId = new Guid("0e67315e-1528-494e-a0e0-64419d1a09d0"),
+                            UpdateDateTime = new DateTime(2023, 5, 18, 6, 7, 15, 443, DateTimeKind.Utc).AddTicks(290)
                         },
                         new
                         {
-                            Id = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            BrandId = new Guid("eb208759-7d7f-4d80-b6e3-fae451be526c"),
-                            ColorId = new Guid("5c87f24c-7261-4969-9358-03fcf8efcaf0"),
-                            CreateDateTime = new DateTime(2023, 4, 20, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9498),
+                            Id = new Guid("6203ab05-6d54-418c-a609-5980e77ac67c"),
+                            BrandId = new Guid("703583da-5da7-4165-ac0c-3d0da79727f5"),
+                            ColorId = new Guid("df287d40-c6c7-4866-89bc-baeba3df1e96"),
+                            CreateDateTime = new DateTime(2023, 10, 7, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(293),
                             Description = "Description for car 16",
-                            EngineVolume = 3726,
-                            ModelId = new Guid("2632c85c-0633-4d20-bb6f-f54a2542869f"),
-                            UpdateDateTime = new DateTime(2023, 4, 20, 21, 53, 6, 668, DateTimeKind.Utc).AddTicks(9498)
+                            EngineVolume = 2648,
+                            ModelId = new Guid("06733028-9994-4311-8dcf-ba2593ce8680"),
+                            UpdateDateTime = new DateTime(2023, 10, 8, 13, 7, 15, 443, DateTimeKind.Utc).AddTicks(293)
                         },
                         new
                         {
-                            Id = new Guid("dbe4df0c-06e1-45ca-9cee-f0c5aafe8ecd"),
-                            BrandId = new Guid("356c58b1-b9f1-420a-b4af-87d9c4c1075d"),
-                            ColorId = new Guid("97116f83-8542-407a-8b9c-38e3a7eff574"),
-                            CreateDateTime = new DateTime(2023, 12, 4, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9501),
+                            Id = new Guid("e3ed1a36-a29c-4a5d-a03b-e6979e1d206a"),
+                            BrandId = new Guid("f7d7de6d-92b3-4c60-9145-8a06b1315d24"),
+                            ColorId = new Guid("c34cfb4c-753c-4829-8b90-1bca57f69b9c"),
+                            CreateDateTime = new DateTime(2023, 6, 13, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(296),
                             Description = "Description for car 17",
-                            EngineVolume = 3359,
-                            ModelId = new Guid("8517d8d3-04b7-4679-809f-9c098a58e0f4"),
-                            UpdateDateTime = new DateTime(2023, 12, 5, 1, 53, 6, 668, DateTimeKind.Utc).AddTicks(9501)
+                            EngineVolume = 2766,
+                            ModelId = new Guid("43f26955-00cd-4b38-888c-83ab1f1b642a"),
+                            UpdateDateTime = new DateTime(2023, 6, 14, 2, 7, 15, 443, DateTimeKind.Utc).AddTicks(296)
                         },
                         new
                         {
-                            Id = new Guid("47b1e7a2-7456-4136-aea4-e296f0fa96f6"),
-                            BrandId = new Guid("e8c2e5ef-ca3c-4f58-9c44-b0a8d2010699"),
-                            ColorId = new Guid("7b84e2a6-d492-4d0e-8640-aea37efc2b8f"),
-                            CreateDateTime = new DateTime(2023, 9, 4, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9504),
+                            Id = new Guid("4baa3dad-4f69-4521-aba3-3c213f3813fd"),
+                            BrandId = new Guid("24bf2e02-967f-4111-966e-69de98e0e5bc"),
+                            ColorId = new Guid("df21f197-7a86-419c-a7eb-787449a4488f"),
+                            CreateDateTime = new DateTime(2024, 2, 8, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(299),
                             Description = "Description for car 18",
-                            EngineVolume = 4589,
-                            ModelId = new Guid("ca0a0bd3-0d5c-4a8e-81d9-5b8b56003c56"),
-                            UpdateDateTime = new DateTime(2023, 9, 5, 5, 53, 6, 668, DateTimeKind.Utc).AddTicks(9504)
+                            EngineVolume = 1625,
+                            ModelId = new Guid("ea82e5f7-23de-4e4b-a944-2f48fa5cb54c"),
+                            UpdateDateTime = new DateTime(2024, 2, 9, 15, 7, 15, 443, DateTimeKind.Utc).AddTicks(299)
                         },
                         new
                         {
-                            Id = new Guid("db2d61fe-ce14-40ed-a010-cf70f586e9d4"),
-                            BrandId = new Guid("155dff8e-91a2-4cf6-ae38-34a948580506"),
-                            ColorId = new Guid("d01dc53e-6814-44af-b131-0caa5a9dc784"),
-                            CreateDateTime = new DateTime(2023, 12, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9507),
+                            Id = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            ColorId = new Guid("ac07541c-0d23-4239-9313-d122a3dac44f"),
+                            CreateDateTime = new DateTime(2023, 12, 4, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(304),
                             Description = "Description for car 19",
-                            EngineVolume = 3661,
-                            ModelId = new Guid("1de069a0-1b86-46e9-9060-156e1b0aa296"),
-                            UpdateDateTime = new DateTime(2023, 12, 31, 15, 53, 6, 668, DateTimeKind.Utc).AddTicks(9507)
+                            EngineVolume = 2420,
+                            ModelId = new Guid("f681b08a-aff2-431a-87cb-5ea5d7280b5e"),
+                            UpdateDateTime = new DateTime(2023, 12, 5, 9, 7, 15, 443, DateTimeKind.Utc).AddTicks(304)
                         },
                         new
                         {
-                            Id = new Guid("7601d109-372f-411f-8884-f37d39e4a094"),
-                            BrandId = new Guid("10b7f847-f9df-4a7b-97f5-7bc9aa108d0d"),
-                            ColorId = new Guid("f62aad82-1809-4afa-8a88-95c88a197da7"),
-                            CreateDateTime = new DateTime(2023, 5, 20, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9510),
+                            Id = new Guid("47c649b6-ba19-4a75-bfb2-472953d5362b"),
+                            BrandId = new Guid("3441174b-9655-4480-9d48-575ba2cc3c82"),
+                            ColorId = new Guid("ac07541c-0d23-4239-9313-d122a3dac44f"),
+                            CreateDateTime = new DateTime(2023, 7, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(307),
                             Description = "Description for car 20",
-                            EngineVolume = 1042,
-                            ModelId = new Guid("da668d2b-e22d-4d41-a14f-b25875375f6e"),
-                            UpdateDateTime = new DateTime(2023, 5, 20, 20, 53, 6, 668, DateTimeKind.Utc).AddTicks(9510)
+                            EngineVolume = 4179,
+                            ModelId = new Guid("9f65bd43-be21-4089-9784-9d08bd889e87"),
+                            UpdateDateTime = new DateTime(2023, 7, 12, 2, 7, 15, 443, DateTimeKind.Utc).AddTicks(307)
                         });
                 });
 
@@ -474,255 +474,213 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d893c786-c9d3-46ef-9f95-d1684d18be22"),
-                            CarId = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
+                            Id = new Guid("078f0831-02fb-47e2-b07b-545a63b88f74"),
+                            CarId = new Guid("c8018f6a-88e2-4350-87f2-d946ab0afd1e"),
                             PhotoUrl = "https://example.com/photo1.jpg"
                         },
                         new
                         {
-                            Id = new Guid("2bcc663e-d1c3-42eb-b4c1-bbc5bba565ec"),
-                            CarId = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
+                            Id = new Guid("463a3f88-1fd0-48d0-ba1f-223774e5abe1"),
+                            CarId = new Guid("d5755b57-1f8b-482a-aee1-80f401bf60e8"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("76be15e7-6850-46a0-a9a8-bd80166e498b"),
+                            CarId = new Guid("6cc85e0b-2ab2-4cd3-8097-15639fc54aec"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("9f2acc9c-3241-4105-a6db-69ac3817454d"),
+                            CarId = new Guid("6cc85e0b-2ab2-4cd3-8097-15639fc54aec"),
                             PhotoUrl = "https://example.com/photo2.jpg"
                         },
                         new
                         {
-                            Id = new Guid("b0b5bec7-3cfe-452a-8e21-610810ec4976"),
-                            CarId = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
+                            Id = new Guid("89153b19-ee9b-4f7e-8348-624d617fa4c9"),
+                            CarId = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("ec2fdfbd-77d6-4121-a6c9-c9c80deb0f80"),
+                            CarId = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("d1254772-21ff-4002-9f28-f427eed1cbd2"),
+                            CarId = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
                             PhotoUrl = "https://example.com/photo3.jpg"
                         },
                         new
                         {
-                            Id = new Guid("67812abc-2cea-4b50-b150-8ff65911fb96"),
-                            CarId = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
+                            Id = new Guid("c5cfa578-0db6-4ab9-8d04-fc5e004bbc76"),
+                            CarId = new Guid("619c48a5-bdd0-4431-9ed5-cb637566bf88"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("2a50d7b1-0849-4684-8d29-65c063613da2"),
+                            CarId = new Guid("619c48a5-bdd0-4431-9ed5-cb637566bf88"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("8a3c701e-e470-413b-bd05-1b05a9c36e78"),
+                            CarId = new Guid("619c48a5-bdd0-4431-9ed5-cb637566bf88"),
+                            PhotoUrl = "https://example.com/photo3.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("13b9706e-ef24-417b-a9a6-2de90c4d2284"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("ac023498-e805-470c-a400-6a673fe39ece"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("3e788fcf-9f1b-4ab7-a81e-dea621a07fda"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            PhotoUrl = "https://example.com/photo3.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("7201b2fe-7215-42b6-91f6-91daa2c54ffc"),
+                            CarId = new Guid("8f0c07b1-9dc5-43b6-a023-a53fb6f7edbf"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("cbf576df-155e-4370-b66e-e71408c11606"),
+                            CarId = new Guid("8f0c07b1-9dc5-43b6-a023-a53fb6f7edbf"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("1f02f36c-b27e-4d6d-9e4c-96245238a19d"),
+                            CarId = new Guid("8f0c07b1-9dc5-43b6-a023-a53fb6f7edbf"),
+                            PhotoUrl = "https://example.com/photo3.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("ea92fac4-65ac-43ab-85e2-003559d07f7f"),
+                            CarId = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("fc26c7e2-ba39-479d-832c-9656597fcc87"),
+                            CarId = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("5b59055a-6f0a-4743-a5d7-728c348148ca"),
+                            CarId = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
+                            PhotoUrl = "https://example.com/photo3.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("6c2904ab-930e-4f2f-80c2-db85c402bc6f"),
+                            CarId = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
                             PhotoUrl = "https://example.com/photo4.jpg"
                         },
                         new
                         {
-                            Id = new Guid("d637b98d-6668-4eef-8e6d-5de12b9b689d"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
+                            Id = new Guid("21b429d5-133b-46a5-8bca-2b3b27c18d68"),
+                            CarId = new Guid("ccbbdac5-7557-438a-8551-ac5901e2b587"),
                             PhotoUrl = "https://example.com/photo1.jpg"
                         },
                         new
                         {
-                            Id = new Guid("4398c2ce-f809-4e90-8292-c0a7bdff0937"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
+                            Id = new Guid("f2fc72dc-89e7-41f2-9a41-b37fcea4bfaa"),
+                            CarId = new Guid("ccbbdac5-7557-438a-8551-ac5901e2b587"),
                             PhotoUrl = "https://example.com/photo2.jpg"
                         },
                         new
                         {
-                            Id = new Guid("4ce9216c-58c6-460f-8d49-2f750e930e47"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
-                            PhotoUrl = "https://example.com/photo3.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("e0179ce4-caec-4d01-8e98-64b8023cc742"),
-                            CarId = new Guid("b701b263-430a-487b-9a5f-c8fd77fe41f0"),
+                            Id = new Guid("1b1b950c-56a6-42ae-bf3f-097736a9f5fe"),
+                            CarId = new Guid("6a192eaf-47eb-4899-aa33-3732c1d5328a"),
                             PhotoUrl = "https://example.com/photo1.jpg"
                         },
                         new
                         {
-                            Id = new Guid("8b56d7d1-45b6-4936-b7ae-6d5f76011ad9"),
-                            CarId = new Guid("508b2912-bd42-4480-95fb-73a432ba8276"),
+                            Id = new Guid("de4038dd-3c5a-44df-8688-7de83f13d114"),
+                            CarId = new Guid("3fbfca05-c56d-4f9b-b064-5095cf13b65e"),
                             PhotoUrl = "https://example.com/photo1.jpg"
                         },
                         new
                         {
-                            Id = new Guid("e083cff3-630a-400c-b807-692a90763ec1"),
-                            CarId = new Guid("508b2912-bd42-4480-95fb-73a432ba8276"),
+                            Id = new Guid("b6b22fde-c196-4d86-989b-d627a6f78eae"),
+                            CarId = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("614c7a92-0ab7-453e-b2a3-6b76ff7ab578"),
+                            CarId = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
                             PhotoUrl = "https://example.com/photo2.jpg"
                         },
                         new
                         {
-                            Id = new Guid("153f2c71-4342-4c3c-94f2-925d31eb27dd"),
-                            CarId = new Guid("508b2912-bd42-4480-95fb-73a432ba8276"),
+                            Id = new Guid("5fa7031b-f531-4200-8646-b2dc6f4cd25d"),
+                            CarId = new Guid("6203ab05-6d54-418c-a609-5980e77ac67c"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("672a2a7b-76a9-41c2-a795-d796ff73a289"),
+                            CarId = new Guid("e3ed1a36-a29c-4a5d-a03b-e6979e1d206a"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("fc03df39-ffd4-4caf-adec-9735921b5719"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("32c41f82-b1d1-402a-ae98-0e25844d10fc"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("944fb0f9-5af8-41d2-a7e4-f522e745983b"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
                             PhotoUrl = "https://example.com/photo3.jpg"
                         },
                         new
                         {
-                            Id = new Guid("9ccf01dd-1636-41c7-82e3-d48f9b1eec97"),
-                            CarId = new Guid("508b2912-bd42-4480-95fb-73a432ba8276"),
+                            Id = new Guid("38c57562-90a3-45ef-a8df-df9a8886e9ec"),
+                            CarId = new Guid("47c649b6-ba19-4a75-bfb2-472953d5362b"),
+                            PhotoUrl = "https://example.com/photo1.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("bea0fca1-b312-4b5c-980c-de457a254c54"),
+                            CarId = new Guid("47c649b6-ba19-4a75-bfb2-472953d5362b"),
+                            PhotoUrl = "https://example.com/photo2.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("f576fc53-2b1c-4823-a343-176526fe9083"),
+                            CarId = new Guid("47c649b6-ba19-4a75-bfb2-472953d5362b"),
+                            PhotoUrl = "https://example.com/photo3.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("31ba04d5-8ae1-4c1b-8aa4-b10e9d89d7dc"),
+                            CarId = new Guid("47c649b6-ba19-4a75-bfb2-472953d5362b"),
                             PhotoUrl = "https://example.com/photo4.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("46e91112-d59e-4157-9dd7-850d7da01305"),
-                            CarId = new Guid("fd09842c-7cc9-4d7a-9c3e-aec4038a313e"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("f318bfc2-7b13-4f2b-bfe0-463b1eead88c"),
-                            CarId = new Guid("d518b5d6-43e5-4418-b9d5-f975e673f822"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("e43c668e-9e52-4314-bedb-ed1d09d7926f"),
-                            CarId = new Guid("d518b5d6-43e5-4418-b9d5-f975e673f822"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("3ba20b46-3284-4619-86e4-6db6660006a7"),
-                            CarId = new Guid("c15df684-32c4-4d8d-9bdb-ab8f7dcd23b7"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("93a4e684-a160-40ef-b4f1-d34ebdb7bfa9"),
-                            CarId = new Guid("c15df684-32c4-4d8d-9bdb-ab8f7dcd23b7"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("f5875104-7691-4a62-9e4b-5e99b5d76c58"),
-                            CarId = new Guid("0e8da9b4-2a32-4ea4-b678-518e5e7f1ae0"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("ff5ab54c-301e-4917-8587-f3abc6039e40"),
-                            CarId = new Guid("0e8da9b4-2a32-4ea4-b678-518e5e7f1ae0"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("ae62cc25-674d-4f7a-a7ee-f907b4e89b51"),
-                            CarId = new Guid("52e1c94d-5c7b-449d-819b-ebd5e7fb9ce5"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("684fe001-b59d-467a-8f89-412c964fd86a"),
-                            CarId = new Guid("52e1c94d-5c7b-449d-819b-ebd5e7fb9ce5"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("88e4d5c0-00fa-424e-9aba-1168ef869b75"),
-                            CarId = new Guid("52e1c94d-5c7b-449d-819b-ebd5e7fb9ce5"),
-                            PhotoUrl = "https://example.com/photo3.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("e98adb28-f002-4c89-b8f6-8582804ed815"),
-                            CarId = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("6c12be7f-621b-47a8-bf72-17fcba56b2d4"),
-                            CarId = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("32dab96e-ae07-4d72-850a-c3588493fb37"),
-                            CarId = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            PhotoUrl = "https://example.com/photo3.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("a1c66c9e-cd2c-43c3-991b-5f5eba3035a2"),
-                            CarId = new Guid("2e66b8bc-2274-498c-909d-5b444ef3ea37"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("f347c1b2-cecf-47cc-9538-d2fb598e7183"),
-                            CarId = new Guid("2e66b8bc-2274-498c-909d-5b444ef3ea37"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("83b4bf7c-4999-4d74-9c88-d6cfc1772d34"),
-                            CarId = new Guid("6b912a89-4cd1-4cc2-b02c-018de5837fec"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("56b5a4a1-62b6-4007-aaeb-354e80f48bec"),
-                            CarId = new Guid("6b912a89-4cd1-4cc2-b02c-018de5837fec"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("7c58b546-8501-4ed5-aa0e-5251751bb103"),
-                            CarId = new Guid("6b912a89-4cd1-4cc2-b02c-018de5837fec"),
-                            PhotoUrl = "https://example.com/photo3.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("8f69542d-eddb-453a-8afe-68c15c4d58a9"),
-                            CarId = new Guid("6b912a89-4cd1-4cc2-b02c-018de5837fec"),
-                            PhotoUrl = "https://example.com/photo4.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("f9b8a7ea-f398-4f6f-97a9-7772409d5878"),
-                            CarId = new Guid("3d97e820-b2a3-443a-8bf1-3a7d707b863a"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("d5d24bd3-13e9-45f1-b97a-2dd7c23d4006"),
-                            CarId = new Guid("3d97e820-b2a3-443a-8bf1-3a7d707b863a"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("044b6cc6-690c-4d76-99d2-eae931fbd759"),
-                            CarId = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("c2c86672-c640-4a1f-9b60-e51185544a32"),
-                            CarId = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("f180c6da-a191-428d-9643-952c1dffeaff"),
-                            CarId = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            PhotoUrl = "https://example.com/photo3.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("dc8fe83a-51e2-4954-85e5-0494b05e4578"),
-                            CarId = new Guid("dbe4df0c-06e1-45ca-9cee-f0c5aafe8ecd"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("fbb4d73b-49e4-44f5-abc5-d7da2a9e62ee"),
-                            CarId = new Guid("dbe4df0c-06e1-45ca-9cee-f0c5aafe8ecd"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("ff30f7e4-dacb-428e-9b90-50da9dddf6ec"),
-                            CarId = new Guid("47b1e7a2-7456-4136-aea4-e296f0fa96f6"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("d6937134-112c-454f-9a16-737e5137b279"),
-                            CarId = new Guid("47b1e7a2-7456-4136-aea4-e296f0fa96f6"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("ae48ad53-14bb-4730-a71f-95b074103b54"),
-                            CarId = new Guid("db2d61fe-ce14-40ed-a010-cf70f586e9d4"),
-                            PhotoUrl = "https://example.com/photo1.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("e225c77d-c147-4c8a-83f5-fe32555a4db6"),
-                            CarId = new Guid("db2d61fe-ce14-40ed-a010-cf70f586e9d4"),
-                            PhotoUrl = "https://example.com/photo2.jpg"
                         });
                 });
 
@@ -749,91 +707,91 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("eb8f2007-c5ea-44c5-b2a1-24c62f16f945"),
+                            Id = new Guid("ac07541c-0d23-4239-9313-d122a3dac44f"),
                             HexCode = "#FF0000",
                             Name = "Red"
                         },
                         new
                         {
-                            Id = new Guid("17ecbd63-71f4-4446-856b-1d2e7e63d40a"),
+                            Id = new Guid("1248b1a0-7a29-4435-bf21-2e4951863ba3"),
                             HexCode = "#00FF00",
                             Name = "Green"
                         },
                         new
                         {
-                            Id = new Guid("359beace-45a4-415c-833d-fd1a75fa82ce"),
+                            Id = new Guid("8522b3be-c86d-43fb-b957-5f47007835de"),
                             HexCode = "#0000FF",
                             Name = "Blue"
                         },
                         new
                         {
-                            Id = new Guid("563f905d-75a9-47d5-b6fa-71c95d356f9e"),
+                            Id = new Guid("df287d40-c6c7-4866-89bc-baeba3df1e96"),
                             HexCode = "#FFFF00",
                             Name = "Yellow"
                         },
                         new
                         {
-                            Id = new Guid("df7f9131-6db0-4031-8c6e-ec6f64888be5"),
+                            Id = new Guid("fe5863b8-f558-432f-a7b5-7ece3552d60e"),
                             HexCode = "#FFA500",
                             Name = "Orange"
                         },
                         new
                         {
-                            Id = new Guid("d01dc53e-6814-44af-b131-0caa5a9dc784"),
+                            Id = new Guid("1ad39944-75e3-4f24-beed-7418341c837b"),
                             HexCode = "#800080",
                             Name = "Purple"
                         },
                         new
                         {
-                            Id = new Guid("7b84e2a6-d492-4d0e-8640-aea37efc2b8f"),
+                            Id = new Guid("b16e6e7c-7444-49c7-b3cd-c291e2cc14ed"),
                             HexCode = "#FFC0CB",
                             Name = "Pink"
                         },
                         new
                         {
-                            Id = new Guid("19698506-7011-49b0-8ac0-4a75d91e2b23"),
+                            Id = new Guid("26793a2b-be34-45ef-9a9f-a622ca1da8ef"),
                             HexCode = "#FFFFFF",
                             Name = "White"
                         },
                         new
                         {
-                            Id = new Guid("fcf23c04-6d8d-4fa2-a36d-46f1142a29c7"),
+                            Id = new Guid("c34cfb4c-753c-4829-8b90-1bca57f69b9c"),
                             HexCode = "#000000",
                             Name = "Black"
                         },
                         new
                         {
-                            Id = new Guid("5c87f24c-7261-4969-9358-03fcf8efcaf0"),
+                            Id = new Guid("1ff7b383-311c-4660-91b2-03bebcbefa97"),
                             HexCode = "#808080",
                             Name = "Gray"
                         },
                         new
                         {
-                            Id = new Guid("f62aad82-1809-4afa-8a88-95c88a197da7"),
+                            Id = new Guid("4caba5e5-eb09-4e4f-a59c-104708827c3c"),
                             HexCode = "#A52A2A",
                             Name = "Brown"
                         },
                         new
                         {
-                            Id = new Guid("08ba557c-950e-4a03-9df1-609abf1cb4b7"),
+                            Id = new Guid("59343eef-6652-4433-97a2-34f21605618d"),
                             HexCode = "#00FFFF",
                             Name = "Cyan"
                         },
                         new
                         {
-                            Id = new Guid("97116f83-8542-407a-8b9c-38e3a7eff574"),
+                            Id = new Guid("596cc859-255f-43fb-b84e-1938d48f8cdf"),
                             HexCode = "#FF00FF",
                             Name = "Magenta"
                         },
                         new
                         {
-                            Id = new Guid("27230718-8ca6-446a-94bd-51cd42f13918"),
+                            Id = new Guid("72063e3d-ec54-428b-9f70-b438cdf58be7"),
                             HexCode = "#00FF00",
                             Name = "Lime"
                         },
                         new
                         {
-                            Id = new Guid("3b272e08-8c06-4102-8fdd-87e0cf9022a6"),
+                            Id = new Guid("df21f197-7a86-419c-a7eb-787449a4488f"),
                             HexCode = "#008080",
                             Name = "Teal"
                         });
@@ -852,82 +810,82 @@ namespace WheelsCatalog.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CurrencyEntityModel");
+                    b.ToTable("Currencies");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f2a9b836-70c8-4ea1-b4c1-38b7fcfcc87a"),
+                            Id = new Guid("00615bbf-d3d2-4a8c-9e24-ca0093f773ec"),
                             Acronym = "USD"
                         },
                         new
                         {
-                            Id = new Guid("9fb332d1-bf3f-4de5-bf10-e5ca8416a7c3"),
+                            Id = new Guid("8df456d1-c625-4543-86cd-50de2a92c948"),
                             Acronym = "EUR"
                         },
                         new
                         {
-                            Id = new Guid("8ee69859-8389-4dae-b886-4d9d112adaea"),
+                            Id = new Guid("fada49d7-2a5d-44fc-ba84-d0cdc8377db4"),
                             Acronym = "GBP"
                         },
                         new
                         {
-                            Id = new Guid("480ef354-749b-48f6-a244-7167b8f5c59a"),
+                            Id = new Guid("f267c0b1-c615-4788-b2a2-5fda0ed89ecd"),
                             Acronym = "JPY"
                         },
                         new
                         {
-                            Id = new Guid("748fca0d-cba2-46cb-a87b-ccd09e274efd"),
+                            Id = new Guid("4cd0f5e2-eef9-418a-86e5-ff39a40731b3"),
                             Acronym = "AUD"
                         },
                         new
                         {
-                            Id = new Guid("14164e32-7a72-4e6d-a2aa-4bec95d190e5"),
+                            Id = new Guid("557f01ff-0db1-42dc-a471-8d063f0458ae"),
                             Acronym = "CAD"
                         },
                         new
                         {
-                            Id = new Guid("3d3bc000-f076-4a21-b82c-06237655a4e0"),
+                            Id = new Guid("091ff7ff-cd34-4de3-9a60-0b3b36def77c"),
                             Acronym = "CHF"
                         },
                         new
                         {
-                            Id = new Guid("011f15d9-30ac-4615-a91a-968426944568"),
+                            Id = new Guid("bfd04dea-d585-4a88-aec9-f030e25427cf"),
                             Acronym = "CNY"
                         },
                         new
                         {
-                            Id = new Guid("4d32a1a0-4d02-432c-af27-d355019c8816"),
+                            Id = new Guid("a5e8655b-10af-461a-baf5-0b2ccfa88904"),
                             Acronym = "SEK"
                         },
                         new
                         {
-                            Id = new Guid("f82938a3-e500-4894-a488-8c4b324039cc"),
+                            Id = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
                             Acronym = "NZD"
                         },
                         new
                         {
-                            Id = new Guid("da13eb88-2b19-455e-ae47-3476255cfb5f"),
+                            Id = new Guid("46511f69-4bfa-4226-bbd3-275a1890f771"),
                             Acronym = "NOK"
                         },
                         new
                         {
-                            Id = new Guid("b94ab15e-61c1-4103-b7a5-224addadcf81"),
+                            Id = new Guid("6bfab59f-f5b9-4d80-9f2f-cf10ad44c363"),
                             Acronym = "ZAR"
                         },
                         new
                         {
-                            Id = new Guid("b3e9d271-7445-4ba6-ab23-26aff55efac4"),
+                            Id = new Guid("20d71c8a-33ce-44e5-8f8d-d4877231560e"),
                             Acronym = "MXN"
                         },
                         new
                         {
-                            Id = new Guid("bf2cb6a1-bcf7-4f82-9a8f-7fd2b64f499f"),
+                            Id = new Guid("d2c66add-0890-4546-b04e-9e2a876cd470"),
                             Acronym = "SGD"
                         },
                         new
                         {
-                            Id = new Guid("94b9c25b-0507-476d-9f13-c6749498d50d"),
+                            Id = new Guid("ea5676b1-b658-440d-8e80-6b13046c57cc"),
                             Acronym = "HKD"
                         });
                 });
@@ -965,408 +923,408 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("da668d2b-e22d-4d41-a14f-b25875375f6e"),
-                            BrandId = new Guid("39cca2f8-3359-4172-bfa9-7a25beb333cc"),
-                            CreateDateTime = new DateTime(2023, 4, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9051),
+                            Id = new Guid("27a51617-129f-4ee5-b1db-b1757bd866f4"),
+                            BrandId = new Guid("4f945a9f-adcd-4e44-b6dc-c5373a8518a3"),
+                            CreateDateTime = new DateTime(2024, 1, 10, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9700),
                             Description = "Description for Model1 for Brand 1",
                             Name = "Model1 for Brand 1",
-                            UpdateDateTime = new DateTime(2023, 10, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9051)
+                            UpdateDateTime = new DateTime(2024, 3, 30, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9700)
                         },
                         new
                         {
-                            Id = new Guid("062c7bc7-c06a-45e3-bbf0-721a2bcdf75c"),
-                            BrandId = new Guid("39cca2f8-3359-4172-bfa9-7a25beb333cc"),
-                            CreateDateTime = new DateTime(2023, 7, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9068),
+                            Id = new Guid("9f65bd43-be21-4089-9784-9d08bd889e87"),
+                            BrandId = new Guid("4f945a9f-adcd-4e44-b6dc-c5373a8518a3"),
+                            CreateDateTime = new DateTime(2023, 11, 23, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9726),
                             Description = "Description for Model2 for Brand 1",
                             Name = "Model2 for Brand 1",
-                            UpdateDateTime = new DateTime(2024, 2, 27, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9068)
+                            UpdateDateTime = new DateTime(2024, 5, 15, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9726)
                         },
                         new
                         {
-                            Id = new Guid("f9930db5-086b-43bb-87c0-675ddade664c"),
-                            BrandId = new Guid("39cca2f8-3359-4172-bfa9-7a25beb333cc"),
-                            CreateDateTime = new DateTime(2024, 2, 9, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9073),
+                            Id = new Guid("0fc4269f-f6f2-45ce-a342-a5e68e92c151"),
+                            BrandId = new Guid("4f945a9f-adcd-4e44-b6dc-c5373a8518a3"),
+                            CreateDateTime = new DateTime(2023, 10, 29, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9731),
                             Description = "Description for Model3 for Brand 1",
                             Name = "Model3 for Brand 1",
-                            UpdateDateTime = new DateTime(2024, 6, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9073)
+                            UpdateDateTime = new DateTime(2024, 1, 14, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9731)
                         },
                         new
                         {
-                            Id = new Guid("0614e76c-1403-4a78-a236-c393c3816634"),
-                            BrandId = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            CreateDateTime = new DateTime(2023, 11, 9, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9081),
+                            Id = new Guid("0e67315e-1528-494e-a0e0-64419d1a09d0"),
+                            BrandId = new Guid("703583da-5da7-4165-ac0c-3d0da79727f5"),
+                            CreateDateTime = new DateTime(2023, 12, 31, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9737),
                             Description = "Description for Model1 for Brand 2",
                             Name = "Model1 for Brand 2",
-                            UpdateDateTime = new DateTime(2024, 2, 24, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9081)
+                            UpdateDateTime = new DateTime(2024, 10, 18, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9737)
                         },
                         new
                         {
-                            Id = new Guid("41dc511f-84b5-4775-a40c-4ddb59e2243d"),
-                            BrandId = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            CreateDateTime = new DateTime(2023, 8, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9086),
+                            Id = new Guid("0ec6d0a9-7201-4640-9b22-1ca33435d685"),
+                            BrandId = new Guid("703583da-5da7-4165-ac0c-3d0da79727f5"),
+                            CreateDateTime = new DateTime(2023, 8, 3, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9742),
                             Description = "Description for Model2 for Brand 2",
                             Name = "Model2 for Brand 2",
-                            UpdateDateTime = new DateTime(2023, 10, 15, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9086)
+                            UpdateDateTime = new DateTime(2023, 10, 9, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9742)
                         },
                         new
                         {
-                            Id = new Guid("502e9953-f55f-4ba5-bbeb-aa4b68922675"),
-                            BrandId = new Guid("4e4eb263-6b9d-4c3a-bdfd-3a47733073b1"),
-                            CreateDateTime = new DateTime(2023, 3, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9092),
+                            Id = new Guid("79db4bf4-a274-4b01-818d-c4980382a34c"),
+                            BrandId = new Guid("703583da-5da7-4165-ac0c-3d0da79727f5"),
+                            CreateDateTime = new DateTime(2023, 7, 7, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9748),
                             Description = "Description for Model3 for Brand 2",
                             Name = "Model3 for Brand 2",
-                            UpdateDateTime = new DateTime(2023, 5, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9092)
+                            UpdateDateTime = new DateTime(2023, 12, 7, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9748)
                         },
                         new
                         {
-                            Id = new Guid("90ae9dfa-b32f-4464-8793-70abd08263ac"),
-                            BrandId = new Guid("4eed6de0-4430-435c-9994-b0b81717c6ee"),
-                            CreateDateTime = new DateTime(2024, 2, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9098),
+                            Id = new Guid("a72d0844-3f2c-40ca-a8e6-484a61638e9d"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            CreateDateTime = new DateTime(2023, 9, 5, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9755),
                             Description = "Description for Model1 for Brand 3",
                             Name = "Model1 for Brand 3",
-                            UpdateDateTime = new DateTime(2024, 4, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9098)
+                            UpdateDateTime = new DateTime(2024, 6, 21, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9755)
                         },
                         new
                         {
-                            Id = new Guid("027ec8a4-e6fc-4a05-8f35-1ef9b9cd992e"),
-                            BrandId = new Guid("4eed6de0-4430-435c-9994-b0b81717c6ee"),
-                            CreateDateTime = new DateTime(2023, 3, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9103),
+                            Id = new Guid("ae3abf6a-c3fc-47ce-be5c-7f338aebadcb"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            CreateDateTime = new DateTime(2023, 9, 10, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9760),
                             Description = "Description for Model2 for Brand 3",
                             Name = "Model2 for Brand 3",
-                            UpdateDateTime = new DateTime(2023, 7, 14, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9103)
+                            UpdateDateTime = new DateTime(2024, 5, 21, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9760)
                         },
                         new
                         {
-                            Id = new Guid("8517d8d3-04b7-4679-809f-9c098a58e0f4"),
-                            BrandId = new Guid("4eed6de0-4430-435c-9994-b0b81717c6ee"),
-                            CreateDateTime = new DateTime(2023, 4, 14, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9107),
+                            Id = new Guid("23200dbd-b9d8-42a8-9407-af29b7669595"),
+                            BrandId = new Guid("007d90b7-4daa-4989-aa73-a7aaa4cea4f4"),
+                            CreateDateTime = new DateTime(2024, 1, 5, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9767),
                             Description = "Description for Model3 for Brand 3",
                             Name = "Model3 for Brand 3",
-                            UpdateDateTime = new DateTime(2023, 7, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9107)
+                            UpdateDateTime = new DateTime(2024, 2, 23, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9767)
                         },
                         new
                         {
-                            Id = new Guid("82bb343c-033d-475e-b6b9-ac37eed141d3"),
-                            BrandId = new Guid("47c27c13-bc6b-4054-87f0-5b6758a61ef9"),
-                            CreateDateTime = new DateTime(2023, 11, 4, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9114),
+                            Id = new Guid("d228966c-e056-4a45-8643-497ba27c01eb"),
+                            BrandId = new Guid("3441174b-9655-4480-9d48-575ba2cc3c82"),
+                            CreateDateTime = new DateTime(2023, 12, 5, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9773),
                             Description = "Description for Model1 for Brand 4",
                             Name = "Model1 for Brand 4",
-                            UpdateDateTime = new DateTime(2024, 8, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9114)
+                            UpdateDateTime = new DateTime(2024, 3, 9, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9773)
                         },
                         new
                         {
-                            Id = new Guid("43517c6c-9492-47d9-9181-c062c85b9ec2"),
-                            BrandId = new Guid("47c27c13-bc6b-4054-87f0-5b6758a61ef9"),
-                            CreateDateTime = new DateTime(2023, 11, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9119),
+                            Id = new Guid("4bf78928-70f5-45f1-aa10-48225b224598"),
+                            BrandId = new Guid("3441174b-9655-4480-9d48-575ba2cc3c82"),
+                            CreateDateTime = new DateTime(2023, 4, 27, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9778),
                             Description = "Description for Model2 for Brand 4",
                             Name = "Model2 for Brand 4",
-                            UpdateDateTime = new DateTime(2024, 6, 9, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9119)
+                            UpdateDateTime = new DateTime(2023, 7, 26, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9778)
                         },
                         new
                         {
-                            Id = new Guid("92df87c8-36b2-4a69-b2c7-6673cab018d0"),
-                            BrandId = new Guid("47c27c13-bc6b-4054-87f0-5b6758a61ef9"),
-                            CreateDateTime = new DateTime(2023, 10, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9126),
+                            Id = new Guid("43f26955-00cd-4b38-888c-83ab1f1b642a"),
+                            BrandId = new Guid("3441174b-9655-4480-9d48-575ba2cc3c82"),
+                            CreateDateTime = new DateTime(2023, 10, 12, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9783),
                             Description = "Description for Model3 for Brand 4",
                             Name = "Model3 for Brand 4",
-                            UpdateDateTime = new DateTime(2024, 5, 7, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9126)
+                            UpdateDateTime = new DateTime(2024, 7, 12, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9783)
                         },
                         new
                         {
-                            Id = new Guid("8453c0a2-e47a-4d91-bf9b-dcc73c4150fb"),
-                            BrandId = new Guid("eb208759-7d7f-4d80-b6e3-fae451be526c"),
-                            CreateDateTime = new DateTime(2023, 9, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9131),
+                            Id = new Guid("faacf7d0-739b-4fd0-8873-c08d092d50ee"),
+                            BrandId = new Guid("6bcac112-ea17-495a-a018-5142cb27a4ea"),
+                            CreateDateTime = new DateTime(2023, 6, 1, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9788),
                             Description = "Description for Model1 for Brand 5",
                             Name = "Model1 for Brand 5",
-                            UpdateDateTime = new DateTime(2023, 12, 13, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9131)
+                            UpdateDateTime = new DateTime(2023, 9, 22, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9788)
                         },
                         new
                         {
-                            Id = new Guid("db6390a8-6b4f-48f7-be5e-09d862ac5ecb"),
-                            BrandId = new Guid("eb208759-7d7f-4d80-b6e3-fae451be526c"),
-                            CreateDateTime = new DateTime(2023, 3, 24, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9136),
+                            Id = new Guid("e4be6211-05f1-4aaf-afc8-f60a32ba6f44"),
+                            BrandId = new Guid("6bcac112-ea17-495a-a018-5142cb27a4ea"),
+                            CreateDateTime = new DateTime(2023, 12, 30, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9796),
                             Description = "Description for Model2 for Brand 5",
                             Name = "Model2 for Brand 5",
-                            UpdateDateTime = new DateTime(2023, 7, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9136)
+                            UpdateDateTime = new DateTime(2024, 2, 21, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9796)
                         },
                         new
                         {
-                            Id = new Guid("93cdc9b4-a28c-4114-b02e-8d4ad23314e4"),
-                            BrandId = new Guid("eb208759-7d7f-4d80-b6e3-fae451be526c"),
-                            CreateDateTime = new DateTime(2023, 7, 3, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9141),
+                            Id = new Guid("94292901-3687-4e1a-aa45-56711e6be0fc"),
+                            BrandId = new Guid("6bcac112-ea17-495a-a018-5142cb27a4ea"),
+                            CreateDateTime = new DateTime(2023, 8, 23, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9801),
                             Description = "Description for Model3 for Brand 5",
                             Name = "Model3 for Brand 5",
-                            UpdateDateTime = new DateTime(2024, 6, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9141)
+                            UpdateDateTime = new DateTime(2023, 9, 11, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9801)
                         },
                         new
                         {
-                            Id = new Guid("c00512a4-f7d8-421f-be3e-c0ec8b97d63c"),
-                            BrandId = new Guid("664f8cd0-f992-4b55-818e-3465cf55ed4c"),
-                            CreateDateTime = new DateTime(2023, 11, 5, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9147),
+                            Id = new Guid("b62a3abf-cc02-4a6f-aa54-14ad004698d4"),
+                            BrandId = new Guid("141d7fc7-3bfa-4f3b-88ad-ad5671553a23"),
+                            CreateDateTime = new DateTime(2023, 5, 13, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9806),
                             Description = "Description for Model1 for Brand 6",
                             Name = "Model1 for Brand 6",
-                            UpdateDateTime = new DateTime(2024, 6, 26, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9147)
+                            UpdateDateTime = new DateTime(2023, 12, 22, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9806)
                         },
                         new
                         {
-                            Id = new Guid("eba59464-a1f0-4ebc-9585-cfbc2368c431"),
-                            BrandId = new Guid("664f8cd0-f992-4b55-818e-3465cf55ed4c"),
-                            CreateDateTime = new DateTime(2023, 10, 18, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9151),
+                            Id = new Guid("82285818-fb6a-4505-a7a6-e8d4e045e122"),
+                            BrandId = new Guid("141d7fc7-3bfa-4f3b-88ad-ad5671553a23"),
+                            CreateDateTime = new DateTime(2024, 1, 4, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9813),
                             Description = "Description for Model2 for Brand 6",
                             Name = "Model2 for Brand 6",
-                            UpdateDateTime = new DateTime(2024, 8, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9151)
+                            UpdateDateTime = new DateTime(2024, 7, 31, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9813)
                         },
                         new
                         {
-                            Id = new Guid("1de069a0-1b86-46e9-9060-156e1b0aa296"),
-                            BrandId = new Guid("664f8cd0-f992-4b55-818e-3465cf55ed4c"),
-                            CreateDateTime = new DateTime(2023, 10, 1, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9157),
+                            Id = new Guid("3b6f38a1-7fdb-43df-9a88-614aa8b72821"),
+                            BrandId = new Guid("141d7fc7-3bfa-4f3b-88ad-ad5671553a23"),
+                            CreateDateTime = new DateTime(2023, 10, 14, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9819),
                             Description = "Description for Model3 for Brand 6",
                             Name = "Model3 for Brand 6",
-                            UpdateDateTime = new DateTime(2023, 10, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9157)
+                            UpdateDateTime = new DateTime(2024, 5, 2, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9819)
                         },
                         new
                         {
-                            Id = new Guid("3288807c-903a-475f-969b-f00f2b3244bc"),
-                            BrandId = new Guid("b977a908-ee1e-4f26-afc5-ae9947ca0965"),
-                            CreateDateTime = new DateTime(2023, 6, 7, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9163),
+                            Id = new Guid("b99a2cae-e932-4b0d-a4a7-eb3ff92fa76f"),
+                            BrandId = new Guid("5f20fefc-1fff-44e9-a6b6-60d7b6be0abf"),
+                            CreateDateTime = new DateTime(2023, 3, 10, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9824),
                             Description = "Description for Model1 for Brand 7",
                             Name = "Model1 for Brand 7",
-                            UpdateDateTime = new DateTime(2023, 7, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9163)
+                            UpdateDateTime = new DateTime(2023, 7, 6, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9824)
                         },
                         new
                         {
-                            Id = new Guid("ea76f537-b9b0-40e4-baae-4e98dc8b5dce"),
-                            BrandId = new Guid("b977a908-ee1e-4f26-afc5-ae9947ca0965"),
-                            CreateDateTime = new DateTime(2023, 3, 5, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9170),
+                            Id = new Guid("ea2845bb-fd5c-4e3b-8be3-8d400d8f90dd"),
+                            BrandId = new Guid("5f20fefc-1fff-44e9-a6b6-60d7b6be0abf"),
+                            CreateDateTime = new DateTime(2023, 5, 24, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9829),
                             Description = "Description for Model2 for Brand 7",
                             Name = "Model2 for Brand 7",
-                            UpdateDateTime = new DateTime(2023, 12, 19, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9170)
+                            UpdateDateTime = new DateTime(2024, 3, 10, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9829)
                         },
                         new
                         {
-                            Id = new Guid("91cbb861-918e-4cf5-a8ad-af0b9f2c67cf"),
-                            BrandId = new Guid("b977a908-ee1e-4f26-afc5-ae9947ca0965"),
-                            CreateDateTime = new DateTime(2023, 6, 3, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9175),
+                            Id = new Guid("fa607908-cd82-4f9b-bab7-aa0400096da0"),
+                            BrandId = new Guid("5f20fefc-1fff-44e9-a6b6-60d7b6be0abf"),
+                            CreateDateTime = new DateTime(2023, 7, 20, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9834),
                             Description = "Description for Model3 for Brand 7",
                             Name = "Model3 for Brand 7",
-                            UpdateDateTime = new DateTime(2024, 1, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9175)
+                            UpdateDateTime = new DateTime(2023, 10, 10, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9834)
                         },
                         new
                         {
-                            Id = new Guid("9384afcd-1605-4142-a4cf-7dd6fd22c994"),
-                            BrandId = new Guid("78938ae2-2895-48e5-b60a-166e5d01f27e"),
-                            CreateDateTime = new DateTime(2024, 1, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9180),
+                            Id = new Guid("63c565b3-09a7-4157-bfb1-5b010bd402cd"),
+                            BrandId = new Guid("f7d7de6d-92b3-4c60-9145-8a06b1315d24"),
+                            CreateDateTime = new DateTime(2023, 10, 8, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9840),
                             Description = "Description for Model1 for Brand 8",
                             Name = "Model1 for Brand 8",
-                            UpdateDateTime = new DateTime(2024, 4, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9180)
+                            UpdateDateTime = new DateTime(2024, 1, 10, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9840)
                         },
                         new
                         {
-                            Id = new Guid("9b1dd26e-f944-4495-9646-6d3848d94579"),
-                            BrandId = new Guid("78938ae2-2895-48e5-b60a-166e5d01f27e"),
-                            CreateDateTime = new DateTime(2023, 3, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9185),
+                            Id = new Guid("f369a620-2265-423f-af6f-9afca53ab9d7"),
+                            BrandId = new Guid("f7d7de6d-92b3-4c60-9145-8a06b1315d24"),
+                            CreateDateTime = new DateTime(2023, 7, 16, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9845),
                             Description = "Description for Model2 for Brand 8",
                             Name = "Model2 for Brand 8",
-                            UpdateDateTime = new DateTime(2024, 2, 4, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9185)
+                            UpdateDateTime = new DateTime(2024, 4, 22, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9845)
                         },
                         new
                         {
-                            Id = new Guid("c05b71d3-615c-401a-9663-9d2a77010b87"),
-                            BrandId = new Guid("78938ae2-2895-48e5-b60a-166e5d01f27e"),
-                            CreateDateTime = new DateTime(2023, 6, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9218),
+                            Id = new Guid("bef08a8c-3dd3-4456-93b8-dce6953784b0"),
+                            BrandId = new Guid("f7d7de6d-92b3-4c60-9145-8a06b1315d24"),
+                            CreateDateTime = new DateTime(2023, 12, 21, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9850),
                             Description = "Description for Model3 for Brand 8",
                             Name = "Model3 for Brand 8",
-                            UpdateDateTime = new DateTime(2023, 10, 13, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9218)
+                            UpdateDateTime = new DateTime(2024, 3, 13, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9850)
                         },
                         new
                         {
-                            Id = new Guid("2632c85c-0633-4d20-bb6f-f54a2542869f"),
-                            BrandId = new Guid("8b9fdb4f-4d9c-437a-8569-e753578d87b8"),
-                            CreateDateTime = new DateTime(2023, 12, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9223),
+                            Id = new Guid("06733028-9994-4311-8dcf-ba2593ce8680"),
+                            BrandId = new Guid("24bf2e02-967f-4111-966e-69de98e0e5bc"),
+                            CreateDateTime = new DateTime(2023, 5, 8, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9857),
                             Description = "Description for Model1 for Brand 9",
                             Name = "Model1 for Brand 9",
-                            UpdateDateTime = new DateTime(2024, 5, 3, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9223)
+                            UpdateDateTime = new DateTime(2023, 8, 23, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9857)
                         },
                         new
                         {
-                            Id = new Guid("d85e1119-8ed6-4e56-b444-119f38fe8ae4"),
-                            BrandId = new Guid("8b9fdb4f-4d9c-437a-8569-e753578d87b8"),
-                            CreateDateTime = new DateTime(2023, 12, 28, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9227),
+                            Id = new Guid("7183d869-1c65-4b21-9a95-c653580da9a9"),
+                            BrandId = new Guid("24bf2e02-967f-4111-966e-69de98e0e5bc"),
+                            CreateDateTime = new DateTime(2023, 8, 7, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9862),
                             Description = "Description for Model2 for Brand 9",
                             Name = "Model2 for Brand 9",
-                            UpdateDateTime = new DateTime(2024, 8, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9227)
+                            UpdateDateTime = new DateTime(2023, 12, 17, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9862)
                         },
                         new
                         {
-                            Id = new Guid("6eace151-d6de-4611-be8d-283f7bf5961f"),
-                            BrandId = new Guid("8b9fdb4f-4d9c-437a-8569-e753578d87b8"),
-                            CreateDateTime = new DateTime(2023, 12, 13, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9232),
+                            Id = new Guid("62bb7a40-1d57-4dea-8369-84c85231c455"),
+                            BrandId = new Guid("24bf2e02-967f-4111-966e-69de98e0e5bc"),
+                            CreateDateTime = new DateTime(2023, 6, 28, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9867),
                             Description = "Description for Model3 for Brand 9",
                             Name = "Model3 for Brand 9",
-                            UpdateDateTime = new DateTime(2024, 3, 27, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9232)
+                            UpdateDateTime = new DateTime(2024, 5, 8, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9867)
                         },
                         new
                         {
-                            Id = new Guid("8ae07e9d-2a99-45a4-b67e-f4e6fbd2eef4"),
-                            BrandId = new Guid("155dff8e-91a2-4cf6-ae38-34a948580506"),
-                            CreateDateTime = new DateTime(2023, 6, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9239),
+                            Id = new Guid("ce89a26c-cf2d-4b10-8870-af1f0a223aa5"),
+                            BrandId = new Guid("5c13c439-0ac2-4722-b874-a49f7a218fac"),
+                            CreateDateTime = new DateTime(2023, 6, 16, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9902),
                             Description = "Description for Model1 for Brand 10",
                             Name = "Model1 for Brand 10",
-                            UpdateDateTime = new DateTime(2024, 5, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9239)
+                            UpdateDateTime = new DateTime(2023, 9, 24, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9902)
                         },
                         new
                         {
-                            Id = new Guid("bc45c316-d145-49a4-aee3-50b0626f2bc3"),
-                            BrandId = new Guid("155dff8e-91a2-4cf6-ae38-34a948580506"),
-                            CreateDateTime = new DateTime(2023, 10, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9244),
+                            Id = new Guid("4c661651-0b56-498e-b520-e5c6faae2d13"),
+                            BrandId = new Guid("5c13c439-0ac2-4722-b874-a49f7a218fac"),
+                            CreateDateTime = new DateTime(2023, 8, 11, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9905),
                             Description = "Description for Model2 for Brand 10",
                             Name = "Model2 for Brand 10",
-                            UpdateDateTime = new DateTime(2024, 9, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9244)
+                            UpdateDateTime = new DateTime(2024, 7, 11, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9905)
                         },
                         new
                         {
-                            Id = new Guid("36282f68-a75e-47cb-bd33-53b326774f0b"),
-                            BrandId = new Guid("155dff8e-91a2-4cf6-ae38-34a948580506"),
-                            CreateDateTime = new DateTime(2024, 1, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9248),
+                            Id = new Guid("441b4c9d-530d-4d21-9411-67a7171a6365"),
+                            BrandId = new Guid("5c13c439-0ac2-4722-b874-a49f7a218fac"),
+                            CreateDateTime = new DateTime(2023, 10, 25, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9910),
                             Description = "Description for Model3 for Brand 10",
                             Name = "Model3 for Brand 10",
-                            UpdateDateTime = new DateTime(2024, 3, 15, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9248)
+                            UpdateDateTime = new DateTime(2024, 9, 20, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9910)
                         },
                         new
                         {
-                            Id = new Guid("dfe5c1ce-6989-48c7-b61b-1c9b44a8fdd8"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            CreateDateTime = new DateTime(2023, 5, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9253),
+                            Id = new Guid("52b33edb-41ea-4db5-8824-31c0cf915940"),
+                            BrandId = new Guid("bd1b0a3e-8292-401b-96c5-32f2acc443f1"),
+                            CreateDateTime = new DateTime(2023, 9, 27, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9915),
                             Description = "Description for Model1 for Brand 11",
                             Name = "Model1 for Brand 11",
-                            UpdateDateTime = new DateTime(2023, 9, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9253)
+                            UpdateDateTime = new DateTime(2024, 6, 23, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9915)
                         },
                         new
                         {
-                            Id = new Guid("6d664298-5e8c-4c61-807b-35f3400d5a30"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            CreateDateTime = new DateTime(2024, 2, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9258),
+                            Id = new Guid("4c25f96d-24c4-4f50-a530-caf11031100b"),
+                            BrandId = new Guid("bd1b0a3e-8292-401b-96c5-32f2acc443f1"),
+                            CreateDateTime = new DateTime(2023, 10, 11, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9920),
                             Description = "Description for Model2 for Brand 11",
                             Name = "Model2 for Brand 11",
-                            UpdateDateTime = new DateTime(2024, 6, 20, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9258)
+                            UpdateDateTime = new DateTime(2024, 1, 1, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9920)
                         },
                         new
                         {
-                            Id = new Guid("606ff679-394a-485f-b880-7cddc4d77ee5"),
-                            BrandId = new Guid("bec4bbfd-5558-4659-b966-ea37f87cb3a1"),
-                            CreateDateTime = new DateTime(2023, 5, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9262),
+                            Id = new Guid("f681b08a-aff2-431a-87cb-5ea5d7280b5e"),
+                            BrandId = new Guid("bd1b0a3e-8292-401b-96c5-32f2acc443f1"),
+                            CreateDateTime = new DateTime(2023, 7, 12, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9928),
                             Description = "Description for Model3 for Brand 11",
                             Name = "Model3 for Brand 11",
-                            UpdateDateTime = new DateTime(2023, 7, 22, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9262)
+                            UpdateDateTime = new DateTime(2024, 3, 9, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9928)
                         },
                         new
                         {
-                            Id = new Guid("de9b09ae-887a-4f61-81e5-fb0eece0ed14"),
-                            BrandId = new Guid("356c58b1-b9f1-420a-b4af-87d9c4c1075d"),
-                            CreateDateTime = new DateTime(2023, 3, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9269),
+                            Id = new Guid("a3b85873-d707-4a4c-bd74-b21773434d22"),
+                            BrandId = new Guid("e221fa33-60d4-4e82-b121-93034ccdfe1c"),
+                            CreateDateTime = new DateTime(2023, 6, 16, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9936),
                             Description = "Description for Model1 for Brand 12",
                             Name = "Model1 for Brand 12",
-                            UpdateDateTime = new DateTime(2023, 5, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9269)
+                            UpdateDateTime = new DateTime(2023, 10, 24, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9936)
                         },
                         new
                         {
-                            Id = new Guid("ca0a0bd3-0d5c-4a8e-81d9-5b8b56003c56"),
-                            BrandId = new Guid("356c58b1-b9f1-420a-b4af-87d9c4c1075d"),
-                            CreateDateTime = new DateTime(2023, 10, 17, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9274),
+                            Id = new Guid("ab6cf181-b3c5-4c51-ad81-aaa1273b103d"),
+                            BrandId = new Guid("e221fa33-60d4-4e82-b121-93034ccdfe1c"),
+                            CreateDateTime = new DateTime(2023, 6, 6, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9941),
                             Description = "Description for Model2 for Brand 12",
                             Name = "Model2 for Brand 12",
-                            UpdateDateTime = new DateTime(2024, 10, 7, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9274)
+                            UpdateDateTime = new DateTime(2023, 9, 24, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9941)
                         },
                         new
                         {
-                            Id = new Guid("ea9b9f34-309f-4ee7-a5d9-4eab061a318d"),
-                            BrandId = new Guid("356c58b1-b9f1-420a-b4af-87d9c4c1075d"),
-                            CreateDateTime = new DateTime(2023, 7, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9280),
+                            Id = new Guid("ea82e5f7-23de-4e4b-a944-2f48fa5cb54c"),
+                            BrandId = new Guid("e221fa33-60d4-4e82-b121-93034ccdfe1c"),
+                            CreateDateTime = new DateTime(2023, 7, 15, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9945),
                             Description = "Description for Model3 for Brand 12",
                             Name = "Model3 for Brand 12",
-                            UpdateDateTime = new DateTime(2024, 4, 11, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9280)
+                            UpdateDateTime = new DateTime(2024, 1, 16, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9945)
                         },
                         new
                         {
-                            Id = new Guid("4a078e12-7b83-4572-bb19-d7a46c58d7c7"),
-                            BrandId = new Guid("e8c2e5ef-ca3c-4f58-9c44-b0a8d2010699"),
-                            CreateDateTime = new DateTime(2023, 4, 19, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9285),
+                            Id = new Guid("c45df155-7297-4f9c-8234-44f54fdef460"),
+                            BrandId = new Guid("154a5f51-05db-41a7-b61f-fd7e84b83f38"),
+                            CreateDateTime = new DateTime(2024, 2, 5, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9958),
                             Description = "Description for Model1 for Brand 13",
                             Name = "Model1 for Brand 13",
-                            UpdateDateTime = new DateTime(2024, 3, 22, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9285)
+                            UpdateDateTime = new DateTime(2024, 6, 22, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9958)
                         },
                         new
                         {
-                            Id = new Guid("be028e7e-f334-4c56-8e33-a6e435a257a7"),
-                            BrandId = new Guid("e8c2e5ef-ca3c-4f58-9c44-b0a8d2010699"),
-                            CreateDateTime = new DateTime(2023, 4, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9290),
+                            Id = new Guid("4572ebe4-c7d9-4309-84c9-bd661c5c3fcb"),
+                            BrandId = new Guid("154a5f51-05db-41a7-b61f-fd7e84b83f38"),
+                            CreateDateTime = new DateTime(2023, 11, 9, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9963),
                             Description = "Description for Model2 for Brand 13",
                             Name = "Model2 for Brand 13",
-                            UpdateDateTime = new DateTime(2023, 9, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9290)
+                            UpdateDateTime = new DateTime(2024, 4, 2, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9963)
                         },
                         new
                         {
-                            Id = new Guid("05ccbb0f-1380-4884-b68a-4e546845dd3b"),
-                            BrandId = new Guid("e8c2e5ef-ca3c-4f58-9c44-b0a8d2010699"),
-                            CreateDateTime = new DateTime(2023, 12, 31, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9294),
+                            Id = new Guid("2ddb1150-76af-4859-af94-89f5eba4261e"),
+                            BrandId = new Guid("154a5f51-05db-41a7-b61f-fd7e84b83f38"),
+                            CreateDateTime = new DateTime(2024, 2, 11, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9970),
                             Description = "Description for Model3 for Brand 13",
                             Name = "Model3 for Brand 13",
-                            UpdateDateTime = new DateTime(2024, 12, 24, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9294)
+                            UpdateDateTime = new DateTime(2024, 10, 16, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9970)
                         },
                         new
                         {
-                            Id = new Guid("5d055ec1-567b-4adf-b212-5d74fd024985"),
-                            BrandId = new Guid("2aa1683d-dad3-4822-a0bd-f89349878072"),
-                            CreateDateTime = new DateTime(2023, 9, 25, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9299),
+                            Id = new Guid("89358834-0068-44fa-8097-1f5756e1660a"),
+                            BrandId = new Guid("a58faf4c-6100-42fc-9c6b-cdda5013d3aa"),
+                            CreateDateTime = new DateTime(2023, 9, 25, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9979),
                             Description = "Description for Model1 for Brand 14",
                             Name = "Model1 for Brand 14",
-                            UpdateDateTime = new DateTime(2024, 5, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9299)
+                            UpdateDateTime = new DateTime(2024, 4, 2, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9979)
                         },
                         new
                         {
-                            Id = new Guid("1fc87ce0-56e8-459f-9a86-f232b7c8d328"),
-                            BrandId = new Guid("2aa1683d-dad3-4822-a0bd-f89349878072"),
-                            CreateDateTime = new DateTime(2023, 4, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9304),
+                            Id = new Guid("b0ddca84-aae9-4bd5-b2ef-e624134e1769"),
+                            BrandId = new Guid("a58faf4c-6100-42fc-9c6b-cdda5013d3aa"),
+                            CreateDateTime = new DateTime(2024, 2, 12, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9988),
                             Description = "Description for Model2 for Brand 14",
                             Name = "Model2 for Brand 14",
-                            UpdateDateTime = new DateTime(2024, 3, 1, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9304)
+                            UpdateDateTime = new DateTime(2024, 7, 9, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9988)
                         },
                         new
                         {
-                            Id = new Guid("97a08df7-3b6f-466b-be2c-a04bb5f4009c"),
-                            BrandId = new Guid("2aa1683d-dad3-4822-a0bd-f89349878072"),
-                            CreateDateTime = new DateTime(2023, 11, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9309),
+                            Id = new Guid("d56b2f02-0675-4889-ba05-f703389ca6dc"),
+                            BrandId = new Guid("a58faf4c-6100-42fc-9c6b-cdda5013d3aa"),
+                            CreateDateTime = new DateTime(2023, 7, 6, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9993),
                             Description = "Description for Model3 for Brand 14",
                             Name = "Model3 for Brand 14",
-                            UpdateDateTime = new DateTime(2024, 3, 13, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9309)
+                            UpdateDateTime = new DateTime(2023, 10, 21, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9993)
                         },
                         new
                         {
-                            Id = new Guid("112b06d2-c83a-4b0c-8552-ec48938f022e"),
-                            BrandId = new Guid("10b7f847-f9df-4a7b-97f5-7bc9aa108d0d"),
-                            CreateDateTime = new DateTime(2023, 9, 24, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9314),
+                            Id = new Guid("5b9f10df-f1d5-40b0-a806-5401a2c2a026"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            CreateDateTime = new DateTime(2023, 3, 2, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9998),
                             Description = "Description for Model1 for Brand 15",
                             Name = "Model1 for Brand 15",
-                            UpdateDateTime = new DateTime(2024, 3, 22, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9314)
+                            UpdateDateTime = new DateTime(2023, 11, 4, 19, 7, 15, 442, DateTimeKind.Utc).AddTicks(9998)
                         },
                         new
                         {
-                            Id = new Guid("8d69a28b-e00b-4cba-87ad-1d4e9e762d2f"),
-                            BrandId = new Guid("10b7f847-f9df-4a7b-97f5-7bc9aa108d0d"),
-                            CreateDateTime = new DateTime(2023, 2, 18, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9321),
+                            Id = new Guid("735507af-fd6d-4fdd-936f-69abb4f83f90"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            CreateDateTime = new DateTime(2023, 7, 14, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(3),
                             Description = "Description for Model2 for Brand 15",
                             Name = "Model2 for Brand 15",
-                            UpdateDateTime = new DateTime(2023, 3, 9, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9321)
+                            UpdateDateTime = new DateTime(2023, 8, 15, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(3)
                         },
                         new
                         {
-                            Id = new Guid("384587b3-6165-43b6-861b-0f84caf9cdce"),
-                            BrandId = new Guid("10b7f847-f9df-4a7b-97f5-7bc9aa108d0d"),
-                            CreateDateTime = new DateTime(2023, 8, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9325),
+                            Id = new Guid("20e092ec-df9e-403d-ac2c-e386210ea548"),
+                            BrandId = new Guid("0e6bfab6-ebd6-4e83-8cc1-5c329e2370a3"),
+                            CreateDateTime = new DateTime(2024, 2, 6, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(8),
                             Description = "Description for Model3 for Brand 15",
                             Name = "Model3 for Brand 15",
-                            UpdateDateTime = new DateTime(2023, 11, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9325)
+                            UpdateDateTime = new DateTime(2024, 7, 29, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(8)
                         });
                 });
 
@@ -1405,353 +1363,513 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ebc830d1-fe5b-46c9-a886-1baecc3c1786"),
-                            CarId = new Guid("2687ac4e-1226-4ec6-bd9f-78e37d0d81a4"),
-                            CreateDateTime = new DateTime(2024, 2, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9795),
-                            CurrencyId = new Guid("f2a9b836-70c8-4ea1-b4c1-38b7fcfcc87a"),
-                            Price = 182.0,
-                            StartDate = new DateTime(2023, 5, 5, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9794),
-                            UpdateDateTime = new DateTime(2024, 2, 17, 3, 53, 6, 668, DateTimeKind.Utc).AddTicks(9795)
+                            Id = new Guid("2f69d5e8-0c37-45b9-b6ef-085b30e64959"),
+                            CarId = new Guid("c8018f6a-88e2-4350-87f2-d946ab0afd1e"),
+                            CreateDateTime = new DateTime(2024, 2, 10, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(568),
+                            CurrencyId = new Guid("091ff7ff-cd34-4de3-9a60-0b3b36def77c"),
+                            Price = 420.0,
+                            StartDate = new DateTime(2023, 9, 12, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(567),
+                            UpdateDateTime = new DateTime(2024, 2, 10, 23, 7, 15, 443, DateTimeKind.Utc).AddTicks(568)
                         },
                         new
                         {
-                            Id = new Guid("90ebeb2a-eadf-46eb-835d-d18d7de8c2fe"),
-                            CarId = new Guid("2687ac4e-1226-4ec6-bd9f-78e37d0d81a4"),
-                            CreateDateTime = new DateTime(2024, 2, 3, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9808),
-                            CurrencyId = new Guid("14164e32-7a72-4e6d-a2aa-4bec95d190e5"),
-                            Price = 454.0,
-                            StartDate = new DateTime(2023, 5, 20, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9807),
-                            UpdateDateTime = new DateTime(2024, 2, 3, 16, 53, 6, 668, DateTimeKind.Utc).AddTicks(9808)
+                            Id = new Guid("15ba986e-c22f-47a0-9f05-c4336e7bdced"),
+                            CarId = new Guid("c8018f6a-88e2-4350-87f2-d946ab0afd1e"),
+                            CreateDateTime = new DateTime(2024, 1, 21, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(582),
+                            CurrencyId = new Guid("091ff7ff-cd34-4de3-9a60-0b3b36def77c"),
+                            Price = 205.0,
+                            StartDate = new DateTime(2023, 10, 8, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(581),
+                            UpdateDateTime = new DateTime(2024, 1, 21, 22, 7, 15, 443, DateTimeKind.Utc).AddTicks(582)
                         },
                         new
                         {
-                            Id = new Guid("87070623-52d9-4a46-b40b-de02d1aa2e23"),
-                            CarId = new Guid("2687ac4e-1226-4ec6-bd9f-78e37d0d81a4"),
-                            CreateDateTime = new DateTime(2024, 1, 25, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9810),
-                            CurrencyId = new Guid("480ef354-749b-48f6-a244-7167b8f5c59a"),
-                            Price = 721.0,
-                            StartDate = new DateTime(2023, 11, 18, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9810),
-                            UpdateDateTime = new DateTime(2024, 1, 25, 16, 53, 6, 668, DateTimeKind.Utc).AddTicks(9810)
-                        },
-                        new
-                        {
-                            Id = new Guid("85735cd8-e88d-4ebf-a8c3-eafdb81992e8"),
-                            CarId = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
-                            CreateDateTime = new DateTime(2024, 2, 8, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9813),
-                            CurrencyId = new Guid("9fb332d1-bf3f-4de5-bf10-e5ca8416a7c3"),
-                            Price = 628.0,
-                            StartDate = new DateTime(2023, 5, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9812),
-                            UpdateDateTime = new DateTime(2024, 2, 9, 12, 53, 6, 668, DateTimeKind.Utc).AddTicks(9813)
-                        },
-                        new
-                        {
-                            Id = new Guid("2a483508-c008-4256-aa06-bf68c1fdb6e4"),
-                            CarId = new Guid("b91571f0-398b-4293-a9f6-3938505972c4"),
-                            CreateDateTime = new DateTime(2024, 1, 28, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9817),
-                            CurrencyId = new Guid("9fb332d1-bf3f-4de5-bf10-e5ca8416a7c3"),
-                            Price = 576.0,
-                            StartDate = new DateTime(2023, 11, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9816),
-                            UpdateDateTime = new DateTime(2024, 1, 29, 6, 53, 6, 668, DateTimeKind.Utc).AddTicks(9817)
-                        },
-                        new
-                        {
-                            Id = new Guid("45bddbe7-497e-4ffd-aaf1-712d19309b57"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
-                            CreateDateTime = new DateTime(2024, 1, 19, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9821),
-                            CurrencyId = new Guid("480ef354-749b-48f6-a244-7167b8f5c59a"),
-                            Price = 967.0,
-                            StartDate = new DateTime(2023, 12, 19, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9820),
-                            UpdateDateTime = new DateTime(2024, 1, 19, 22, 53, 6, 668, DateTimeKind.Utc).AddTicks(9821)
-                        },
-                        new
-                        {
-                            Id = new Guid("2d8d0377-62d3-4531-92df-91c41776aa0b"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
-                            CreateDateTime = new DateTime(2024, 1, 26, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9823),
-                            CurrencyId = new Guid("f2a9b836-70c8-4ea1-b4c1-38b7fcfcc87a"),
-                            Price = 618.0,
-                            StartDate = new DateTime(2023, 10, 30, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9822),
-                            UpdateDateTime = new DateTime(2024, 1, 26, 19, 53, 6, 668, DateTimeKind.Utc).AddTicks(9823)
-                        },
-                        new
-                        {
-                            Id = new Guid("8407d5cb-2f22-47a0-a0a4-c433bff4c78c"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
-                            CreateDateTime = new DateTime(2024, 2, 4, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9825),
-                            CurrencyId = new Guid("bf2cb6a1-bcf7-4f82-9a8f-7fd2b64f499f"),
-                            Price = 749.0,
-                            StartDate = new DateTime(2023, 5, 11, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9824),
-                            UpdateDateTime = new DateTime(2024, 2, 4, 21, 53, 6, 668, DateTimeKind.Utc).AddTicks(9825)
-                        },
-                        new
-                        {
-                            Id = new Guid("c0b6119d-81bd-4474-a31b-f7e6f62ff161"),
-                            CarId = new Guid("4c7ee6fe-ea56-4001-af13-241a85dba21f"),
-                            CreateDateTime = new DateTime(2024, 1, 25, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9827),
-                            CurrencyId = new Guid("f82938a3-e500-4894-a488-8c4b324039cc"),
-                            Price = 210.0,
-                            StartDate = new DateTime(2023, 11, 22, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9827),
-                            UpdateDateTime = new DateTime(2024, 1, 26, 0, 53, 6, 668, DateTimeKind.Utc).AddTicks(9827)
-                        },
-                        new
-                        {
-                            Id = new Guid("1249f167-15fc-493e-93f4-b0cbfef225ef"),
-                            CarId = new Guid("c15df684-32c4-4d8d-9bdb-ab8f7dcd23b7"),
-                            CreateDateTime = new DateTime(2024, 2, 11, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9831),
-                            CurrencyId = new Guid("b94ab15e-61c1-4103-b7a5-224addadcf81"),
-                            Price = 399.0,
-                            StartDate = new DateTime(2023, 4, 8, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9831),
-                            UpdateDateTime = new DateTime(2024, 2, 12, 4, 53, 6, 668, DateTimeKind.Utc).AddTicks(9831)
-                        },
-                        new
-                        {
-                            Id = new Guid("2bf18858-60ad-4843-9b95-3fc99b30c4e7"),
-                            CarId = new Guid("c15df684-32c4-4d8d-9bdb-ab8f7dcd23b7"),
-                            CreateDateTime = new DateTime(2024, 1, 27, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9833),
-                            CurrencyId = new Guid("011f15d9-30ac-4615-a91a-968426944568"),
-                            Price = 560.0,
-                            StartDate = new DateTime(2023, 9, 14, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9833),
-                            UpdateDateTime = new DateTime(2024, 1, 28, 13, 53, 6, 668, DateTimeKind.Utc).AddTicks(9833)
-                        },
-                        new
-                        {
-                            Id = new Guid("76ee5d5b-c471-4cbe-b957-98c70f75cec5"),
-                            CarId = new Guid("965b61dc-ff72-4408-a9de-626686ee572f"),
-                            CreateDateTime = new DateTime(2024, 2, 11, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9836),
-                            CurrencyId = new Guid("8ee69859-8389-4dae-b886-4d9d112adaea"),
-                            Price = 276.0,
-                            StartDate = new DateTime(2023, 9, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9836),
-                            UpdateDateTime = new DateTime(2024, 2, 11, 23, 53, 6, 668, DateTimeKind.Utc).AddTicks(9836)
-                        },
-                        new
-                        {
-                            Id = new Guid("388bc878-5bba-4415-a2a8-a24b70af2d2e"),
-                            CarId = new Guid("965b61dc-ff72-4408-a9de-626686ee572f"),
-                            CreateDateTime = new DateTime(2024, 2, 8, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9840),
-                            CurrencyId = new Guid("b3e9d271-7445-4ba6-ab23-26aff55efac4"),
-                            Price = 254.0,
-                            StartDate = new DateTime(2023, 12, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9840),
-                            UpdateDateTime = new DateTime(2024, 2, 9, 12, 53, 6, 668, DateTimeKind.Utc).AddTicks(9840)
-                        },
-                        new
-                        {
-                            Id = new Guid("205a8d51-3d3e-45ae-b526-11154234179e"),
-                            CarId = new Guid("965b61dc-ff72-4408-a9de-626686ee572f"),
-                            CreateDateTime = new DateTime(2024, 2, 11, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9842),
-                            CurrencyId = new Guid("b94ab15e-61c1-4103-b7a5-224addadcf81"),
-                            Price = 498.0,
-                            StartDate = new DateTime(2023, 9, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9842),
-                            UpdateDateTime = new DateTime(2024, 2, 11, 17, 53, 6, 668, DateTimeKind.Utc).AddTicks(9842)
-                        },
-                        new
-                        {
-                            Id = new Guid("06f46227-66c5-49c8-950b-32f12f6effdc"),
-                            CarId = new Guid("52e1c94d-5c7b-449d-819b-ebd5e7fb9ce5"),
-                            CreateDateTime = new DateTime(2024, 2, 8, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9845),
-                            CurrencyId = new Guid("b94ab15e-61c1-4103-b7a5-224addadcf81"),
-                            Price = 851.0,
-                            StartDate = new DateTime(2023, 3, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9845),
-                            UpdateDateTime = new DateTime(2024, 2, 9, 2, 53, 6, 668, DateTimeKind.Utc).AddTicks(9845)
-                        },
-                        new
-                        {
-                            Id = new Guid("911f2cf0-ed1d-4b6f-b4ad-7e7db33777bc"),
-                            CarId = new Guid("52e1c94d-5c7b-449d-819b-ebd5e7fb9ce5"),
-                            CreateDateTime = new DateTime(2024, 1, 22, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9847),
-                            CurrencyId = new Guid("480ef354-749b-48f6-a244-7167b8f5c59a"),
-                            Price = 911.0,
-                            StartDate = new DateTime(2024, 1, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9847),
-                            UpdateDateTime = new DateTime(2024, 1, 23, 3, 53, 6, 668, DateTimeKind.Utc).AddTicks(9847)
-                        },
-                        new
-                        {
-                            Id = new Guid("153da4e9-d4f3-4e86-8fef-457bee85ca27"),
-                            CarId = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            CreateDateTime = new DateTime(2024, 2, 14, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9850),
-                            CurrencyId = new Guid("3d3bc000-f076-4a21-b82c-06237655a4e0"),
-                            Price = 763.0,
-                            StartDate = new DateTime(2023, 5, 1, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9850),
-                            UpdateDateTime = new DateTime(2024, 2, 15, 7, 53, 6, 668, DateTimeKind.Utc).AddTicks(9850)
-                        },
-                        new
-                        {
-                            Id = new Guid("b842d43d-2466-47ad-a9be-f26fa362b3d1"),
-                            CarId = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            CreateDateTime = new DateTime(2024, 1, 24, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9853),
-                            CurrencyId = new Guid("480ef354-749b-48f6-a244-7167b8f5c59a"),
-                            Price = 282.0,
-                            StartDate = new DateTime(2023, 9, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9853),
-                            UpdateDateTime = new DateTime(2024, 1, 24, 16, 53, 6, 668, DateTimeKind.Utc).AddTicks(9853)
-                        },
-                        new
-                        {
-                            Id = new Guid("47541357-1cf8-459e-8718-b5c47e54309c"),
-                            CarId = new Guid("6db24646-f4ec-4597-9127-afef5390f471"),
-                            CreateDateTime = new DateTime(2024, 1, 25, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9855),
-                            CurrencyId = new Guid("011f15d9-30ac-4615-a91a-968426944568"),
-                            Price = 366.0,
-                            StartDate = new DateTime(2023, 7, 5, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9855),
-                            UpdateDateTime = new DateTime(2024, 1, 25, 19, 53, 6, 668, DateTimeKind.Utc).AddTicks(9855)
-                        },
-                        new
-                        {
-                            Id = new Guid("402af165-bd5f-4337-a39e-6b2eb6fe8253"),
-                            CarId = new Guid("3d97e820-b2a3-443a-8bf1-3a7d707b863a"),
-                            CreateDateTime = new DateTime(2024, 1, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9859),
-                            CurrencyId = new Guid("3d3bc000-f076-4a21-b82c-06237655a4e0"),
-                            Price = 459.0,
-                            StartDate = new DateTime(2023, 12, 14, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9858),
-                            UpdateDateTime = new DateTime(2024, 1, 21, 23, 53, 6, 668, DateTimeKind.Utc).AddTicks(9859)
-                        },
-                        new
-                        {
-                            Id = new Guid("e8231b88-d98c-4c14-a182-236985e6918e"),
-                            CarId = new Guid("3d97e820-b2a3-443a-8bf1-3a7d707b863a"),
-                            CreateDateTime = new DateTime(2024, 2, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9863),
-                            CurrencyId = new Guid("da13eb88-2b19-455e-ae47-3476255cfb5f"),
-                            Price = 867.0,
-                            StartDate = new DateTime(2023, 7, 27, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9862),
-                            UpdateDateTime = new DateTime(2024, 2, 12, 15, 53, 6, 668, DateTimeKind.Utc).AddTicks(9863)
-                        },
-                        new
-                        {
-                            Id = new Guid("295817fe-d028-4f68-88a5-a898d5774be0"),
-                            CarId = new Guid("3d97e820-b2a3-443a-8bf1-3a7d707b863a"),
-                            CreateDateTime = new DateTime(2024, 2, 15, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9865),
-                            CurrencyId = new Guid("da13eb88-2b19-455e-ae47-3476255cfb5f"),
+                            Id = new Guid("e62d8bb4-1703-48ae-b77a-f8499f8ec9ed"),
+                            CarId = new Guid("c8018f6a-88e2-4350-87f2-d946ab0afd1e"),
+                            CreateDateTime = new DateTime(2024, 2, 13, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(584),
+                            CurrencyId = new Guid("d2c66add-0890-4546-b04e-9e2a876cd470"),
                             Price = 948.0,
-                            StartDate = new DateTime(2023, 5, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9864),
-                            UpdateDateTime = new DateTime(2024, 2, 16, 5, 53, 6, 668, DateTimeKind.Utc).AddTicks(9865)
+                            StartDate = new DateTime(2023, 9, 30, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(584),
+                            UpdateDateTime = new DateTime(2024, 2, 14, 4, 7, 15, 443, DateTimeKind.Utc).AddTicks(584)
                         },
                         new
                         {
-                            Id = new Guid("d54d408e-4344-4b05-a8c2-2dba550eb7d6"),
-                            CarId = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            CreateDateTime = new DateTime(2024, 1, 26, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9867),
-                            CurrencyId = new Guid("b3e9d271-7445-4ba6-ab23-26aff55efac4"),
-                            Price = 681.0,
-                            StartDate = new DateTime(2023, 4, 13, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9867),
-                            UpdateDateTime = new DateTime(2024, 1, 26, 15, 53, 6, 668, DateTimeKind.Utc).AddTicks(9867)
+                            Id = new Guid("73ab74e0-06fc-4122-a271-050639226921"),
+                            CarId = new Guid("c8018f6a-88e2-4350-87f2-d946ab0afd1e"),
+                            CreateDateTime = new DateTime(2024, 1, 31, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(587),
+                            CurrencyId = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
+                            Price = 603.0,
+                            StartDate = new DateTime(2023, 2, 26, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(586),
+                            UpdateDateTime = new DateTime(2024, 2, 1, 9, 7, 15, 443, DateTimeKind.Utc).AddTicks(587)
                         },
                         new
                         {
-                            Id = new Guid("413d0dab-1b2a-40c0-b99c-bd45ba883755"),
-                            CarId = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            CreateDateTime = new DateTime(2024, 2, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9870),
-                            CurrencyId = new Guid("8ee69859-8389-4dae-b886-4d9d112adaea"),
-                            Price = 685.0,
-                            StartDate = new DateTime(2023, 6, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9869),
-                            UpdateDateTime = new DateTime(2024, 2, 11, 7, 53, 6, 668, DateTimeKind.Utc).AddTicks(9870)
+                            Id = new Guid("ac3e47dc-0914-42b9-99ec-036566084ad2"),
+                            CarId = new Guid("d5755b57-1f8b-482a-aee1-80f401bf60e8"),
+                            CreateDateTime = new DateTime(2024, 2, 12, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(590),
+                            CurrencyId = new Guid("6bfab59f-f5b9-4d80-9f2f-cf10ad44c363"),
+                            Price = 540.0,
+                            StartDate = new DateTime(2023, 10, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(589),
+                            UpdateDateTime = new DateTime(2024, 2, 12, 20, 7, 15, 443, DateTimeKind.Utc).AddTicks(590)
                         },
                         new
                         {
-                            Id = new Guid("8e533620-4a5a-45cb-8708-996fbc2ba403"),
-                            CarId = new Guid("ed25bbe2-971a-4dfb-8a77-e1217c0d74e6"),
-                            CreateDateTime = new DateTime(2024, 1, 19, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9872),
-                            CurrencyId = new Guid("480ef354-749b-48f6-a244-7167b8f5c59a"),
-                            Price = 915.0,
-                            StartDate = new DateTime(2023, 5, 26, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9871),
-                            UpdateDateTime = new DateTime(2024, 1, 19, 19, 53, 6, 668, DateTimeKind.Utc).AddTicks(9872)
+                            Id = new Guid("e5b0dfad-71e2-427d-a3af-297d5277c710"),
+                            CarId = new Guid("d5755b57-1f8b-482a-aee1-80f401bf60e8"),
+                            CreateDateTime = new DateTime(2024, 1, 30, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(593),
+                            CurrencyId = new Guid("20d71c8a-33ce-44e5-8f8d-d4877231560e"),
+                            Price = 449.0,
+                            StartDate = new DateTime(2024, 2, 16, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(593),
+                            UpdateDateTime = new DateTime(2024, 1, 30, 23, 7, 15, 443, DateTimeKind.Utc).AddTicks(593)
                         },
                         new
                         {
-                            Id = new Guid("4f80b14a-452c-40dc-aabd-45dedabbe6d9"),
-                            CarId = new Guid("dbe4df0c-06e1-45ca-9cee-f0c5aafe8ecd"),
-                            CreateDateTime = new DateTime(2024, 2, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9874),
-                            CurrencyId = new Guid("011f15d9-30ac-4615-a91a-968426944568"),
-                            Price = 131.0,
-                            StartDate = new DateTime(2024, 2, 10, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9873),
-                            UpdateDateTime = new DateTime(2024, 2, 16, 23, 53, 6, 668, DateTimeKind.Utc).AddTicks(9874)
+                            Id = new Guid("0be268f8-e42c-48cf-91c4-c9610e252888"),
+                            CarId = new Guid("d5755b57-1f8b-482a-aee1-80f401bf60e8"),
+                            CreateDateTime = new DateTime(2024, 1, 20, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(621),
+                            CurrencyId = new Guid("557f01ff-0db1-42dc-a471-8d063f0458ae"),
+                            Price = 67.0,
+                            StartDate = new DateTime(2023, 12, 16, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(621),
+                            UpdateDateTime = new DateTime(2024, 1, 21, 9, 7, 15, 443, DateTimeKind.Utc).AddTicks(621)
                         },
                         new
                         {
-                            Id = new Guid("cfa98b5c-3a18-4c7c-bc17-1e95fe11efbf"),
-                            CarId = new Guid("dbe4df0c-06e1-45ca-9cee-f0c5aafe8ecd"),
-                            CreateDateTime = new DateTime(2024, 2, 7, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9876),
-                            CurrencyId = new Guid("f2a9b836-70c8-4ea1-b4c1-38b7fcfcc87a"),
-                            Price = 906.0,
-                            StartDate = new DateTime(2023, 10, 6, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9876),
-                            UpdateDateTime = new DateTime(2024, 2, 8, 9, 53, 6, 668, DateTimeKind.Utc).AddTicks(9876)
+                            Id = new Guid("987e6a30-048a-4015-b674-c410f5c7e92a"),
+                            CarId = new Guid("d5755b57-1f8b-482a-aee1-80f401bf60e8"),
+                            CreateDateTime = new DateTime(2024, 2, 7, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(624),
+                            CurrencyId = new Guid("20d71c8a-33ce-44e5-8f8d-d4877231560e"),
+                            Price = 604.0,
+                            StartDate = new DateTime(2024, 2, 8, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(623),
+                            UpdateDateTime = new DateTime(2024, 2, 8, 13, 7, 15, 443, DateTimeKind.Utc).AddTicks(624)
                         },
                         new
                         {
-                            Id = new Guid("850a7e0c-f442-449f-b8f7-0833cbec1b65"),
-                            CarId = new Guid("dbe4df0c-06e1-45ca-9cee-f0c5aafe8ecd"),
-                            CreateDateTime = new DateTime(2024, 1, 26, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9879),
-                            CurrencyId = new Guid("94b9c25b-0507-476d-9f13-c6749498d50d"),
-                            Price = 924.0,
-                            StartDate = new DateTime(2023, 8, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9878),
-                            UpdateDateTime = new DateTime(2024, 1, 26, 22, 53, 6, 668, DateTimeKind.Utc).AddTicks(9879)
+                            Id = new Guid("9e760f91-efcc-4569-abf8-569cbbf79b27"),
+                            CarId = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
+                            CreateDateTime = new DateTime(2024, 2, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(629),
+                            CurrencyId = new Guid("bfd04dea-d585-4a88-aec9-f030e25427cf"),
+                            Price = 965.0,
+                            StartDate = new DateTime(2023, 6, 16, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(628),
+                            UpdateDateTime = new DateTime(2024, 2, 12, 0, 7, 15, 443, DateTimeKind.Utc).AddTicks(629)
                         },
                         new
                         {
-                            Id = new Guid("901be530-9232-401a-a69a-637f2b08e9d6"),
-                            CarId = new Guid("47b1e7a2-7456-4136-aea4-e296f0fa96f6"),
-                            CreateDateTime = new DateTime(2024, 1, 29, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9883),
-                            CurrencyId = new Guid("748fca0d-cba2-46cb-a87b-ccd09e274efd"),
-                            Price = 416.0,
-                            StartDate = new DateTime(2023, 3, 8, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9882),
-                            UpdateDateTime = new DateTime(2024, 1, 30, 10, 53, 6, 668, DateTimeKind.Utc).AddTicks(9883)
+                            Id = new Guid("53776e79-c96d-488d-a4f1-ab088ddb6c44"),
+                            CarId = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
+                            CreateDateTime = new DateTime(2024, 1, 28, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(632),
+                            CurrencyId = new Guid("091ff7ff-cd34-4de3-9a60-0b3b36def77c"),
+                            Price = 502.0,
+                            StartDate = new DateTime(2023, 7, 3, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(631),
+                            UpdateDateTime = new DateTime(2024, 1, 29, 2, 7, 15, 443, DateTimeKind.Utc).AddTicks(632)
                         },
                         new
                         {
-                            Id = new Guid("b9560715-b903-407f-9a3f-789209203db1"),
-                            CarId = new Guid("47b1e7a2-7456-4136-aea4-e296f0fa96f6"),
-                            CreateDateTime = new DateTime(2024, 2, 12, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9885),
-                            CurrencyId = new Guid("bf2cb6a1-bcf7-4f82-9a8f-7fd2b64f499f"),
-                            Price = 101.0,
-                            StartDate = new DateTime(2024, 2, 9, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9885),
-                            UpdateDateTime = new DateTime(2024, 2, 13, 4, 53, 6, 668, DateTimeKind.Utc).AddTicks(9885)
+                            Id = new Guid("5bec0149-7926-41bd-ac0b-f2bdf6a483bc"),
+                            CarId = new Guid("41606abf-1e4d-4498-be16-05e272cec6c7"),
+                            CreateDateTime = new DateTime(2024, 2, 10, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(634),
+                            CurrencyId = new Guid("00615bbf-d3d2-4a8c-9e24-ca0093f773ec"),
+                            Price = 669.0,
+                            StartDate = new DateTime(2023, 5, 26, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(634),
+                            UpdateDateTime = new DateTime(2024, 2, 11, 4, 7, 15, 443, DateTimeKind.Utc).AddTicks(634)
                         },
                         new
                         {
-                            Id = new Guid("d133707a-d852-428f-addb-cc6ede51e79a"),
-                            CarId = new Guid("47b1e7a2-7456-4136-aea4-e296f0fa96f6"),
-                            CreateDateTime = new DateTime(2024, 1, 19, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9887),
-                            CurrencyId = new Guid("748fca0d-cba2-46cb-a87b-ccd09e274efd"),
-                            Price = 410.0,
-                            StartDate = new DateTime(2023, 8, 14, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9887),
-                            UpdateDateTime = new DateTime(2024, 1, 20, 7, 53, 6, 668, DateTimeKind.Utc).AddTicks(9887)
+                            Id = new Guid("8a04731e-d700-4039-b184-10ed764c70e9"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            CreateDateTime = new DateTime(2024, 1, 22, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(637),
+                            CurrencyId = new Guid("fada49d7-2a5d-44fc-ba84-d0cdc8377db4"),
+                            Price = 364.0,
+                            StartDate = new DateTime(2023, 6, 1, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(637),
+                            UpdateDateTime = new DateTime(2024, 1, 23, 0, 7, 15, 443, DateTimeKind.Utc).AddTicks(637)
                         },
                         new
                         {
-                            Id = new Guid("d5bbd263-f8b4-42b9-9c2c-fa4a085d1d12"),
-                            CarId = new Guid("db2d61fe-ce14-40ed-a010-cf70f586e9d4"),
-                            CreateDateTime = new DateTime(2024, 2, 16, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9889),
-                            CurrencyId = new Guid("4d32a1a0-4d02-432c-af27-d355019c8816"),
-                            Price = 381.0,
-                            StartDate = new DateTime(2023, 9, 23, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9889),
-                            UpdateDateTime = new DateTime(2024, 2, 16, 23, 53, 6, 668, DateTimeKind.Utc).AddTicks(9889)
+                            Id = new Guid("b2f0be7c-4c71-4101-ad21-80e76801ab6d"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            CreateDateTime = new DateTime(2024, 1, 31, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(639),
+                            CurrencyId = new Guid("a5e8655b-10af-461a-baf5-0b2ccfa88904"),
+                            Price = 784.0,
+                            StartDate = new DateTime(2023, 11, 24, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(639),
+                            UpdateDateTime = new DateTime(2024, 2, 1, 7, 7, 15, 443, DateTimeKind.Utc).AddTicks(639)
                         },
                         new
                         {
-                            Id = new Guid("6444fb02-cbc3-466f-a2b9-c82c75975b9d"),
-                            CarId = new Guid("db2d61fe-ce14-40ed-a010-cf70f586e9d4"),
-                            CreateDateTime = new DateTime(2024, 2, 2, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9891),
-                            CurrencyId = new Guid("3d3bc000-f076-4a21-b82c-06237655a4e0"),
-                            Price = 351.0,
-                            StartDate = new DateTime(2023, 9, 7, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9891),
-                            UpdateDateTime = new DateTime(2024, 2, 3, 5, 53, 6, 668, DateTimeKind.Utc).AddTicks(9891)
+                            Id = new Guid("aef5eddb-22d1-4aaf-91b3-6afbdfa41fea"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            CreateDateTime = new DateTime(2024, 1, 20, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(642),
+                            CurrencyId = new Guid("d2c66add-0890-4546-b04e-9e2a876cd470"),
+                            Price = 749.0,
+                            StartDate = new DateTime(2023, 8, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(641),
+                            UpdateDateTime = new DateTime(2024, 1, 20, 20, 7, 15, 443, DateTimeKind.Utc).AddTicks(642)
                         },
                         new
                         {
-                            Id = new Guid("4f55b875-d98f-4edf-8311-f80de851d1fa"),
-                            CarId = new Guid("db2d61fe-ce14-40ed-a010-cf70f586e9d4"),
-                            CreateDateTime = new DateTime(2024, 1, 24, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9894),
-                            CurrencyId = new Guid("8ee69859-8389-4dae-b886-4d9d112adaea"),
-                            Price = 473.0,
-                            StartDate = new DateTime(2023, 4, 26, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9894),
-                            UpdateDateTime = new DateTime(2024, 1, 24, 23, 53, 6, 668, DateTimeKind.Utc).AddTicks(9894)
+                            Id = new Guid("bf0f9246-872d-4220-8b59-1706151d222f"),
+                            CarId = new Guid("78b63a1b-b561-4abe-8ae4-f6cf70054b6d"),
+                            CreateDateTime = new DateTime(2024, 2, 17, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(644),
+                            CurrencyId = new Guid("46511f69-4bfa-4226-bbd3-275a1890f771"),
+                            Price = 264.0,
+                            StartDate = new DateTime(2024, 1, 2, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(643),
+                            UpdateDateTime = new DateTime(2024, 2, 18, 2, 7, 15, 443, DateTimeKind.Utc).AddTicks(644)
                         },
                         new
                         {
-                            Id = new Guid("28a8f811-9e05-4a72-830d-407b87e4b934"),
-                            CarId = new Guid("7601d109-372f-411f-8884-f37d39e4a094"),
-                            CreateDateTime = new DateTime(2024, 2, 8, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9897),
-                            CurrencyId = new Guid("f2a9b836-70c8-4ea1-b4c1-38b7fcfcc87a"),
-                            Price = 869.0,
-                            StartDate = new DateTime(2023, 9, 21, 14, 53, 6, 668, DateTimeKind.Utc).AddTicks(9896),
-                            UpdateDateTime = new DateTime(2024, 2, 9, 9, 53, 6, 668, DateTimeKind.Utc).AddTicks(9897)
+                            Id = new Guid("5e44239f-847d-4588-8367-7f09c2a551c2"),
+                            CarId = new Guid("8f0c07b1-9dc5-43b6-a023-a53fb6f7edbf"),
+                            CreateDateTime = new DateTime(2024, 2, 1, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(646),
+                            CurrencyId = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
+                            Price = 730.0,
+                            StartDate = new DateTime(2023, 7, 25, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(646),
+                            UpdateDateTime = new DateTime(2024, 2, 2, 16, 7, 15, 443, DateTimeKind.Utc).AddTicks(646)
+                        },
+                        new
+                        {
+                            Id = new Guid("8a200d04-ed02-4723-9025-9d34ec668f20"),
+                            CarId = new Guid("8f0c07b1-9dc5-43b6-a023-a53fb6f7edbf"),
+                            CreateDateTime = new DateTime(2024, 1, 25, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(650),
+                            CurrencyId = new Guid("4cd0f5e2-eef9-418a-86e5-ff39a40731b3"),
+                            Price = 818.0,
+                            StartDate = new DateTime(2023, 3, 6, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(650),
+                            UpdateDateTime = new DateTime(2024, 1, 26, 5, 7, 15, 443, DateTimeKind.Utc).AddTicks(650)
+                        },
+                        new
+                        {
+                            Id = new Guid("dfc1a8bb-90e4-49c9-9369-8c19b3594b5f"),
+                            CarId = new Guid("ececdd8b-4da4-4d37-b675-175c56f53fe4"),
+                            CreateDateTime = new DateTime(2024, 1, 30, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(654),
+                            CurrencyId = new Guid("00615bbf-d3d2-4a8c-9e24-ca0093f773ec"),
+                            Price = 435.0,
+                            StartDate = new DateTime(2023, 3, 12, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(654),
+                            UpdateDateTime = new DateTime(2024, 1, 31, 5, 7, 15, 443, DateTimeKind.Utc).AddTicks(654)
+                        },
+                        new
+                        {
+                            Id = new Guid("6d59ccc3-3654-420d-81d2-09cb0f8a91c1"),
+                            CarId = new Guid("e81865c8-7db0-4238-8df5-e8a25f6fc469"),
+                            CreateDateTime = new DateTime(2024, 2, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(657),
+                            CurrencyId = new Guid("d2c66add-0890-4546-b04e-9e2a876cd470"),
+                            Price = 840.0,
+                            StartDate = new DateTime(2023, 12, 18, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(656),
+                            UpdateDateTime = new DateTime(2024, 2, 6, 12, 7, 15, 443, DateTimeKind.Utc).AddTicks(657)
+                        },
+                        new
+                        {
+                            Id = new Guid("99156bf7-3c05-47bf-b47a-50f3753b6090"),
+                            CarId = new Guid("e81865c8-7db0-4238-8df5-e8a25f6fc469"),
+                            CreateDateTime = new DateTime(2024, 2, 16, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(659),
+                            CurrencyId = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
+                            Price = 583.0,
+                            StartDate = new DateTime(2023, 5, 4, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(659),
+                            UpdateDateTime = new DateTime(2024, 2, 17, 4, 7, 15, 443, DateTimeKind.Utc).AddTicks(659)
+                        },
+                        new
+                        {
+                            Id = new Guid("92c431f4-b9ad-4f50-8ef9-7a3d0dd17045"),
+                            CarId = new Guid("e81865c8-7db0-4238-8df5-e8a25f6fc469"),
+                            CreateDateTime = new DateTime(2024, 1, 25, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(661),
+                            CurrencyId = new Guid("00615bbf-d3d2-4a8c-9e24-ca0093f773ec"),
+                            Price = 219.0,
+                            StartDate = new DateTime(2023, 6, 14, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(661),
+                            UpdateDateTime = new DateTime(2024, 1, 26, 1, 7, 15, 443, DateTimeKind.Utc).AddTicks(661)
+                        },
+                        new
+                        {
+                            Id = new Guid("0bb5bbc1-eea2-41ee-9d84-c32bd5e6ff23"),
+                            CarId = new Guid("e81865c8-7db0-4238-8df5-e8a25f6fc469"),
+                            CreateDateTime = new DateTime(2024, 2, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(664),
+                            CurrencyId = new Guid("bfd04dea-d585-4a88-aec9-f030e25427cf"),
+                            Price = 611.0,
+                            StartDate = new DateTime(2023, 4, 27, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(663),
+                            UpdateDateTime = new DateTime(2024, 2, 11, 21, 7, 15, 443, DateTimeKind.Utc).AddTicks(664)
+                        },
+                        new
+                        {
+                            Id = new Guid("0422e9d4-abdb-47d9-a649-948df33ddb69"),
+                            CarId = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
+                            CreateDateTime = new DateTime(2024, 1, 31, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(667),
+                            CurrencyId = new Guid("f267c0b1-c615-4788-b2a2-5fda0ed89ecd"),
+                            Price = 171.0,
+                            StartDate = new DateTime(2023, 3, 9, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(666),
+                            UpdateDateTime = new DateTime(2024, 2, 1, 7, 7, 15, 443, DateTimeKind.Utc).AddTicks(667)
+                        },
+                        new
+                        {
+                            Id = new Guid("c83bb259-db3a-49d7-8986-34d2aaa7dc91"),
+                            CarId = new Guid("2d106169-7359-4727-9a78-147b30a53c59"),
+                            CreateDateTime = new DateTime(2024, 2, 16, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(669),
+                            CurrencyId = new Guid("091ff7ff-cd34-4de3-9a60-0b3b36def77c"),
+                            Price = 668.0,
+                            StartDate = new DateTime(2023, 7, 26, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(668),
+                            UpdateDateTime = new DateTime(2024, 2, 17, 17, 7, 15, 443, DateTimeKind.Utc).AddTicks(669)
+                        },
+                        new
+                        {
+                            Id = new Guid("800204d9-894a-4cb0-8d9b-f4a508d03db0"),
+                            CarId = new Guid("b9c55f44-e0a4-4997-8670-1d8c35e38437"),
+                            CreateDateTime = new DateTime(2024, 2, 9, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(673),
+                            CurrencyId = new Guid("fada49d7-2a5d-44fc-ba84-d0cdc8377db4"),
+                            Price = 598.0,
+                            StartDate = new DateTime(2023, 12, 17, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(673),
+                            UpdateDateTime = new DateTime(2024, 2, 10, 3, 7, 15, 443, DateTimeKind.Utc).AddTicks(673)
+                        },
+                        new
+                        {
+                            Id = new Guid("29fe86b1-a7a2-4362-be3a-73becf77ee81"),
+                            CarId = new Guid("b9c55f44-e0a4-4997-8670-1d8c35e38437"),
+                            CreateDateTime = new DateTime(2024, 2, 15, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(676),
+                            CurrencyId = new Guid("46511f69-4bfa-4226-bbd3-275a1890f771"),
+                            Price = 314.0,
+                            StartDate = new DateTime(2023, 7, 29, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(675),
+                            UpdateDateTime = new DateTime(2024, 2, 15, 23, 7, 15, 443, DateTimeKind.Utc).AddTicks(676)
+                        },
+                        new
+                        {
+                            Id = new Guid("a4793a12-6885-4446-8962-3a75885d0b1b"),
+                            CarId = new Guid("b9c55f44-e0a4-4997-8670-1d8c35e38437"),
+                            CreateDateTime = new DateTime(2024, 1, 30, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(678),
+                            CurrencyId = new Guid("8df456d1-c625-4543-86cd-50de2a92c948"),
+                            Price = 955.0,
+                            StartDate = new DateTime(2023, 8, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(677),
+                            UpdateDateTime = new DateTime(2024, 1, 31, 2, 7, 15, 443, DateTimeKind.Utc).AddTicks(678)
+                        },
+                        new
+                        {
+                            Id = new Guid("3feef044-2e54-4dbe-a014-194598e72314"),
+                            CarId = new Guid("ccbbdac5-7557-438a-8551-ac5901e2b587"),
+                            CreateDateTime = new DateTime(2024, 1, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(681),
+                            CurrencyId = new Guid("46511f69-4bfa-4226-bbd3-275a1890f771"),
+                            Price = 355.0,
+                            StartDate = new DateTime(2023, 4, 12, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(680),
+                            UpdateDateTime = new DateTime(2024, 1, 24, 0, 7, 15, 443, DateTimeKind.Utc).AddTicks(681)
+                        },
+                        new
+                        {
+                            Id = new Guid("bd34a891-9418-491a-ae22-c20d500176a5"),
+                            CarId = new Guid("ccbbdac5-7557-438a-8551-ac5901e2b587"),
+                            CreateDateTime = new DateTime(2024, 1, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(683),
+                            CurrencyId = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
+                            Price = 641.0,
+                            StartDate = new DateTime(2024, 1, 15, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(682),
+                            UpdateDateTime = new DateTime(2024, 1, 24, 5, 7, 15, 443, DateTimeKind.Utc).AddTicks(683)
+                        },
+                        new
+                        {
+                            Id = new Guid("09c2ffa9-f62b-42fa-8dba-abf54f6dca26"),
+                            CarId = new Guid("ccbbdac5-7557-438a-8551-ac5901e2b587"),
+                            CreateDateTime = new DateTime(2024, 2, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(685),
+                            CurrencyId = new Guid("f267c0b1-c615-4788-b2a2-5fda0ed89ecd"),
+                            Price = 77.0,
+                            StartDate = new DateTime(2023, 4, 29, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(684),
+                            UpdateDateTime = new DateTime(2024, 2, 6, 6, 7, 15, 443, DateTimeKind.Utc).AddTicks(685)
+                        },
+                        new
+                        {
+                            Id = new Guid("94801fab-94be-49dd-9dc6-2588e90042d7"),
+                            CarId = new Guid("6a192eaf-47eb-4899-aa33-3732c1d5328a"),
+                            CreateDateTime = new DateTime(2024, 2, 3, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(687),
+                            CurrencyId = new Guid("4cd0f5e2-eef9-418a-86e5-ff39a40731b3"),
+                            Price = 708.0,
+                            StartDate = new DateTime(2023, 12, 28, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(687),
+                            UpdateDateTime = new DateTime(2024, 2, 4, 17, 7, 15, 443, DateTimeKind.Utc).AddTicks(687)
+                        },
+                        new
+                        {
+                            Id = new Guid("f19efe2f-68a4-455a-b67a-123b7639d83d"),
+                            CarId = new Guid("6a192eaf-47eb-4899-aa33-3732c1d5328a"),
+                            CreateDateTime = new DateTime(2024, 2, 17, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(690),
+                            CurrencyId = new Guid("a5e8655b-10af-461a-baf5-0b2ccfa88904"),
+                            Price = 447.0,
+                            StartDate = new DateTime(2023, 10, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(689),
+                            UpdateDateTime = new DateTime(2024, 2, 18, 6, 7, 15, 443, DateTimeKind.Utc).AddTicks(690)
+                        },
+                        new
+                        {
+                            Id = new Guid("e5bb9b12-cfd6-49be-8ad0-40d23744e628"),
+                            CarId = new Guid("6a192eaf-47eb-4899-aa33-3732c1d5328a"),
+                            CreateDateTime = new DateTime(2024, 1, 30, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(694),
+                            CurrencyId = new Guid("4cd0f5e2-eef9-418a-86e5-ff39a40731b3"),
+                            Price = 120.0,
+                            StartDate = new DateTime(2023, 9, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(693),
+                            UpdateDateTime = new DateTime(2024, 1, 31, 3, 7, 15, 443, DateTimeKind.Utc).AddTicks(694)
+                        },
+                        new
+                        {
+                            Id = new Guid("cc669a27-1522-4dde-a62a-d2694fdf79a0"),
+                            CarId = new Guid("3fbfca05-c56d-4f9b-b064-5095cf13b65e"),
+                            CreateDateTime = new DateTime(2024, 2, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(697),
+                            CurrencyId = new Guid("ea5676b1-b658-440d-8e80-6b13046c57cc"),
+                            Price = 555.0,
+                            StartDate = new DateTime(2023, 11, 13, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(697),
+                            UpdateDateTime = new DateTime(2024, 2, 12, 6, 7, 15, 443, DateTimeKind.Utc).AddTicks(697)
+                        },
+                        new
+                        {
+                            Id = new Guid("70e7293a-205a-4eee-a4e0-c47bc3522bb0"),
+                            CarId = new Guid("3fbfca05-c56d-4f9b-b064-5095cf13b65e"),
+                            CreateDateTime = new DateTime(2024, 2, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(700),
+                            CurrencyId = new Guid("557f01ff-0db1-42dc-a471-8d063f0458ae"),
+                            Price = 714.0,
+                            StartDate = new DateTime(2023, 10, 30, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(699),
+                            UpdateDateTime = new DateTime(2024, 2, 12, 6, 7, 15, 443, DateTimeKind.Utc).AddTicks(700)
+                        },
+                        new
+                        {
+                            Id = new Guid("35c4252d-8398-4d50-9762-0fa9bf571c62"),
+                            CarId = new Guid("3fbfca05-c56d-4f9b-b064-5095cf13b65e"),
+                            CreateDateTime = new DateTime(2024, 1, 26, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(702),
+                            CurrencyId = new Guid("20d71c8a-33ce-44e5-8f8d-d4877231560e"),
+                            Price = 639.0,
+                            StartDate = new DateTime(2023, 12, 19, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(701),
+                            UpdateDateTime = new DateTime(2024, 1, 27, 10, 7, 15, 443, DateTimeKind.Utc).AddTicks(702)
+                        },
+                        new
+                        {
+                            Id = new Guid("9925a82b-e824-40ea-a0fa-2fd0380dd246"),
+                            CarId = new Guid("3fbfca05-c56d-4f9b-b064-5095cf13b65e"),
+                            CreateDateTime = new DateTime(2024, 2, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(704),
+                            CurrencyId = new Guid("d2c66add-0890-4546-b04e-9e2a876cd470"),
+                            Price = 691.0,
+                            StartDate = new DateTime(2023, 11, 14, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(704),
+                            UpdateDateTime = new DateTime(2024, 2, 6, 0, 7, 15, 443, DateTimeKind.Utc).AddTicks(704)
+                        },
+                        new
+                        {
+                            Id = new Guid("e6f2e878-c85a-45f5-a895-521ea02488a5"),
+                            CarId = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
+                            CreateDateTime = new DateTime(2024, 2, 6, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(707),
+                            CurrencyId = new Guid("20d71c8a-33ce-44e5-8f8d-d4877231560e"),
+                            Price = 579.0,
+                            StartDate = new DateTime(2023, 7, 15, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(706),
+                            UpdateDateTime = new DateTime(2024, 2, 7, 2, 7, 15, 443, DateTimeKind.Utc).AddTicks(707)
+                        },
+                        new
+                        {
+                            Id = new Guid("ebdb37bd-d2ec-4ab2-b73c-28534f8d6b33"),
+                            CarId = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
+                            CreateDateTime = new DateTime(2024, 1, 21, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(709),
+                            CurrencyId = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
+                            Price = 284.0,
+                            StartDate = new DateTime(2023, 4, 7, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(708),
+                            UpdateDateTime = new DateTime(2024, 1, 22, 18, 7, 15, 443, DateTimeKind.Utc).AddTicks(709)
+                        },
+                        new
+                        {
+                            Id = new Guid("e4cdaba3-0352-4813-8f3b-b69771b4413d"),
+                            CarId = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
+                            CreateDateTime = new DateTime(2024, 1, 29, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(711),
+                            CurrencyId = new Guid("a5e8655b-10af-461a-baf5-0b2ccfa88904"),
+                            Price = 67.0,
+                            StartDate = new DateTime(2023, 8, 10, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(711),
+                            UpdateDateTime = new DateTime(2024, 1, 30, 15, 7, 15, 443, DateTimeKind.Utc).AddTicks(711)
+                        },
+                        new
+                        {
+                            Id = new Guid("8a077dd6-3b8a-45c9-a52e-086832345136"),
+                            CarId = new Guid("ba5eba73-ebe1-4719-a5c2-ac35f919d4d3"),
+                            CreateDateTime = new DateTime(2024, 2, 15, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(715),
+                            CurrencyId = new Guid("8df456d1-c625-4543-86cd-50de2a92c948"),
+                            Price = 169.0,
+                            StartDate = new DateTime(2023, 11, 9, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(715),
+                            UpdateDateTime = new DateTime(2024, 2, 16, 7, 7, 15, 443, DateTimeKind.Utc).AddTicks(715)
+                        },
+                        new
+                        {
+                            Id = new Guid("a98842df-2db3-4d28-a729-731fc914a80b"),
+                            CarId = new Guid("6203ab05-6d54-418c-a609-5980e77ac67c"),
+                            CreateDateTime = new DateTime(2024, 1, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(718),
+                            CurrencyId = new Guid("557f01ff-0db1-42dc-a471-8d063f0458ae"),
+                            Price = 509.0,
+                            StartDate = new DateTime(2023, 6, 27, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(717),
+                            UpdateDateTime = new DateTime(2024, 1, 24, 15, 7, 15, 443, DateTimeKind.Utc).AddTicks(718)
+                        },
+                        new
+                        {
+                            Id = new Guid("23eb6de2-986b-45d7-b9af-f67a93a7c82f"),
+                            CarId = new Guid("6203ab05-6d54-418c-a609-5980e77ac67c"),
+                            CreateDateTime = new DateTime(2024, 1, 31, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(720),
+                            CurrencyId = new Guid("4cd0f5e2-eef9-418a-86e5-ff39a40731b3"),
+                            Price = 660.0,
+                            StartDate = new DateTime(2023, 8, 1, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(719),
+                            UpdateDateTime = new DateTime(2024, 2, 1, 15, 7, 15, 443, DateTimeKind.Utc).AddTicks(720)
+                        },
+                        new
+                        {
+                            Id = new Guid("28f31ec2-5362-4a3a-8bb5-27fb196e57e7"),
+                            CarId = new Guid("e3ed1a36-a29c-4a5d-a03b-e6979e1d206a"),
+                            CreateDateTime = new DateTime(2024, 1, 29, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(722),
+                            CurrencyId = new Guid("557f01ff-0db1-42dc-a471-8d063f0458ae"),
+                            Price = 204.0,
+                            StartDate = new DateTime(2023, 8, 23, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(722),
+                            UpdateDateTime = new DateTime(2024, 1, 30, 0, 7, 15, 443, DateTimeKind.Utc).AddTicks(722)
+                        },
+                        new
+                        {
+                            Id = new Guid("23093cc0-fbfb-4bc8-8d1a-ada85a7d2cf1"),
+                            CarId = new Guid("e3ed1a36-a29c-4a5d-a03b-e6979e1d206a"),
+                            CreateDateTime = new DateTime(2024, 1, 31, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(725),
+                            CurrencyId = new Guid("bfd04dea-d585-4a88-aec9-f030e25427cf"),
+                            Price = 740.0,
+                            StartDate = new DateTime(2023, 6, 24, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(724),
+                            UpdateDateTime = new DateTime(2024, 2, 1, 14, 7, 15, 443, DateTimeKind.Utc).AddTicks(725)
+                        },
+                        new
+                        {
+                            Id = new Guid("40c28f86-6184-401c-a6fc-5fcdb7ea8cea"),
+                            CarId = new Guid("e3ed1a36-a29c-4a5d-a03b-e6979e1d206a"),
+                            CreateDateTime = new DateTime(2024, 1, 21, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(727),
+                            CurrencyId = new Guid("557f01ff-0db1-42dc-a471-8d063f0458ae"),
+                            Price = 225.0,
+                            StartDate = new DateTime(2023, 8, 2, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(726),
+                            UpdateDateTime = new DateTime(2024, 1, 22, 9, 7, 15, 443, DateTimeKind.Utc).AddTicks(727)
+                        },
+                        new
+                        {
+                            Id = new Guid("c1bed4fe-a57e-4e4e-aade-b8521fa4b68a"),
+                            CarId = new Guid("e3ed1a36-a29c-4a5d-a03b-e6979e1d206a"),
+                            CreateDateTime = new DateTime(2024, 2, 13, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(729),
+                            CurrencyId = new Guid("bfd04dea-d585-4a88-aec9-f030e25427cf"),
+                            Price = 463.0,
+                            StartDate = new DateTime(2023, 9, 11, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(728),
+                            UpdateDateTime = new DateTime(2024, 2, 14, 11, 7, 15, 443, DateTimeKind.Utc).AddTicks(729)
+                        },
+                        new
+                        {
+                            Id = new Guid("3c34a7d4-0240-4bd4-b453-f738a968c27f"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            CreateDateTime = new DateTime(2024, 2, 5, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(732),
+                            CurrencyId = new Guid("68512ad7-3653-4c98-8117-fc7b1c71de39"),
+                            Price = 256.0,
+                            StartDate = new DateTime(2023, 11, 26, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(731),
+                            UpdateDateTime = new DateTime(2024, 2, 6, 4, 7, 15, 443, DateTimeKind.Utc).AddTicks(732)
+                        },
+                        new
+                        {
+                            Id = new Guid("0ac863aa-0c7d-47d4-9d7a-cbe56ef2a4f3"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            CreateDateTime = new DateTime(2024, 1, 31, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(736),
+                            CurrencyId = new Guid("ea5676b1-b658-440d-8e80-6b13046c57cc"),
+                            Price = 794.0,
+                            StartDate = new DateTime(2023, 5, 8, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(735),
+                            UpdateDateTime = new DateTime(2024, 2, 1, 7, 7, 15, 443, DateTimeKind.Utc).AddTicks(736)
+                        },
+                        new
+                        {
+                            Id = new Guid("286d710c-2f0b-4228-8c0b-d1b655fe7bd0"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            CreateDateTime = new DateTime(2024, 2, 13, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(738),
+                            CurrencyId = new Guid("091ff7ff-cd34-4de3-9a60-0b3b36def77c"),
+                            Price = 613.0,
+                            StartDate = new DateTime(2023, 11, 6, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(738),
+                            UpdateDateTime = new DateTime(2024, 2, 14, 10, 7, 15, 443, DateTimeKind.Utc).AddTicks(738)
+                        },
+                        new
+                        {
+                            Id = new Guid("4731de1a-7fa5-4219-b892-8a85e36ec2fd"),
+                            CarId = new Guid("e04fbfc7-0c98-4770-a0ab-3111f3587f21"),
+                            CreateDateTime = new DateTime(2024, 2, 6, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(741),
+                            CurrencyId = new Guid("46511f69-4bfa-4226-bbd3-275a1890f771"),
+                            Price = 923.0,
+                            StartDate = new DateTime(2023, 6, 3, 19, 7, 15, 443, DateTimeKind.Utc).AddTicks(740),
+                            UpdateDateTime = new DateTime(2024, 2, 7, 11, 7, 15, 443, DateTimeKind.Utc).AddTicks(741)
                         });
                 });
 

@@ -16,6 +16,11 @@ public class CurrencyEntity : Entity<CurrencyId>
     {
         return new CurrencyEntity(CurrencyId.CreateUnique(), acronym);
     }
+    
+    public void Update(string acronym)
+    {
+        Acronym = acronym;
+    }
 
 #pragma warning disable CS8618 
     public CurrencyEntity() { }

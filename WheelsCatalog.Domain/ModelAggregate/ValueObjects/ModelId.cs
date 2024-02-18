@@ -2,9 +2,9 @@
 
 namespace WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
-public class ModelId : AggregateRootId<Guid>
+public class ModelId : ValueObject
 {
-    public override Guid Value { get; protected set; }
+    public Guid Value { get; protected set; }
 
     private ModelId(Guid value)
     {
