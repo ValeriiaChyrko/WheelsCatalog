@@ -2,10 +2,8 @@ using AutoMapper;
 using NUnit.Framework;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.CarAggregate;
-using WheelsCatalog.Domain.CarAggregate.ValueObjects;
+using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Models;
 using static NUnit.Framework.Assert;
@@ -15,7 +13,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
 [TestFixture]
     public class CarMapperTests
     {
-        private IEntityMapper<Car, CarEntityModel> _carMapper = null!;
         private IMapper _mapper = null!;
 
         [SetUp]
@@ -27,8 +24,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             });
 
             _mapper = mapperConfig.CreateMapper();
-            
-            _carMapper = new CarMapper(_mapper);
         }
 
         [Test]
@@ -44,7 +39,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             );
 
             // Act
-            var model = _carMapper.MapToModel(entity);
+            var model = _mapper.Map<CarEntityModel>(entity);
 
             // Assert
             That(model, Is.Not.Null);
@@ -73,7 +68,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             };
 
             // Act
-            var entity = _carMapper.MapToEntity(model);
+            var entity = _mapper.Map<Car>(model);
             
             // Assert
             That(entity, Is.Not.Null);

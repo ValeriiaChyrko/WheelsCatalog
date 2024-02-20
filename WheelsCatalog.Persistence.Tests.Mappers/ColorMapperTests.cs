@@ -1,8 +1,6 @@
 using AutoMapper;
 using NUnit.Framework;
-using WheelsCatalog.Domain.CarAggregate.Entities;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
+using WheelsCatalog.Domain.ColorAggregate;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Models;
 using static NUnit.Framework.Assert;
@@ -12,30 +10,26 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
 [TestFixture]
     public class ColorMapperTests
     {
-        private IEntityMapper<ColorEntity, ColorEntityModel> _colorMapper = null!;
         private IMapper _mapper = null!;
 
         [SetUp]
         public void Setup()
         {
-            var mapperConfig = new MapperConfiguration(cfg =>
+            var config = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile<ColorEntityMappingProfile>();
+                cfg.AddProfile(new ColorEntityMappingProfile());
             });
-
-            _mapper = mapperConfig.CreateMapper();
-            
-            _colorMapper = new ColorMapper(_mapper);
+            _mapper = config.CreateMapper();
         }
 
         [Test]
         public void MapToModel_WhenEntityMapped_ReturnsCorrectModel()
         {
             // Arrange
-            var entity = ColorEntity.Create("Red", "#FF0000");
+            var entity = Color.Create("Red", "#FF0000");
 
             // Act
-            var model = _colorMapper.MapToModel(entity);
+            var model = _mapper.Map<ColorEntityModel>(entity);
 
             // Assert
             That(model, Is.Not.Null);
@@ -56,7 +50,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             };
 
             // Act
-            var entity = _colorMapper.MapToEntity(model);
+            var entity = _mapper.Map<Color>(model);
             
             // Assert
             That(entity, Is.Not.Null);

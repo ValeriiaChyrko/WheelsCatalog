@@ -5,13 +5,10 @@ using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.CarAggregate;
-using WheelsCatalog.Domain.CarAggregate.ValueObjects;
+using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Interceptors;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
-using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
 
@@ -22,7 +19,6 @@ public class CarRepositoryTests
 {
     private WheelsCatalogDbContext _dbContext = null!;
     private CarRepository _carRepository = null!;
-    private IEntityMapper<Car, CarEntityModel> _brandMapper = null!;
     private IMapper _mapper = null!;
 
     [SetUp]
@@ -40,10 +36,9 @@ public class CarRepositoryTests
         });
 
         _mapper = mapperConfig.CreateMapper();
-        _brandMapper = new CarMapper(_mapper);
 
         _dbContext = new WheelsCatalogDbContext(options, interceptor);
-        _carRepository = new CarRepository(_dbContext, _brandMapper);
+        _carRepository = new CarRepository(_dbContext, _mapper);
     }
 
     [TearDown]
@@ -214,46 +209,5 @@ public class CarRepositoryTests
         That(result.Description, Is.EqualTo(entityModel.Description));
         That(result.CreateDateTime, Is.EqualTo(entityModel.CreateDateTime));
         That(result.UpdateDateTime, Is.EqualTo(entityModel.UpdateDateTime));
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityExists_ReturnsTrue()
-    {
-        // Arrange
-        var entityToAdd = Car.Create(
-            engineVolume: 2000,
-            description: "Sedan",
-            colorId: ColorId.CreateUnique(),
-            brandId: BrandId.CreateUnique(),
-            modelId: ModelId.CreateUnique()
-        );
-        var cancellationToken = new CancellationToken();
-        await _carRepository.AddAsync(entityToAdd, cancellationToken);
-
-        // Act
-        var result = await _carRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsTrue(result);
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityDoesNotExist_ReturnsFalse()
-    {
-        // Arrange
-        var entityToAdd = Car.Create(
-            engineVolume: 2000,
-            description: "Sedan",
-            colorId: ColorId.CreateUnique(),
-            brandId: BrandId.CreateUnique(),
-            modelId: ModelId.CreateUnique()
-        );
-        var cancellationToken = new CancellationToken();
-
-        // Act
-        var result = await _carRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsFalse(result);
     }
 }

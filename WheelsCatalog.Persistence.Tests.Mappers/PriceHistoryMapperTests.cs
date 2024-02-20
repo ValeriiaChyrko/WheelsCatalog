@@ -1,10 +1,8 @@
 using AutoMapper;
 using NUnit.Framework;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
+using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
-using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Models;
 using static NUnit.Framework.Assert;
@@ -14,7 +12,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
 [TestFixture]
     public class PriceHistoryMapperTests
     {
-        private IEntityMapper<PriceHistory, PriceHistoryEntityModel> _priceHistoriesMapper = null!;
         private IMapper _mapper = null!;
 
         [SetUp]
@@ -26,8 +23,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             });
 
             _mapper = mapperConfig.CreateMapper();
-            
-            _priceHistoriesMapper = new PriceHistoryMapper(_mapper);
         }
 
         [Test]
@@ -37,7 +32,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             var entity = PriceHistory.Create(1000.00, new DateTime(2023, 1, 1), CurrencyId.CreateUnique(), CarId.CreateUnique());
 
             // Act
-            var model = _priceHistoriesMapper.MapToModel(entity);
+            var model = _mapper.Map<PriceHistoryEntityModel>(entity);
 
             // Assert
             That(model, Is.Not.Null);
@@ -62,7 +57,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             };
 
             // Act
-            var entity = _priceHistoriesMapper.MapToEntity(model);
+            var entity = _mapper.Map<PriceHistory>(model);
             
             // Assert
             That(entity, Is.Not.Null);

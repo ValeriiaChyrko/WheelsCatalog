@@ -2,8 +2,6 @@ using AutoMapper;
 using NUnit.Framework;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Models;
 using static NUnit.Framework.Assert;
@@ -13,7 +11,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
 [TestFixture]
     public class ModelMapperTests
     {
-        private IEntityMapper<Model, ModelEntityModel> _modelMapper = null!;
         private IMapper _mapper = null!;
 
         [SetUp]
@@ -26,8 +23,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             });
 
             _mapper = mapperConfig.CreateMapper();
-            
-            _modelMapper = new ModelMapper(_mapper);
         }
 
         [Test]
@@ -37,7 +32,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             var entity = Model.Create("Model 1", "Description for Model 1", BrandId.CreateUnique());
 
             // Act
-            var model = _modelMapper.MapToModel(entity);
+            var model = _mapper.Map<ModelEntityModel>(entity);
 
             // Assert
             That(model, Is.Not.Null);
@@ -64,7 +59,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             };
 
             // Act
-            var entity = _modelMapper.MapToEntity(model);
+            var entity = _mapper.Map<Model>(model);
             
             // Assert
             That(entity, Is.Not.Null);

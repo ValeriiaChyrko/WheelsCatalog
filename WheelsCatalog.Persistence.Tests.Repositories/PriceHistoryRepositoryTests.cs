@@ -4,13 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
+using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
-using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Interceptors;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
-using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
 
@@ -21,7 +18,6 @@ public class PriceHistoryRepositoryTests
 {
     private WheelsCatalogDbContext _dbContext = null!;
     private PriceHistoryRepository _priceHistoryRepository = null!;
-    private IEntityMapper<PriceHistory, PriceHistoryEntityModel> _modelMapper = null!;
     private IMapper _mapper = null!;
 
     [SetUp]
@@ -39,10 +35,9 @@ public class PriceHistoryRepositoryTests
         });
 
         _mapper = mapperConfig.CreateMapper();
-        _modelMapper = new PriceHistoryMapper(_mapper);
 
         _dbContext = new WheelsCatalogDbContext(options, interceptor);
-        _priceHistoryRepository = new PriceHistoryRepository(_dbContext, _modelMapper);
+        _priceHistoryRepository = new PriceHistoryRepository(_dbContext, _mapper);
     }
 
     [TearDown]
@@ -167,34 +162,5 @@ public class PriceHistoryRepositoryTests
         That(result.CarId.Value, Is.EqualTo(entityToAdd.CarId.Value));
         That(result.CreateDateTime, Is.EqualTo(entityToAdd.CreateDateTime));
         That(result.UpdateDateTime, Is.EqualTo(entityToAdd.UpdateDateTime));
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityExists_ReturnsTrue()
-    {
-        // Arrange
-        var entityToAdd = PriceHistory.Create(1000.00, new DateTime(2023, 2, 17), CurrencyId.CreateUnique(), CarId.CreateUnique());
-        var cancellationToken = new CancellationToken();
-        await _priceHistoryRepository.AddAsync(entityToAdd, cancellationToken);
-
-        // Act
-        var result = await _priceHistoryRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsTrue(result);
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityDoesNotExist_ReturnsFalse()
-    {
-        // Arrange
-        var entityToAdd = PriceHistory.Create(1000.00, new DateTime(2023, 2, 17), CurrencyId.CreateUnique(), CarId.CreateUnique());
-        var cancellationToken = new CancellationToken();
-
-        // Act
-        var result = await _priceHistoryRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsFalse(result);
     }
 }

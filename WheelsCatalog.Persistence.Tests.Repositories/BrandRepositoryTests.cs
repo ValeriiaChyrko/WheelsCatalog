@@ -5,10 +5,7 @@ using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Domain.BrandAggregate;
 using WheelsCatalog.Persistence.Interceptors;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
-using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
 
@@ -19,7 +16,6 @@ public class BrandRepositoryTests
 {
     private WheelsCatalogDbContext _dbContext = null!;
     private BrandRepository _brandRepository = null!;
-    private IEntityMapper<Brand, BrandEntityModel> _brandMapper = null!;
     private IMapper _mapper = null!;
 
     [SetUp]
@@ -38,10 +34,9 @@ public class BrandRepositoryTests
         });
 
         _mapper = mapperConfig.CreateMapper();
-        _brandMapper = new BrandMapper(_mapper);
 
         _dbContext = new WheelsCatalogDbContext(options, interceptor);
-        _brandRepository = new BrandRepository(_dbContext, _brandMapper);
+        _brandRepository = new BrandRepository(_dbContext, _mapper);
     }
 
     [TearDown]
@@ -157,34 +152,5 @@ public class BrandRepositoryTests
         That(result.Description, Is.EqualTo(entityModel.Description));
         That(result.CreateDateTime, Is.EqualTo(entityModel.CreateDateTime));
         That(result.UpdateDateTime, Is.EqualTo(entityModel.UpdateDateTime));
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityExists_ReturnsTrue()
-    {
-        // Arrange
-        var entityToAdd = Brand.Create("Brand 1", "https://example.com/logo1.png", "Description for Brand 1");
-        var cancellationToken = new CancellationToken();
-        await _brandRepository.AddAsync(entityToAdd, cancellationToken);
-
-        // Act
-        var result = await _brandRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsTrue(result);
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityDoesNotExist_ReturnsFalse()
-    {
-        // Arrange
-        var entityToAdd = Brand.Create("Brand 1", "https://example.com/logo1.png", "Description for Brand 1");
-        var cancellationToken = new CancellationToken();
-
-        // Act
-        var result = await _brandRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsFalse(result);
     }
 }

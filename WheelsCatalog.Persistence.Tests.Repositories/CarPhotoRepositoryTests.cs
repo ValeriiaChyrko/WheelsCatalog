@@ -6,10 +6,7 @@ using NUnit.Framework;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Interceptors;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
-using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
 
@@ -20,7 +17,6 @@ public class CarPhotoRepositoryTests
 {
     private WheelsCatalogDbContext _dbContext = null!;
     private CarPhotoRepository _carPhotoRepository = null!;
-    private IEntityMapper<CarPhotoEntity, CarPhotoEntityModel> _carPhotoMapper = null!;
     private IMapper _mapper = null!;
 
     [SetUp]
@@ -38,10 +34,9 @@ public class CarPhotoRepositoryTests
         });
 
         _mapper = mapperConfig.CreateMapper();
-        _carPhotoMapper = new CarPhotoMapper(_mapper);
 
         _dbContext = new WheelsCatalogDbContext(options, interceptor);
-        _carPhotoRepository = new CarPhotoRepository(_dbContext, _carPhotoMapper);
+        _carPhotoRepository = new CarPhotoRepository(_dbContext, _mapper);
     }
 
     [TearDown]
@@ -147,34 +142,5 @@ public class CarPhotoRepositoryTests
         That(result!.Id.Value, Is.EqualTo(entityModel.Id.Value));
         That(result.PhotoUrl, Is.EqualTo(entityModel.PhotoUrl));
         That(result.CarId, Is.EqualTo(entityModel.CarId));
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityExists_ReturnsTrue()
-    {
-        // Arrange
-        var entityToAdd = CarPhotoEntity.Create("test1_logo_url", CarId.CreateUnique());
-        var cancellationToken = new CancellationToken();
-        await _carPhotoRepository.AddAsync(entityToAdd, cancellationToken);
-
-        // Act
-        var result = await _carPhotoRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsTrue(result);
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityDoesNotExist_ReturnsFalse()
-    {
-        // Arrange
-        var entityToAdd = CarPhotoEntity.Create("test1_logo_url", CarId.CreateUnique());
-        var cancellationToken = new CancellationToken();
-
-        // Act
-        var result = await _carPhotoRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsFalse(result);
     }
 }

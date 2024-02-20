@@ -1,9 +1,6 @@
 using AutoMapper;
 using NUnit.Framework;
 using WheelsCatalog.Domain.BrandAggregate;
-using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Models;
 using static NUnit.Framework.Assert;
@@ -13,7 +10,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
 [TestFixture]
     public class BrandMapperTests
     {
-        private IEntityMapper<Brand, BrandEntityModel> _brandMapper = null!;
         private IMapper _mapper = null!;
 
         [SetUp]
@@ -22,12 +18,9 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             var mapperConfig = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<BrandMappingProfile>();
-                cfg.AddProfile<ModelMappingProfile>();
             });
 
             _mapper = mapperConfig.CreateMapper();
-            
-            _brandMapper = new BrandMapper(_mapper);
         }
 
         [Test]
@@ -37,7 +30,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             var entity = Brand.Create("Brand 1", "https://example.com/logo1.png", "Description for Brand 1");
 
             // Act
-            var model = _brandMapper.MapToModel(entity);
+            var model = _mapper.Map<BrandEntityModel>(entity);
 
             // Assert
             That(model, Is.Not.Null);
@@ -48,9 +41,9 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             That(model.CreateDateTime, Is.EqualTo(entity.CreateDateTime));
             That(model.UpdateDateTime, Is.EqualTo(entity.UpdateDateTime));
         }
-
+        
         [Test]
-        public void MapToEntity_WhenModelMapped_ReturnsCorrectEntity()
+        public void MapToEntity_WhenModelMappedWithoutDependencies_ReturnsCorrectEntity()
         {
             // Arrange
             var model =new BrandEntityModel
@@ -64,7 +57,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             };
 
             // Act
-            var entity = _brandMapper.MapToEntity(model);
+            var entity = _mapper.Map<Brand>(model);
             
             // Assert
             That(entity, Is.Not.Null);
@@ -77,7 +70,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
         }
         
         [Test]
-        public void MapToModel_WhenEntityMappedWithDependencies_ReturnsCorrectModel()
+        public void MapToModel_WhenEntityMappedWithoutDependencies_ReturnsCorrectModel()
         {
             // Arrange
             var brand = Brand.Create(
@@ -86,80 +79,14 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
                 "Description"
             );
 
-            brand.AddModelId(ModelId.CreateUnique());
-
             // Act
             var brandEntityModel = _mapper.Map<BrandEntityModel>(brand);
         
             // Assert
             That(brandEntityModel, Is.Not.Null);
             That(brandEntityModel.Id, Is.EqualTo(brand.Id.Value));
-            That(brandEntityModel.Id, Is.EqualTo(brand.Id.Value));
             That(brandEntityModel.Name, Is.EqualTo(brand.Name));
             That(brandEntityModel.LogoUrl, Is.EqualTo(brand.LogoUrl));
             That(brandEntityModel.Description, Is.EqualTo(brand.Description));
-            
-            That(brandEntityModel.Models.Count, Is.EqualTo(1));
-            That(brandEntityModel.Models.First().Id, Is.EqualTo(brand.ModelIds.First().Value));
-        }
-        
-        [Test]
-        public void MapToModel_WhenEntityMappedWithModels_ReturnsCorrectBrand()
-        {
-            // Arrange
-            var brandId = Guid.NewGuid();
-            var testModels = new List<ModelEntityModel>
-            {
-                new ModelEntityModel
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Model 1",
-                    Description = "Description for Model 1",
-                    CreateDateTime = DateTime.Now,
-                    UpdateDateTime = DateTime.Now,
-                    BrandId = brandId
-                },
-                new  ModelEntityModel
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Model 2",
-                    Description = "Description for Model 2",
-                    CreateDateTime = DateTime.Now,
-                    UpdateDateTime = DateTime.Now,
-                    BrandId = brandId
-                },
-                new ModelEntityModel
-                {
-                    Id = Guid.NewGuid(),
-                    Name = "Model 3",
-                    Description = "Description for Model 3",
-                    CreateDateTime = DateTime.Now,
-                    UpdateDateTime = DateTime.Now,
-                    BrandId = brandId
-                }
-            };
-                
-            var brandEntityModel = new BrandEntityModel
-            {
-                Id = Guid.NewGuid(),
-                Name = "TestBrand",
-                LogoUrl = "test_logo_url",
-                Description = "Test Description",
-                Models = testModels
-            };
-
-            // Act
-            var brand = _mapper.Map<Brand>(brandEntityModel);
-
-            // Assert
-            IsNotNull(brand);
-            That(brand.Id.Value, Is.EqualTo(brandEntityModel.Id));
-            That(brand.Name, Is.EqualTo(brandEntityModel.Name));
-            That(brand.LogoUrl, Is.EqualTo(brandEntityModel.LogoUrl));
-            That(brand.Description, Is.EqualTo(brandEntityModel.Description));
-            That(brand.ModelIds.Count, Is.EqualTo(brandEntityModel.Models.Count()));
-            That(brand.ModelIds.FirstOrDefault()?.Value, Is.EqualTo(brandEntityModel.Models.FirstOrDefault()?.Id));
-            IsTrue(brandEntityModel.Models.All(modelEntity =>
-                brand.ModelIds.Contains(ModelId.Create(modelEntity.Id))));
         }
     }

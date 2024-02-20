@@ -2,8 +2,6 @@ using AutoMapper;
 using NUnit.Framework;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Models;
 using static NUnit.Framework.Assert;
@@ -13,7 +11,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
 [TestFixture]
     public class CarPhotoMapperTests
     {
-        private IEntityMapper<CarPhotoEntity, CarPhotoEntityModel> _photoMapper = null!;
         private IMapper _mapper = null!;
 
         [SetUp]
@@ -25,8 +22,6 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             });
 
             _mapper = mapperConfig.CreateMapper();
-            
-            _photoMapper = new CarPhotoMapper(_mapper);
         }
 
         [Test]
@@ -36,7 +31,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             var entity = CarPhotoEntity.Create("https://example.com/photo.png", CarId.CreateUnique());
 
             // Act
-            var model = _photoMapper.MapToModel(entity);
+            var model = _mapper.Map<CarPhotoEntityModel>(entity);
 
             // Assert
             That(model, Is.Not.Null);
@@ -57,7 +52,7 @@ namespace WheelsCatalog.Persistence.Tests.Mappers;
             };
 
             // Act
-            var entity = _photoMapper.MapToEntity(model);
+            var entity = _mapper.Map<CarPhotoEntity>(model);
             
             // Assert
             That(entity, Is.Not.Null);

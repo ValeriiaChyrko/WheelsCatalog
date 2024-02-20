@@ -6,10 +6,7 @@ using NUnit.Framework;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate;
 using WheelsCatalog.Persistence.Interceptors;
-using WheelsCatalog.Persistence.Mappers;
-using WheelsCatalog.Persistence.Mappers.Common;
 using WheelsCatalog.Persistence.Mappers.Profiles;
-using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
 
@@ -20,7 +17,6 @@ public class ModelRepositoryTests
 {
     private WheelsCatalogDbContext _dbContext = null!;
     private ModelRepository _modelRepository = null!;
-    private IEntityMapper<Model, ModelEntityModel> _modelMapper = null!;
     private IMapper _mapper = null!;
 
     [SetUp]
@@ -39,10 +35,9 @@ public class ModelRepositoryTests
         });
 
         _mapper = mapperConfig.CreateMapper();
-        _modelMapper = new ModelMapper(_mapper);
 
         _dbContext = new WheelsCatalogDbContext(options, interceptor);
-        _modelRepository = new ModelRepository(_dbContext, _modelMapper);
+        _modelRepository = new ModelRepository(_dbContext, _mapper);
     }
 
     [TearDown]
@@ -159,34 +154,5 @@ public class ModelRepositoryTests
         That(result.Description, Is.EqualTo(entityModel.Description));
         That(result.CreateDateTime, Is.EqualTo(entityModel.CreateDateTime));
         That(result.UpdateDateTime, Is.EqualTo(entityModel.UpdateDateTime));
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityExists_ReturnsTrue()
-    {
-        // Arrange
-        var entityToAdd = Model.Create("ModelName1", "Description for Model 1", BrandId.CreateUnique());
-        var cancellationToken = new CancellationToken();
-        await _modelRepository.AddAsync(entityToAdd, cancellationToken);
-
-        // Act
-        var result = await _modelRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsTrue(result);
-    }
-
-    [Test]
-    public async Task IsExistAsync_WhenEntityDoesNotExist_ReturnsFalse()
-    {
-        // Arrange
-        var entityToAdd = Model.Create("ModelName1", "Description for Model 1", BrandId.CreateUnique());
-        var cancellationToken = new CancellationToken();
-
-        // Act
-        var result = await _modelRepository.IsExistAsync(entityToAdd.Id.Value, cancellationToken);
-
-        // Assert
-        IsFalse(result);
     }
 }
