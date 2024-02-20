@@ -1,4 +1,4 @@
-﻿namespace WheelsCatalog.Application.dtos.sharedDtos;
+﻿namespace WheelsCatalog.Application.DTOs.sharedDtos;
 
 public class FileDto
 {

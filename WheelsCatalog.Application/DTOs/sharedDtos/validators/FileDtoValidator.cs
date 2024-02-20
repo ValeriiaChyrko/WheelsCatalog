@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace WheelsCatalog.Application.dtos.sharedDtos.validators;
+namespace WheelsCatalog.Application.DTOs.sharedDtos.validators;
 
 public class FileDtoValidator : AbstractValidator<FileDto>
 {
