@@ -4,7 +4,7 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class PriceHistoryDataSeed
     {
-        public static List<PriceHistoryEntityModel> SeedPriceHistories(List<CurrencyEntityModel> currencies, List<CarEntityModel> cars)
+        internal static List<PriceHistoryEntityModel> SeedPriceHistories(List<CurrencyEntityModel> currencies, List<CarEntityModel> cars)
         {
             var random = new Random();
             var histories = new List<PriceHistoryEntityModel>();

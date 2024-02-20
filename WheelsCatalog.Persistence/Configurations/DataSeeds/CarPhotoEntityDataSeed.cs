@@ -4,7 +4,7 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class CarPhotoDataSeed
     {
-        public static List<CarPhotoEntityModel> SeedCarPhotos(List<CarEntityModel> cars)
+        internal static List<CarPhotoEntityModel> SeedCarPhotos(List<CarEntityModel> cars)
         {
             var random = new Random();
             var photos = new List<CarPhotoEntityModel>();

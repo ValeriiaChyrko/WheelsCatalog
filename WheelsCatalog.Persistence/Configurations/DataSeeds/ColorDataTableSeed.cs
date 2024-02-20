@@ -4,7 +4,7 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class ColorDataTableSeed
     {
-        public static List<ColorEntityModel> SeedColors()
+        internal static List<ColorEntityModel> SeedColors()
         {
             var colors = new List<ColorEntityModel>
             {

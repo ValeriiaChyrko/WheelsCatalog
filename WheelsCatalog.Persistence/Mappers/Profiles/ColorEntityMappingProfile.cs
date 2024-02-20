@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Domain.CarAggregate.Entities;
-using WheelsCatalog.Domain.CarAggregate.ValueObjects;
+using WheelsCatalog.Domain.ColorAggregate;
+using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Models;
 
 namespace WheelsCatalog.Persistence.Mappers.Profiles;
@@ -9,11 +9,10 @@ public class ColorEntityMappingProfile : Profile
 {
     public ColorEntityMappingProfile()
     {
-        CreateMap<ColorEntity, ColorEntityModel>()
+        CreateMap<Color, ColorEntityModel>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
 
-        CreateMap<ColorEntityModel, ColorEntity>()
+        CreateMap<ColorEntityModel, Color>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => ColorId.Create(src.Id)));
-
     }
 }

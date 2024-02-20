@@ -1,4 +1,4 @@
-﻿namespace WheelsCatalog.Application.common.exceptions;
+﻿namespace WheelsCatalog.Application.Common.Exceptions;
 
 public class BadRequestException : Exception
 {

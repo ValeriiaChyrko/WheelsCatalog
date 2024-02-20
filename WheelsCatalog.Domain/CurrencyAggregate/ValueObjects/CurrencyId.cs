@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
+namespace WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 
 public class CurrencyId : ValueObject
 {

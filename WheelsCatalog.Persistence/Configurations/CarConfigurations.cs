@@ -4,7 +4,7 @@ using WheelsCatalog.Persistence.Models;
 
 namespace WheelsCatalog.Persistence.Configurations;
 
-public class CarConfigurations : IEntityTypeConfiguration<CarEntityModel>
+internal class CarConfigurations : IEntityTypeConfiguration<CarEntityModel>
 {
     public void Configure(EntityTypeBuilder<CarEntityModel> builder)
     {

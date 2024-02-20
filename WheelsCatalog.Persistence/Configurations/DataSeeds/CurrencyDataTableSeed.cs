@@ -4,7 +4,7 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class CurrencyDataTableSeed
     {
-        public static List<CurrencyEntityModel> SeedCurrencies()
+        internal static List<CurrencyEntityModel> SeedCurrencies()
         {
             var currencies = new List<CurrencyEntityModel>
             {

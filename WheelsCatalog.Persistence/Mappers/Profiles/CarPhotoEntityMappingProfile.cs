@@ -10,7 +10,8 @@ public class CarPhotoEntityMappingProfile : Profile
     public CarPhotoEntityMappingProfile()
     {
         CreateMap<CarPhotoEntity, CarPhotoEntityModel>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value))
+            .ForMember(dest => dest.CarId, opt => opt.MapFrom(src => src.CarId.Value));
 
         CreateMap<CarPhotoEntityModel, CarPhotoEntity>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => CarPhotoId.Create(src.Id)));

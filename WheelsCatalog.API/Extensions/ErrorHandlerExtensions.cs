@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Diagnostics;
-using WheelsCatalog.Application.common.exceptions;
+using WheelsCatalog.Application.Common.Exceptions;
 
 namespace WheelsCatalog.API.Extensions;
 

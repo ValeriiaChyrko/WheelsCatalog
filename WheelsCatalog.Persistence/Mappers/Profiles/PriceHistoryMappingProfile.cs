@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
+using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
 using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Models;

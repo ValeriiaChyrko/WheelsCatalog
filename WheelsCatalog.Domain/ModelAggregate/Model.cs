@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
-using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.Common.Models;
+using WheelsCatalog.Domain.ModelAggregate.Events;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.ModelAggregate;
@@ -12,9 +12,6 @@ public sealed class Model : AggregateRoot<ModelId>
     public BrandId BrandId { get; private set; }
     public DateTime CreateDateTime { get; private set; }
     public DateTime UpdateDateTime { get; private set; }
-    
-    private readonly List<CarId> _carIds = new();
-    public IReadOnlyCollection<CarId> CarIds => _carIds.AsReadOnly();
 
     private Model(ModelId id, string name, string? description, DateTime createDateTime, DateTime updateDateTime, BrandId brandId) : base(id)
     {
@@ -25,16 +22,14 @@ public sealed class Model : AggregateRoot<ModelId>
         BrandId = brandId;
     }
     
-    public void AddCarId(CarId carId)
-    {
-        _carIds.Add(carId);
-    }
-    
     public static Model Create(string name, string? description, BrandId brandId)
     {
         var modelId = ModelId.CreateUnique();
         var recordDateTime = DateTime.Now;
-        return new Model(modelId, name, description, recordDateTime, recordDateTime, brandId);
+        
+        var model = new Model(modelId, name, description, recordDateTime, recordDateTime, brandId);
+        model.AddDomainEvent(new ModelCreated(modelId, brandId));
+        return model;
     }
     
     public void Update(string name, string? description, BrandId brandId)
@@ -43,6 +38,8 @@ public sealed class Model : AggregateRoot<ModelId>
         Description = description;
         BrandId = brandId;
         UpdateDateTime = DateTime.Now;
+        
+        AddDomainEvent(new ModelUpdated(Id, BrandId));
     }
 
 #pragma warning disable CS8618

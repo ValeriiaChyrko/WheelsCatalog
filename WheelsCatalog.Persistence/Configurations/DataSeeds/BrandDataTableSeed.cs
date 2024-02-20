@@ -4,7 +4,7 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class BrandDataTableSeed
     {
-        public static List<BrandEntityModel> SeedBrands()
+        internal static List<BrandEntityModel> SeedBrands()
         {
             var brands = new List<BrandEntityModel>
             {

@@ -1,6 +1,6 @@
-﻿using WheelsCatalog.Application.contracts.persistence.common;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Common;
 
-namespace WheelsCatalog.Application.contracts.persistence;
+namespace WheelsCatalog.Application.Contracts.Persistence;
 
 public interface IBrandRepository : IGenericRepository<Domain.BrandAggregate.Brand>
 {

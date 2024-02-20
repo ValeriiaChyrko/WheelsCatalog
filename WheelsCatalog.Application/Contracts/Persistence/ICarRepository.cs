@@ -1,7 +1,7 @@
-﻿using WheelsCatalog.Application.contracts.persistence.common;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Common;
 using WheelsCatalog.Domain.CarAggregate;
 
-namespace WheelsCatalog.Application.contracts.persistence;
+namespace WheelsCatalog.Application.Contracts.Persistence;
 
 public interface ICarRepository : IGenericRepository<Car>
 {

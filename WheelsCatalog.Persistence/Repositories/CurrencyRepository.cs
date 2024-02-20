@@ -1,14 +1,14 @@
-﻿using WheelsCatalog.Application.contracts.persistence;
-using WheelsCatalog.Domain.PriceHistoryAggregate.Entities;
-using WheelsCatalog.Persistence.Mappers.Common;
+﻿using AutoMapper;
+using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Domain.CurrencyAggregate;
 using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories.common;
 
 namespace WheelsCatalog.Persistence.Repositories;
 
-public class CurrencyRepository : GenericRepository<CurrencyEntity, CurrencyEntityModel>, ICurrencyRepository
+internal class CurrencyRepository : GenericRepository<Currency, CurrencyEntityModel>, ICurrencyRepository
 {
-    public CurrencyRepository(WheelsCatalogDbContext context, IEntityMapper<CurrencyEntity, CurrencyEntityModel> mapper) : base(context, mapper)
+    public CurrencyRepository(WheelsCatalogDbContext context, IMapper mapper) : base(context, mapper)
     {
     }
     

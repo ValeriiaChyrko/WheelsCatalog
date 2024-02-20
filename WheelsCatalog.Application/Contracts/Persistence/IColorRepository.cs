@@ -1,9 +1,9 @@
-﻿using WheelsCatalog.Application.contracts.persistence.common;
-using WheelsCatalog.Domain.CarAggregate.Entities;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Common;
+using WheelsCatalog.Domain.ColorAggregate;
 
-namespace WheelsCatalog.Application.contracts.persistence;
+namespace WheelsCatalog.Application.Contracts.Persistence;
 
-public interface IColorRepository : IGenericRepository<ColorEntity>
+public interface IColorRepository : IReadRepositoryBase<Color>
 {
     
 }

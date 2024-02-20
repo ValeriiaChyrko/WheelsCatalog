@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Domain.Common.Models;
 
-namespace WheelsCatalog.Domain.CarAggregate.ValueObjects;
+namespace WheelsCatalog.Domain.ColorAggregate.ValueObjects;
 
 public sealed class ColorId : ValueObject
 {

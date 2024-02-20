@@ -2,7 +2,7 @@
 
 namespace WheelsCatalog.Persistence.Models;
 
-public class CarPhotoEntityModel
+internal class CarPhotoEntityModel
 {
     [Key] public Guid Id { get; set; }
     

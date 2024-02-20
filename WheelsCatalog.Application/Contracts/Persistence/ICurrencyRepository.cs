@@ -1,9 +1,9 @@
-﻿using WheelsCatalog.Application.contracts.persistence.common;
-using WheelsCatalog.Domain.PriceHistoryAggregate.Entities;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Common;
+using WheelsCatalog.Domain.CurrencyAggregate;
 
-namespace WheelsCatalog.Application.contracts.persistence;
+namespace WheelsCatalog.Application.Contracts.Persistence;
 
-public interface ICurrencyRepository : IGenericRepository<CurrencyEntity>
+public interface ICurrencyRepository : IReadRepositoryBase<Currency>
 {
     
 }

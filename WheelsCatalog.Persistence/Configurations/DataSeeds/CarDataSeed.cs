@@ -4,7 +4,7 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class CarDataSeed
     {
-        public static List<CarEntityModel> SeedCars(List<BrandEntityModel> brands,
+        internal static List<CarEntityModel> SeedCars(List<BrandEntityModel> brands,
             List<ModelEntityModel> models, List<ColorEntityModel> colors)
         {
             var cars = new List<CarEntityModel>();

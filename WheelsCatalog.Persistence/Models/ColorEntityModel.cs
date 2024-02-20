@@ -2,7 +2,7 @@
 
 namespace WheelsCatalog.Persistence.Models;
 
-public class ColorEntityModel
+internal class ColorEntityModel
 {
     [Key] public Guid Id { get; set; }
     
@@ -11,4 +11,8 @@ public class ColorEntityModel
     
     [Required] [MaxLength(127)] 
     public string HexCode { get; set; }  = string.Empty;
+    
+    [Required] public DateTime CreateDateTime { get; set; }
+
+    [Required] public DateTime UpdateDateTime { get; set; }
 }

@@ -1,14 +1,14 @@
-﻿using WheelsCatalog.Application.contracts.persistence;
-using WheelsCatalog.Domain.CarAggregate.Entities;
-using WheelsCatalog.Persistence.Mappers.Common;
+﻿using AutoMapper;
+using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Domain.ColorAggregate;
 using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories.common;
 
 namespace WheelsCatalog.Persistence.Repositories;
 
-public class ColorRepository : GenericRepository<ColorEntity, ColorEntityModel>, IColorRepository
+internal class ColorRepository : GenericRepository<Color, ColorEntityModel>, IColorRepository
 {
-    public ColorRepository(WheelsCatalogDbContext context, IEntityMapper<ColorEntity, ColorEntityModel> mapper) : base(context, mapper)
+    public ColorRepository(WheelsCatalogDbContext context, IMapper mapper) : base(context, mapper)
     {
     }
     
