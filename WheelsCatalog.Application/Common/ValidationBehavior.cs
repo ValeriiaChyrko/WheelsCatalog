@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using MediatR;
-using WheelsCatalog.Application.common.exceptions;
+using WheelsCatalog.Application.Common.Exceptions;
 
-namespace WheelsCatalog.Application.common;
+namespace WheelsCatalog.Application.Common;
 
 public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

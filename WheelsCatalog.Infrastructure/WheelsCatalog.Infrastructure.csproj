@@ -10,4 +10,11 @@
       <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Firebase.Auth" Version="1.0.0" />
+      <PackageReference Include="Firebase.js" Version="2.1.2" />
+      <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    </ItemGroup>
+
 </Project>

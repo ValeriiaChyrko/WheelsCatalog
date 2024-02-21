@@ -24,11 +24,14 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
         if (entityModel != null) _context.Entry(entityModel).State = EntityState.Detached;
         return entityModel != null ? _mapper.Map<TEntity>(entityModel) : null;
     }
-
+    
     protected async Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
     {
-        return await _context.Set<TEntityModel>().Select(
-            entityModel => _mapper.Map<TEntity>(entityModel)).AsQueryable().Where(predicate).ToListAsync(cancellationToken);
+        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
+        return entityModels
+            .Select(entityModel => _mapper.Map<TEntity>(entityModel))
+            .Where(predicate.Compile()) 
+            .ToList();
     }
 
     public virtual async Task<ICollection<TEntity>> ListAsync(CancellationToken cancellationToken = default)
