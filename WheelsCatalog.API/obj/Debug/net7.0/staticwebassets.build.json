@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TDq+Rs3epSr5kJiaQRVhnP9fr7Jk9TIcIL94aFQuuyI=",
+  "Hash": "G2oIfdBU6OOg3e6/VF0jspRJzRrQclHuKInChBPneJg=",
   "Source": "WheelsCatalog.API",
   "BasePath": "_content/WheelsCatalog.API",
   "Mode": "Default",
@@ -1035,6 +1035,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\logo_e22b9c.jpg",
+      "SourceId": "WheelsCatalog.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\",
+      "BasePath": "_content/WheelsCatalog.API",
+      "RelativePath": "src/images/logo_e22b9c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\images\\logo_e22b9c.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\temp-photo_3fb311",
+      "SourceId": "WheelsCatalog.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\",
+      "BasePath": "_content/WheelsCatalog.API",
+      "RelativePath": "src/images/temp-photo_3fb311",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\images\\temp-photo_3fb311"
+    },
+    {
+      "Identity": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\updated file name_fd4a6a",
+      "SourceId": "WheelsCatalog.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\",
+      "BasePath": "_content/WheelsCatalog.API",
+      "RelativePath": "src/images/updated file name_fd4a6a",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\images\\updated file name_fd4a6a"
     }
   ]
 }

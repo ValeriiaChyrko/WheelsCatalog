@@ -1,7 +1,6 @@
 ﻿using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.Common.Models;
 using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
-using WheelsCatalog.Domain.PriceHistoryAggregate.Events;
 using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.PriceHistoryAggregate;
@@ -31,7 +30,6 @@ public sealed class PriceHistory : AggregateRoot<PriceHistoryId>
         var recordDateTime = DateTime.Now;
         
         var priceHistory = new PriceHistory(priceHistoryId, price, startDate, currencyId, carId, recordDateTime, recordDateTime);
-        priceHistory.AddDomainEvent(new PriceHistoryCreated(priceHistoryId, carId));
         return priceHistory;
     }
     
@@ -42,8 +40,6 @@ public sealed class PriceHistory : AggregateRoot<PriceHistoryId>
         CurrencyId = currencyId;
         CarId = carId;
         UpdateDateTime = DateTime.Now;
-        
-        AddDomainEvent(new PriceHistoryUpdated(Id, carId));
     }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.

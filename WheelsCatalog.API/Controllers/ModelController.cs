@@ -44,7 +44,7 @@ public class ModelController : ControllerBase
         return StatusCode(StatusCodes.Status200OK, result);
     }
     
-    [HttpGet("brands/{id:guid}/models")]
+    [HttpGet("/api/brands/{id:guid}/models")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

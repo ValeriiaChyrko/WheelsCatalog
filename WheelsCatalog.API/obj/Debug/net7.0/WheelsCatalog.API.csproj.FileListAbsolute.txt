@@ -92,3 +92,9 @@ C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\WheelsCatalogDbContext.cs
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\Firebase.Auth.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\Firebase.Storage.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\System.ServiceModel.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\WheelsCatalog.Infrastructure.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\WheelsCatalog.Infrastructure.pdb

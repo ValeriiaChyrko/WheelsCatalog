@@ -241,6 +241,18 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\logo_e22b9c.jpg",
+      "PackagePath": "staticwebassets\\src\\images\\logo_e22b9c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\temp-photo_3fb311",
+      "PackagePath": "staticwebassets\\src\\images"
+    },
+    {
+      "Id": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\updated file name_fd4a6a",
+      "PackagePath": "staticwebassets\\src\\images"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.WheelsCatalog.API.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

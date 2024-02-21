@@ -6,7 +6,7 @@ internal class CarEntityModel
 {
     [Key] public Guid Id { get; set; }
 
-    [Required] public int EngineVolume { get; set; }
+    [Required] public double EngineVolume { get; set; }
 
     [MaxLength(512)]
     public string? Description { get; set; }

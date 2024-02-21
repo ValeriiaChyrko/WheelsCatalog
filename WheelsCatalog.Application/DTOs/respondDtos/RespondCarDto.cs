@@ -3,6 +3,6 @@
 public class RespondCarDto
 {
     public Guid Id { get; set; } 
-    public int EngineVolume { get; set; }
+    public double EngineVolume { get; set; }
     public string? Description { get; set; }
 }

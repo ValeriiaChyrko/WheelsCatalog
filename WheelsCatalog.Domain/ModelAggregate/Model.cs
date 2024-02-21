@@ -1,6 +1,5 @@
 ﻿using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.Common.Models;
-using WheelsCatalog.Domain.ModelAggregate.Events;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Domain.ModelAggregate;
@@ -28,7 +27,6 @@ public sealed class Model : AggregateRoot<ModelId>
         var recordDateTime = DateTime.Now;
         
         var model = new Model(modelId, name, description, recordDateTime, recordDateTime, brandId);
-        model.AddDomainEvent(new ModelCreated(modelId, brandId));
         return model;
     }
     
@@ -38,8 +36,6 @@ public sealed class Model : AggregateRoot<ModelId>
         Description = description;
         BrandId = brandId;
         UpdateDateTime = DateTime.Now;
-        
-        AddDomainEvent(new ModelUpdated(Id, BrandId));
     }
 
 #pragma warning disable CS8618
