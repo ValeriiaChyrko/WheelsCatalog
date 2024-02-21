@@ -1,10 +1,10 @@
-﻿using WheelsCatalog.Application.dtos.sharedDtos;
+﻿using WheelsCatalog.Application.DTOs.sharedDtos;
 
-namespace WheelsCatalog.Application.dtos.requestsDtos;
+namespace WheelsCatalog.Application.DTOs.requestsDtos;
 
 public class RequestBrandDto
 {
-    public required string Name { get; set; } 
-    public required FileDto Logo { get; set; } 
+    public string? Name { get; set; } 
+    public FileDto? Logo { get; set; } 
     public string? Description { get; set; } 
 }

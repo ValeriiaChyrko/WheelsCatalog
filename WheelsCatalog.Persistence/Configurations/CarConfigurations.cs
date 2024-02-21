@@ -15,12 +15,6 @@ internal class CarConfigurations : IEntityTypeConfiguration<CarEntityModel>
             .OnDelete(DeleteBehavior.NoAction);
 
         builder
-            .HasOne(c => c.Brand)
-            .WithMany()
-            .HasForeignKey(c => c.BrandId)
-            .OnDelete(DeleteBehavior.NoAction);
-
-        builder
             .HasOne(c => c.Model)
             .WithMany()
             .HasForeignKey(c => c.ModelId)

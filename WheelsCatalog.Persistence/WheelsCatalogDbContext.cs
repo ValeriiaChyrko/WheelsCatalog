@@ -34,7 +34,7 @@ namespace WheelsCatalog.Persistence
             modelBuilder.Entity<ModelEntityModel>().HasData(models);
             var colors = ColorDataTableSeed.SeedColors();
             modelBuilder.Entity<ColorEntityModel>().HasData(colors);
-            var cars = CarDataSeed.SeedCars(brands, models, colors);
+            var cars = CarDataSeed.SeedCars(models, colors);
             modelBuilder.Entity<CarEntityModel>().HasData(cars);
             var carPhotos = CarPhotoDataSeed.SeedCarPhotos(cars);
             modelBuilder.Entity<CarPhotoEntityModel>().HasData(carPhotos);
@@ -43,15 +43,7 @@ namespace WheelsCatalog.Persistence
             var priceHistories = PriceHistoryDataSeed.SeedPriceHistories(currencies, cars);
             modelBuilder.Entity<PriceHistoryEntityModel>().HasData(priceHistories);
         }
-
-        public DbSet<BrandEntityModel> Brands { get; set; } = null!;
-        public DbSet<CarEntityModel> Cars { get; set; } = null!;
-        public DbSet<ModelEntityModel> Models { get; set; } = null!;
-        public DbSet<PriceHistoryEntityModel> PriceHistories { get; set; } = null!;
-        public DbSet<CarPhotoEntityModel> CarPhotos { get; set; } = null!;
-        public DbSet<ColorEntityModel> Colors { get; set; } = null!;
-        public DbSet<CurrencyEntityModel> Currencies { get; set; } = null!;
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.AddInterceptors(_publishDomainEventsInterceptor);

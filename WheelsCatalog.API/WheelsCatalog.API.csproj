@@ -17,11 +17,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
+      <ProjectReference Include="..\WheelsCatalog.Infrastructure\WheelsCatalog.Infrastructure.csproj" />
       <ProjectReference Include="..\WheelsCatalog.Persistence\WheelsCatalog.Persistence.csproj" />
     </ItemGroup>
 
@@ -33,6 +30,10 @@
       <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.0" />
       <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
       <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\src\images\" />
     </ItemGroup>
 
 </Project>

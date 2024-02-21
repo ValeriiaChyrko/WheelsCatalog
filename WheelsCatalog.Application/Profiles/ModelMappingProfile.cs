@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Application.DTOs.sharedDtos;
+using WheelsCatalog.Application.DTOs.requestsDtos;
+using WheelsCatalog.Application.DTOs.respondDtos;
+using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate;
+using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Application.profiles;
 
@@ -8,6 +11,14 @@ public class ModelMappingProfile : Profile
 {
     public ModelMappingProfile()
     {
-        CreateMap<ModelDto, Model>().ReverseMap();
+        CreateMap<RequestModelDto, Model>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => ModelId.CreateUnique()))
+            .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => BrandId.Create(src.BrandId!.Value)));
+        
+        CreateMap<RespondModelDto, Model>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => ModelId.CreateUnique()));
+        
+        CreateMap<Model, RespondModelDto>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
     }
 }

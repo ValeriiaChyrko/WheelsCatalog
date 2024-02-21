@@ -8,9 +8,9 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
-        services.AddScoped<IFileService, FileService>();
-        services.AddScoped<ILocalFileStorage, LocalFileStorage>();
-        services.AddScoped<ICloudFileStorage, CloudFileStorage>();
+        services.AddTransient<IFileService, FileService>();
+        services.AddTransient<ILocalFileStorage, LocalFileStorage>();
+        services.AddTransient<ICloudFileStorage, CloudFileStorage>();
 
         return services;
     }

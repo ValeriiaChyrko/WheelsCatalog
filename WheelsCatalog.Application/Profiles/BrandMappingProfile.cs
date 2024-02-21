@@ -1,27 +1,24 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Application.contracts.infrastructure.file;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.respondDtos;
-using WheelsCatalog.Application.DTOs.sharedDtos;
 using WheelsCatalog.Domain.BrandAggregate;
+using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 
 namespace WheelsCatalog.Application.profiles;
 
 public class BrandMappingProfile : Profile
 {
-    private readonly IFileService _fileService;
-
-    public BrandMappingProfile(IFileService fileService)
+    public BrandMappingProfile()
     {
-        _fileService = fileService;
-
         CreateMap<RequestBrandDto, Brand>()
-            .ForMember(dest => dest.LogoUrl, opt => opt.MapFrom(src => UploadImageAsync(src.Logo!)));
-        CreateMap<Brand, RespondBrandDto>().ReverseMap();
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => BrandId.CreateUnique()))
+            .ForMember(dest => dest.LogoUrl, opt => opt.Ignore());
+        
+        CreateMap<Brand, RespondBrandDto>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
+        
+        CreateMap<Brand, RespondBrandDtoDetails>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
     }
-
-    private async Task<string> UploadImageAsync(FileDto file)
-    {
-        return await _fileService.UploadImage(file);
-    }
+    
 }

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using WheelsCatalog.Application.dtos.sharedDtos.validators;
+using WheelsCatalog.Application.DTOs.sharedDtos.validators;
 
-namespace WheelsCatalog.Application.dtos.requestsDtos.validators;
+namespace WheelsCatalog.Application.DTOs.requestsDtos.validators;
 
 public class RequestBrandDtoValidator : AbstractValidator<RequestBrandDto>
 {
@@ -12,11 +12,12 @@ public class RequestBrandDtoValidator : AbstractValidator<RequestBrandDto>
     {
         RuleFor(p => p.Name)
             .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull()
+            .NotNull().WithMessage("{PropertyName} is required.")
             .MaximumLength(MaxLengthNameLength).WithMessage($"{{PropertyName}} must not exceed {MaxLengthNameLength} characters.");
         
         RuleFor(p => p.Logo)
-            .SetValidator(new FileDtoValidator());
+            .NotNull().WithMessage("{PropertyName} is required.")
+            .SetValidator(new FileDtoValidator()!);
         
         RuleFor(p => p.Description)
             .NotEmpty().WithMessage("{PropertyName} is required.")

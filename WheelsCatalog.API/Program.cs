@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
+using WheelsCatalog.API;
 using WheelsCatalog.API.Extensions;
 using WheelsCatalog.Application;
 using WheelsCatalog.Infrastructure;
@@ -12,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddPresentationServices();
 
 builder.Services.AddSwaggerGen(c =>
 {

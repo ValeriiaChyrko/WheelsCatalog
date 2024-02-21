@@ -16,10 +16,6 @@ internal class CarEntityModel
     public ColorEntityModel Color { get; set; } = null!;
 
     [Required]
-    public Guid BrandId { get; set; }
-    public BrandEntityModel Brand { get; set; } = null!;
-
-    [Required]
     public Guid ModelId { get; set; }
     public ModelEntityModel Model { get; set; } = null!;
     

@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Persistence.Interceptors;
-using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Repositories;
 
 namespace WheelsCatalog.Persistence;
@@ -18,16 +17,6 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString));
 
         services.AddScoped<PublishDomainEventsInterceptor>();
-        
-        services.AddAutoMapper(
-            typeof(BrandMappingProfile), 
-            typeof(CarMappingProfile),
-            typeof(CarPhotoEntityMappingProfile),
-            typeof(ColorEntityMappingProfile),
-            typeof(CurrencyMappingProfile),
-            typeof(ModelMappingProfile),
-            typeof(PriceHistoryMappingProfile)
-        );
         
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<ICarPhotoRepository, CarPhotoRepository>();

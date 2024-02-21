@@ -1,28 +1,20 @@
 ﻿using FluentValidation;
-using WheelsCatalog.Application.contracts.persistence;
-using WheelsCatalog.Application.dtos.sharedDtos.validators;
+using WheelsCatalog.Application.DTOs.sharedDtos.validators;
 
-namespace WheelsCatalog.Application.dtos.requestsDtos.validators;
+namespace WheelsCatalog.Application.DTOs.requestsDtos.validators;
 
 public class RequestCarPhotoDtoValidator : AbstractValidator<RequestCarPhotoDto>
 {
-    private readonly ICarPhotoRepository _repository;
     
-    public RequestCarPhotoDtoValidator(ICarPhotoRepository repository)
+    public RequestCarPhotoDtoValidator()
     {
-        _repository = repository;
         RuleFor(p => p.Photo)
-            .SetValidator(new FileDtoValidator());
+            .NotNull().WithMessage("{PropertyName} is required.")
+            .SetValidator(new FileDtoValidator()!);
         
         RuleFor(p => p.CarId)
-            .GreaterThan(0)
-            .MustAsync(ExistInRepository)
-            .WithMessage("{PropertyName} does not exist.");
-    }
-    
-    private async Task<bool> ExistInRepository(int id, CancellationToken token)
-    {
-        var exists = await _repository.IsExistAsync(id, token);
-        return exists;
+            .NotEmpty().WithMessage("{PropertyName} is required.")
+            .NotNull().WithMessage("{PropertyName} is required.")
+            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
     }
 }

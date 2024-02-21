@@ -1,9 +1,9 @@
-﻿using WheelsCatalog.Application.dtos.sharedDtos;
+﻿using WheelsCatalog.Application.DTOs.sharedDtos;
 
-namespace WheelsCatalog.Application.dtos.requestsDtos;
+namespace WheelsCatalog.Application.DTOs.requestsDtos;
 
 public class RequestCarPhotoDto
 {
-    public required int CarId { get; set; } 
-    public required FileDto Photo { get; set; } 
+    public FileDto? Photo { get; set; } 
+    public Guid? CarId { get; set; } 
 }

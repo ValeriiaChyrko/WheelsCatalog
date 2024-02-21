@@ -4,15 +4,13 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
 {
     public static class CarDataSeed
     {
-        internal static List<CarEntityModel> SeedCars(List<BrandEntityModel> brands,
-            List<ModelEntityModel> models, List<ColorEntityModel> colors)
+        internal static List<CarEntityModel> SeedCars(List<ModelEntityModel> models, List<ColorEntityModel> colors)
         {
             var cars = new List<CarEntityModel>();
             var random = new Random();
 
             for (var i = 0; i < 20; i++)
             {
-                var brandId = brands[random.Next(brands.Count)].Id;
                 var modelId = models[random.Next(models.Count)].Id;
                 var colorId = colors[random.Next(colors.Count)].Id;
 
@@ -27,7 +25,6 @@ namespace WheelsCatalog.Persistence.Configurations.DataSeeds
                     EngineVolume = engineVolume,
                     Description = description,
                     ColorId = colorId,
-                    BrandId = brandId,
                     ModelId = modelId,
                     CreateDateTime = createDateTime,
                     UpdateDateTime = updateDateTime
