@@ -43,6 +43,8 @@ public static class AutoMapperConfiguration
         cfg.AddProfile(new ModelMappingProfile());
         cfg.AddProfile(new CarMappingProfile());
         cfg.AddProfile(new PriceMappingProfile());
+        cfg.AddProfile(new ColorMappingProfile());
+        cfg.AddProfile(new CurrencyMappingProfile());
     }
 }
 
