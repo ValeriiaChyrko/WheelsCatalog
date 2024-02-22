@@ -45,17 +45,47 @@ public class CarController : ControllerBase
         return StatusCode(StatusCodes.Status200OK, result);
     }
     
-    [HttpGet("/api/models/{id:guid}/cars")]
+    [HttpGet("/api/models/{modelId:guid}/cars")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByModel(Guid? id)
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByModel(Guid? modelId)
     {
-        if (id == null)
-            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting models.");
+        if (modelId == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
         
-        var command = new GetCarDtoListByModelRequest { Id = id };
+        var command = new GetCarDtoListByModelRequest { Id = modelId };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/colors/{colorId:guid}/cars")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByColor(Guid? colorId)
+    {
+        if (colorId == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+        
+        var command = new GetCarDtoListByColorRequest { Id = colorId };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/brands/{brandId:guid}/cars")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByBrand(Guid? brandId)
+    {
+        if (brandId == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+        
+        var command = new GetCarDtoListByBrandRequest { Id = brandId };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

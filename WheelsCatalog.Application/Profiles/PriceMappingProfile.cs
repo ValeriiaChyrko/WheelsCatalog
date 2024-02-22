@@ -23,6 +23,6 @@ public class PriceMappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value))
             .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Price))
             .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.StartDate));
-
+        
     }
 }

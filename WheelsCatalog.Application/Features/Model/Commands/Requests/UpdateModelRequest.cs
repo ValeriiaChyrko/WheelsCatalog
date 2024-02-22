@@ -7,5 +7,5 @@ namespace WheelsCatalog.Application.Features.Model.Commands.Requests;
 public class UpdateModelRequest : IRequest<ModelId>
 {
     public Guid? Id { get; init; }
-    public required RequestModelDto? ModelDto { get; init; }
+    public RequestModelDto? ModelDto { get; init; }
 }
