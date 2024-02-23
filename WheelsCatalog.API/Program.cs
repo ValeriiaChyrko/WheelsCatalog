@@ -15,6 +15,16 @@ builder.Services.AddInfrastructureServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddPresentationServices();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMyOrigin", p =>
+    {
+        p.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "WheelsCatalog API v1", Version = "v1" });
