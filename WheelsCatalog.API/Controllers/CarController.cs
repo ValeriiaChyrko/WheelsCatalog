@@ -30,6 +30,15 @@ public class CarController : ControllerBase
         return StatusCode(StatusCodes.Status200OK, result);
     }
     
+    [HttpGet("details")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetWithDependencies()
+    {
+        var result = await _mediator.Send(new GetCarDtoListDetailsRequest());
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
     [HttpGet("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

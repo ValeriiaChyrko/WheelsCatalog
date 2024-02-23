@@ -8,4 +8,5 @@ public class RespondCarDtoDetails
     public string ModelName { get; set; } = string.Empty;
     public string ColorName { get; set; } = string.Empty;
     public List<string>? PhotoUrl { get; set; }
+    public RespondPriceDto? Price { get; set; }
 }

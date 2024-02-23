@@ -19,7 +19,7 @@ public class CarMappingProfile : Profile
 
         CreateMap<Car, RespondCarDto>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
-        
+
         CreateMap<Car, RespondCarDtoDetails>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
     }

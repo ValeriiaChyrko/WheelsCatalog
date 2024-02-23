@@ -11,13 +11,17 @@ public class GetCarDtoDetailsHandler : IRequestHandler<GetCarDtoDetailsRequest, 
 {
     private readonly ICarRepository _carRepository;
     private readonly ICarPhotoRepository _carPhotoRepository;
+    private readonly IPriceHistoryRepository _priceHistoryRepository;
+    private readonly ICurrencyRepository _currencyRepository;
     private readonly IMapper _mapper;
 
-    public GetCarDtoDetailsHandler(IMapper mapper, ICarRepository carRepository, ICarPhotoRepository carPhotoRepository)
+    public GetCarDtoDetailsHandler(IMapper mapper, ICarRepository carRepository, ICarPhotoRepository carPhotoRepository, IPriceHistoryRepository priceHistoryRepository, ICurrencyRepository currencyRepository)
     {
         _mapper = mapper;
         _carRepository = carRepository;
         _carPhotoRepository = carPhotoRepository;
+        _priceHistoryRepository = priceHistoryRepository;
+        _currencyRepository = currencyRepository;
     }
 
     public async Task<RespondCarDtoDetails> Handle(GetCarDtoDetailsRequest request, CancellationToken cancellationToken)
@@ -31,6 +35,11 @@ public class GetCarDtoDetailsHandler : IRequestHandler<GetCarDtoDetailsRequest, 
 
         var photos = await _carPhotoRepository.GetAllPhotosByCarIdName(car.Id);
         respond.PhotoUrl = photos.Select(entity => entity.PhotoUrl).ToList();
+
+        var price = await _priceHistoryRepository.GetActualPriceByCarIdAsync(car.Id, cancellationToken);
+        respond.Price = _mapper.Map<RespondPriceDto>(price);
+        if (price != null) respond.Price.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(price.CurrencyId) ??
+                                                           throw new InvalidOperationException();
 
         return respond;
     }

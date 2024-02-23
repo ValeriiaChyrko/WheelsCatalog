@@ -35,6 +35,21 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
             .Where(predicate.Compile())
             .ToList();
     }
+    
+    protected async Task<ICollection<TEntity>> ListAsync(
+        Func<IQueryable<TEntityModel>, IQueryable<TEntityModel>>? include = null,
+        CancellationToken cancellationToken = default)
+    {
+        IQueryable<TEntityModel> query = _context.Set<TEntityModel>();
+        if (include != null) query = include(query);
+
+        var entityModels = await query
+            .ToListAsync(cancellationToken);
+
+        return entityModels
+            .Select(entityModel => _mapper.Map<TEntity>(entityModel))
+            .ToList();
+    }
 
     public virtual async Task<ICollection<TEntity>> ListAsync(CancellationToken cancellationToken = default)
     {

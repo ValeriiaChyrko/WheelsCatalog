@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Domain.CarAggregate;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
