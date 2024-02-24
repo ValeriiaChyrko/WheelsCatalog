@@ -12,7 +12,7 @@ using WheelsCatalog.Persistence;
 namespace WheelsCatalog.Persistence.Migrations
 {
     [DbContext(typeof(WheelsCatalogDbContext))]
-    [Migration("20240221164611_TableCreate")]
+    [Migration("20240224130503_TableCreate")]
     partial class TableCreate
     {
         /// <inheritdoc />
