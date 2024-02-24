@@ -31,7 +31,7 @@ public class WheelsCatalogDbContext : DbContext
     {
         var brands = BrandDataTableSeed.SeedBrands();
         modelBuilder.Entity<BrandEntityModel>().HasData(brands);
-        var models = ModelDataSeed.SeedModels(brands);
+        var models = ModelTableDataSeed.SeedModels(brands);
         modelBuilder.Entity<ModelEntityModel>().HasData(models);
         var colors = ColorDataTableSeed.SeedColors();
         modelBuilder.Entity<ColorEntityModel>().HasData(colors);
