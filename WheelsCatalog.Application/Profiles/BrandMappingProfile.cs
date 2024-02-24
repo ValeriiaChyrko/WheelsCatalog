@@ -4,7 +4,7 @@ using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Domain.BrandAggregate;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class BrandMappingProfile : Profile
 {

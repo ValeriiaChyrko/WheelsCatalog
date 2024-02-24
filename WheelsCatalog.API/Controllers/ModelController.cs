@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WheelsCatalog.Application.Common.Exceptions;
+using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Model.Commands.Requests;
@@ -23,9 +25,10 @@ public class ModelController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondModelDto>>> Get()
+    public async Task<ActionResult<PaginatedList<RespondModelDto>>> Get([FromQuery] PaginationParameters? paginationParams)
     {
-        var result = await _mediator.Send(new GetModelDtoListRequest());
+        var command = new GetModelDtoListRequest { PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
 

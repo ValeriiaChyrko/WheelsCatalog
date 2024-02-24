@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WheelsCatalog.Application.contracts.infrastructure.file;
+using WheelsCatalog.Application.Contracts.Infrastructure.File;
 using WheelsCatalog.Infrastructure.file;
 
 namespace WheelsCatalog.Infrastructure;

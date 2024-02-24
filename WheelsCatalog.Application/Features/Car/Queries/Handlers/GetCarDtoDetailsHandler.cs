@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Car.Queries.Requests;
 
@@ -30,8 +30,8 @@ public class GetCarDtoDetailsHandler : IRequestHandler<GetCarDtoDetailsRequest, 
         if (car == null) throw new NotFoundRequestException(request.Id!.Value);
 
         var respond = _mapper.Map<RespondCarDtoDetails>(car);
-        respond.ModelName = _carRepository.GetCarModelName(car.Id) ?? throw new InvalidOperationException();
-        respond.ColorName = _carRepository.GetCarColorName(car.Id) ?? throw new InvalidOperationException();
+        respond.ModelName = await _carRepository.GetCarModelNameAsync(car.ModelId, cancellationToken) ?? throw new InvalidOperationException();
+        respond.ColorName = await _carRepository.GetCarColorNameAsync(car.ColorId, cancellationToken) ?? throw new InvalidOperationException();
 
         var photos = await _carPhotoRepository.GetAllPhotosByCarIdName(car.Id);
         respond.PhotoUrl = photos.Select(entity => entity.PhotoUrl).ToList();

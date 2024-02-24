@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Moq;
 using NUnit.Framework;
-using WheelsCatalog.Application.contracts.infrastructure.file;
+using WheelsCatalog.Application.Contracts.Infrastructure.File;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.sharedDtos;
-using WheelsCatalog.Application.profiles;
+using WheelsCatalog.Application.Profiles;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 
 namespace WheelsCatalog.Application.Tests.Mappers;

@@ -1,7 +1,7 @@
 ﻿using Firebase.Auth;
 using Firebase.Storage;
 using Microsoft.Extensions.Configuration;
-using WheelsCatalog.Application.contracts.infrastructure.file;
+using WheelsCatalog.Application.Contracts.Infrastructure.File;
 
 namespace WheelsCatalog.Infrastructure.file;
 

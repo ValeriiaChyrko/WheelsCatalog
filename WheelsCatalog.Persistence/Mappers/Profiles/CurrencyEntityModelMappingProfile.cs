@@ -14,6 +14,5 @@ public class CurrencyEntityModelMappingProfile : Profile
 
         CreateMap<CurrencyEntityModel, Currency>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => CurrencyId.Create(src.Id)));
-
     }
 }

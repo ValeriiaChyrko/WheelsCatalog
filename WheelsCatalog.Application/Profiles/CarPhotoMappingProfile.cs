@@ -3,7 +3,7 @@ using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class CarPhotoMappingProfile : Profile
 {

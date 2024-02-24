@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.respondDtos;
-using WheelsCatalog.Application.profiles;
+using WheelsCatalog.Application.Profiles;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Domain.PriceHistoryAggregate;

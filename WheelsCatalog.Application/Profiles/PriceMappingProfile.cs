@@ -6,7 +6,7 @@ using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
 using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class PriceMappingProfile : Profile
 {

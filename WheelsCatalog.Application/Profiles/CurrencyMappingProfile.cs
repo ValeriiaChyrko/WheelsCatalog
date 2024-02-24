@@ -2,7 +2,7 @@
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Domain.CurrencyAggregate;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class CurrencyMappingProfile : Profile
 {

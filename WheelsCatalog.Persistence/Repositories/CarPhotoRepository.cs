@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Models;
@@ -12,13 +12,13 @@ internal class CarPhotoRepository : GenericRepository<CarPhotoEntity, CarPhotoEn
 {
     private readonly WheelsCatalogDbContext _context;
     private readonly IMapper _mapper;
-    
+
     public CarPhotoRepository(WheelsCatalogDbContext context, IMapper mapper) : base(context, mapper)
     {
         _context = context;
         _mapper = mapper;
     }
-    
+
     public async Task<IEnumerable<CarPhotoEntity>> GetAllPhotosByCarIdName(CarId carId)
     {
         var photos = await _context.Set<CarPhotoEntityModel>()

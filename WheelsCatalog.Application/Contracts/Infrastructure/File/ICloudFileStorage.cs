@@ -1,4 +1,4 @@
-﻿namespace WheelsCatalog.Application.contracts.infrastructure.file;
+﻿namespace WheelsCatalog.Application.Contracts.Infrastructure.File;
 
 public interface ICloudFileStorage
 {

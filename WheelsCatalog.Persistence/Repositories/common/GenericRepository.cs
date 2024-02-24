@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using WheelsCatalog.Application.Contracts.Persistence.Common;
+using WheelsCatalog.Application.Contracts.Persistence.Repository.Common;
 
 namespace WheelsCatalog.Persistence.Repositories.common;
 
@@ -26,6 +26,34 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
         return entityModel != null ? _mapper.Map<TEntity>(entityModel) : null;
     }
 
+    public virtual async Task<ICollection<TEntity>> ListAsync(CancellationToken cancellationToken = default)
+    {
+        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
+        return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
+    }
+    
+    public virtual async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, CancellationToken cancellationToken = default)
+    {
+        var entityModels = await _context.Set<TEntityModel>()
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize) 
+            .ToListAsync(cancellationToken);
+
+        return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
+    }
+    
+    protected async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, Expression<Func<TEntity, bool>> predicate,
+        CancellationToken cancellationToken = default)
+    {
+        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
+        return entityModels
+            .Select(entityModel => _mapper.Map<TEntity>(entityModel))
+            .Where(predicate.Compile())
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+    }
+    
     protected async Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntity, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
@@ -35,31 +63,32 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
             .Where(predicate.Compile())
             .ToList();
     }
-    
-    protected async Task<ICollection<TEntity>> ListAsync(
+
+    protected async Task<ICollection<TEntityModel>> ListAsync<TProperty>(
         Func<IQueryable<TEntityModel>, IQueryable<TEntityModel>>? include = null,
+        Expression<Func<TEntityModel, TProperty>>? navigationPropertyPath = null,
         CancellationToken cancellationToken = default)
+        where TProperty : class
     {
         IQueryable<TEntityModel> query = _context.Set<TEntityModel>();
-        if (include != null) query = include(query);
+        if (include != null)
+        {
+            query = navigationPropertyPath != null ? include(query).Include(navigationPropertyPath) : include(query);
+        }
 
-        var entityModels = await query
-            .ToListAsync(cancellationToken);
+        var entityModels = await query.ToListAsync(cancellationToken);
 
-        return entityModels
-            .Select(entityModel => _mapper.Map<TEntity>(entityModel))
-            .ToList();
-    }
-
-    public virtual async Task<ICollection<TEntity>> ListAsync(CancellationToken cancellationToken = default)
-    {
-        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
-        return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
+        return entityModels;
     }
 
     public virtual async Task<int> CountAsync(CancellationToken cancellationToken = default)
     {
         return await _context.Set<TEntityModel>().CountAsync(cancellationToken);
+    }
+
+    protected async Task<int> CountAsync(Expression<Func<TEntityModel, bool>> predicate, CancellationToken cancellationToken = default)
+    {
+        return await _context.Set<TEntityModel>().CountAsync(predicate, cancellationToken);
     }
 
     public virtual async Task<bool> AnyAsync(CancellationToken cancellationToken = default)

@@ -11,12 +11,11 @@ public static class ModelDataSeed
         var random = new Random();
 
         foreach (var brand in brands)
-        {
             for (var i = 0; i < 3; i++)
             {
                 var modelName = $"Model{i + 1} for {brand.Name}";
                 var modelDescription = $"Description for {modelName}";
-                
+
                 var createDateTime = DateTime.UtcNow.AddDays(-random.Next(1, 365));
                 var updateDateTime = createDateTime.AddDays(random.Next(1, 365));
 
@@ -31,7 +30,6 @@ public static class ModelDataSeed
                 };
                 models.Add(model);
             }
-        }
 
         return models;
     }

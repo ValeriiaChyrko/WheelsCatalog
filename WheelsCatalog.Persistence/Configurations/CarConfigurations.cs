@@ -19,12 +19,12 @@ internal class CarConfigurations : IEntityTypeConfiguration<CarEntityModel>
             .WithMany()
             .HasForeignKey(c => c.ModelId)
             .OnDelete(DeleteBehavior.NoAction);
-        
+
         builder
             .HasMany(c => c.Photos)
             .WithOne(p => p.Car)
             .HasForeignKey(p => p.CarId);
-        
+
         builder
             .HasMany(c => c.PriceHistories)
             .WithOne(p => p.Car)

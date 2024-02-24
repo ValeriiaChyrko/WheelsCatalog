@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WheelsCatalog.Application.Common.Exceptions;
+using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Color.Queries.Requests;
 
@@ -21,9 +23,10 @@ public class ColorController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondColorDto>>> Get()
+    public async Task<ActionResult<PaginatedList<RespondColorDto>>> Get([FromQuery] PaginationParameters? paginationParams)
     {
-        var result = await _mediator.Send(new GetColorDtoListRequest());
+        var command = new GetColorDtoListRequest { PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
 

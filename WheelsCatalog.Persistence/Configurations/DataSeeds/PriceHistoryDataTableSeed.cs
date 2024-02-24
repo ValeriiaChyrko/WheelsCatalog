@@ -1,41 +1,41 @@
 ﻿using WheelsCatalog.Persistence.Models;
 
-namespace WheelsCatalog.Persistence.Configurations.DataSeeds
+namespace WheelsCatalog.Persistence.Configurations.DataSeeds;
+
+public static class PriceHistoryDataSeed
 {
-    public static class PriceHistoryDataSeed
+    internal static List<PriceHistoryEntityModel> SeedPriceHistories(List<CurrencyEntityModel> currencies,
+        List<CarEntityModel> cars)
     {
-        internal static List<PriceHistoryEntityModel> SeedPriceHistories(List<CurrencyEntityModel> currencies, List<CarEntityModel> cars)
+        var random = new Random();
+        var histories = new List<PriceHistoryEntityModel>();
+
+        foreach (var car in cars)
         {
-            var random = new Random();
-            var histories = new List<PriceHistoryEntityModel>();
+            var numHistories = random.Next(0, 5);
 
-            foreach (var car in cars)
+            for (var i = 0; i < numHistories; i++)
             {
-                var numHistories = random.Next(0, 5);
+                var price = random.Next(10, 1000);
+                var startDate = DateTime.UtcNow.AddDays(-random.Next(1, 365));
+                var createDateTime = DateTime.UtcNow.AddDays(-random.Next(1, 30));
+                var updateDateTime = createDateTime.AddHours(random.Next(1, 24));
 
-                for (var i = 0; i < numHistories; i++)
+                var randomCurrency = currencies.ElementAt(random.Next(0, currencies.Count()));
+
+                histories.Add(new PriceHistoryEntityModel
                 {
-                    var price = random.Next(10, 1000);
-                    var startDate = DateTime.UtcNow.AddDays(-random.Next(1, 365));
-                    var createDateTime = DateTime.UtcNow.AddDays(-random.Next(1, 30));
-                    var updateDateTime = createDateTime.AddHours(random.Next(1, 24));
-                    
-                    var randomCurrency = currencies.ElementAt(random.Next(0, currencies.Count()));
-
-                    histories.Add(new PriceHistoryEntityModel
-                    {
-                        Id = Guid.NewGuid(),
-                        Price = price,
-                        StartDate = startDate,
-                        CurrencyId = randomCurrency.Id,
-                        CarId = car.Id,
-                        CreateDateTime = createDateTime,
-                        UpdateDateTime = updateDateTime
-                    });
-                }
+                    Id = Guid.NewGuid(),
+                    Price = price,
+                    StartDate = startDate,
+                    CurrencyId = randomCurrency.Id,
+                    CarId = car.Id,
+                    CreateDateTime = createDateTime,
+                    UpdateDateTime = updateDateTime
+                });
             }
-
-            return histories;
         }
+
+        return histories;
     }
 }

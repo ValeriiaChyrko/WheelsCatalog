@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Application.profiles;
+using WheelsCatalog.Application.Profiles;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 
 namespace WheelsCatalog.API;

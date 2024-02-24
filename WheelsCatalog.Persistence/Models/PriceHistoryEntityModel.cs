@@ -10,16 +10,13 @@ internal class PriceHistoryEntityModel
 
     [Required] public DateTime StartDate { get; set; }
 
-    [Required]
-    public Guid CurrencyId { get; set; }
+    [Required] public Guid CurrencyId { get; set; }
     public CurrencyEntityModel Currency { get; set; } = null!;
-    
-    [Required]
-    public Guid CarId { get; set; }
+
+    [Required] public Guid CarId { get; set; }
     public CarEntityModel Car { get; set; } = null!;
 
     [Required] public DateTime CreateDateTime { get; set; }
 
     [Required] public DateTime UpdateDateTime { get; set; }
-        
 }

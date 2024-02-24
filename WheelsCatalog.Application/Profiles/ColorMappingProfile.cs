@@ -2,7 +2,7 @@
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Domain.ColorAggregate;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class ColorMappingProfile : Profile
 {

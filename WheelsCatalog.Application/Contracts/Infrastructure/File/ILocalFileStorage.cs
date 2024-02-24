@@ -1,6 +1,6 @@
 ﻿using WheelsCatalog.Application.DTOs.sharedDtos;
 
-namespace WheelsCatalog.Application.contracts.infrastructure.file;
+namespace WheelsCatalog.Application.Contracts.Infrastructure.File;
 
 public interface ILocalFileStorage
 {

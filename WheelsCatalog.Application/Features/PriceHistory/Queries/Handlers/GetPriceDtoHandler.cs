@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.PriceHistory.Queries.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;

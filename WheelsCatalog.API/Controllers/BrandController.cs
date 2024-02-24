@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WheelsCatalog.Application.Common.Exceptions;
+using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Brand.Commands.Requests;
@@ -23,9 +25,10 @@ public class BrandController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondBrandDto>>> Get()
+    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> Get([FromQuery] PaginationParameters? paginationParams)
     {
-        var result = await _mediator.Send(new GetBrandDtoListRequest());
+        var command = new GetBrandDtoListRequest { PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
 
@@ -34,7 +37,7 @@ public class BrandController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<RespondBrandDto>> Get(Guid? id)
+    public async Task<ActionResult<RespondBrandDto>> Get([FromRoute] Guid? id)
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting brand.");
@@ -49,7 +52,7 @@ public class BrandController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<RespondBrandDtoDetails>> GetDetails(Guid? id)
+    public async Task<ActionResult<RespondBrandDtoDetails>> GetDetails([FromQuery] Guid? id)
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting brand.");

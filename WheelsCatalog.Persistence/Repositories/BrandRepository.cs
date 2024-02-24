@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Domain.BrandAggregate;
 using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories.common;
@@ -11,5 +11,4 @@ internal class BrandRepository : GenericRepository<Brand, BrandEntityModel>, IBr
     public BrandRepository(WheelsCatalogDbContext context, IMapper mapper) : base(context, mapper)
     {
     }
-    
 }

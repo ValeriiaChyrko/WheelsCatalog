@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Domain.CurrencyAggregate;
 using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Models;
@@ -10,6 +10,7 @@ namespace WheelsCatalog.Persistence.Repositories;
 internal class CurrencyRepository : GenericRepository<Currency, CurrencyEntityModel>, ICurrencyRepository
 {
     private readonly WheelsCatalogDbContext _context;
+
     public CurrencyRepository(WheelsCatalogDbContext context, IMapper mapper) : base(context, mapper)
     {
         _context = context;

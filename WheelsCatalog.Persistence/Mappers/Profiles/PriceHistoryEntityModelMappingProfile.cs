@@ -20,6 +20,5 @@ public class PriceHistoryEntityModelMappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => PriceHistoryId.Create(src.Id)))
             .ForMember(dest => dest.CurrencyId, opt => opt.MapFrom(src => CurrencyId.Create(src.CurrencyId)))
             .ForMember(dest => dest.CarId, opt => opt.MapFrom(src => CarId.Create(src.CarId)));
-        
     }
 }

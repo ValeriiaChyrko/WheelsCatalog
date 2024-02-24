@@ -7,19 +7,21 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.16" />
-        <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.16"/>
+        <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Remove="Configurations\DatabaseInitializer.cs" />
+        <Compile Remove="Configurations\DatabaseInitializer.cs"/>
         <Compile Update="WheelsCatalogDbContext.cs">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Compile>
     </ItemGroup>
 
-
+    <ItemGroup>
+        <Folder Include="Specification\"/>
+    </ItemGroup>
 
 </Project>

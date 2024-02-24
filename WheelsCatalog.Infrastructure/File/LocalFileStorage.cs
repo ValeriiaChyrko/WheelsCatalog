@@ -1,5 +1,5 @@
 ﻿using Microsoft.CSharp.RuntimeBinder;
-using WheelsCatalog.Application.contracts.infrastructure.file;
+using WheelsCatalog.Application.Contracts.Infrastructure.File;
 using WheelsCatalog.Application.DTOs.sharedDtos;
 
 namespace WheelsCatalog.Infrastructure.file;

@@ -84,7 +84,7 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<RespondBrandDto>> Get(Guid? carId, DateTime? dateTime)
+    public async Task<ActionResult<RespondBrandDto>> GetByCar(Guid? carId, DateTime? dateTime)
     {
         if (dateTime == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting price.");

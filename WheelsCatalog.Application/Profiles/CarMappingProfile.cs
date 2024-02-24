@@ -6,7 +6,7 @@ using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class CarMappingProfile : Profile
 {

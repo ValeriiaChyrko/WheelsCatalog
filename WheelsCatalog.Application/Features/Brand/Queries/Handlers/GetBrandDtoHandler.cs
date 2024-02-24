@@ -2,6 +2,7 @@
 using MediatR;
 using WheelsCatalog.Application.Common.Exceptions;
 using WheelsCatalog.Application.Contracts.Persistence;
+using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Brand.Queries.Requests;
 

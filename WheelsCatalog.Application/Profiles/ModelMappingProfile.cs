@@ -5,7 +5,7 @@ using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
-namespace WheelsCatalog.Application.profiles;
+namespace WheelsCatalog.Application.Profiles;
 
 public class ModelMappingProfile : Profile
 {
