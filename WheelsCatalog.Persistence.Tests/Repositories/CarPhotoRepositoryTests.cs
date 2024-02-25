@@ -1,11 +1,8 @@
 using AutoMapper;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Domain.CarAggregate.Entities;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
-using WheelsCatalog.Persistence.Interceptors;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
@@ -25,8 +22,6 @@ public class CarPhotoRepositoryTests
         var options = new DbContextOptionsBuilder<WheelsCatalogDbContext>()
             .UseInMemoryDatabase(databaseName: "TestDatabase")
             .Options;
-        var mediatorMock = new Mock<IMediator>();
-        var interceptor = new PublishDomainEventsInterceptor(mediatorMock.Object);
 
         var mapperConfig = new MapperConfiguration(cfg =>
         {
@@ -35,7 +30,7 @@ public class CarPhotoRepositoryTests
 
         _mapper = mapperConfig.CreateMapper();
 
-        _dbContext = new WheelsCatalogDbContext(options, interceptor);
+        _dbContext = new WheelsCatalogDbContext(options);
         _carPhotoRepository = new CarPhotoRepository(_dbContext, _mapper);
     }
 

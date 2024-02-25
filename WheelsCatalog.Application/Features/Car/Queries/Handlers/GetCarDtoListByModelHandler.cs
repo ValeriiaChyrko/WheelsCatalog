@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using WheelsCatalog.Application.Common;
 using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
@@ -21,15 +22,15 @@ public class GetCarDtoListByModelHandler : IRequestHandler<GetCarDtoListByModelR
 
     public async Task<PaginatedList<RespondCarDto>> Handle(GetCarDtoListByModelRequest request, CancellationToken cancellationToken)
     {
-        var modelId = ModelId.Create(request.Id!.Value);
+        var paginationParameters = request.PaginationParameters;
+        var pageSize = paginationParameters?.Limit ?? Constants.DefaultPageSize;
+        var pageNumber = paginationParameters?.Page ?? Constants.DefaultPageNumber;
         
-        var totalItems = await _repository.CountByModelIdAsync(modelId, cancellationToken);
-        var pageSize = request.PaginationParameters?.Limit == 0 ? totalItems : request.PaginationParameters!.Limit;
-        var pageNumber = request.PaginationParameters?.Page == 0 ? 1 : request.PaginationParameters!.Page;
+        var modelId = ModelId.Create(request.Id!.Value);
         
         var carsByModel = await _repository.GetAllByModelIdAsync(pageNumber, pageSize, modelId, cancellationToken);
         var respondCarDtos = _mapper.Map<List<RespondCarDto>>(carsByModel);
 
-        return new PaginatedList<RespondCarDto>(respondCarDtos, pageSize, pageNumber, totalItems);
+        return new PaginatedList<RespondCarDto>(respondCarDtos, pageNumber);
     }
 }

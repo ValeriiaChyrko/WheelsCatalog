@@ -22,4 +22,18 @@ internal class ModelRepository : GenericRepository<Model, ModelEntityModel>, IMo
 
         return models;
     }
+
+    public async Task<int> CountByBrandIdAsync(BrandId brandId, CancellationToken cancellationToken = default)
+    {
+        var modelEntityByBrandCount = await CountAsync(modelEntity => modelEntity.BrandId == brandId.Value, cancellationToken);
+        return modelEntityByBrandCount;
+    }
+
+    public async Task<ICollection<Model>> GetAllByBrandIdAsync(int pageNumber, int pageSize, BrandId brandId, CancellationToken cancellationToken = default)
+    {
+        Expression<Func<Model, bool>> predicate = model => model.BrandId == brandId;
+        var models = await ListAsync(pageNumber, pageSize, predicate, cancellationToken);
+
+        return models;
+    }
 }

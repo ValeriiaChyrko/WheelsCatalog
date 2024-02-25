@@ -25,9 +25,20 @@ public class ModelController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<RespondModelDto>>> Get([FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<PaginatedList<RespondModelDto>>> Get(
+        [FromQuery] PaginationParameters? paginationParams)
     {
         var command = new GetModelDtoListRequest { PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<PaginatedList<RespondModelDto>>> GetAmount()
+    {
+        var command = new GetModelDtoListCountRequest();
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -41,23 +52,39 @@ public class ModelController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting model.");
-        
-        var command = new GetModelDtoRequest() { Id = id };
+
+        var command = new GetModelDtoRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpGet("/api/brands/{id:guid}/models")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondModelDto>>> GetModelsByBrand(Guid? id)
+    public async Task<ActionResult<IEnumerable<RespondModelDto>>> GetModelsByBrand(Guid? id, 
+        [FromQuery] PaginationParameters? paginationParams)
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting models.");
-        
-        var command = new GetModelDtoListByBrandRequest() { Id = id };
+
+        var command = new GetModelDtoListByBrandRequest { Id = id, PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/brands/{id:guid}/models/count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> GetModelsByBrandAmount(Guid? id)
+    {
+        if (id == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting models.");
+
+        var command = new GetModelDtoListByBrandCountRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -71,7 +98,7 @@ public class ModelController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with model creation.");
-        
+
         var command = new CreateModelRequest { ModelDto = request };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status201Created, result.Value);
@@ -86,7 +113,7 @@ public class ModelController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with model deletion.");
-        
+
         var command = new DeleteModelRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
@@ -100,7 +127,7 @@ public class ModelController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with model updating.");
-        
+
         var command = new UpdateModelRequest { Id = id, ModelDto = request };
         var response = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, response.Value);

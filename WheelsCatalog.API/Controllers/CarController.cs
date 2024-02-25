@@ -26,13 +26,24 @@ public class CarController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<RespondCarDto>>> Get([FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<PaginatedList<RespondCarDto>>> Get(
+        [FromQuery] PaginationParameters? paginationParams)
     {
         var command = new GetCarDtoListRequest { PaginationParameters = paginationParams };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
     
+    [HttpGet("count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> GetBrandsAmount()
+    {
+        var command = new GetCarDtoListCountRequest();
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+
     [HttpGet("details")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -41,7 +52,7 @@ public class CarController : ControllerBase
         var result = await _mediator.Send(new GetCarDtoListDetailsRequest());
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpGet("{id:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -51,53 +62,131 @@ public class CarController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
-        
-        var command = new GetCarDtoRequest() { Id = id };
+
+        var command = new GetCarDtoRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpGet("/api/models/{modelId:guid}/cars")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByModel(Guid? modelId, [FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByModel(Guid? modelId,
+        [FromQuery] PaginationParameters? paginationParams)
     {
         if (modelId == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
-        
-        var command = new GetCarDtoListByModelRequest { Id = modelId, PaginationParameters = paginationParams};
+
+        var command = new GetCarDtoListByModelRequest { Id = modelId, PaginationParameters = paginationParams };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
     
+    [HttpGet("/api/models/{modelId:guid}/cars/count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> GetCarsByModelAmount(Guid? modelId)
+    {
+        if (modelId == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+
+        var command = new GetCarDtoListByModelCountRequest { Id = modelId };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+
     [HttpGet("/api/colors/{colorId:guid}/cars")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByColor(Guid? colorId, [FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByColor(Guid? colorId,
+        [FromQuery] PaginationParameters? paginationParams)
     {
         if (colorId == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
-        
-        var command = new GetCarDtoListByColorRequest { Id = colorId, PaginationParameters = paginationParams};
+
+        var command = new GetCarDtoListByColorRequest { Id = colorId, PaginationParameters = paginationParams };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
     
+    [HttpGet("/api/colors/{colorId:guid}/cars/count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> GetCarsByColorAmount(Guid? colorId)
+    {
+        if (colorId == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+
+        var command = new GetCarDtoListByColorCountRequest { Id = colorId };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+
     [HttpGet("/api/brands/{brandId:guid}/cars")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByBrand(Guid? brandId, [FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByBrand(Guid? brandId,
+        [FromQuery] PaginationParameters? paginationParams)
     {
         if (brandId == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
-        
-        var command = new GetCarDtoListByBrandRequest { Id = brandId, PaginationParameters = paginationParams};
+
+        var command = new GetCarDtoListByBrandRequest { Id = brandId, PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/brands/{brandId:guid}/cars/count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> GetCarsByBrandAmount(Guid? brandId)
+    {
+        if (brandId == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+
+        var command = new GetCarDtoListByBrandCountRequest { Id = brandId };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/prices/cars")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> GetCarsByPrice([FromQuery] PriceFilteringParameters? priceFiltering, [FromQuery] PaginationParameters paginationParameters)
+    {
+        if (priceFiltering == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+
+        var command = new GetCarDtoListByPriceRequest { PriceFilteringParameters = priceFiltering, PaginationParameters = paginationParameters };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/prices/cars/count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<int>> GetCarsByPriceAmount([FromQuery] PriceFilteringParameters? priceFiltering)
+    {
+        if (priceFiltering == null)
+            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
+
+        var command = new GetCarDtoListByPriceCountRequest { PriceFilteringParameters = priceFiltering };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -111,12 +200,12 @@ public class CarController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting car.");
-        
-        var command = new GetCarDtoDetailsRequest() { Id = id };
+
+        var command = new GetCarDtoDetailsRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpPost("photos/{carId:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -126,12 +215,12 @@ public class CarController : ControllerBase
     {
         if (carId == null || photo == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting photos of car.");
-        
-        var command = new CreateCarDtoPhotosRequest() { Id = carId, Photo = photo };
+
+        var command = new CreateCarDtoPhotosRequest{ Id = carId, Photo = photo };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
     }
-    
+
     [HttpDelete("photos/{photoId:guid}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -141,8 +230,8 @@ public class CarController : ControllerBase
     {
         if (photoId == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting photos of car.");
-        
-        var command = new DeleteCarDtoPhotosRequest() { Id = photoId };
+
+        var command = new DeleteCarDtoPhotosRequest { Id = photoId };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
     }
@@ -156,7 +245,7 @@ public class CarController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with car creation.");
-        
+
         var command = new CreateCarRequest { CarDto = request };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status201Created, result.Value);
@@ -171,7 +260,7 @@ public class CarController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with car deletion.");
-        
+
         var command = new DeleteCarRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
@@ -185,7 +274,7 @@ public class CarController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with car updating.");
-        
+
         var command = new UpdateCarRequest { Id = id, CarDto = request };
         var response = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, response.Value);

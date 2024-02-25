@@ -1,14 +1,8 @@
 ﻿namespace WheelsCatalog.Domain.Common.Models;
 
-public abstract class Entity<TId> : IEquatable<Entity<TId>>, IHasDomainEvents where TId : notnull
+public abstract class Entity<TId> : IEquatable<Entity<TId>> where TId : notnull
 {
     public TId Id { get; }
-    private readonly List<IDomainEvent> _domainEvents = new();
-    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
-    public void ClearDomainEvents()
-    {
-        _domainEvents.Clear();
-    }
 
     protected Entity(TId id)
     {
@@ -38,11 +32,6 @@ public abstract class Entity<TId> : IEquatable<Entity<TId>>, IHasDomainEvents wh
     public static bool operator!=(Entity<TId>? left, Entity<TId>? right)
     {
         return !Equals(left, right);
-    }
-
-    public void AddDomainEvent(IDomainEvent domainEvent)
-    {
-        _domainEvents.Add(domainEvent);
     }
     
 #pragma warning disable CS8618 

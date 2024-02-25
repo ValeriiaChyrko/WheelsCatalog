@@ -7,33 +7,34 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
-      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+        <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml"/>
+        <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
-      <ProjectReference Include="..\WheelsCatalog.Infrastructure\WheelsCatalog.Infrastructure.csproj" />
-      <ProjectReference Include="..\WheelsCatalog.Persistence\WheelsCatalog.Persistence.csproj" />
+        <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj"/>
+        <ProjectReference Include="..\WheelsCatalog.Infrastructure\WheelsCatalog.Infrastructure.csproj"/>
+        <ProjectReference Include="..\WheelsCatalog.Persistence\WheelsCatalog.Persistence.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.0" />
-      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
-      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="8.0.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="wwwroot\src\images\" />
+        <Folder Include="wwwroot\src\images\"/>
     </ItemGroup>
 
 </Project>

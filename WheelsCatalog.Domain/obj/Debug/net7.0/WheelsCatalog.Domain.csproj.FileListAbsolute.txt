@@ -9,4 +9,3 @@ C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\refint\WheelsCatalog.Domain.dll
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.pdb
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\ref\WheelsCatalog.Domain.dll
-C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Domain\obj\Debug\net7.0\WheelsCatalog.Domain.csproj.AssemblyReference.cache

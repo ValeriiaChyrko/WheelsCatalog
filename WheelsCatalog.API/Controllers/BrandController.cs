@@ -25,9 +25,20 @@ public class BrandController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> Get([FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> Get(
+        [FromQuery] PaginationParameters? paginationParams)
     {
         var command = new GetBrandDtoListRequest { PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> GetBrandsAmount()
+    {
+        var command = new GetBrandDtoListLengthRequest();
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -41,8 +52,8 @@ public class BrandController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting brand.");
-        
-        var command = new GetBrandDtoRequest() { Id = id };
+
+        var command = new GetBrandDtoRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -56,8 +67,8 @@ public class BrandController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting brand.");
-        
-        var command = new GetBrandDtoDetailsRequest() { Id = id };
+
+        var command = new GetBrandDtoDetailsRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -71,7 +82,7 @@ public class BrandController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with brand creation.");
-        
+
         var command = new CreateBrandRequest { BrandDto = request };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status201Created, result.Value);
@@ -86,7 +97,7 @@ public class BrandController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with brand deletion.");
-        
+
         var command = new DeleteBrandRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
@@ -100,7 +111,7 @@ public class BrandController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with brand updating.");
-        
+
         var command = new UpdateBrandRequest { Id = id, BrandDto = request };
         var response = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, response.Value);

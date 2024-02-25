@@ -1,10 +1,7 @@
 using AutoMapper;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Domain.ColorAggregate;
-using WheelsCatalog.Persistence.Interceptors;
 using WheelsCatalog.Persistence.Mappers.Profiles;
 using WheelsCatalog.Persistence.Repositories;
 using static NUnit.Framework.Assert;
@@ -24,8 +21,6 @@ public class ColorRepositoryTests
         var options = new DbContextOptionsBuilder<WheelsCatalogDbContext>()
             .UseInMemoryDatabase(databaseName: "TestDatabase")
             .Options;
-        var mediatorMock = new Mock<IMediator>();
-        var interceptor = new PublishDomainEventsInterceptor(mediatorMock.Object);
 
         var mapperConfig = new MapperConfiguration(cfg =>
         {
@@ -34,7 +29,7 @@ public class ColorRepositoryTests
 
         _mapper = mapperConfig.CreateMapper();
 
-        _dbContext = new WheelsCatalogDbContext(options, interceptor);
+        _dbContext = new WheelsCatalogDbContext(options);
         _colorRepository = new ColorRepository(_dbContext, _mapper);
     }
 

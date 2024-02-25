@@ -29,7 +29,7 @@ public class PriceController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with price creation.");
-        
+
         var command = new CreatePriceRequest { PriceDto = request };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status201Created, result.Value);
@@ -44,7 +44,7 @@ public class PriceController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with price deletion.");
-        
+
         var command = new DeletePriceRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
@@ -58,12 +58,12 @@ public class PriceController : ControllerBase
     {
         if (request == null)
             throw new BadRequestException("Request body is null. Cannot proceed with price updating.");
-        
+
         var command = new UpdatePriceRequest { Id = id, PriceDto = request };
         var response = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, response.Value);
     }
-    
+
     [HttpGet("/api/cars/{id:guid}/prices")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -73,12 +73,12 @@ public class PriceController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting prices.");
-        
+
         var command = new GetActualPriceByCarRequest { CarId = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpGet("{carId:guid} {dateTime:datetime}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -88,28 +88,28 @@ public class PriceController : ControllerBase
     {
         if (dateTime == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting price.");
-        
+
         var command = new GetPriceDtoRequest { CarId = carId, Date = dateTime };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpGet("max")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<RespondPriceDto>> GetMaxPrice(DateTime? dateTime)
     {
-        var command = new GetMaxPriceRequest{ Date = dateTime};
+        var command = new GetMaxPriceRequest { Date = dateTime };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
-    
+
     [HttpGet("min")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<RespondPriceDto>> GetMinPrice(DateTime? dateTime)
     {
-        var command = new GetMinPriceRequest{ Date = dateTime};
+        var command = new GetMinPriceRequest { Date = dateTime };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

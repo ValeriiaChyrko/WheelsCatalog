@@ -23,9 +23,22 @@ public class CurrencyController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<RespondCurrencyDto>>> Get([FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<PaginatedList<RespondCurrencyDto>>> Get(
+        [FromQuery] PaginationParameters? paginationParams)
     {
         var command = new GetCurrencyDtoListRequest { PaginationParameters = paginationParams };
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<IEnumerable<int>>> GetAmount()
+    {
+        var command = new GetCurrencyDtoListCountRequest();
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -39,8 +52,8 @@ public class CurrencyController : ControllerBase
     {
         if (id == null)
             throw new BadRequestException("Parameters of request is null. Cannot proceed with getting currency.");
-        
-        var command = new GetCurrencyDtoRequest() { Id = id };
+
+        var command = new GetCurrencyDtoRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

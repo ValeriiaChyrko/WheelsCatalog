@@ -6,7 +6,7 @@ namespace WheelsCatalog.API;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddPresentationServices(this IServiceCollection services)
+    public static void AddPresentationServices(this IServiceCollection services)
     {
         services.AddSingleton<IMapper>(_ =>
         {
@@ -18,8 +18,6 @@ public static class DependencyInjection
 
             return config.CreateMapper();
         });
-        
-        return services;
     }
 }
 
@@ -35,7 +33,7 @@ public static class AutoMapperConfiguration
         cfg.AddProfile(new ModelEntityModelMappingProfile());
         cfg.AddProfile(new PriceHistoryEntityModelMappingProfile());
     }
-    
+
     public static void AddApplicationAutoMapper(this IMapperConfigurationExpression cfg)
     {
         cfg.AddProfile(new BrandMappingProfile());
@@ -47,4 +45,3 @@ public static class AutoMapperConfiguration
         cfg.AddProfile(new CurrencyMappingProfile());
     }
 }
-

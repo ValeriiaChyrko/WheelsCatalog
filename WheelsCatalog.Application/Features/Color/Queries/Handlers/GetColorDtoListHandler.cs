@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using WheelsCatalog.Application.Common;
 using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
@@ -20,13 +21,13 @@ public class GetColorDtoListHandler : IRequestHandler<GetColorDtoListRequest, Pa
 
     public async Task<PaginatedList<RespondColorDto>> Handle(GetColorDtoListRequest request, CancellationToken cancellationToken)
     {
-        var totalItems = await _repository.CountAsync(cancellationToken);
-        var pageSize = request.PaginationParameters?.Limit == 0 ? totalItems : request.PaginationParameters!.Limit;
-        var pageNumber = request.PaginationParameters?.Page == 0 ? 1 : request.PaginationParameters!.Page;
+        var paginationParameters = request.PaginationParameters;
+        var pageSize = paginationParameters?.Limit ?? Constants.DefaultPageSize;
+        var pageNumber = paginationParameters?.Page ?? Constants.DefaultPageNumber;
         
         var colors = await _repository.ListAsync(pageNumber, pageSize, cancellationToken);
         var respondColorsDtos = _mapper.Map<List<RespondColorDto>>(colors);
 
-        return new PaginatedList<RespondColorDto>(respondColorsDtos, pageSize, pageNumber, totalItems);
+        return new PaginatedList<RespondColorDto>(respondColorsDtos, pageNumber);
     }
 }
