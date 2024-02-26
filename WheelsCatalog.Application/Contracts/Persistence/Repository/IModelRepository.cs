@@ -1,12 +1,17 @@
 ﻿using WheelsCatalog.Application.Contracts.Persistence.Repository.Common;
-using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
+using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Domain.ModelAggregate;
 
 namespace WheelsCatalog.Application.Contracts.Persistence.Repository;
 
 public interface IModelRepository : IGenericRepository<Model>
 {
-    Task<ICollection<Model>> GetAllByBrandIdAsync(BrandId brandId, CancellationToken cancellationToken = default);
-    Task<int> CountByBrandIdAsync(BrandId brandId, CancellationToken cancellationToken = default);
-    Task<ICollection<Model>> GetAllByBrandIdAsync(int pageNumber, int pageSize, BrandId brandId, CancellationToken cancellationToken = default);
+    Task<ICollection<Model>> GetAllByBrandIdAsync(Guid brandId, CancellationToken cancellationToken = default);
+    Task<int> CountByBrandIdAsync(Guid brandId, CancellationToken cancellationToken = default);
+    Task<ICollection<Model>> GetAllByBrandIdAsync(int pageNumber, int pageSize, Guid brandId, CancellationToken cancellationToken = default);
+
+    Task<int> CountWithFiltersAsync(ModelFilteringParameters? filtering = null,
+        CancellationToken cancellationToken = default);
+    Task<ICollection<Model>> GetAllByFilterAsync(int pageNumber, int pageSize,
+        ModelFilteringParameters? filtering = null, CancellationToken cancellationToken = default);
 }

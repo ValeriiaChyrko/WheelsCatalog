@@ -5,7 +5,8 @@ using WheelsCatalog.Application.DTOs.respondDtos;
 
 namespace WheelsCatalog.Application.Features.Model.Queries.Requests;
 
-public class GetModelDtoListRequest : IRequest<PaginatedList<RespondModelDto>>
+public class GetModelDtoListWithFiltersRequest : IRequest<PaginatedList<RespondModelDto>>
 {
+    public ModelFilteringParameters? FilteringParameters { get; init; }
     public PaginationParameters? PaginationParameters { get; init; }
 }

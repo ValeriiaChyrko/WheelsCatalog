@@ -8,25 +8,26 @@ using WheelsCatalog.Application.Features.Model.Queries.Requests;
 
 namespace WheelsCatalog.Application.Features.Model.Queries.Handlers;
 
-public class GetModelDtoListHandler : IRequestHandler<GetModelDtoListRequest, PaginatedList<RespondModelDto>>
+public class GetModelDtoListWithFiltersHandler : IRequestHandler<GetModelDtoListWithFiltersRequest, PaginatedList<RespondModelDto>>
 {
     private readonly IModelRepository _repository;
     private readonly IMapper _mapper;
 
-    public GetModelDtoListHandler(IModelRepository repository, IMapper mapper)
+    public GetModelDtoListWithFiltersHandler(IModelRepository repository, IMapper mapper)
     {
         _repository = repository;
         _mapper = mapper;
     }
 
-    public async Task<PaginatedList<RespondModelDto>> Handle(GetModelDtoListRequest request, CancellationToken cancellationToken)
+    public async Task<PaginatedList<RespondModelDto>> Handle(GetModelDtoListWithFiltersRequest request, CancellationToken cancellationToken)
     {
         var paginationParameters = request.PaginationParameters;
         var pageSize = paginationParameters?.Limit ?? Constants.DefaultPageSize;
         var pageNumber = paginationParameters?.Page ?? Constants.DefaultPageNumber;
         
-        var models = await _repository.ListAsync(pageNumber, pageSize, cancellationToken);
-        var respondModelDtos = _mapper.Map<List<RespondModelDto>>(models);
+        var modelsByFilter = await _repository.GetAllByFilterAsync(pageNumber, pageSize, request.FilteringParameters, cancellationToken);
+
+        var respondModelDtos = _mapper.Map<List<RespondModelDto>>(modelsByFilter);
 
         return new PaginatedList<RespondModelDto>(respondModelDtos, pageNumber);
     }

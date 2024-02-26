@@ -5,5 +5,5 @@ namespace WheelsCatalog.Application.Features.Model.Queries.Requests;
 
 public class GetModelDtoRequest : IRequest<RespondModelDto>
 {
-    public Guid? Id { get; set; }
+    public Guid? Id { get; init; }
 }

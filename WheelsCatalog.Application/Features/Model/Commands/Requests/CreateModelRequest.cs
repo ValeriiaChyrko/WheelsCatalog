@@ -6,5 +6,5 @@ namespace WheelsCatalog.Application.Features.Model.Commands.Requests;
 
 public class CreateModelRequest : IRequest<ModelId>
 {
-    public required RequestModelDto? ModelDto { get; init; }
+    public RequestModelDto? ModelDto { get; init; }
 }
