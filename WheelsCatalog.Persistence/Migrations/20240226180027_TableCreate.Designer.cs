@@ -12,7 +12,7 @@ using WheelsCatalog.Persistence;
 namespace WheelsCatalog.Persistence.Migrations
 {
     [DbContext(typeof(WheelsCatalogDbContext))]
-    [Migration("20240224130503_TableCreate")]
+    [Migration("20240226180027_TableCreate")]
     partial class TableCreate
     {
         /// <inheritdoc />
@@ -52,6 +52,12 @@ namespace WheelsCatalog.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LogoUrl")
+                        .IsUnique();
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("BrandEntityModel");
                 });
@@ -188,6 +194,9 @@ namespace WheelsCatalog.Persistence.Migrations
 
                     b.HasIndex("BrandId");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("ModelEntityModel");
                 });
 
@@ -233,9 +242,9 @@ namespace WheelsCatalog.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("WheelsCatalog.Persistence.Models.ModelEntityModel", "Model")
-                        .WithMany()
+                        .WithMany("Cars")
                         .HasForeignKey("ModelId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Color");
@@ -259,7 +268,7 @@ namespace WheelsCatalog.Persistence.Migrations
                     b.HasOne("WheelsCatalog.Persistence.Models.BrandEntityModel", "Brand")
                         .WithMany("Models")
                         .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Brand");
@@ -299,6 +308,11 @@ namespace WheelsCatalog.Persistence.Migrations
             modelBuilder.Entity("WheelsCatalog.Persistence.Models.CurrencyEntityModel", b =>
                 {
                     b.Navigation("Models");
+                });
+
+            modelBuilder.Entity("WheelsCatalog.Persistence.Models.ModelEntityModel", b =>
+                {
+                    b.Navigation("Cars");
                 });
 #pragma warning restore 612, 618
         }

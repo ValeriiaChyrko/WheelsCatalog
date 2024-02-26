@@ -74,8 +74,7 @@ namespace WheelsCatalog.Persistence.Migrations
                         name: "FK_ModelEntityModel_BrandEntityModel_BrandId",
                         column: x => x.BrandId,
                         principalTable: "BrandEntityModel",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -102,7 +101,8 @@ namespace WheelsCatalog.Persistence.Migrations
                         name: "FK_CarEntityModel_ModelEntityModel_ModelId",
                         column: x => x.ModelId,
                         principalTable: "ModelEntityModel",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +154,18 @@ namespace WheelsCatalog.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_BrandEntityModel_LogoUrl",
+                table: "BrandEntityModel",
+                column: "LogoUrl",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BrandEntityModel_Name",
+                table: "BrandEntityModel",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CarEntityModel_ColorId",
                 table: "CarEntityModel",
                 column: "ColorId");
@@ -172,6 +184,12 @@ namespace WheelsCatalog.Persistence.Migrations
                 name: "IX_ModelEntityModel_BrandId",
                 table: "ModelEntityModel",
                 column: "BrandId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ModelEntityModel_Name",
+                table: "ModelEntityModel",
+                column: "Name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_PriceHistoryEntityModel_CarId",

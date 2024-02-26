@@ -3,9 +3,9 @@ using WheelsCatalog.Application.Contracts.Presentation.Validators;
 
 namespace WheelsCatalog.Application.Features.Brand.Queries.Requests.Validators;
 
-public class GetBrandDtoListRequestValidator : AbstractValidator<GetBrandDtoListWithFiltersRequest>
+public class GetBrandDtoListWithFiltersRequestValidator : AbstractValidator<GetBrandDtoListWithFiltersRequest>
 {
-    public GetBrandDtoListRequestValidator()
+    public GetBrandDtoListWithFiltersRequestValidator()
     {
         RuleFor(x => x.PaginationParameters)
             .SetValidator(new PaginationParametersValidator()!)

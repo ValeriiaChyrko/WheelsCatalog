@@ -1,4 +1,7 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.13\ref\net7.0\System.ComponentModel.Annotations.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=29484864_002D4a4c_002D4340_002D9d09_002D7ee1d9af12e2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddAsync_WhenEntityAdded_ReturnsMappedEntity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CA0CEFF-0AF6-4286-A0B0-77FC573108A7::net7.0::WheelsCatalog.Persistence.Tests.Mappers.BrandMapperTests.MapToEntity_WhenModelMappedWithoutDependencies_ReturnsCorrectEntity&lt;/TestId&gt;&#xD;

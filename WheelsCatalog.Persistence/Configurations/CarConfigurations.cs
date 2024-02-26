@@ -13,17 +13,18 @@ internal class CarConfigurations : IEntityTypeConfiguration<CarEntityModel>
             .WithMany()
             .HasForeignKey(c => c.ColorId)
             .OnDelete(DeleteBehavior.NoAction);
-
+        
         builder
             .HasOne(c => c.Model)
             .WithMany()
-            .HasForeignKey(c => c.ModelId)
+            .HasForeignKey(c => c.ModelId) 
             .OnDelete(DeleteBehavior.NoAction);
 
         builder
             .HasMany(c => c.Photos)
             .WithOne(p => p.Car)
-            .HasForeignKey(p => p.CarId);
+            .HasForeignKey(p => p.CarId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder
             .HasMany(c => c.PriceHistories)

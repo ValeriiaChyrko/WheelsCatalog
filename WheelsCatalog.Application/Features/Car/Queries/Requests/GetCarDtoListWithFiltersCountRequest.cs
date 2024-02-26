@@ -5,6 +5,6 @@ namespace WheelsCatalog.Application.Features.Car.Queries.Requests;
 
 public class GetCarDtoListWithFiltersCountRequest : IRequest<int>
 {
-    public CarFilteringParameters? CarFilteringParameters { get; set; }
-    public PriceFilteringParameters? PriceFilteringParameters { get; set; }
+    public CarFilteringParameters? CarFilteringParameters { get; init; }
+    public PriceFilteringParameters? PriceFilteringParameters { get; init; }
 }

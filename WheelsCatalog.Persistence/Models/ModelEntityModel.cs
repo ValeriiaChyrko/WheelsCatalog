@@ -16,4 +16,5 @@ internal class ModelEntityModel
 
     [Required] public Guid BrandId { get; set; }
     public BrandEntityModel Brand { get; set; } = null!;
+    public ICollection<CarEntityModel>? Cars { get; set; }
 }
