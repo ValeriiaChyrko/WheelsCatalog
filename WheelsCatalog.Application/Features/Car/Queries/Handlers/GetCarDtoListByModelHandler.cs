@@ -5,7 +5,6 @@ using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Car.Queries.Requests;
-using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Application.Features.Car.Queries.Handlers;
 
@@ -22,11 +21,11 @@ public class GetCarDtoListByModelHandler : IRequestHandler<GetCarDtoListByModelR
 
     public async Task<PaginatedList<RespondCarDto>> Handle(GetCarDtoListByModelRequest request, CancellationToken cancellationToken)
     {
+        var modelId = request.Id!.Value;
+        
         var paginationParameters = request.PaginationParameters;
         var pageSize = paginationParameters?.Limit ?? Constants.DefaultPageSize;
         var pageNumber = paginationParameters?.Page ?? Constants.DefaultPageNumber;
-        
-        var modelId = ModelId.Create(request.Id!.Value);
         
         var carsByModel = await _repository.GetAllByModelIdAsync(pageNumber, pageSize, modelId, cancellationToken);
         var respondCarDtos = _mapper.Map<List<RespondCarDto>>(carsByModel);

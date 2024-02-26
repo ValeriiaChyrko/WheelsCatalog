@@ -19,7 +19,7 @@ internal class CarPhotoRepository : GenericRepository<CarPhotoEntity, CarPhotoEn
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<CarPhotoEntity>> GetAllPhotosByCarIdName(CarId carId)
+    public async Task<IEnumerable<CarPhotoEntity>> GetAllPhotosByCarId(CarId carId)
     {
         var photos = await _context.Set<CarPhotoEntityModel>()
             .Where(photo => photo.CarId == carId.Value)

@@ -24,7 +24,7 @@ public class CreateCarDtoPhotosHandler : IRequestHandler<CreateCarDtoPhotosReque
         var photoUrl = await UploadLogoAsync(command.Photo!);
         if (photoUrl == null) throw new OperationCanceledException("Failed to upload photo.");
         
-        var carId = command.Id!.Value;
+        var carId = command.CarId!.Value;
         var photo = Domain.CarAggregate.Entities.CarPhotoEntity.Create(photoUrl, CarId.Create(carId));
         await _repository.AddAsync(photo, cancellationToken);
 

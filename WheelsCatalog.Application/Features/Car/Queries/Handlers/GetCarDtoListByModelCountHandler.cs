@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.Features.Car.Queries.Requests;
-using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 
 namespace WheelsCatalog.Application.Features.Car.Queries.Handlers;
 
@@ -16,7 +15,7 @@ public class GetCarDtoListByModelCountHandler : IRequestHandler<GetCarDtoListByM
 
     public async Task<int> Handle(GetCarDtoListByModelCountRequest request, CancellationToken cancellationToken)
     {
-        var modelId = ModelId.Create(request.Id!.Value);
+        var modelId = request.Id!.Value;
         return await _repository.CountByModelIdAsync(modelId, cancellationToken);
     }
 }

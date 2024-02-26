@@ -37,13 +37,14 @@ public class GetCarDtoListDetailsHandler : IRequestHandler<GetCarDtoListDetailsR
         foreach (var car in carEntities)
         {
             var respond = _mapper.Map<RespondCarDtoDetails>(car);
-            respond.ModelName = await _carRepository.GetCarModelNameAsync(car.ModelId, cancellationToken) ?? throw new InvalidOperationException();
-            respond.ColorName = await _carRepository.GetCarColorNameAsync(car.ColorId, cancellationToken) ?? throw new InvalidOperationException();
+            respond.ModelName = await _carRepository.GetCarModelNameAsync(car.ModelId.Value, cancellationToken) ?? throw new InvalidOperationException();
+            respond.BrandName = await _carRepository.GetCarBrandNameAsync(car.ModelId.Value, cancellationToken) ?? throw new InvalidOperationException();
+            respond.ColorName = await _carRepository.GetCarColorNameAsync(car.ColorId.Value, cancellationToken) ?? throw new InvalidOperationException();
 
-            var photos = await _carPhotoRepository.GetAllPhotosByCarIdName(car.Id);
+            var photos = await _carPhotoRepository.GetAllPhotosByCarId(car.Id);
             respond.PhotoUrl = photos.Select(entity => entity.PhotoUrl).ToList();
             
-            var price = await _priceHistoryRepository.GetActualPriceByCarIdAsync(car.Id, cancellationToken);
+            var price = await _priceHistoryRepository.GetActualPriceByCarIdAsync(car.Id.Value, cancellationToken);
             respond.Price = _mapper.Map<RespondPriceDto>(price);
             if (price != null) respond.Price.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(price.CurrencyId) ??
                                                                throw new InvalidOperationException();

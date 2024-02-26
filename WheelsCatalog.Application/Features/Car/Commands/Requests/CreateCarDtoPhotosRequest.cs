@@ -6,6 +6,6 @@ namespace WheelsCatalog.Application.Features.Car.Commands.Requests;
 
 public class CreateCarDtoPhotosRequest : IRequest<CarPhotoId>
 {
-    public Guid? Id { get; init; }
+    public Guid? CarId { get; init; }
     public FileDto? Photo { get; init; }
 }

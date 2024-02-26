@@ -5,5 +5,5 @@ namespace WheelsCatalog.Application.Features.PriceHistory.Queries.Requests;
 
 public class GetActualPriceByCarRequest : IRequest<RespondPriceDto> 
 {
-    public Guid? CarId { get; set; }
+    public Guid? CarId { get; init; }
 }

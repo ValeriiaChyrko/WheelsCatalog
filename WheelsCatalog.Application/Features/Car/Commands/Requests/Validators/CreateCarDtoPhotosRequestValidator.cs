@@ -1,17 +1,17 @@
 ﻿using FluentValidation;
 using WheelsCatalog.Application.DTOs.sharedDtos.validators;
 
-namespace WheelsCatalog.Application.DTOs.requestsDtos.validators;
+namespace WheelsCatalog.Application.Features.Car.Commands.Requests.Validators;
 
-public class RequestCarPhotoDtoValidator : AbstractValidator<RequestCarPhotoDto>
+public class CreateCarDtoPhotosRequestValidator : AbstractValidator<CreateCarDtoPhotosRequest>
 {
-    public RequestCarPhotoDtoValidator()
+    public CreateCarDtoPhotosRequestValidator()
     {
-        RuleFor(p => p.Photo)
-            .NotNull().WithMessage("{PropertyName} is required.")
+        RuleFor(x => x.Photo)
+            .NotNull().WithMessage("Photo must not be null.")
             .SetValidator(new FileDtoValidator()!);
         
-        RuleFor(p => p.CarId)
+        RuleFor(x => x.CarId)
             .NotEmpty().WithMessage("{PropertyName} is required.")
             .NotNull().WithMessage("{PropertyName} is required.")
             .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");

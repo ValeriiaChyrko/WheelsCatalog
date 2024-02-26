@@ -6,5 +6,5 @@ namespace WheelsCatalog.Application.Contracts.Persistence.Repository;
 
 public interface ICarPhotoRepository : IGenericRepository<CarPhotoEntity>
 {
-    Task<IEnumerable<CarPhotoEntity>> GetAllPhotosByCarIdName(CarId carId);
+    Task<IEnumerable<CarPhotoEntity>> GetAllPhotosByCarId(CarId carId);
 }

@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.PriceHistory.Queries.Requests;
-using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
 namespace WheelsCatalog.Application.Features.PriceHistory.Queries.Handlers;
 
@@ -24,7 +22,7 @@ public class GetActualPriceByCarHandler : IRequestHandler<GetActualPriceByCarReq
     public async Task<RespondPriceDto> Handle(GetActualPriceByCarRequest request, CancellationToken cancellationToken)
     {
         var carId = request.CarId!.Value;
-        var priceHistoryByCar = await _priceHistoryRepository.GetActualPriceByCarIdAsync(CarId.Create(carId), cancellationToken);
+        var priceHistoryByCar = await _priceHistoryRepository.GetActualPriceByCarIdAsync(carId, cancellationToken);
         if (priceHistoryByCar == null) return new RespondPriceDto();
         
         var respond = _mapper.Map<RespondPriceDto>(priceHistoryByCar);

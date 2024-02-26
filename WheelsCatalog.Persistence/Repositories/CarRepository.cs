@@ -1,10 +1,8 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Domain.CarAggregate;
-using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
-using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories.common;
 
@@ -12,136 +10,115 @@ namespace WheelsCatalog.Persistence.Repositories;
 
 internal class CarRepository : GenericRepository<Car, CarEntityModel>, ICarRepository
 {
-    private readonly WheelsCatalogDbContext _context;
     public CarRepository(WheelsCatalogDbContext context, IMapper mapper) : base(context, mapper)
     {
-        _context = context;
     }
 
-    public async Task<string?> GetCarModelNameAsync(ModelId modelId, CancellationToken cancellationToken = default)
+    public async Task<string?> GetCarModelNameAsync(Guid modelId, CancellationToken cancellationToken = default)
     {
         var carEntityModel = await ListAsync(
-            query => query.Where(car => car.ModelId == modelId.Value),
+            query => query.Where(car => car.ModelId == modelId),
             car => car.Model, 
             cancellationToken);
 
         return carEntityModel.FirstOrDefault()?.Model.Name;
     }
     
-    public async Task<string?> GetCarColorNameAsync(ColorId colorId, CancellationToken cancellationToken = default)
+    public async Task<string?> GetCarBrandNameAsync(Guid modelId, CancellationToken cancellationToken = default)
     {
         var carEntityModel = await ListAsync(
-            query => query.Where(car => car.ColorId == colorId.Value),
+            query => query.Where(car => car.Model.Id == modelId),
+            car => car.Model.Brand, 
+            cancellationToken);
+
+        return carEntityModel.FirstOrDefault()?.Model.Brand.Name;
+    }
+    
+    public async Task<string?> GetCarColorNameAsync(Guid colorId, CancellationToken cancellationToken = default)
+    {
+        var carEntityModel = await ListAsync(
+            query => query.Where(car => car.ColorId == colorId),
             car => car.Color, 
             cancellationToken);
 
         return carEntityModel.FirstOrDefault()?.Color.Name;
     }
     
-    public async Task<int> CountByModelIdAsync(ModelId modelId,
+    public async Task<int> CountByModelIdAsync(Guid modelId,
         CancellationToken cancellationToken = default)
     {
-        var carEntityModelCount = await CountAsync(carEntity => carEntity.ModelId == modelId.Value, cancellationToken);
+        var carEntityModelCount = await CountAsync(carEntity => carEntity.ModelId == modelId, cancellationToken);
         return carEntityModelCount;
     }
-
-    public async Task<ICollection<Car>> GetAllByModelIdAsync(ModelId modelId,
-        CancellationToken cancellationToken = default)
-    {
-        Expression<Func<Car, bool>> predicate = car => car.ModelId == modelId;
-        var cars = await ListAsync(predicate, cancellationToken);
-
-        return cars;
-    }
     
-    public async Task<ICollection<Car>> GetAllByModelIdAsync(int pageNumber, int pageSize, ModelId modelId,
+    public async Task<ICollection<Car>> GetAllByModelIdAsync(int pageNumber, int pageSize, Guid modelId,
         CancellationToken cancellationToken = default)
     {
-        Expression<Func<Car, bool>> predicate = car => car.ModelId == modelId;
-        var cars = await ListAsync(pageNumber, pageSize, predicate, cancellationToken);
-
-        return cars;
-    }
-
-    public async Task<int> CountByModelIdsAsync(IEnumerable<ModelId> modelIds, CancellationToken cancellationToken = default)
-    {
-        var targetGuids = modelIds.Select(id => id.Value).ToList();
-        Expression<Func<CarEntityModel, bool>> predicate = carEntity => targetGuids.Contains(carEntity.ModelId);
-
-        return await CountAsync(predicate, cancellationToken);
-    }
-
-    
-    public async Task<ICollection<Car>> GetAllByModelIdsAsync(IEnumerable<ModelId> modelIds,
-        CancellationToken cancellationToken = default)
-    {
-        var targetGuids = modelIds.Select(id => id.Value).ToList();
-        Expression<Func<Car, bool>> predicate = car => targetGuids.Contains(car.ModelId.Value);
-        var cars = await ListAsync(predicate, cancellationToken);
-
-        return cars;
-    }
-
-    public async Task<ICollection<Car>> GetAllByModelIdsAsync(int pageNumber, int pageSize, IEnumerable<ModelId> modelIds,
-        CancellationToken cancellationToken = default)
-    {
-        var targetGuids = modelIds.Select(id => id.Value).ToList();
-        Expression<Func<Car, bool>> predicate = car => targetGuids.Contains(car.ModelId.Value);
+        Expression<Func<CarEntityModel, bool>> predicate = car => car.ModelId == modelId;
         var cars = await ListAsync(pageNumber, pageSize, predicate, cancellationToken);
 
         return cars;
     }
     
-    public async Task<int> CountByColorIdAsync(ColorId colorId,
-        CancellationToken cancellationToken = default)
+    private Expression<Func<CarEntityModel, bool>> BuildCarFilterCondition(CarFilteringParameters? carFiltering,
+        PriceFilteringParameters? priceFiltering)
     {
-        var carEntityModelCount = await CountAsync(carEntity => carEntity.ColorId == colorId.Value, cancellationToken);
-        return carEntityModelCount;
-    }
-    
-    public async Task<ICollection<Car>> GetAllByColorIdAsync(ColorId colorId,
-        CancellationToken cancellationToken = default)
-    {
-        Expression<Func<Car, bool>> predicate = car => car.ColorId == colorId;
-        return await ListAsync(predicate, cancellationToken);
-    }
-    
-    public async Task<ICollection<Car>> GetAllByColorIdAsync(int pageNumber, int pageSize, ColorId colorId,
-        CancellationToken cancellationToken = default)
-    {
-        Expression<Func<Car, bool>> predicate = car => car.ColorId == colorId;
-        return await ListAsync(pageNumber, pageSize, predicate, cancellationToken);
-    }
-    
-    public async Task<int> CountByPriceFiltersAsync(DateTime dateTime, double minPrice, double maxPrice,
-        CancellationToken cancellationToken = default)
-    {
-        Expression<Func<PriceHistoryEntityModel, bool>> pricePredicate = 
-            ph => ph.StartDate.Date <= dateTime.Date && ph.Price >= minPrice && ph.Price <= maxPrice;
-        var carIdsInPriceRange = await _context.Set<PriceHistoryEntityModel>()
-            .Where(pricePredicate)
-            .Select(ph => ph.CarId)
-            .Distinct()
-            .ToListAsync(cancellationToken);
-        
-        var carsByPriceAmount = await CountAsync(car => carIdsInPriceRange.Contains(car.Id), cancellationToken);
-        return carsByPriceAmount;
-    }
-    
-    public async Task<ICollection<Car>?> GetAllByPriceIdAsync(int pageNumber, int pageSize, DateTime dateTime, 
-        double minPrice, double maxPrice, CancellationToken cancellationToken = default)
-    {
-        Expression<Func<PriceHistoryEntityModel, bool>> pricePredicate = 
-            ph => ph.StartDate.Date <= dateTime.Date && ph.Price >= minPrice && ph.Price <= maxPrice;
+        Expression<Func<CarEntityModel, bool>> filterCondition = car => true;
 
-        var carIdsInPriceRange = await _context.Set<PriceHistoryEntityModel>()
-            .Where(pricePredicate)
-            .Select(ph => ph.CarId)
-            .Distinct()
-            .ToListAsync(cancellationToken);
+        if (carFiltering?.ColorId != null)
+            filterCondition = filterCondition.And(car => car.ColorId == carFiltering.ColorId);
+
+        if (carFiltering?.ModelId != null)
+            filterCondition = filterCondition.And(car => car.ModelId == carFiltering.ModelId);
         
-        Expression<Func<Car, bool>> carPredicate = car => carIdsInPriceRange.Contains(car.Id.Value);
-        var carsInPriceRange = await ListAsync(pageNumber, pageSize, carPredicate, cancellationToken);
-        return carsInPriceRange;
+        if (carFiltering?.PartialModelName != null)
+            filterCondition = filterCondition.And(car => car.Model.Name.Contains(carFiltering.PartialModelName));
+        
+        if (carFiltering?.BrandId != null)
+            filterCondition = filterCondition.And(car => car.Model.BrandId == carFiltering.BrandId);
+        
+        if (carFiltering?.PartialBrandName != null)
+            filterCondition = filterCondition.And(car => car.Model.Brand.Name.Contains(carFiltering.PartialBrandName));
+    
+        if (carFiltering?.EngineVolume != null && carFiltering.EngineVolume != 0)
+            filterCondition = filterCondition.And(car => car.EngineVolume.CompareTo(carFiltering.EngineVolume.Value) == 0);
+        
+        if (priceFiltering?.Date != null)
+            filterCondition = filterCondition.And(
+                car => car.PriceHistories != null && 
+                       car.PriceHistories.Any(ph => 
+                           ph.StartDate.Date == priceFiltering.Date.Value.Date));
+        
+        if (priceFiltering?.MinPrice != null)
+            filterCondition = filterCondition.And(
+                car => car.PriceHistories != null && 
+                       car.PriceHistories.Any(ph => 
+                           ph.Price >= priceFiltering.MinPrice));
+        
+        if (priceFiltering?.MaxPrice != null)
+            filterCondition = filterCondition.And(
+                car => car.PriceHistories != null && 
+                       car.PriceHistories.Any(ph => 
+                           ph.Price <= priceFiltering.MaxPrice));
+
+        return filterCondition;
+    }
+
+    public async Task<int> CountWithFiltersAsync(CarFilteringParameters? filtering = null, 
+        PriceFilteringParameters? priceFiltering = null,
+        CancellationToken cancellationToken = default)
+    {
+        var filterCondition = BuildCarFilterCondition(filtering, priceFiltering);
+        var count = await CountAsync(filterCondition, cancellationToken);
+        return count;
+    }
+
+    public async Task<ICollection<Car>> GetAllByFilterAsync(int pageNumber, int pageSize,
+        CarFilteringParameters? filtering = null, PriceFilteringParameters? priceFiltering = null,
+        CancellationToken cancellationToken = default)
+    {
+        var filterCondition = BuildCarFilterCondition(filtering, priceFiltering);
+        var cars = await ListAsync(pageNumber, pageSize, filterCondition, cancellationToken);
+        return cars;
     }
 }

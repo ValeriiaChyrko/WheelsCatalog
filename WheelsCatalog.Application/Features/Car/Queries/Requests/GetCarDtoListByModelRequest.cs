@@ -5,8 +5,8 @@ using WheelsCatalog.Application.DTOs.respondDtos;
 
 namespace WheelsCatalog.Application.Features.Car.Queries.Requests;
 
-public class GetCarDtoListByModelRequest : IRequest<PaginatedList<RespondCarDto>> 
+public class GetCarDtoListByModelRequest : IRequest<PaginatedList<RespondCarDto>>
 {
-    public Guid? Id { get; init; }
-    public PaginationParameters? PaginationParameters { get; init; }
+    public Guid? Id { get; set; }
+    public PaginationParameters? PaginationParameters { get; set; }
 }

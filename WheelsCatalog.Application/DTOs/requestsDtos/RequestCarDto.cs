@@ -2,8 +2,8 @@
 
 public class RequestCarDto
 {
-    public double EngineVolume { get; set; }
-    public string? Description { get; set; }
-    public Guid? ModelId { get; set; }
-    public Guid? ColorId { get; set; }
+    public double EngineVolume { get; init; }
+    public string? Description { get; init; }
+    public Guid? ModelId { get; init; }
+    public Guid? ColorId { get; init; }
 }

@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using WheelsCatalog.Application.Common;
 
 namespace WheelsCatalog.Application.DTOs.requestsDtos.validators;
 
 public class RequestCarDtoValidator : AbstractValidator<RequestCarDto>
 {
-    private const int MaxLengthDescriptionLength = 512;
+    private const int MaxLengthDescriptionLength = Constants.MaxLengthDescriptionPropertyLength;
     
     public RequestCarDtoValidator()
     {

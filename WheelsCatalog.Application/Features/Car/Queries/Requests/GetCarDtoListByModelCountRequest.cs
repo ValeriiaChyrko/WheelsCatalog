@@ -4,5 +4,5 @@ namespace WheelsCatalog.Application.Features.Car.Queries.Requests;
 
 public class GetCarDtoListByModelCountRequest : IRequest<int>
 {
-    public Guid? Id { get; init; }
+    public Guid? Id { get; set; }
 }

@@ -42,25 +42,28 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
         return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
     }
     
-    protected async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, Expression<Func<TEntity, bool>> predicate,
+    protected async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, Expression<Func<TEntityModel, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
-        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
-        return entityModels
-            .Select(entityModel => _mapper.Map<TEntity>(entityModel))
-            .Where(predicate.Compile())
+        var entityModels = await _context.Set<TEntityModel>()
+            .Where(predicate)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .ToList();
+            .ToListAsync(cancellationToken);
+        
+        return entityModels
+            .Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
     }
     
-    protected async Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntity, bool>> predicate,
+    protected async Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntityModel, bool>> predicate,
         CancellationToken cancellationToken = default)
     {
-        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
+        var entityModels = await _context.Set<TEntityModel>()
+            .Where(predicate)
+            .ToListAsync(cancellationToken);
+       
         return entityModels
             .Select(entityModel => _mapper.Map<TEntity>(entityModel))
-            .Where(predicate.Compile())
             .ToList();
     }
 

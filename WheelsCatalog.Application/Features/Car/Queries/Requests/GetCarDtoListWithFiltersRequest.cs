@@ -5,8 +5,9 @@ using WheelsCatalog.Application.DTOs.respondDtos;
 
 namespace WheelsCatalog.Application.Features.Car.Queries.Requests;
 
-public class GetCarDtoListByPriceRequest : IRequest<PaginatedList<RespondCarDto>> 
+public class GetCarDtoListWithFiltersRequest : IRequest<PaginatedList<RespondCarDto>>
 {
-    public PriceFilteringParameters? PriceFilteringParameters { get; init; }
+    public CarFilteringParameters? CarFilteringParameters { get; set; }
+    public PriceFilteringParameters? PriceFilteringParameters { get; set; }
     public PaginationParameters? PaginationParameters { get; init; }
 }
