@@ -26,7 +26,7 @@ public class GetBrandDtoDetailsHandler : IRequestHandler<GetBrandDtoDetailsReque
         if (brand == null) throw new NotFoundRequestException(request.Id!.Value);
 
         var respond = _mapper.Map<RespondBrandDtoDetails>(brand);
-        var modelsByBrand = await _modelRepository.GetAllByBrandIdAsync(brand.Id, cancellationToken);
+        var modelsByBrand = await _modelRepository.GetAllByBrandIdAsync(brand.Id.Value, cancellationToken);
         respond.ModelDtos = modelsByBrand.Count == 0 ? new List<RespondModelDto>() : _mapper.Map<List<RespondModelDto>>(modelsByBrand);
 
         return respond;

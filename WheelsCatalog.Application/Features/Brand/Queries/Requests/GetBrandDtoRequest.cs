@@ -5,5 +5,5 @@ namespace WheelsCatalog.Application.Features.Brand.Queries.Requests;
 
 public class GetBrandDtoRequest : IRequest<RespondBrandDto>
 {
-    public Guid? Id { get; set; }
+    public Guid? Id { get; init; }
 }

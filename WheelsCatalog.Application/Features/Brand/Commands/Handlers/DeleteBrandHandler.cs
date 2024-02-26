@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.Features.Brand.Commands.Requests;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;

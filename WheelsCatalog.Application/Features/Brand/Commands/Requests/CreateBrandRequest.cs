@@ -6,5 +6,5 @@ namespace WheelsCatalog.Application.Features.Brand.Commands.Requests;
 
 public class CreateBrandRequest : IRequest<BrandId>
 {
-    public required RequestBrandDto? BrandDto { get; init; }
+    public RequestBrandDto? BrandDto { get; init; }
 }

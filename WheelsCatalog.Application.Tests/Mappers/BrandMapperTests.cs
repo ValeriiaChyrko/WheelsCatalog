@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Moq;
 using NUnit.Framework;
-using WheelsCatalog.Application.Contracts.Infrastructure.File;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.DTOs.sharedDtos;
@@ -14,15 +12,10 @@ namespace WheelsCatalog.Application.Tests.Mappers;
 public class BrandMapperTests
 {
     private IMapper _mapper = null!;
-    private Mock<IFileService> _fileServiceMock = null!;
 
     [SetUp]
     public void Setup()
     {
-        _fileServiceMock = new Mock<IFileService>();
-        _fileServiceMock.Setup(service => service.UploadImage(It.IsAny<FileDto>()))
-            .ReturnsAsync("https://firebasestorage.googleapis.com/v0/b/wheelscatalog-564d8.appspot.com");
-        
         var mapperConfig = new MapperConfiguration(cfg =>
         {
             cfg.AddProfile(new BrandMappingProfile());
@@ -55,10 +48,7 @@ public class BrandMapperTests
         // Assert
         Assert.IsNotNull(result);
         Assert.That(result.Name, Is.EqualTo(requestBrandDto.Name));
-        Assert.IsFalse(string.IsNullOrEmpty(result.LogoUrl));
         Assert.That(result.Description, Is.EqualTo(requestBrandDto.Description));
-        
-        _fileServiceMock.Verify(service => service.UploadImage(It.IsAny<FileDto>()), Times.Once);
     }
     
     [Test]

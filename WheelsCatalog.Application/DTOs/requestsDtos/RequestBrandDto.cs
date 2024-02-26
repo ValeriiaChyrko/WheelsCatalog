@@ -4,7 +4,7 @@ namespace WheelsCatalog.Application.DTOs.requestsDtos;
 
 public class RequestBrandDto
 {
-    public string? Name { get; set; } 
-    public FileDto? Logo { get; set; } 
-    public string? Description { get; set; } 
+    public string? Name { get; init; } 
+    public FileDto? Logo { get; init; } 
+    public string? Description { get; init; } 
 }

@@ -5,7 +5,8 @@ using WheelsCatalog.Application.DTOs.respondDtos;
 
 namespace WheelsCatalog.Application.Features.Brand.Queries.Requests;
 
-public class GetBrandDtoListRequest : IRequest<PaginatedList<RespondBrandDto>>
+public class GetBrandDtoListWithFiltersRequest : IRequest<PaginatedList<RespondBrandDto>>
 {
+    public BrandFilteringParameters? FilteringParameters { get; init; }
     public PaginationParameters? PaginationParameters { get; init; }
 }
