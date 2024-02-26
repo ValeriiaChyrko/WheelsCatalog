@@ -2,8 +2,8 @@
 
 public class RequestPriceDto
 {
-    public double Amount { get; set; }
-    public DateTime? Date { get; set; }
-    public Guid? CurrencyId { get; set; }
-    public Guid? CarId { get; set; }
+    public double Amount { get; init; }
+    public DateTime? Date { get; init; }
+    public Guid? CurrencyId { get; init; }
+    public Guid? CarId { get; init; }
 }

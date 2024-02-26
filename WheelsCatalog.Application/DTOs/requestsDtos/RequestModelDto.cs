@@ -2,7 +2,7 @@
 
 public class RequestModelDto
 {
-    public string? Name { get; set; } 
-    public string? Description { get; set; } 
-    public Guid? BrandId { get; set; } 
+    public string? Name { get; init; } 
+    public string? Description { get; init; } 
+    public Guid? BrandId { get; init; } 
 }

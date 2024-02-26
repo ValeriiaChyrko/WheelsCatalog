@@ -1051,6 +1051,18 @@
           "build/netcoreapp3.1/NUnit3TestAdapter.props": {}
         }
       },
+      "PredicateBuilder/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/PredicateBuilder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/PredicateBuilder.dll": {}
+        }
+      },
       "System.Configuration.ConfigurationManager/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -1548,6 +1560,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.EntityFrameworkCore": "7.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.16",
+          "PredicateBuilder": "1.0.0",
           "WheelsCatalog.Application": "1.0.0"
         },
         "compile": {
@@ -3104,6 +3117,18 @@
         "nunit3testadapter.4.4.2.nupkg.sha512",
         "nunit3testadapter.nuspec",
         "nunit_256.png"
+      ]
+    },
+    "PredicateBuilder/1.0.0": {
+      "sha512": "LRmXTr9wMBnc8C0j+D3nRb4SwxgW4aW03NGJ/YBb+WWDFdGNnI4tym3ZXWZi1Bc09t4dfSFIG1R5akFI3aKVgQ==",
+      "type": "package",
+      "path": "predicatebuilder/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.0/PredicateBuilder.dll",
+        "predicatebuilder.1.0.0.nupkg.sha512",
+        "predicatebuilder.nuspec"
       ]
     },
     "System.Configuration.ConfigurationManager/6.0.1": {

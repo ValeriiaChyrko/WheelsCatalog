@@ -1,7 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
-using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
 using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories.common;
@@ -15,19 +14,19 @@ internal class PriceHistoryRepository : GenericRepository<PriceHistory, PriceHis
     {
     }
 
-    public async Task<ICollection<PriceHistory>> GetAllByCarIdAsync(CarId carId,
+    public async Task<ICollection<PriceHistory>> GetAllByCarIdAsync(Guid carId,
         CancellationToken cancellationToken = default)
     {
-        Expression<Func<PriceHistory, bool>> predicate = car => car.CarId == carId;
+        Expression<Func<PriceHistoryEntityModel, bool>> predicate = car => car.CarId == carId;
         var priceHistories = await ListAsync(predicate, cancellationToken);
 
         return priceHistories;
     }
 
-    public async Task<PriceHistory?> GetActualPriceByCarIdAsync(CarId carId,
+    public async Task<PriceHistory?> GetActualPriceByCarIdAsync(Guid carId,
         CancellationToken cancellationToken = default)
     {
-        Expression<Func<PriceHistory, bool>> filterExpression = entity => entity.CarId == carId;
+        Expression<Func<PriceHistoryEntityModel, bool>> filterExpression = entity => entity.CarId == carId;
 
         var filteredEntities = await ListAsync(filterExpression, cancellationToken);
         var actualPrice = filteredEntities.MaxBy(entity => entity.StartDate);
@@ -35,10 +34,10 @@ internal class PriceHistoryRepository : GenericRepository<PriceHistory, PriceHis
         return actualPrice;
     }
 
-    public async Task<PriceHistory?> GetActualPriceByCarIdStartByDateAsync(CarId carId, DateTime dateTime,
+    public async Task<PriceHistory?> GetActualPriceByCarIdStartByDateAsync(Guid carId, DateTime dateTime,
         CancellationToken cancellationToken = default)
     {
-        Expression<Func<PriceHistory, bool>> filterExpression =
+        Expression<Func<PriceHistoryEntityModel, bool>> filterExpression =
             entity => entity.CarId == carId && entity.StartDate >= dateTime;
 
         var filteredEntities = await ListAsync(filterExpression, cancellationToken);

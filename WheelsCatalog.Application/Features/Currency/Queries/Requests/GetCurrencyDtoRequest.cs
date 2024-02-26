@@ -5,5 +5,5 @@ namespace WheelsCatalog.Application.Features.Currency.Queries.Requests;
 
 public class GetCurrencyDtoRequest : IRequest<RespondCurrencyDto>
 {
-    public Guid? Id { get; set; }
+    public Guid? Id { get; init; }
 }

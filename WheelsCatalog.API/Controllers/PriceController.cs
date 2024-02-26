@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WheelsCatalog.Application.Common.Exceptions;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.PriceHistory.Commands.Requests;
@@ -27,9 +26,6 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<Guid>> Create([FromBody] RequestPriceDto? request)
     {
-        if (request == null)
-            throw new BadRequestException("Request body is null. Cannot proceed with price creation.");
-
         var command = new CreatePriceRequest { PriceDto = request };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status201Created, result.Value);
@@ -42,9 +38,6 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<Guid>> Delete(Guid? id)
     {
-        if (id == null)
-            throw new BadRequestException("Parameters of request is null. Cannot proceed with price deletion.");
-
         var command = new DeletePriceRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result.Value);
@@ -56,9 +49,6 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<RespondPriceDto>> Update(Guid? id, RequestPriceDto? request)
     {
-        if (request == null)
-            throw new BadRequestException("Request body is null. Cannot proceed with price updating.");
-
         var command = new UpdatePriceRequest { Id = id, PriceDto = request };
         var response = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, response.Value);
@@ -71,9 +61,6 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<RespondPriceDto>> GetActualPriceByCar(Guid? id)
     {
-        if (id == null)
-            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting prices.");
-
         var command = new GetActualPriceByCarRequest { CarId = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
@@ -86,9 +73,6 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<RespondBrandDto>> GetByCar(Guid? carId, DateTime? dateTime)
     {
-        if (dateTime == null)
-            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting price.");
-
         var command = new GetPriceDtoRequest { CarId = carId, Date = dateTime };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);

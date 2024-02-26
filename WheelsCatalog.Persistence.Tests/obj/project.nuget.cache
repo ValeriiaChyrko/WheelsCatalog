@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SYzN6dBfgo5wi4++5MftNs5t6VnkQKKd5N/d16uRpABSCVoHarzUToFjqTeODDuxcp31FKh7dSUCSQMfYrkZFA==",
+  "dgSpecHash": "0oTuG7m6plWeh+gD87yfZe1/+4NxRW8/swEIiZD9DZqpVX5ybXAP3nMbH1D41oizzN0Dd+AZi11sGt50rnoqMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.Persistence.Tests\\WheelsCatalog.Persistence.Tests.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Users\\Valeriia\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\Valeriia\\.nuget\\packages\\nunit.analyzers\\3.6.1\\nunit.analyzers.3.6.1.nupkg.sha512",
     "C:\\Users\\Valeriia\\.nuget\\packages\\nunit3testadapter\\4.4.2\\nunit3testadapter.4.4.2.nupkg.sha512",
+    "C:\\Users\\Valeriia\\.nuget\\packages\\predicatebuilder\\1.0.0\\predicatebuilder.1.0.0.nupkg.sha512",
     "C:\\Users\\Valeriia\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Valeriia\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "C:\\Users\\Valeriia\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",

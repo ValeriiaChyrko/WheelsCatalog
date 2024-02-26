@@ -1,10 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=29484864_002D4a4c_002D4340_002D9d09_002D7ee1d9af12e2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddAsync_WhenEntityAdded_ReturnsMappedEntity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=29484864_002D4a4c_002D4340_002D9d09_002D7ee1d9af12e2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddAsync_WhenEntityAdded_ReturnsMappedEntity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CA0CEFF-0AF6-4286-A0B0-77FC573108A7::net7.0::WheelsCatalog.Persistence.Tests.Mappers.BrandMapperTests.MapToEntity_WhenModelMappedWithoutDependencies_ReturnsCorrectEntity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Exceptions.BadRequestExceptionTests.Constructor_WithMessage_SetsMessage&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34266535_002Da606_002D4c04_002D91bb_002Dd0aa2add7b2f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateAsync_WhenEntityUpdated_ReturnsUpdatedEntity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=34266535_002Da606_002D4c04_002D91bb_002Dd0aa2add7b2f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateAsync_WhenEntityUpdated_ReturnsUpdatedEntity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Mappers.BrandMapperTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CA0CEFF-0AF6-4286-A0B0-77FC573108A7::net7.0::WheelsCatalog.Persistence.Tests.Repositories.BrandRepositoryTests.UpdateAsync_WhenEntityUpdated_ReturnsUpdatedEntity&lt;/TestId&gt;&#xD;
@@ -19,6 +20,22 @@
     &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Validators.RequestsDtosValidatorsTestsRequestModelDto&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Validators.RequestsDtosValidatorsTestsRequestPriceDto&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9CA0CEFF-0AF6-4286-A0B0-77FC573108A7::net7.0::WheelsCatalog.Persistence.Tests.Mappers.BrandMapperTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Exceptions.BadRequestExceptionTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Exceptions.NotFoundRequestExceptionTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Exceptions.ValidationBehaviorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Mappers.CarPhotoMapperTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Brand.CreateBrandRequestTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Brand.DeleteBrandRequestTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Brand.UpdateBrandRequestTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Brand.CreateBrandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Brand.DeleteBrandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Brand.UpdateBrandHandlerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Model.CreateModelRequestTests.CreateModelRequest_ModelDto_Property_Set_Get_Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Model.CreateModelRequestTests.CreateModelRequest_ModelDto_Initialized_Null_Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Model.CreateModelRequestTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Model.DeleteModelRequestTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Model.UpdateModelRequestTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A89030FD-F51B-426F-AAA5-78A7D60E5E40::net7.0::WheelsCatalog.Application.Tests.Features.Model.CreateModelHandlerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

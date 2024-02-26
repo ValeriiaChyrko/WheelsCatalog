@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WheelsCatalog.Application.Common.Exceptions;
 using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Application.DTOs.respondDtos;
@@ -50,9 +49,6 @@ public class ColorController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<RespondColorDto>> Get(Guid? id)
     {
-        if (id == null)
-            throw new BadRequestException("Parameters of request is null. Cannot proceed with getting color.");
-
         var command = new GetColorDtoRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);

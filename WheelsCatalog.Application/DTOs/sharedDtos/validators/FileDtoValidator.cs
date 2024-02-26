@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using WheelsCatalog.Application.Common;
 
 namespace WheelsCatalog.Application.DTOs.sharedDtos.validators;
 
 public class FileDtoValidator : AbstractValidator<FileDto>
 {
-    private const int MaxLength = 255;
+    private const int MaxLength = Constants.MaxLengthNamePropertyLength;
 
     public FileDtoValidator()
     {

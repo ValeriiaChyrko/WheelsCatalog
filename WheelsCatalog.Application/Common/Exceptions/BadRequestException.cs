@@ -6,9 +6,9 @@ public class BadRequestException : Exception
     {
     }
 
-    public BadRequestException(string[] errors) : base("Multiple errors occurred. See error details.")
+    public BadRequestException(string[] errors) : base("Multiple errors occurred. See error details.\n " + string.Join("\n ", errors))
     {
-        Errors = errors;
+        Errors= errors;
     }
 
     public string[]? Errors { get; set; }

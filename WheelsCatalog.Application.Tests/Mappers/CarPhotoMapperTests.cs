@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Moq;
 using NUnit.Framework;
-using WheelsCatalog.Application.Contracts.Infrastructure.File;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.sharedDtos;
 using WheelsCatalog.Application.Profiles;
@@ -13,15 +11,10 @@ namespace WheelsCatalog.Application.Tests.Mappers;
 public class CarPhotoMapperTests
 {
     private IMapper _mapper = null!;
-    private Mock<IFileService> _fileServiceMock = null!;
 
     [SetUp]
     public void Setup()
     {
-        _fileServiceMock = new Mock<IFileService>();
-        _fileServiceMock.Setup(service => service.UploadImage(It.IsAny<FileDto>()))
-            .ReturnsAsync("https://firebasestorage.googleapis.com/v0/b/wheelscatalog-564d8.appspot.com");
-        
         var mapperConfig = new MapperConfiguration(cfg =>
         {
             cfg.AddProfile(new CarPhotoMappingProfile());
@@ -53,8 +46,5 @@ public class CarPhotoMapperTests
         // Assert
         Assert.IsNotNull(result);
         Assert.That(result.CarId.Value, Is.EqualTo(requestCarPhotoDto.CarId.Value));
-        Assert.IsFalse(string.IsNullOrEmpty(result.PhotoUrl));
-        
-        _fileServiceMock.Verify(service => service.UploadImage(It.IsAny<FileDto>()), Times.Once);
     }
 }

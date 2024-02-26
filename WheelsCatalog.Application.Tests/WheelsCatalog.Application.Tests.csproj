@@ -22,7 +22,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\WheelsCatalog.Application\WheelsCatalog.Application.csproj" />
+
+
+
+
     </ItemGroup>
+
+
 
 
 

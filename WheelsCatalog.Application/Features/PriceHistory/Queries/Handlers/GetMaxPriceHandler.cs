@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.PriceHistory.Queries.Requests;
@@ -29,7 +28,7 @@ public class GetMaxPriceHandler : IRequestHandler<GetMaxPriceRequest, RespondPri
         var actualPrices = new List<Domain.PriceHistoryAggregate.PriceHistory>();
         foreach (var car in cars)
         {
-            var priceHistoryByCar = await _priceHistoryRepository.GetActualPriceByCarIdStartByDateAsync(car.Id, startDate, cancellationToken);
+            var priceHistoryByCar = await _priceHistoryRepository.GetActualPriceByCarIdStartByDateAsync(car.Id.Value, startDate, cancellationToken);
             if (priceHistoryByCar != null) actualPrices.Add(priceHistoryByCar);
         }
 
