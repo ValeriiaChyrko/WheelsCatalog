@@ -142,7 +142,19 @@ internal class CarRepository : GenericRepository<Car, CarEntityModel>, ICarRepos
         var predicate = BuildFilterCondition(filtering, priceFiltering);
         var sortExpression = BuildSortingCondition(filtering);
         var sortOrder = filtering?.IsDescending;
-        var brands = await ListAsync(pageNumber, pageSize, sortOrder, sortExpression, predicate, cancellationToken);
-        return brands;
+        var cars = await ListAsync(pageNumber, pageSize, sortOrder, sortExpression, predicate, cancellationToken);
+        return cars;
+    }
+    
+    public async Task<double?> GetCarDtoEngineVolumeMax()
+    {
+        var cars = await ListAsync(true, car => car.EngineVolume);
+        return cars.FirstOrDefault()?.EngineVolume;
+    }
+    
+    public async Task<double?> GetCarDtoEngineVolumeMin()
+    {
+        var cars = await ListAsync(false, car => car.EngineVolume);
+        return cars.FirstOrDefault()?.EngineVolume;
     }
 }

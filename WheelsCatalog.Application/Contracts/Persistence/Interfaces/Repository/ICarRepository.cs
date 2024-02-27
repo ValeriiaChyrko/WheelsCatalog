@@ -10,9 +10,9 @@ public interface ICarRepository : IGenericRepository<Car>
     Task<string?> GetCarBrandNameAsync(Guid modelId, CancellationToken cancellationToken = default);
     Task<string?> GetCarColorNameAsync(Guid colorId, CancellationToken cancellationToken = default);
 
-    Task<int> CountByModelIdAsync(Guid modelId, CancellationToken cancellationToken = default);
-    Task<ICollection<Car>> GetAllByModelIdAsync(int pageNumber, int pageSize, Guid modelId, CancellationToken cancellationToken = default);
-
+    Task<double?> GetCarDtoEngineVolumeMax();
+    Task<double?> GetCarDtoEngineVolumeMin();
+    
     Task<int> CountWithFiltersAsync(CarFilteringParameters? filtering = null,
         PriceFilteringParameters? priceFiltering = null,
         CancellationToken cancellationToken = default);

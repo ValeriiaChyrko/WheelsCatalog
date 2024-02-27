@@ -9,35 +9,23 @@ namespace WheelsCatalog.Application.Features.PriceHistory.Queries.Handlers;
 public class GetMaxPriceHandler : IRequestHandler<GetMaxPriceRequest, RespondPriceDto>
 {
     private readonly IPriceHistoryRepository _priceHistoryRepository;
-    private readonly ICarRepository _carRepository;
     private readonly ICurrencyRepository _currencyRepository;
     private readonly IMapper _mapper;
 
-    public GetMaxPriceHandler(IPriceHistoryRepository priceHistoryRepository, IMapper mapper, ICurrencyRepository currencyRepository, ICarRepository carRepository)
+    public GetMaxPriceHandler(IPriceHistoryRepository priceHistoryRepository, IMapper mapper, ICurrencyRepository currencyRepository)
     {
         _priceHistoryRepository = priceHistoryRepository;
         _mapper = mapper;
         _currencyRepository = currencyRepository;
-        _carRepository = carRepository;
     }
 
     public async Task<RespondPriceDto> Handle(GetMaxPriceRequest request, CancellationToken cancellationToken)
     {
-        var cars = await _carRepository.ListAsync(cancellationToken);
-        var startDate = request.Date != null ? request.Date!.Value : DateTime.MinValue;
-        var actualPrices = new List<Domain.PriceHistoryAggregate.PriceHistory>();
-        foreach (var car in cars)
-        {
-            var priceHistoryByCar = await _priceHistoryRepository.GetActualPriceByCarIdStartByDateAsync(car.Id.Value, startDate, cancellationToken);
-            if (priceHistoryByCar != null) actualPrices.Add(priceHistoryByCar);
-        }
-
-        if (actualPrices.Count == 0) throw new InvalidOperationException("No actual prices found for any cars.");
-
-        var maxPrice = actualPrices.OrderByDescending(x => x.Price).First();
+        var maxPrice = await _priceHistoryRepository.GetMaxPriceStartByDateAsync(request.Date!.Value, cancellationToken);
+        if (maxPrice == null) return new RespondPriceDto();
+        
         var respond = _mapper.Map<RespondPriceDto>(maxPrice);
-        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(maxPrice.CurrencyId) 
-                                  ?? throw new InvalidOperationException();
+        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(maxPrice.CurrencyId) ?? throw new InvalidOperationException();
 
         return respond;
     }

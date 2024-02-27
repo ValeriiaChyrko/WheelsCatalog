@@ -45,4 +45,24 @@ internal class PriceHistoryRepository : GenericRepository<PriceHistory, PriceHis
 
         return actualPrice;
     }
+    
+    public async Task<PriceHistory?> GetMaxPriceStartByDateAsync(DateTime? dateTime,
+        CancellationToken cancellationToken = default)
+    {
+        Expression<Func<PriceHistoryEntityModel, bool>> filterExpression =
+            entity => entity.StartDate.Date <= (dateTime ?? DateTime.Now).Date;
+
+        var filteredEntities = await ListAsync(true, price => price.Price, filterExpression, cancellationToken);
+        return filteredEntities.FirstOrDefault();
+    }
+    
+    public async Task<PriceHistory?> GetMinPriceStartByDateAsync(DateTime? dateTime,
+        CancellationToken cancellationToken = default)
+    {
+        Expression<Func<PriceHistoryEntityModel, bool>> filterExpression =
+            entity => entity.StartDate.Date <= (dateTime ?? DateTime.Now).Date;
+
+        var filteredEntities = await ListAsync(false, price => price.Price, filterExpression, cancellationToken);
+        return filteredEntities.FirstOrDefault();
+    }
 }

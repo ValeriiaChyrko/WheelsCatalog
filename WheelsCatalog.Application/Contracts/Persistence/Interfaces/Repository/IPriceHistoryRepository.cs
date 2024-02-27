@@ -10,4 +10,10 @@ public interface IPriceHistoryRepository : IGenericRepository<PriceHistory>
 
     Task<PriceHistory?> GetActualPriceByCarIdStartByDateAsync(Guid carId, DateTime dateTime,
         CancellationToken cancellationToken = default);
+
+    Task<PriceHistory?> GetMaxPriceStartByDateAsync(DateTime? dateTime,
+        CancellationToken cancellationToken = default);
+
+    Task<PriceHistory?> GetMinPriceStartByDateAsync(DateTime? dateTime,
+        CancellationToken cancellationToken = default);
 }

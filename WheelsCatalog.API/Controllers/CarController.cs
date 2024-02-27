@@ -41,7 +41,7 @@ public class CarController : ControllerBase
     [HttpGet("count")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> GetBrandsAmount(
+    public async Task<ActionResult<PaginatedList<RespondBrandDto>>> GetCarsAmount(
         [FromQuery] CarFilteringParameters? filteringParameters,
         [FromQuery] PriceFilteringParameters? priceFilteringParameters)
     {
@@ -54,6 +54,26 @@ public class CarController : ControllerBase
         return StatusCode(StatusCodes.Status200OK, result);
     }
 
+    [HttpGet("/api/engine-volumes/max")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<double>> GetEngineVolumeMax()
+    {
+        var command = new GetCarDtoEngineVolumeMaxRequest();
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
+    [HttpGet("/api/engine-volumes/min")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<double>> GetEngineVolumeMin()
+    {
+        var command = new GetCarDtoEngineVolumeMinRequest();
+        var result = await _mediator.Send(command);
+        return StatusCode(StatusCodes.Status200OK, result);
+    }
+    
     [HttpGet("details")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

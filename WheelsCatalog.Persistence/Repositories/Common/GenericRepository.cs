@@ -120,6 +120,16 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
         return await BaseListAsync(predicate: predicate, cancellationToken: cancellationToken);
     }
     
+    protected async Task<ICollection<TEntity>> ListAsync( 
+        bool? isDescending = false,
+        Expression<Func<TEntityModel, object>>? sortExpression = null,
+        Expression<Func<TEntityModel, bool>>? predicate = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await BaseListAsync(useSorting: true, sortExpression:sortExpression, isDescending: isDescending,
+            predicate: predicate, cancellationToken: cancellationToken);
+    }
+    
     protected async Task<List<TEntityModel>> ListAsync(
         Func<IQueryable<TEntityModel>, IQueryable<TEntityModel>>? include = null,
         Expression<Func<TEntityModel, object>>? navigationPropertyPath = null,
