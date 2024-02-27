@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Model.Commands.Requests;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;

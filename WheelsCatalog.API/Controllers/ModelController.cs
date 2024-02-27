@@ -25,10 +25,9 @@ public class ModelController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<PaginatedList<RespondModelDto>>> Get(
-        [FromQuery] ModelFilteringParameters? filteringParameters,
-        [FromQuery] PaginationParameters? paginationParameters)
+        [FromQuery] ModelFilteringParameters? filteringParameters)
     {
-        var command = new GetModelDtoListWithFiltersRequest { FilteringParameters = filteringParameters, PaginationParameters = paginationParameters };
+        var command = new GetModelDtoListWithFiltersRequest { FilteringParameters = filteringParameters };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }
@@ -52,31 +51,6 @@ public class ModelController : ControllerBase
     public async Task<ActionResult<RespondModelDto>> Get(Guid? id)
     {
         var command = new GetModelDtoRequest { Id = id };
-        var result = await _mediator.Send(command);
-        return StatusCode(StatusCodes.Status200OK, result);
-    }
-
-    [HttpGet("/api/brands/{id:guid}/models")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondModelDto>>> GetModelsByBrand(Guid? id, 
-        [FromQuery] PaginationParameters? paginationParams)
-    {
-        var command = new GetModelDtoListByBrandRequest { Id = id, PaginationParameters = paginationParams };
-        var result = await _mediator.Send(command);
-        return StatusCode(StatusCodes.Status200OK, result);
-    }
-    
-    [HttpGet("/api/brands/{id:guid}/models/count")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<int>> GetModelsByBrandAmount(Guid? id)
-    {
-        var command = new GetModelDtoListByBrandCountRequest { Id = id };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

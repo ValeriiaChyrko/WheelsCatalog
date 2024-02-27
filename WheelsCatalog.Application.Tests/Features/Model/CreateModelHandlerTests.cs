@@ -1,6 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.Features.Model.Commands.Handlers;
 using WheelsCatalog.Application.Features.Model.Commands.Requests;

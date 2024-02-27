@@ -8,5 +8,4 @@ namespace WheelsCatalog.Application.Features.Model.Queries.Requests;
 public class GetModelDtoListWithFiltersRequest : IRequest<PaginatedList<RespondModelDto>>
 {
     public ModelFilteringParameters? FilteringParameters { get; init; }
-    public PaginationParameters? PaginationParameters { get; init; }
 }

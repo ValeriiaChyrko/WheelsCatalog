@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Persistence.Repositories;
 
 namespace WheelsCatalog.Persistence;

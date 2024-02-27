@@ -1,4 +1,4 @@
-﻿namespace WheelsCatalog.Application.Contracts.Persistence.Repository.Common;
+﻿namespace WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 
 public interface IGenericRepository<TEntity> : IReadRepositoryBase<TEntity> where TEntity : class
 {

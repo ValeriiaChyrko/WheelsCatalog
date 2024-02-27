@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using WheelsCatalog.Application.Contracts.Persistence;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.ColorAggregate.ValueObjects;

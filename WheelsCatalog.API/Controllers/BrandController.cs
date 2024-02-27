@@ -25,10 +25,9 @@ public class BrandController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<PaginatedList<RespondBrandDto>>> Get(
-        [FromQuery] BrandFilteringParameters? filteringParameters,
-        [FromQuery] PaginationParameters? paginationParams)
+        [FromQuery] BrandFilteringParameters? filteringParameters)
     {
-        var command = new GetBrandDtoListWithFiltersRequest { PaginationParameters = paginationParams, FilteringParameters = filteringParameters };
+        var command = new GetBrandDtoListWithFiltersRequest { FilteringParameters = filteringParameters };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

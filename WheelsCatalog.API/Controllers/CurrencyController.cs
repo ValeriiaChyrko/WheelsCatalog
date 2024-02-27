@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WheelsCatalog.Application.Contracts.Persistence;
-using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Currency.Queries.Requests;
 
@@ -22,10 +21,9 @@ public class CurrencyController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<PaginatedList<RespondCurrencyDto>>> Get(
-        [FromQuery] PaginationParameters? paginationParams)
+    public async Task<ActionResult<PaginatedList<RespondCurrencyDto>>> Get()
     {
-        var command = new GetCurrencyDtoListRequest { PaginationParameters = paginationParams };
+        var command = new GetCurrencyDtoListRequest();
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

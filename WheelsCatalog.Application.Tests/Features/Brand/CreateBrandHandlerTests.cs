@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Application.Contracts.Infrastructure.File;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.sharedDtos;
 using WheelsCatalog.Application.Features.Brand.Commands.Handlers;

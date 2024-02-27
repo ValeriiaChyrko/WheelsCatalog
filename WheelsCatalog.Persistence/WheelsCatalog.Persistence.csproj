@@ -21,8 +21,7 @@
         </Compile>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Specification\"/>
-    </ItemGroup>
+
+
 
 </Project>

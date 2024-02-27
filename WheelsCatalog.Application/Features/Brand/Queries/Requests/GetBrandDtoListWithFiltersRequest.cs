@@ -8,5 +8,4 @@ namespace WheelsCatalog.Application.Features.Brand.Queries.Requests;
 public class GetBrandDtoListWithFiltersRequest : IRequest<PaginatedList<RespondBrandDto>>
 {
     public BrandFilteringParameters? FilteringParameters { get; init; }
-    public PaginationParameters? PaginationParameters { get; init; }
 }

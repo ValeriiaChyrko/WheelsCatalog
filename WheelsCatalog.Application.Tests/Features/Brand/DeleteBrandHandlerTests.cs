@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Brand.Commands.Handlers;
 using WheelsCatalog.Application.Features.Brand.Commands.Requests;
 using WheelsCatalog.Domain.BrandAggregate.ValueObjects;

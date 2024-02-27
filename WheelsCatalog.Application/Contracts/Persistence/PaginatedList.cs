@@ -1,18 +1,15 @@
-﻿using WheelsCatalog.Application.Contracts.Presentation;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Interfaces;
 
 namespace WheelsCatalog.Application.Contracts.Persistence;
 
-public class PaginatedList<T>
+public class PaginatedList<TEntity> : IPaginatedList<TEntity> where TEntity : class
 {
-    public IReadOnlyList<T> Data { get; private set; }
-    public PaginationInfo Pagination { get; private set; }
-
-    public PaginatedList(IReadOnlyList<T> data, int currentPage)
+    public PaginatedList(IReadOnlyList<TEntity> data, int page, int limit)
     {
         Data = data;
-        Pagination = new PaginationInfo
-        {
-            CurrentPage = currentPage
-        };
+        Pagination = new Pageable(page, limit);
     }
+
+    public IReadOnlyList<TEntity> Data { get; }
+    public IPageable Pagination { get; }
 }

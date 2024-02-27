@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Domain.CarAggregate;
 using WheelsCatalog.Persistence.Models;
@@ -60,7 +60,7 @@ internal class CarRepository : GenericRepository<Car, CarEntityModel>, ICarRepos
         return cars;
     }
     
-    private Expression<Func<CarEntityModel, bool>> BuildCarFilterCondition(CarFilteringParameters? carFiltering,
+    private Expression<Func<CarEntityModel, bool>> BuildFilterCondition(CarFilteringParameters? carFiltering,
         PriceFilteringParameters? priceFiltering)
     {
         Expression<Func<CarEntityModel, bool>> filterCondition = car => true;
@@ -80,35 +80,57 @@ internal class CarRepository : GenericRepository<Car, CarEntityModel>, ICarRepos
         if (carFiltering?.PartialBrandName != null)
             filterCondition = filterCondition.And(car => car.Model.Brand.Name.Contains(carFiltering.PartialBrandName));
     
-        if (carFiltering?.EngineVolume != null && carFiltering.EngineVolume != 0)
-            filterCondition = filterCondition.And(car => car.EngineVolume.CompareTo(carFiltering.EngineVolume.Value) == 0);
+        if (carFiltering?.MinEngineVolume != null && carFiltering.MinEngineVolume != 0)
+            filterCondition = filterCondition.And(car => car.EngineVolume.CompareTo(carFiltering.MinEngineVolume.Value) > 0);
+        
+        if (carFiltering?.MaxEngineVolume != null && carFiltering.MaxEngineVolume != 0)
+            filterCondition = filterCondition.And(car => car.EngineVolume.CompareTo(carFiltering.MaxEngineVolume.Value) < 0);
         
         if (priceFiltering?.Date != null)
-            filterCondition = filterCondition.And(
-                car => car.PriceHistories != null && 
-                       car.PriceHistories.Any(ph => 
-                           ph.StartDate.Date == priceFiltering.Date.Value.Date));
-        
+        {
+            var targetDate = priceFiltering.Date.Value.Date;
+            filterCondition = filterCondition.And(car => car.PriceHistories != null &&
+                              car.PriceHistories.Any(ph => ph.StartDate <= targetDate));
+        }
+
         if (priceFiltering?.MinPrice != null)
-            filterCondition = filterCondition.And(
-                car => car.PriceHistories != null && 
-                       car.PriceHistories.Any(ph => 
-                           ph.Price >= priceFiltering.MinPrice));
+        {
+            filterCondition = filterCondition.And(car => car.PriceHistories != null &&
+                              car.PriceHistories.OrderByDescending(ph => ph.StartDate)
+                              .FirstOrDefault(ph => ph.StartDate.Date <= (priceFiltering.Date ?? DateTime.Now).Date)!
+                              .Price >= priceFiltering.MinPrice);
+        }
         
         if (priceFiltering?.MaxPrice != null)
-            filterCondition = filterCondition.And(
-                car => car.PriceHistories != null && 
-                       car.PriceHistories.Any(ph => 
-                           ph.Price <= priceFiltering.MaxPrice));
+        {
+            filterCondition = filterCondition.And(car => car.PriceHistories != null &&
+                              car.PriceHistories.OrderByDescending(ph => ph.StartDate)
+                              .FirstOrDefault(ph => ph.StartDate.Date <= (priceFiltering.Date ?? DateTime.Now).Date)!
+                              .Price <= priceFiltering.MaxPrice);
+        }
 
         return filterCondition;
     }
 
+    private Expression<Func<CarEntityModel, object>> BuildSortingCondition(CarFilteringParameters? filtering)
+    {
+        Expression<Func<CarEntityModel, object>> sortingCondition = car => car.Id;
+
+        if (filtering?.SortPropertyName == null) return sortingCondition;
+        
+        var parameterExpression = Expression.Parameter(typeof(CarEntityModel), "car");
+        var propertyExpression = Expression.PropertyOrField(parameterExpression, filtering.SortPropertyName);
+        var convertExpression = Expression.Convert(propertyExpression, typeof(object)); 
+
+        sortingCondition = Expression.Lambda<Func<CarEntityModel, object>>(convertExpression, parameterExpression);
+        return sortingCondition;
+    }
+    
     public async Task<int> CountWithFiltersAsync(CarFilteringParameters? filtering = null, 
         PriceFilteringParameters? priceFiltering = null,
         CancellationToken cancellationToken = default)
     {
-        var filterCondition = BuildCarFilterCondition(filtering, priceFiltering);
+        var filterCondition = BuildFilterCondition(filtering, priceFiltering);
         var count = await CountAsync(filterCondition, cancellationToken);
         return count;
     }
@@ -117,8 +139,10 @@ internal class CarRepository : GenericRepository<Car, CarEntityModel>, ICarRepos
         CarFilteringParameters? filtering = null, PriceFilteringParameters? priceFiltering = null,
         CancellationToken cancellationToken = default)
     {
-        var filterCondition = BuildCarFilterCondition(filtering, priceFiltering);
-        var cars = await ListAsync(pageNumber, pageSize, filterCondition, cancellationToken);
-        return cars;
+        var predicate = BuildFilterCondition(filtering, priceFiltering);
+        var sortExpression = BuildSortingCondition(filtering);
+        var sortOrder = filtering?.IsDescending;
+        var brands = await ListAsync(pageNumber, pageSize, sortOrder, sortExpression, predicate, cancellationToken);
+        return brands;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.PriceHistory.Queries.Requests;
 

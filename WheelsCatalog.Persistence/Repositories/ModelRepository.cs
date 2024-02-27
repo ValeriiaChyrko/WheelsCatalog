@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Domain.ModelAggregate;
 using WheelsCatalog.Persistence.Models;
@@ -52,6 +52,20 @@ internal class ModelRepository : GenericRepository<Model, ModelEntityModel>, IMo
         return filterCondition;
     }
 
+    private Expression<Func<ModelEntityModel, object>> BuildSortingCondition(ModelFilteringParameters? filtering)
+    {
+        Expression<Func<ModelEntityModel, object>> sortingCondition = model => model.Id;
+
+        if (filtering?.SortPropertyName == null) return sortingCondition;
+        
+        var parameterExpression = Expression.Parameter(typeof(ModelEntityModel), "model");
+        var propertyExpression = Expression.PropertyOrField(parameterExpression, filtering.SortPropertyName);
+        var convertExpression = Expression.Convert(propertyExpression, typeof(object)); 
+
+        sortingCondition = Expression.Lambda<Func<ModelEntityModel, object>>(convertExpression, parameterExpression);
+        return sortingCondition;
+    }
+    
     public async Task<int> CountWithFiltersAsync(ModelFilteringParameters? filtering = null,
         CancellationToken cancellationToken = default)
     {
@@ -63,8 +77,10 @@ internal class ModelRepository : GenericRepository<Model, ModelEntityModel>, IMo
     public async Task<ICollection<Model>> GetAllByFilterAsync(int pageNumber, int pageSize,
         ModelFilteringParameters? filtering = null, CancellationToken cancellationToken = default)
     {
-        var filterCondition = BuildFilterCondition(filtering);
-        var models = await ListAsync(pageNumber, pageSize, filterCondition, cancellationToken);
+        var predicate = BuildFilterCondition(filtering);
+        var sortExpression = BuildSortingCondition(filtering);
+        var sortOrder = filtering?.IsDescending;
+        var models = await ListAsync(pageNumber, pageSize, sortOrder, sortExpression, predicate, cancellationToken);
         return models;
     }
 }

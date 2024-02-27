@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Domain.CurrencyAggregate;
 using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
 using WheelsCatalog.Persistence.Models;

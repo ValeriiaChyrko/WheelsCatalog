@@ -1,7 +1,7 @@
-﻿using WheelsCatalog.Application.Contracts.Persistence.Repository.Common;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
 
-namespace WheelsCatalog.Application.Contracts.Persistence.Repository;
+namespace WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 
 public interface IPriceHistoryRepository : IGenericRepository<PriceHistory>
 {

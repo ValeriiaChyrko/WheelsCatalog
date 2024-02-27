@@ -27,14 +27,12 @@ public class CarController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<PaginatedList<RespondCarDto>>> Get(
         [FromQuery] CarFilteringParameters? filteringParameters,
-        [FromQuery] PriceFilteringParameters? priceFilteringParameters,
-        [FromQuery] PaginationParameters? paginationParams)
+        [FromQuery] PriceFilteringParameters? priceFilteringParameters)
     {
         var command = new GetCarDtoListWithFiltersRequest
         {
             CarFilteringParameters = filteringParameters,
-            PriceFilteringParameters = priceFilteringParameters,
-            PaginationParameters = paginationParams
+            PriceFilteringParameters = priceFilteringParameters
         };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
@@ -59,11 +57,14 @@ public class CarController : ControllerBase
     [HttpGet("details")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetWithDependencies([FromQuery] PaginationParameters? paginationParameters)
+    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetWithDependencies(
+        [FromQuery] CarFilteringParameters? filteringParameters,
+        [FromQuery] PriceFilteringParameters? priceFilteringParameters)
     {
         var command = new GetCarDtoListDetailsRequest
         {
-            PaginationParameters = paginationParameters
+            CarFilteringParameters = filteringParameters,
+            PriceFilteringParameters = priceFilteringParameters
         };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
@@ -77,31 +78,6 @@ public class CarController : ControllerBase
     public async Task<ActionResult<RespondCarDto>> Get(Guid? id)
     {
         var command = new GetCarDtoRequest { Id = id };
-        var result = await _mediator.Send(command);
-        return StatusCode(StatusCodes.Status200OK, result);
-    }
-
-    [HttpGet("/api/models/{modelId:guid}/cars")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RespondCarDto>>> GetCarsByModel(Guid? modelId,
-        [FromQuery] PaginationParameters? paginationParams)
-    {
-        var command = new GetCarDtoListByModelRequest { Id = modelId, PaginationParameters = paginationParams };
-        var result = await _mediator.Send(command);
-        return StatusCode(StatusCodes.Status200OK, result);
-    }
-    
-    [HttpGet("/api/models/{modelId:guid}/cars/count")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<int>> GetCarsByModelAmount(Guid? modelId)
-    {
-        var command = new GetCarDtoListByModelCountRequest { Id = modelId };
         var result = await _mediator.Send(command);
         return StatusCode(StatusCodes.Status200OK, result);
     }

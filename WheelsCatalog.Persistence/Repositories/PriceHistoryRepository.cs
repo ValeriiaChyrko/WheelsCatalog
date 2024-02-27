@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Domain.PriceHistoryAggregate;
 using WheelsCatalog.Persistence.Models;
 using WheelsCatalog.Persistence.Repositories.common;
@@ -38,10 +38,10 @@ internal class PriceHistoryRepository : GenericRepository<PriceHistory, PriceHis
         CancellationToken cancellationToken = default)
     {
         Expression<Func<PriceHistoryEntityModel, bool>> filterExpression =
-            entity => entity.CarId == carId && entity.StartDate >= dateTime;
+            entity => entity.CarId == carId && entity.StartDate.Date <= dateTime.Date;
 
         var filteredEntities = await ListAsync(filterExpression, cancellationToken);
-        var actualPrice = filteredEntities.MinBy(entity => entity.StartDate);
+        var actualPrice = filteredEntities.MaxBy(entity => entity.StartDate.Date);
 
         return actualPrice;
     }

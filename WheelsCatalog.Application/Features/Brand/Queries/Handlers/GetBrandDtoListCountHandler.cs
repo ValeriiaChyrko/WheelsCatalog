@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Brand.Queries.Requests;
 
 namespace WheelsCatalog.Application.Features.Brand.Queries.Handlers;

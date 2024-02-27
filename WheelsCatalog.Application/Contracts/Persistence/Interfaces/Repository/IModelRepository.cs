@@ -1,8 +1,8 @@
-﻿using WheelsCatalog.Application.Contracts.Persistence.Repository.Common;
+﻿using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Domain.ModelAggregate;
 
-namespace WheelsCatalog.Application.Contracts.Persistence.Repository;
+namespace WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 
 public interface IModelRepository : IGenericRepository<Model>
 {

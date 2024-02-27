@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using WheelsCatalog.Application.Contracts.Persistence.Repository.Common;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 
 namespace WheelsCatalog.Persistence.Repositories.common;
 
@@ -26,62 +26,107 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
         return entityModel != null ? _mapper.Map<TEntity>(entityModel) : null;
     }
 
-    public virtual async Task<ICollection<TEntity>> ListAsync(CancellationToken cancellationToken = default)
-    {
-        var entityModels = await _context.Set<TEntityModel>().ToListAsync(cancellationToken);
-        return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
-    }
-    
-    public virtual async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, CancellationToken cancellationToken = default)
-    {
-        var entityModels = await _context.Set<TEntityModel>()
-            .Skip((pageNumber - 1) * pageSize)
-            .Take(pageSize) 
-            .ToListAsync(cancellationToken);
-
-        return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
-    }
-    
-    protected async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, Expression<Func<TEntityModel, bool>> predicate,
-        CancellationToken cancellationToken = default)
-    {
-        var entityModels = await _context.Set<TEntityModel>()
-            .Where(predicate)
-            .Skip((pageNumber - 1) * pageSize)
-            .Take(pageSize)
-            .ToListAsync(cancellationToken);
-        
-        return entityModels
-            .Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
-    }
-    
-    protected async Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntityModel, bool>> predicate,
-        CancellationToken cancellationToken = default)
-    {
-        var entityModels = await _context.Set<TEntityModel>()
-            .Where(predicate)
-            .ToListAsync(cancellationToken);
-       
-        return entityModels
-            .Select(entityModel => _mapper.Map<TEntity>(entityModel))
-            .ToList();
-    }
-
-    protected async Task<ICollection<TEntityModel>> ListAsync<TProperty>(
+    private async Task<List<TEntityModel>> GetEntityModelsAsync(
+        int? pageNumber = null,
+        int? pageSize = null,
+        bool usePagination = false,
+        bool useSorting = false,
+        bool? isDescending = false,
+        Expression<Func<TEntityModel, bool>>? predicate = null,
+        Expression<Func<TEntityModel, object>>? sortExpression = null,
         Func<IQueryable<TEntityModel>, IQueryable<TEntityModel>>? include = null,
-        Expression<Func<TEntityModel, TProperty>>? navigationPropertyPath = null,
+        Expression<Func<TEntityModel, object>>? navigationPropertyPath = null,
         CancellationToken cancellationToken = default)
-        where TProperty : class
     {
         IQueryable<TEntityModel> query = _context.Set<TEntityModel>();
+
+        if (predicate != null)
+            query = query.Where(predicate);
+
         if (include != null)
         {
-            query = navigationPropertyPath != null ? include(query).Include(navigationPropertyPath) : include(query);
+            query = include(query);
+            if (navigationPropertyPath != null)
+                query = query.Include(navigationPropertyPath);
         }
 
-        var entityModels = await query.ToListAsync(cancellationToken);
+        if (useSorting && sortExpression != null)
+        {
+            query = isDescending == true ? query.OrderByDescending(sortExpression) : query.OrderBy(sortExpression);
+        }
+        
+        if (usePagination && pageNumber.HasValue && pageSize.HasValue)
+        {
+            query = query
+                .Skip((pageNumber.Value - 1) * pageSize.Value)
+                .Take(pageSize.Value);
+        }
 
-        return entityModels;
+        return await query.ToListAsync(cancellationToken);
+    }
+    
+    private async Task<ICollection<TEntity>> BaseListAsync(
+        int? pageNumber = null,
+        int? pageSize = null,
+        bool usePagination = false,
+        bool useSorting = false,
+        bool? isDescending = false,
+        Expression<Func<TEntityModel, bool>>? predicate = null,
+        Expression<Func<TEntityModel, object>>? sortExpression = null,
+        Func<IQueryable<TEntityModel>, IQueryable<TEntityModel>>? include = null,
+        Expression<Func<TEntityModel, object>>? navigationPropertyPath = null,
+        CancellationToken cancellationToken = default)
+    {
+        var entityModels = await GetEntityModelsAsync(pageNumber, pageSize, usePagination,
+            useSorting, isDescending, predicate, sortExpression, include, navigationPropertyPath, cancellationToken);
+        return entityModels.Select(entityModel => _mapper.Map<TEntity>(entityModel)).ToList();
+    }
+    
+    public virtual async Task<ICollection<TEntity>> ListAsync(CancellationToken cancellationToken = default)
+    {
+        return await BaseListAsync(cancellationToken: cancellationToken);
+    }
+    
+    public virtual async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, 
+        CancellationToken cancellationToken = default)
+    {
+        return await BaseListAsync(pageNumber: pageNumber, pageSize: pageSize,
+            usePagination: true, cancellationToken: cancellationToken);
+    }
+    
+    protected async Task<ICollection<TEntity>> ListAsync(int pageNumber, int pageSize, 
+        Expression<Func<TEntityModel, bool>>? predicate,
+        CancellationToken cancellationToken = default)
+    {
+        return await BaseListAsync(pageNumber: pageNumber, pageSize: pageSize, usePagination: true,
+            predicate: predicate, cancellationToken: cancellationToken);
+    }
+    
+    protected async Task<ICollection<TEntity>> ListAsync(int? pageNumber, int? pageSize, 
+        bool? isDescending = false,
+        Expression<Func<TEntityModel, object>>? sortExpression = null,
+        Expression<Func<TEntityModel, bool>>? predicate = null, 
+        CancellationToken cancellationToken = default)
+    {
+        return await BaseListAsync(usePagination: true, pageNumber: pageNumber, pageSize: pageSize,
+            useSorting: true, sortExpression:sortExpression, isDescending: isDescending,
+            predicate: predicate, cancellationToken: cancellationToken);
+    }
+    
+    protected async Task<ICollection<TEntity>> ListAsync(
+        Expression<Func<TEntityModel, bool>>? predicate = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await BaseListAsync(predicate: predicate, cancellationToken: cancellationToken);
+    }
+    
+    protected async Task<List<TEntityModel>> ListAsync(
+        Func<IQueryable<TEntityModel>, IQueryable<TEntityModel>>? include = null,
+        Expression<Func<TEntityModel, object>>? navigationPropertyPath = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await GetEntityModelsAsync(include: include, navigationPropertyPath: navigationPropertyPath, 
+            cancellationToken: cancellationToken);
     }
 
     public virtual async Task<int> CountAsync(CancellationToken cancellationToken = default)

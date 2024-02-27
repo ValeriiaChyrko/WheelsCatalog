@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using WheelsCatalog.Application.Contracts.Presentation.Validators;
 
 namespace WheelsCatalog.Application.Features.Brand.Queries.Requests.Validators;
 
@@ -7,8 +6,6 @@ public class GetBrandDtoListWithFiltersRequestValidator : AbstractValidator<GetB
 {
     public GetBrandDtoListWithFiltersRequestValidator()
     {
-        RuleFor(x => x.PaginationParameters)
-            .SetValidator(new PaginationParametersValidator()!)
-            .When(x=>x.PaginationParameters != null);
+        //RuleFor(x => x.PaginationParameters).SetValidator(new PaginationParametersValidator()!).When(x=>x.PaginationParameters != null);
     }
 }

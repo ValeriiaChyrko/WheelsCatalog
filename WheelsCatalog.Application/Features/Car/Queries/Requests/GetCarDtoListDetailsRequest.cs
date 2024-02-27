@@ -7,5 +7,6 @@ namespace WheelsCatalog.Application.Features.Car.Queries.Requests;
 
 public class GetCarDtoListDetailsRequest : IRequest<PaginatedList<RespondCarDtoDetails>>
 {
-    public PaginationParameters? PaginationParameters { get; init; }
+    public CarFilteringParameters? CarFilteringParameters { get; init; }
+    public PriceFilteringParameters? PriceFilteringParameters { get; init; }
 }

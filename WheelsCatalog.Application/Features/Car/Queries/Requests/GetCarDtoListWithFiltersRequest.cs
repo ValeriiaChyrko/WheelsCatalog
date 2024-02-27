@@ -9,5 +9,4 @@ public class GetCarDtoListWithFiltersRequest : IRequest<PaginatedList<RespondCar
 {
     public CarFilteringParameters? CarFilteringParameters { get; init; }
     public PriceFilteringParameters? PriceFilteringParameters { get; init; }
-    public PaginationParameters? PaginationParameters { get; init; }
 }

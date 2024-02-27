@@ -2,7 +2,7 @@
 using MediatR;
 using WheelsCatalog.Application.Common;
 using WheelsCatalog.Application.Contracts.Persistence;
-using WheelsCatalog.Application.Contracts.Persistence.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Brand.Queries.Requests;
 
@@ -21,13 +21,13 @@ public class GetBrandDtoListHandler : IRequestHandler<GetBrandDtoListWithFilters
 
     public async Task<PaginatedList<RespondBrandDto>> Handle(GetBrandDtoListWithFiltersRequest request, CancellationToken cancellationToken)
     {
-        var paginationParameters = request.PaginationParameters;
+        var paginationParameters = request.FilteringParameters;
         var pageNumber = paginationParameters?.Page ?? Constants.DefaultPageNumber;
         var pageSize = paginationParameters?.Limit ?? Constants.DefaultPageSize;
 
         var brands = await _repository.GetAllByFilterAsync(pageNumber, pageSize, request.FilteringParameters, cancellationToken);
         var respondBrands = _mapper.Map<List<RespondBrandDto>>(brands);
         
-        return new PaginatedList<RespondBrandDto>(respondBrands, pageNumber);
+        return new PaginatedList<RespondBrandDto>(respondBrands, pageNumber, pageSize);
     }
 }
