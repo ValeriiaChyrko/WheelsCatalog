@@ -8,12 +8,11 @@ public class UpdateModelRequestValidator : AbstractValidator<UpdateModelRequest>
     public UpdateModelRequestValidator()
     {
         RuleFor(x => x.Id)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
+            .NotEmpty().WithMessage("Ідентифікатор моделі є обов'язковим полем.")
+            .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор моделі не повинен бути пустим GUID.");
         
         RuleFor(x => x.ModelDto)
-            .NotNull().WithMessage("ModelDto must not be null.")
+            .NotNull().WithMessage("Об'єкт моделі повинен бути переданий в метод.")
             .SetValidator(new RequestModelDtoValidator()!);
     }
 }

@@ -25,7 +25,7 @@ public class GetMinPriceHandler : IRequestHandler<GetMinPriceRequest, RespondPri
         if (minPrice == null) return new RespondPriceDto();
         
         var respond = _mapper.Map<RespondPriceDto>(minPrice);
-        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(minPrice.CurrencyId) ?? throw new InvalidOperationException();
+        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(minPrice.CurrencyId) ?? string.Empty;
 
         return respond;
     }

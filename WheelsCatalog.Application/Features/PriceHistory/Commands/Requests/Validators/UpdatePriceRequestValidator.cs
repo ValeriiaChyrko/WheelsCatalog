@@ -8,12 +8,11 @@ public class UpdatePriceRequestValidator : AbstractValidator<UpdatePriceRequest>
     public UpdatePriceRequestValidator()
     {
         RuleFor(x => x.PriceDto)
-            .NotNull().WithMessage("ModelDto must not be null.")
+            .NotNull().WithMessage("Об'єкт ціни повинен бути переданий в метод.")
             .SetValidator(new RequestPriceDtoValidator()!);
         
         RuleFor(x => x.Id)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
+            .NotEmpty().WithMessage("Ідентифікатор ціни є обов'язковим полем.")
+            .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор ціни не повинен бути пустим GUID.");
     }
 }

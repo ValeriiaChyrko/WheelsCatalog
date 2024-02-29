@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Currency.Queries.Requests;
@@ -22,7 +22,7 @@ public class GetCurrencyDtoHandler : IRequestHandler<GetCurrencyDtoRequest, Resp
     public async Task<RespondCurrencyDto> Handle(GetCurrencyDtoRequest request, CancellationToken cancellationToken)
     {
         var currency = await _repository.GetByIdAsync(request.Id!.Value, cancellationToken);
-        if (currency == null) throw new NotFoundRequestException(request.Id!.Value);
+        if (currency == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Currency", Id = request.Id!.Value});
 
         return _mapper.Map<RespondCurrencyDto>(currency);
     }

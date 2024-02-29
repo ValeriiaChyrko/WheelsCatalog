@@ -7,8 +7,8 @@ public class GetMinPriceRequestValidator : AbstractValidator<GetMinPriceRequest>
     public GetMinPriceRequestValidator()
     {
         RuleFor(dto => dto.Date)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .Must(BeValidDate).WithMessage("{PropertyName} must be a valid date.");
+            .NotEmpty().WithMessage("Дата початку дії ціни є обов'язковим полем.")
+            .Must(BeValidDate).WithMessage("Введена дата має бути коректною.");
     }
     
     private static bool BeValidDate(DateTime? date)

@@ -8,7 +8,7 @@ public class CreatePriceRequestValidator : AbstractValidator<CreatePriceRequest>
     public CreatePriceRequestValidator()
     {
         RuleFor(x => x.PriceDto)
-            .NotNull().WithMessage("ModelDto must not be null.")
+            .NotNull().WithMessage("Об'єкт ціни повинен бути переданий в метод.")
             .SetValidator(new RequestPriceDtoValidator()!);
     }
 }

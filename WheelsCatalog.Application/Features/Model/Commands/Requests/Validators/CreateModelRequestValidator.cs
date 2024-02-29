@@ -8,7 +8,7 @@ public class CreateModelRequestValidator : AbstractValidator<CreateModelRequest>
     public CreateModelRequestValidator()
     {
         RuleFor(x => x.ModelDto)
-            .NotNull().WithMessage("ModelDto must not be null.")
+            .NotNull().WithMessage("Об'єкт моделі має бути переданий в метод.")
             .SetValidator(new RequestModelDtoValidator()!);
     }
 }

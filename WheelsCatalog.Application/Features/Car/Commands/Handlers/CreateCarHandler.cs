@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
@@ -22,7 +21,11 @@ public class CreateCarHandler : IRequestHandler<CreateCarRequest, CarId>
         var modelId = command.CarDto!.ModelId!.Value;
         var colorId = command.CarDto!.ColorId!.Value;
         
-        var car = Domain.CarAggregate.Car.Create(command.CarDto.EngineVolume, command.CarDto.Description, ColorId.Create(colorId), ModelId.Create(modelId)); 
+        var car = Domain.CarAggregate.Car.Create(
+            command.CarDto.EngineVolume, 
+            command.CarDto.Description, 
+            ColorId.Create(colorId), 
+            ModelId.Create(modelId)); 
         await _repository.AddAsync(car, cancellationToken);
 
         return car.Id;

@@ -25,7 +25,7 @@ public class GetMaxPriceHandler : IRequestHandler<GetMaxPriceRequest, RespondPri
         if (maxPrice == null) return new RespondPriceDto();
         
         var respond = _mapper.Map<RespondPriceDto>(maxPrice);
-        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(maxPrice.CurrencyId) ?? throw new InvalidOperationException();
+        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(maxPrice.CurrencyId) ?? string.Empty;
 
         return respond;
     }

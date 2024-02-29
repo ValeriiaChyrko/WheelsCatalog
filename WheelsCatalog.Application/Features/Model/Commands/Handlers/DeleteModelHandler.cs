@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Model.Commands.Requests;
 using WheelsCatalog.Domain.ModelAggregate.ValueObjects;
@@ -21,7 +21,7 @@ public class DeleteModelHandler : IRequestHandler<DeleteModelRequest, ModelId>
         var id = command.Id!.Value;
         
         var model = await _repository.GetByIdAsync(id, cancellationToken);
-        if (model == null) throw new NotFoundRequestException(id);
+        if (model == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Model", Id = id});
         
         await _repository.DeleteAsync(model, cancellationToken);
         return model.Id;

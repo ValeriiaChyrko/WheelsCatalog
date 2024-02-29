@@ -21,7 +21,7 @@ public class CreateBrandHandler : IRequestHandler<CreateBrandRequest, BrandId>
     public async Task<BrandId> Handle(CreateBrandRequest command, CancellationToken cancellationToken)
     {
         var logoUrl = await UploadLogoAsync(command.BrandDto!.Logo!);
-        if (logoUrl == null) throw new OperationCanceledException("Failed to upload logo.");
+        if (logoUrl == null) throw new OperationCanceledException("Помилка завантаження фотографії");
         
         var brand = Domain.BrandAggregate.Brand.Create(command.BrandDto.Name!, logoUrl, command.BrandDto.Description);
         await _repository.AddAsync(brand, cancellationToken);

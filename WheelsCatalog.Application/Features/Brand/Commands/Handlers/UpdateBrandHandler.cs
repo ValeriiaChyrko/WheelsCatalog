@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
 using WheelsCatalog.Application.Contracts.Infrastructure.File;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
@@ -22,10 +23,10 @@ public class UpdateBrandHandler : IRequestHandler<UpdateBrandRequest, BrandId>
     public async Task<BrandId> Handle(UpdateBrandRequest command, CancellationToken cancellationToken)
     {
         var brand = await _repository.GetByIdAsync(command.Id!.Value, cancellationToken);
-        if (brand == null) throw new NotFoundRequestException(command.Id!.Value);
+        if (brand == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Brand", Id = command.Id!.Value});
         
         var logoUrl = await UploadLogoAsync(command.BrandDto!.Logo!);
-        if (logoUrl == null) throw new OperationCanceledException("Failed to upload logo.");
+        if (logoUrl == null) throw new OperationCanceledException("Помилка завантаження фотограції.");
         
         brand.Update(command.BrandDto.Name!, logoUrl, command.BrandDto.Description);
         await _repository.UpdateAsync(brand, cancellationToken);

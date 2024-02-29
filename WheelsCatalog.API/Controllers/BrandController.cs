@@ -48,7 +48,7 @@ public class BrandController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<RespondBrandDto>> Get([FromRoute] Guid? id)
+    public async Task<ActionResult<RespondBrandDto>> Get(Guid? id)
     {
         var command = new GetBrandDtoRequest { Id = id };
         var result = await _mediator.Send(command);
@@ -60,7 +60,7 @@ public class BrandController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<RespondBrandDtoDetails>> GetDetails([FromQuery] Guid? id)
+    public async Task<ActionResult<RespondBrandDtoDetails>> GetDetails(Guid? id)
     {
         var command = new GetBrandDtoDetailsRequest { Id = id };
         var result = await _mediator.Send(command);

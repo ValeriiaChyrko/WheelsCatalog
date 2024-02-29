@@ -2,7 +2,7 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using WheelsCatalog.Application.Common;
+using WheelsCatalog.Application.Behaviors;
 
 namespace WheelsCatalog.Application;
 
@@ -16,6 +16,8 @@ public static class DependencyInjection
         
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(DatabaseErrorBehavior<,>));
+        
         return services;
     }
 }

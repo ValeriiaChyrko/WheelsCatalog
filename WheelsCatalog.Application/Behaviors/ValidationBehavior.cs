@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
 using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
 
-namespace WheelsCatalog.Application.Common;
+namespace WheelsCatalog.Application.Behaviors;
 
 public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
@@ -17,20 +18,22 @@ public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         if (!_validators.Any()) return await next();
-    
+
         var context = new ValidationContext<TRequest>(request);
 
         var errors = _validators
-            .Select(x => x.Validate(context))
-            .SelectMany(x => x.Errors)
-            .Where(x => x != null)
-            .Select(x => x.ErrorMessage)
-            .Distinct()
-            .ToArray();
+            .SelectMany(validator => validator.Validate(context).Errors
+                .Select(error => new ValidationError
+                {
+                    Entity = typeof(TRequest).Name,
+                    Field = error.PropertyName,
+                    Message = error.ErrorMessage
+                }))
+            .ToList();
 
-        if (errors.Any())
-            throw new BadRequestException(errors);
-
-        return await next();
+        if (!errors.Any()) return await next();
+        
+        var errorMessage = $"Помилка валідації для запиту {typeof(TRequest).Name}";
+        throw new RequestValidationException(errorMessage, errors);
     }
 }

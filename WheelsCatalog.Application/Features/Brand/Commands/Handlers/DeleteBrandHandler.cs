@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Brand.Commands.Requests;
@@ -20,7 +21,7 @@ public class DeleteBrandHandler : IRequestHandler<DeleteBrandRequest, BrandId>
         var id = command.Id!.Value;
         
         var brand = await _repository.GetByIdAsync(id, cancellationToken);
-        if (brand == null) throw new NotFoundRequestException(id);
+        if (brand == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Brand", Id = id});
         
         await _repository.DeleteAsync(brand, cancellationToken);
         return brand.Id;

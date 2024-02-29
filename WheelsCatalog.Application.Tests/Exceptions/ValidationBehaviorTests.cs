@@ -3,6 +3,7 @@ using FluentValidation.Results;
 using MediatR;
 using Moq;
 using NUnit.Framework;
+using WheelsCatalog.Application.Behaviors;
 using WheelsCatalog.Application.Common;
 using WheelsCatalog.Application.Common.Exceptions;
 

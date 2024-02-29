@@ -7,13 +7,12 @@ public class GetPriceDtoRequestValidator : AbstractValidator<GetPriceDtoRequest>
     public GetPriceDtoRequestValidator()
     {
         RuleFor(x => x.CarId)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
+            .NotEmpty().WithMessage("Ідентифікатор автомобіля є обов'язковим полем.")
+            .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор автомобіля не повинен бути пустим GUID.");
         
         RuleFor(dto => dto.Date)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .Must(BeValidDate).WithMessage("{PropertyName} must be a valid date.");
+            .NotEmpty().WithMessage("Дата початку дії ціни є обов'язковим полем.")
+            .Must(BeValidDate).WithMessage("Введена дата має бути коректною.");
     }
     
     private static bool BeValidDate(DateTime? date)

@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.PriceHistory.Commands.Requests;
 using WheelsCatalog.Domain.PriceHistoryAggregate.ValueObjects;
@@ -21,7 +21,7 @@ public class DeletePriceHandler : IRequestHandler<DeletePriceRequest, PriceHisto
         var id = command.Id!.Value;
         
         var price = await _repository.GetByIdAsync(id, cancellationToken);
-        if (price == null) throw new NotFoundRequestException(id);
+        if (price == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Price", Id = command.Id.Value});
         
         await _repository.DeleteAsync(price, cancellationToken);
         return price.Id;

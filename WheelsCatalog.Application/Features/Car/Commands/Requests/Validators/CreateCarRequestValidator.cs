@@ -8,7 +8,7 @@ public class CreateCarRequestValidator : AbstractValidator<CreateCarRequest>
     public CreateCarRequestValidator()
     {
         RuleFor(x => x.CarDto)
-            .NotNull().WithMessage("Photo must not be null.")
+            .NotNull().WithMessage("Об'єкт автомобіля повинен бути переданий в метод.")
             .SetValidator(new RequestCarDtoValidator()!);
     }
 }

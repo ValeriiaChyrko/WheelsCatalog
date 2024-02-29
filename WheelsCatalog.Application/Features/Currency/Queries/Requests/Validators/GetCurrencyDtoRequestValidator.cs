@@ -7,8 +7,7 @@ public class GetCurrencyDtoRequestValidator : AbstractValidator<GetCurrencyDtoRe
     public GetCurrencyDtoRequestValidator()
     {
         RuleFor(x => x.Id)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
+            .NotEmpty().WithMessage("Ідентифікатор валюти є обов'язковим полем.")
+            .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор валюти не повинен бути пустим GUID.");
     }
 }

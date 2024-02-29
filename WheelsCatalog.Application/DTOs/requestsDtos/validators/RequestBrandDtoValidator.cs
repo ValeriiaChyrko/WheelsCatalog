@@ -12,17 +12,17 @@ public class RequestBrandDtoValidator : AbstractValidator<RequestBrandDto>
     public RequestBrandDtoValidator()
     {
         RuleFor(p => p.Name)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .MaximumLength(MaxLengthNameLength).WithMessage($"{{PropertyName}} must not exceed {MaxLengthNameLength} characters.");
-        
+            .NotEmpty().WithMessage("Назва бренду є обов'язковим полем.")
+            .MaximumLength(MaxLengthNameLength).WithMessage($"Назва бренду не повинна перевищувати {MaxLengthNameLength} символів.");
+    
         RuleFor(p => p.Logo)
-            .NotNull().WithMessage("{PropertyName} is required.")
+            .NotNull().WithMessage("Лого для бренду є обов'язковим полем.")
             .SetValidator(new FileDtoValidator()!);
-        
+    
         RuleFor(p => p.Description)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .MaximumLength(MaxLengthDescriptionLength).WithMessage($"{{PropertyName}} must not exceed {MaxLengthDescriptionLength} characters.")
+            .NotEmpty().WithMessage("Опис бренду не може бути порожнім.")
+            .MaximumLength(MaxLengthDescriptionLength).WithMessage($"Опис бренду не повинен перевищувати {MaxLengthDescriptionLength} символів.")
             .When(p => p.Description != null);
     }
+
 }

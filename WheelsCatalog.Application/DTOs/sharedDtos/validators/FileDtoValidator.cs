@@ -10,15 +10,14 @@ public class FileDtoValidator : AbstractValidator<FileDto>
     public FileDtoValidator()
     {
         RuleFor(dto => dto.FileName)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .MaximumLength(MaxLength).WithMessage($"{{PropertyName}} cannot be longer than {MaxLength} characters.");
+            .NotEmpty().WithMessage("Назва файлу є обов'язковим полем.")
+            .MaximumLength(MaxLength).WithMessage($"Назва файлу не повинна перевищувати {MaxLength} символів.");
 
         RuleFor(dto => dto.ContentType)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .MaximumLength(MaxLength).WithMessage($"{{PropertyName}} cannot be longer than {MaxLength} characters.");
+            .NotEmpty().WithMessage("Тип файлу є обов'язковим полем.")
+            .MaximumLength(MaxLength).WithMessage($"Тип файлу не повинна перевищувати {MaxLength} символів.");
 
         RuleFor(dto => dto.Data)
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .NotEmpty().WithMessage("{PropertyName} cannot be empty.");
+            .NotEmpty().WithMessage("Дані файлу є обов'язковим полем.");
     }
 }

@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
@@ -21,7 +21,7 @@ public class UpdateCarHandler : IRequestHandler<UpdateCarRequest, CarId>
     public async Task<CarId> Handle(UpdateCarRequest command, CancellationToken cancellationToken)
     {
         var car = await _repository.GetByIdAsync(command.Id!.Value, cancellationToken);
-        if (car == null) throw new NotFoundRequestException(command.Id!.Value);
+        if (car == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Car", Id = command.Id!.Value});
         
         var modelId = command.CarDto!.ModelId!.Value;
         var colorId = command.CarDto!.ColorId!.Value;

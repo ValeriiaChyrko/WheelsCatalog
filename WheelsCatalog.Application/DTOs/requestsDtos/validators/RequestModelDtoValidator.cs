@@ -1,28 +1,28 @@
 ﻿using FluentValidation;
 using WheelsCatalog.Application.Common;
 
-namespace WheelsCatalog.Application.DTOs.requestsDtos.validators;
-
-public class RequestModelDtoValidator : AbstractValidator<RequestModelDto>
+namespace WheelsCatalog.Application.DTOs.requestsDtos.validators
 {
-    private const int MaxLengthNameLength = Constants.MaxLengthNamePropertyLength;
-    private const int MaxLengthDescriptionLength = Constants.MaxLengthDescriptionPropertyLength;
-    
-    public RequestModelDtoValidator()
+    public class RequestModelDtoValidator : AbstractValidator<RequestModelDto>
     {
-        RuleFor(p => p.Name)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .MaximumLength(MaxLengthNameLength).WithMessage($"{{PropertyName}} must not exceed {MaxLengthNameLength} characters.");
+        private const int MaxLengthNameLength = Constants.MaxLengthNamePropertyLength;
+        private const int MaxLengthDescriptionLength = Constants.MaxLengthDescriptionPropertyLength;
         
-        RuleFor(p => p.Description)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .MaximumLength(MaxLengthDescriptionLength).WithMessage($"{{PropertyName}} must not exceed {MaxLengthDescriptionLength} characters.")
-            .When(p => p.Description != null);
+        public RequestModelDtoValidator()
+        {
+            RuleFor(p => p.Name)
+                .NotEmpty().WithMessage("Назва моделі є обов'язковим полем.")
+                .MaximumLength(MaxLengthNameLength).WithMessage($"Назва моделі не повинна перевищувати {MaxLengthNameLength} символів.");
+            
+            RuleFor(p => p.Description)
+                .NotEmpty().WithMessage("Опис моделі не може бути порожнім.")
+                .MaximumLength(MaxLengthDescriptionLength).WithMessage($"Опис моделі не повинен перевищувати {MaxLengthDescriptionLength} символів.")
+                .When(p => p.Description != null);
 
-        RuleFor(p => p.BrandId)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
+            RuleFor(p => p.BrandId)
+                .NotEmpty().WithMessage("Ідентифікатор бренду є обов'язковим полем.")
+                .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор бренду не повинен бути пустим GUID.");
+            
+        }
     }
 }

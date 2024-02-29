@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using WheelsCatalog.Application.Contracts.Infrastructure.File;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.sharedDtos;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
@@ -22,7 +21,7 @@ public class CreateCarDtoPhotosHandler : IRequestHandler<CreateCarDtoPhotosReque
     public async Task<CarPhotoId> Handle(CreateCarDtoPhotosRequest command, CancellationToken cancellationToken)
     {
         var photoUrl = await UploadLogoAsync(command.Photo!);
-        if (photoUrl == null) throw new OperationCanceledException("Failed to upload photo.");
+        if (photoUrl == null) throw new OperationCanceledException("Помилка завантаження фотографії.");
         
         var carId = command.CarId!.Value;
         var photo = Domain.CarAggregate.Entities.CarPhotoEntity.Create(photoUrl, CarId.Create(carId));

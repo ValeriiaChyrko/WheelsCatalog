@@ -8,12 +8,11 @@ public class CreateCarDtoPhotosRequestValidator : AbstractValidator<CreateCarDto
     public CreateCarDtoPhotosRequestValidator()
     {
         RuleFor(x => x.Photo)
-            .NotNull().WithMessage("Photo must not be null.")
+            .NotNull().WithMessage("Об'єкт фото має бути передано в метод.")
             .SetValidator(new FileDtoValidator()!);
         
         RuleFor(x => x.CarId)
-            .NotEmpty().WithMessage("{PropertyName} is required.")
-            .NotNull().WithMessage("{PropertyName} is required.")
-            .Must(id => id != Guid.Empty).WithMessage("{PropertyName} must not be empty GUID.");
+            .NotEmpty().WithMessage("Ідентифікатор автомобіля є обов'язковим полем.")
+            .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор автомобіля не повинен бути пустим GUID.");
     }
 }

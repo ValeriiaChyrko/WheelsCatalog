@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
@@ -21,7 +21,7 @@ public class DeleteCarDtoPhotosHandlers : IRequestHandler<DeleteCarDtoPhotosRequ
         var id = command.Id!.Value;
         
         var photo = await _repository.GetByIdAsync(id, cancellationToken);
-        if (photo == null) throw new NotFoundRequestException(id);
+        if (photo == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "CarPhoto", Id = command.Id!.Value});
         
         await _repository.DeleteAsync(photo, cancellationToken);
         return photo.Id;

@@ -27,7 +27,7 @@ public class GetPriceDtoHandler : IRequestHandler<GetPriceDtoRequest, RespondPri
         if (priceHistoryByCar == null) return new RespondPriceDto();
         
         var respond = _mapper.Map<RespondPriceDto>(priceHistoryByCar);
-        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(priceHistoryByCar.CurrencyId) ?? throw new InvalidOperationException();
+        respond.CurrencyAcronym = _currencyRepository.GetCurrencyAcronym(priceHistoryByCar.CurrencyId) ?? string.Empty;
 
         return respond;
     }

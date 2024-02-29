@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Brand.Queries.Requests;
@@ -22,7 +22,7 @@ public class GetBrandDtoHandler : IRequestHandler<GetBrandDtoRequest, RespondBra
     public async Task<RespondBrandDto> Handle(GetBrandDtoRequest request, CancellationToken cancellationToken)
     {
         var brand = await _repository.GetByIdAsync(request.Id!.Value, cancellationToken);
-        if (brand == null) throw new NotFoundRequestException(request.Id!.Value);
+        if (brand == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Brand", Id = request.Id!.Value});
 
         return _mapper.Map<RespondBrandDto>(brand);
     }

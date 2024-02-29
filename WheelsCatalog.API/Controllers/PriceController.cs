@@ -66,7 +66,7 @@ public class PriceController : ControllerBase
         return StatusCode(StatusCodes.Status200OK, result);
     }
 
-    [HttpGet("{carId:guid} {dateTime:datetime}")]
+    [HttpGet("{carId:guid}/{dateTime:datetime}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

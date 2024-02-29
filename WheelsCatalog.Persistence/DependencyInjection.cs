@@ -8,7 +8,7 @@ namespace WheelsCatalog.Persistence;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddPersistenceServices(this IServiceCollection services,
+    public static void AddPersistenceServices(this IServiceCollection services,
         IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("WheelsCatalog_Local");
@@ -23,7 +23,5 @@ public static class DependencyInjection
         services.AddScoped<ICurrencyRepository, CurrencyRepository>();
         services.AddScoped<IModelRepository, ModelRepository>();
         services.AddScoped<IPriceHistoryRepository, PriceHistoryRepository>();
-
-        return services;
     }
 }

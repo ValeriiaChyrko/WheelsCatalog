@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
+using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Color.Queries.Requests;
@@ -22,7 +22,7 @@ public class GetColorDtoHandler : IRequestHandler<GetColorDtoRequest, RespondCol
     public async Task<RespondColorDto> Handle(GetColorDtoRequest request, CancellationToken cancellationToken)
     {
         var color = await _repository.GetByIdAsync(request.Id!.Value, cancellationToken);
-        if (color == null) throw new NotFoundRequestException(request.Id!.Value);
+        if (color == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Color", Id = request.Id!.Value});
 
         return _mapper.Map<RespondColorDto>(color);
     }
