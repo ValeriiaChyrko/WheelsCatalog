@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
@@ -9,11 +9,11 @@ namespace WheelsCatalog.Application.Features.Car.Commands.Handlers;
 
 public class CreateCarHandler : IRequestHandler<CreateCarRequest, CarId>
 {
-    private readonly ICarRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public CreateCarHandler(ICarRepository repository)
+    public CreateCarHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<CarId> Handle(CreateCarRequest command, CancellationToken cancellationToken)
@@ -26,7 +26,8 @@ public class CreateCarHandler : IRequestHandler<CreateCarRequest, CarId>
             command.CarDto.Description, 
             ColorId.Create(colorId), 
             ModelId.Create(modelId)); 
-        await _repository.AddAsync(car, cancellationToken);
+        await _unitOfWork.CarRepository.AddAsync(car, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return car.Id;
     }

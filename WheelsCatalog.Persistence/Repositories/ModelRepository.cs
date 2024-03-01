@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Contracts.Presentation;
 using WheelsCatalog.Domain.ModelAggregate;
 using WheelsCatalog.Persistence.Models;

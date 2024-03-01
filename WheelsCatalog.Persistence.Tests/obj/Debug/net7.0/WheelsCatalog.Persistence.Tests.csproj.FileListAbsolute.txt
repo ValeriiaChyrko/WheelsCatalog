@@ -164,3 +164,4 @@ C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence.Tests\obj\Debug\net7.0\WheelsCatalog.Persistence.Tests.pdb
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence.Tests\obj\Debug\net7.0\WheelsCatalog.Persistence.Tests.genruntimeconfig.cache
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence.Tests\obj\Debug\net7.0\ref\WheelsCatalog.Persistence.Tests.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Persistence.Tests\bin\Debug\net7.0\PredicateBuilder.dll

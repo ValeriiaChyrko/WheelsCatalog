@@ -22,4 +22,9 @@ public class FileService : IFileService
 
         return cloudLink;
     }
+    
+    public async Task DeleteImage(string fileName)
+    {
+        await _cloudFileStorage.DeleteFromCloud(fileName);
+    }
 }

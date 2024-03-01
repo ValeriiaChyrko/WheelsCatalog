@@ -784,6 +784,17 @@
       },
       "NUnit.Analyzers/3.6.1": {},
       "NUnit3TestAdapter/4.4.2": {},
+      "PredicateBuilder/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/PredicateBuilder.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
@@ -986,6 +997,7 @@
           "AutoMapper": "12.0.1",
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "MediatR": "12.2.0",
+          "Microsoft.EntityFrameworkCore": "7.0.16",
           "WheelsCatalog.Domain": "1.0.0"
         },
         "runtime": {
@@ -1002,6 +1014,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.EntityFrameworkCore": "7.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.16",
+          "PredicateBuilder": "1.0.0",
           "WheelsCatalog.Application": "1.0.0"
         },
         "runtime": {
@@ -1379,6 +1392,13 @@
       "sha512": "sha512-vA/iHYcR+LYw+pRWQugckC/zW2fXHaqMr2uA82NOBt8v4YK4wMJrQ7QC8XLc7PjetEZ96cPbBTWsDDtmQiRZTA==",
       "path": "nunit3testadapter/4.4.2",
       "hashPath": "nunit3testadapter.4.4.2.nupkg.sha512"
+    },
+    "PredicateBuilder/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LRmXTr9wMBnc8C0j+D3nRb4SwxgW4aW03NGJ/YBb+WWDFdGNnI4tym3ZXWZi1Bc09t4dfSFIG1R5akFI3aKVgQ==",
+      "path": "predicatebuilder/1.0.0",
+      "hashPath": "predicatebuilder.1.0.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",

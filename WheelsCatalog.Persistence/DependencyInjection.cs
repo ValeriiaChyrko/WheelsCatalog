@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Persistence.Repositories;
+using WheelsCatalog.Persistence.Repositories.common;
 
 namespace WheelsCatalog.Persistence;
 
@@ -16,6 +18,8 @@ public static class DependencyInjection
         services.AddDbContext<WheelsCatalogDbContext>(options =>
             options.UseSqlServer(connectionString));
 
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<ICarPhotoRepository, CarPhotoRepository>();
         services.AddScoped<ICarRepository, CarRepository>();

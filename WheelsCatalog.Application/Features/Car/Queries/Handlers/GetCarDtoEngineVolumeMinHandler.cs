@@ -1,20 +1,20 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.Car.Queries.Requests;
 
 namespace WheelsCatalog.Application.Features.Car.Queries.Handlers;
 
 public class GetCarDtoEngineVolumeMinHandler : IRequestHandler<GetCarDtoEngineVolumeMinRequest, double>
 {
-    private readonly ICarRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public GetCarDtoEngineVolumeMinHandler(ICarRepository repository)
+    public GetCarDtoEngineVolumeMinHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<double> Handle(GetCarDtoEngineVolumeMinRequest request, CancellationToken cancellationToken)
     {
-        return await _repository.GetCarDtoEngineVolumeMin() ?? 0;
+        return await _unitOfWork.CarRepository.GetCarDtoEngineVolumeMin() ?? 0;
     }
 }

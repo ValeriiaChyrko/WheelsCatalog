@@ -1,20 +1,20 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.Model.Queries.Requests;
 
 namespace WheelsCatalog.Application.Features.Model.Queries.Handlers;
 
 public class GetModelDtoListWithFiltersCountHandler : IRequestHandler<GetModelDtoListCountRequest, int>
 {
-    private readonly IModelRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public GetModelDtoListWithFiltersCountHandler(IModelRepository repository)
+    public GetModelDtoListWithFiltersCountHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<int> Handle(GetModelDtoListCountRequest request, CancellationToken cancellationToken)
     {
-        return await _repository.CountWithFiltersAsync(request.FilteringParameters, cancellationToken);
+        return await _unitOfWork.ModelRepository.CountWithFiltersAsync(request.FilteringParameters, cancellationToken);
     }
 }

@@ -1,20 +1,20 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.Color.Queries.Requests;
 
 namespace WheelsCatalog.Application.Features.Color.Queries.Handlers;
 
 public class GetColorDtoListCountHandler : IRequestHandler<GetColorDtoListCountRequest, int>
 {
-    private readonly IColorRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public GetColorDtoListCountHandler(IColorRepository repository)
+    public GetColorDtoListCountHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<int> Handle(GetColorDtoListCountRequest request, CancellationToken cancellationToken)
     {
-        return  await _repository.CountAsync(cancellationToken);
+        return  await _unitOfWork.ColorRepository.CountAsync(cancellationToken);
     }
 }

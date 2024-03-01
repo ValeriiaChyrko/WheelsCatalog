@@ -12,7 +12,7 @@ public class GenericRepository<TEntity, TEntityModel> : IGenericRepository<TEnti
     private readonly DbContext _context;
     private readonly IMapper _mapper;
 
-    protected GenericRepository(DbContext context, IMapper mapper)
+    public GenericRepository(DbContext context, IMapper mapper)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

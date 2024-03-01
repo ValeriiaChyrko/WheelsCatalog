@@ -59,6 +59,14 @@ public class DatabaseErrorException : Exception
                 "Не вдалося оновити запис, оскільки один або декілька пов'язаних з ним об'єктів не знайдено в базі даних. " +
                 "Перевірте, чи існують об'єкти, до яких ви посилаєтеся, введіть вірні дані, а потім спробуйте знову.";
 
+        if (errorMessage.Contains("Cannot insert duplicate key row in object 'dbo.BrandEntityModel' with unique index 'IX_BrandEntityModel_Name"))
+            return 
+                "Бренд з таким іменем вже існує.";
+        
+        if (errorMessage.Contains("Cannot insert duplicate key row in object 'dbo.ModelEntityModel' with unique index 'IX_ModelEntityModel_Name'"))
+            return 
+                "Модель з таким іменем вже існує.";
+        
         return string.Empty;
     }
 }

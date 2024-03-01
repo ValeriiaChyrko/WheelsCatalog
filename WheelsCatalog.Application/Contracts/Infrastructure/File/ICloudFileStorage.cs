@@ -3,4 +3,5 @@
 public interface ICloudFileStorage
 {
     Task<string> UploadToCloud(FileStream stream, string fileName);
+    Task DeleteFromCloud(string fileName);
 }

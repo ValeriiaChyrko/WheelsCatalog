@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 
@@ -9,21 +9,22 @@ namespace WheelsCatalog.Application.Features.Car.Commands.Handlers;
 
 public class DeleteCarHandler : IRequestHandler<DeleteCarRequest, CarId>
 {
-    private readonly ICarRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public DeleteCarHandler(ICarRepository repository)
+    public DeleteCarHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<CarId> Handle(DeleteCarRequest command, CancellationToken cancellationToken)
     {
         var id = command.Id!.Value;
         
-        var car = await _repository.GetByIdAsync(id, cancellationToken);
+        var car = await _unitOfWork.CarRepository.GetByIdAsync(id, cancellationToken);
         if (car == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Car", Id = command.Id!.Value});
         
-        await _repository.DeleteAsync(car, cancellationToken);
+        await _unitOfWork.CarRepository.DeleteAsync(car, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
         return car.Id;
     }
 }

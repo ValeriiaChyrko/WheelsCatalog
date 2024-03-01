@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using WheelsCatalog.Application.Common.Errors;
 using WheelsCatalog.Application.Common.Exceptions;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.Car.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.ColorAggregate.ValueObjects;
@@ -11,23 +11,24 @@ namespace WheelsCatalog.Application.Features.Car.Commands.Handlers;
 
 public class UpdateCarHandler : IRequestHandler<UpdateCarRequest, CarId>
 {
-    private readonly ICarRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public UpdateCarHandler(ICarRepository repository)
+    public UpdateCarHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<CarId> Handle(UpdateCarRequest command, CancellationToken cancellationToken)
     {
-        var car = await _repository.GetByIdAsync(command.Id!.Value, cancellationToken);
+        var car = await _unitOfWork.CarRepository.GetByIdAsync(command.Id!.Value, cancellationToken);
         if (car == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Car", Id = command.Id!.Value});
         
         var modelId = command.CarDto!.ModelId!.Value;
         var colorId = command.CarDto!.ColorId!.Value;
         
         car.Update(command.CarDto.EngineVolume, command.CarDto.Description, ColorId.Create(colorId), ModelId.Create(modelId));
-        await _repository.UpdateAsync(car, cancellationToken);
+        await _unitOfWork.CarRepository.UpdateAsync(car, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return car.Id;
     }

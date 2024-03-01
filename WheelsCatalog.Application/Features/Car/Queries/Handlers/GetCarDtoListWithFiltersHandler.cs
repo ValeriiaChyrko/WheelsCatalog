@@ -2,7 +2,7 @@
 using MediatR;
 using WheelsCatalog.Application.Common;
 using WheelsCatalog.Application.Contracts.Persistence;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Car.Queries.Requests;
 
@@ -10,12 +10,12 @@ namespace WheelsCatalog.Application.Features.Car.Queries.Handlers;
 
 public class GetCarDtoListWithFiltersHandler : IRequestHandler<GetCarDtoListWithFiltersRequest, PaginatedList<RespondCarDto>>
 {
-    private readonly ICarRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public GetCarDtoListWithFiltersHandler(ICarRepository repository, IMapper mapper)
+    public GetCarDtoListWithFiltersHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
@@ -25,7 +25,7 @@ public class GetCarDtoListWithFiltersHandler : IRequestHandler<GetCarDtoListWith
         var pageSize = carFilteringParameters?.Limit ?? Constants.DefaultPageSize;
         var pageNumber = carFilteringParameters?.Page ?? Constants.DefaultPageNumber;
         
-        var cars = await _repository.GetAllByFilterAsync(
+        var cars = await _unitOfWork.CarRepository.GetAllByFilterAsync(
             pageNumber, 
             pageSize, 
             request.CarFilteringParameters,

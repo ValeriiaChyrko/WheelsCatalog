@@ -1,7 +1,7 @@
 ﻿using Moq;
 using NUnit.Framework;
 using WheelsCatalog.Application.Contracts.Infrastructure.File;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.DTOs.requestsDtos;
 using WheelsCatalog.Application.DTOs.sharedDtos;
 using WheelsCatalog.Application.Features.Brand.Commands.Handlers;
@@ -13,13 +13,13 @@ namespace WheelsCatalog.Application.Tests.Features.Brand;
 public class CreateBrandHandlerTests
 {
     private CreateBrandHandler _handler = null!;
-    private Mock<IBrandRepository> _mockBrandRepository = null!;
+    private Mock<IUnitOfWork> _mockBrandRepository = null!;
     private Mock<IFileService> _mockFileService = null!;
 
     [SetUp]
     public void SetUp()
     {
-        _mockBrandRepository = new Mock<IBrandRepository>();
+        _mockBrandRepository = new Mock<IUnitOfWork>();
         _mockFileService = new Mock<IFileService>();
         _handler = new CreateBrandHandler(_mockBrandRepository.Object, _mockFileService.Object);
     }
@@ -48,7 +48,7 @@ public class CreateBrandHandlerTests
 
         // Assert
         Assert.IsNotNull(result);
-        _mockBrandRepository.Verify(x => x.AddAsync(It.IsAny<Domain.BrandAggregate.Brand>(), CancellationToken.None), Times.Once);
+        _mockBrandRepository.Verify(x => x.BrandRepository.AddAsync(It.IsAny<Domain.BrandAggregate.Brand>(), CancellationToken.None), Times.Once);
     }
 
     [Test]
@@ -72,6 +72,6 @@ public class CreateBrandHandlerTests
         // Act & Assert
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
             await _handler.Handle(request, CancellationToken.None));
-        _mockBrandRepository.Verify(x => x.AddAsync(It.IsAny<Domain.BrandAggregate.Brand>(), CancellationToken.None), Times.Never);
+        _mockBrandRepository.Verify(x => x.BrandRepository.AddAsync(It.IsAny<Domain.BrandAggregate.Brand>(), CancellationToken.None), Times.Never);
     }
 }

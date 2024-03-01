@@ -18,7 +18,7 @@ public class NotFoundRequestException : Exception
         Error = error;
     }
     
-    public Dictionary<string, List<string>> GetErrors()
+    public Dictionary<string, List<string?>>? GetErrors()
     {
         var errorsDict = new Dictionary<string, List<string>>();
         errorsDict.Add("Помилка обробки таблиці CarEntityModel", 

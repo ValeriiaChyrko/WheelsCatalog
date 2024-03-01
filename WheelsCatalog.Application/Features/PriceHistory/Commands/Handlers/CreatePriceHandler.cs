@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.Features.PriceHistory.Commands.Requests;
 using WheelsCatalog.Domain.CarAggregate.ValueObjects;
 using WheelsCatalog.Domain.CurrencyAggregate.ValueObjects;
@@ -9,11 +9,11 @@ namespace WheelsCatalog.Application.Features.PriceHistory.Commands.Handlers;
 
 public class CreatePriceHandler : IRequestHandler<CreatePriceRequest, PriceHistoryId>
 {
-    private readonly IPriceHistoryRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public CreatePriceHandler(IPriceHistoryRepository repository)
+    public CreatePriceHandler(IUnitOfWork unitOfWork)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<PriceHistoryId> Handle(CreatePriceRequest command, CancellationToken cancellationToken)
@@ -23,7 +23,8 @@ public class CreatePriceHandler : IRequestHandler<CreatePriceRequest, PriceHisto
         var date = command.PriceDto.Date!.Value;
         
         var price = Domain.PriceHistoryAggregate.PriceHistory.Create(command.PriceDto!.Amount, date, CurrencyId.Create(currencyId), CarId.Create(carId)); 
-        await _repository.AddAsync(price, cancellationToken);
+        await _unitOfWork.PriceHistoryRepository.AddAsync(price, cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return price.Id;
     }

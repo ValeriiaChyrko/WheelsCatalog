@@ -2,7 +2,7 @@
 using MediatR;
 using WheelsCatalog.Application.Common;
 using WheelsCatalog.Application.Contracts.Persistence;
-using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository;
+using WheelsCatalog.Application.Contracts.Persistence.Interfaces.Repository.Common;
 using WheelsCatalog.Application.DTOs.respondDtos;
 using WheelsCatalog.Application.Features.Model.Queries.Requests;
 
@@ -10,12 +10,12 @@ namespace WheelsCatalog.Application.Features.Model.Queries.Handlers;
 
 public class GetModelDtoListWithFiltersHandler : IRequestHandler<GetModelDtoListWithFiltersRequest, PaginatedList<RespondModelDto>>
 {
-    private readonly IModelRepository _repository;
+    private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public GetModelDtoListWithFiltersHandler(IModelRepository repository, IMapper mapper)
+    public GetModelDtoListWithFiltersHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
-        _repository = repository;
+        _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
@@ -25,7 +25,7 @@ public class GetModelDtoListWithFiltersHandler : IRequestHandler<GetModelDtoList
         var pageSize = filteringParameters?.Limit ?? Constants.DefaultPageSize;
         var pageNumber = filteringParameters?.Page ?? Constants.DefaultPageNumber;
         
-        var modelsByFilter = await _repository.GetAllByFilterAsync(pageNumber, pageSize, request.FilteringParameters, cancellationToken);
+        var modelsByFilter = await _unitOfWork.ModelRepository.GetAllByFilterAsync(pageNumber, pageSize, request.FilteringParameters, cancellationToken);
 
         var respondModelDtos = _mapper.Map<List<RespondModelDto>>(modelsByFilter);
 
