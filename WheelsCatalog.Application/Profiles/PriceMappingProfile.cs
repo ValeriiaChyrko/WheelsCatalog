@@ -16,9 +16,15 @@ public class PriceMappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => PriceHistoryId.CreateUnique()))
             .ForMember(dest=> dest.Price, opt=>opt.MapFrom(src=> src.Amount))
             .ForMember(dest=> dest.StartDate, opt=>opt.MapFrom(src=> src.Date))
-            .ForMember(dest => dest.CarId, opt => opt.MapFrom(src => CarId.Create(src.CarId!.Value)))
             .ForMember(dest => dest.CurrencyId, opt => opt.MapFrom(src => CurrencyId.Create(src.CurrencyId!.Value)));
 
+        CreateMap<RequestPriceHistoryDto, PriceHistory>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => PriceHistoryId.CreateUnique()))
+            .ForMember(dest=> dest.Price, opt=>opt.MapFrom(src=> src.Amount))
+            .ForMember(dest=> dest.StartDate, opt=>opt.MapFrom(src=> src.Date))
+            .ForMember(dest => dest.CurrencyId, opt => opt.MapFrom(src => CurrencyId.Create(src.CurrencyId!.Value)))
+            .ForMember(dest => dest.CarId, opt => opt.MapFrom(src => CarId.Create(src.CarId!.Value)));
+        
         CreateMap<PriceHistory, RespondPriceDto>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value))
             .ForMember(dest => dest.Amount, opt => opt.MapFrom(src => src.Price))

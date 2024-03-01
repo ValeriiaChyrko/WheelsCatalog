@@ -56,18 +56,4 @@ public class RequestsDtosValidatorsTestsRequestPriceDto
             var result = _validator.Validate(new RequestPriceDto { CurrencyId = null });
             Assert.IsTrue(result.Errors.Exists(e => e.PropertyName == "CurrencyId"));
         }
-        
-        [Test]
-        public void CarId_WhenEmpty_ShouldHaveValidationError()
-        {
-            var result = _validator.Validate(new RequestPriceDto { CarId = Guid.Empty });
-            Assert.IsTrue(result.Errors.Exists(e => e.PropertyName == "CarId"));
-        }
-
-        [Test]
-        public void CarId_WhenNull_ShouldHaveValidationError()
-        {
-            var result = _validator.Validate(new RequestPriceDto { CarId = null });
-            Assert.IsTrue(result.Errors.Exists(e => e.PropertyName == "CarId"));
-        }
 }

@@ -9,6 +9,6 @@ public class CreatePriceRequestValidator : AbstractValidator<CreatePriceRequest>
     {
         RuleFor(x => x.PriceDto)
             .NotNull().WithMessage("Об'єкт ціни повинен бути переданий в метод.")
-            .SetValidator(new RequestPriceDtoValidator()!);
+            .SetValidator(new RequestPriceHistoryDtoValidator()!);
     }
 }

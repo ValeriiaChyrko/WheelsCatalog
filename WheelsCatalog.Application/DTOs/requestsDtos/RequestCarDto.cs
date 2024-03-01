@@ -6,4 +6,5 @@ public class RequestCarDto
     public string? Description { get; init; }
     public Guid? ModelId { get; init; }
     public Guid? ColorId { get; init; }
+    public RequestPriceDto? Price { get; set; }
 }

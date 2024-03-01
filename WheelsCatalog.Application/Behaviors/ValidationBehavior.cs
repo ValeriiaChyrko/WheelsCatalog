@@ -34,6 +34,6 @@ public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
         if (!errors.Any()) return await next();
         
         var errorMessage = $"Помилка валідації для запиту {typeof(TRequest).Name}";
-        throw new RequestValidationException(errorMessage, errors);
+        throw new RequestValidationException(errorMessage, errors, new Exception("Fluent validation exception. See inner exceptions."));
     }
 }

@@ -9,7 +9,7 @@ public class UpdatePriceRequestValidator : AbstractValidator<UpdatePriceRequest>
     {
         RuleFor(x => x.PriceDto)
             .NotNull().WithMessage("Об'єкт ціни повинен бути переданий в метод.")
-            .SetValidator(new RequestPriceDtoValidator()!);
+            .SetValidator(new RequestPriceHistoryDtoValidator()!);
         
         RuleFor(x => x.Id)
             .NotEmpty().WithMessage("Ідентифікатор ціни є обов'язковим полем.")

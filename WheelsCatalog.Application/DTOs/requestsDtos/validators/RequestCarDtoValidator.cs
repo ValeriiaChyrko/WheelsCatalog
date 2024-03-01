@@ -24,6 +24,10 @@ namespace WheelsCatalog.Application.DTOs.requestsDtos.validators
             RuleFor(p => p.ColorId)
                 .NotEmpty().WithMessage("Ідентифікатор кольору автомобіля є обов'язковим полем.")
                 .Must(id => id != Guid.Empty).WithMessage("Ідентифікатор кольору не повинен бути пустим GUID.");
+            
+            RuleFor(p => p.Price)
+                .NotNull().WithMessage("Ціна для автомобіля є обов'язковим полем.")
+                .SetValidator(new RequestPriceDtoValidator()!);
         }
     }
 }

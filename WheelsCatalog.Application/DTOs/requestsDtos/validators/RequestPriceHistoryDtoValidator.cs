@@ -2,9 +2,9 @@
 
 namespace WheelsCatalog.Application.DTOs.requestsDtos.validators
 {
-    public class RequestPriceDtoValidator : AbstractValidator<RequestPriceDto>
+    public class RequestPriceHistoryDtoValidator : AbstractValidator<RequestPriceHistoryDto>
     {
-        public RequestPriceDtoValidator()
+        public RequestPriceHistoryDtoValidator()
         {
             RuleFor(dto => dto.Amount)
                 .GreaterThan(0).WithMessage("Ціна автомобіля повинна бути більшою за нуль.");

@@ -7,5 +7,5 @@ namespace WheelsCatalog.Application.Features.PriceHistory.Commands.Requests;
 public class UpdatePriceRequest : IRequest<PriceHistoryId>
 {
     public Guid? Id { get; init; }
-    public RequestPriceDto? PriceDto { get; init; }
+    public RequestPriceHistoryDto? PriceDto { get; init; }
 }
