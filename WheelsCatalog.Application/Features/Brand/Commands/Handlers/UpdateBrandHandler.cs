@@ -26,7 +26,6 @@ public class UpdateBrandHandler : IRequestHandler<UpdateBrandRequest, BrandId>
         if (brand == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Brand", Id = command.Id!.Value});
         
         var logoUrl = await UploadLogoAsync(command.BrandDto!.Logo!);
-        if (logoUrl == null) throw new OperationCanceledException("Помилка завантаження фотографії.");
         
         brand.Update(command.BrandDto.Name!, logoUrl, command.BrandDto.Description);
         await _unitOfWork.BrandRepository.UpdateAsync(brand, cancellationToken);
@@ -37,6 +36,8 @@ public class UpdateBrandHandler : IRequestHandler<UpdateBrandRequest, BrandId>
     
     private async Task<string> UploadLogoAsync(FileDto logo)
     {
-        return await _fileService.UploadImage(logo);
+        var logoUrl = await _fileService.UploadImage(logo);
+        if (logoUrl == null) throw new OperationCanceledException("Помилка завантаження фотографії.");
+        return logoUrl;
     }
 }
