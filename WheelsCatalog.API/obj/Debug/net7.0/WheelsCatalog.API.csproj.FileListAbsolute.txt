@@ -98,3 +98,4 @@ C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\WheelsCatalog.Infrastructure.dll
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\WheelsCatalog.Infrastructure.pdb
 C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\PredicateBuilder.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.API\bin\Debug\net7.0\errors.json

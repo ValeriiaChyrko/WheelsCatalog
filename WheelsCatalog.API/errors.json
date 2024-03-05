@@ -1,0 +1,7 @@
+﻿{
+  "DELETE statement conflicted with the REFERENCE constraint": "Не вдалося видалити запис, оскільки існують пов'язані з ним об'єкти. Будь ласка, спочатку видаліть усі залежні об'єкти, а потім спробуйте знову.",
+  "The INSERT statement conflicted with the FOREIGN KEY constraint": "Не вдалося створити запис, оскільки один або декілька пов'язаних з ним об'єктів не знайдено в базі даних. Перевірте, чи існують об'єкти, до яких ви посилаєтеся, введіть вірні дані, а потім спробуйте знову.",
+  "The UPDATE statement conflicted with the FOREIGN KEY constraint": "Не вдалося оновити запис, оскільки один або декілька пов'язаних з ним об'єктів не знайдено в базі даних. Перевірте, чи існують об'єкти, до яких ви посилаєтеся, введіть вірні дані, а потім спробуйте знову.",
+  "Cannot insert duplicate key row in object 'dbo.BrandEntityModel' with unique index 'IX_BrandEntityModel_Name": "Бренд з таким іменем вже існує.",
+  "Cannot insert duplicate key row in object 'dbo.ModelEntityModel' with unique index 'IX_ModelEntityModel_Name": "Модель з таким іменем вже існує."
+}

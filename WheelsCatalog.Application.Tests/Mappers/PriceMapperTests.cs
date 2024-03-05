@@ -33,8 +33,7 @@ public class PriceMapperTests
         {
             Amount = 1000.50, 
             Date = DateTime.Now, 
-            CurrencyId = Guid.NewGuid(), 
-            CarId = Guid.NewGuid() 
+            CurrencyId = Guid.NewGuid()
         };
         
         // Act
@@ -45,7 +44,6 @@ public class PriceMapperTests
         Assert.That(result.Price, Is.EqualTo(priceDto.Amount));
         Assert.That(result.StartDate, Is.EqualTo(priceDto.Date));
         Assert.That(result.CurrencyId.Value, Is.EqualTo(priceDto.CurrencyId));
-        Assert.That(result.CarId.Value, Is.EqualTo(priceDto.CarId));
     }
     
     [Test]

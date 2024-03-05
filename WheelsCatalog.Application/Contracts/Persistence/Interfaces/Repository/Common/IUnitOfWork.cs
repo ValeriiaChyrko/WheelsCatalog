@@ -8,7 +8,7 @@ public interface IUnitOfWork : IDisposable
     bool HasActiveTransaction { get; }
     IDbContextTransaction? GetCurrentTransaction();
     Task<IDbContextTransaction> BeginTransactionAsync();
-    Task CommitAsync(IDbContextTransaction transaction);
+    Task CommitAsync(IDbContextTransaction transaction, CancellationToken cancellationToken);
     
     IBrandRepository BrandRepository { get; }
     ICarPhotoRepository CarPhotoRepository { get; }

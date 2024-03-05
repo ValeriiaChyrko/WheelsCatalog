@@ -24,7 +24,7 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<Guid>> Create([FromBody] RequestPriceDto? request)
+    public async Task<ActionResult<Guid>> Create([FromBody] RequestPriceHistoryDto? request)
     {
         var command = new CreatePriceRequest { PriceDto = request };
         var result = await _mediator.Send(command);
@@ -47,7 +47,7 @@ public class PriceController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<RespondPriceDto>> Update(Guid? id, RequestPriceDto? request)
+    public async Task<ActionResult<RespondPriceDto>> Update(Guid? id, RequestPriceHistoryDto? request)
     {
         var command = new UpdatePriceRequest { Id = id, PriceDto = request };
         var response = await _mediator.Send(command);

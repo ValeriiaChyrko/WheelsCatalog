@@ -63,7 +63,7 @@ public class UnitOfWork : IUnitOfWork
 
     public void Dispose()
     {
-        _context.Dispose();
+        _context.DisposeAsync();
     }
 
     public bool HasActiveTransaction => _transaction != null;
@@ -88,7 +88,7 @@ public class UnitOfWork : IUnitOfWork
         return _transaction;
     }
 
-    public async Task CommitAsync(IDbContextTransaction transaction)
+    public async Task CommitAsync(IDbContextTransaction transaction, CancellationToken cancellationToken)
     {
         if (transaction == null)
             throw new ArgumentNullException(nameof(transaction));
@@ -98,13 +98,13 @@ public class UnitOfWork : IUnitOfWork
 
         try
         {
-            await _context.SaveChangesAsync();
-            await transaction.CommitAsync();
+            await _context.SaveChangesAsync(cancellationToken);
+            await transaction.CommitAsync(cancellationToken);
         }
-        catch
+        catch (Exception ex)
         {
-            await transaction.RollbackAsync();
-            throw;
+            await transaction.RollbackAsync(cancellationToken);
+            throw new OperationCanceledException(ex.Message);
         }
         finally
         {
