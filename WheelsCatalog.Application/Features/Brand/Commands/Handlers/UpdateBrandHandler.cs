@@ -24,10 +24,11 @@ public class UpdateBrandHandler : IRequestHandler<UpdateBrandRequest, BrandId>
     {
         var brand = await _unitOfWork.BrandRepository.GetByIdAsync(command.Id!.Value, cancellationToken);
         if (brand == null) throw new NotFoundRequestException(new NotFoundError{ Entity = "Brand", Id = command.Id!.Value});
+
+        var logo = command.BrandDto?.Logo;
+        var logoUrl = logo == null ? brand.LogoUrl : await UploadLogoAsync(logo);
         
-        var logoUrl = await UploadLogoAsync(command.BrandDto!.Logo!);
-        
-        brand.Update(command.BrandDto.Name!, logoUrl, command.BrandDto.Description);
+        brand.Update(command.BrandDto!.Name!, logoUrl, command.BrandDto.Description);
         await _unitOfWork.BrandRepository.UpdateAsync(brand, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

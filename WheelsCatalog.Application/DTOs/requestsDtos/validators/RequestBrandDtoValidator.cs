@@ -16,7 +16,6 @@ public class RequestBrandDtoValidator : AbstractValidator<RequestBrandDto>
             .MaximumLength(MaxLengthNameLength).WithMessage($"Назва бренду не повинна перевищувати {MaxLengthNameLength} символів.");
     
         RuleFor(p => p.Logo)
-            .NotNull().WithMessage("Лого для бренду є обов'язковим полем.")
             .SetValidator(new FileDtoValidator()!)
             .When(p => p.Logo != null);
     

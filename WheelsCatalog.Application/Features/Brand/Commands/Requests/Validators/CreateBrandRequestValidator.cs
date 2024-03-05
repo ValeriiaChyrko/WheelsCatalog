@@ -10,5 +10,8 @@ public class CreateBrandRequestValidator : AbstractValidator<CreateBrandRequest>
         RuleFor(x => x.BrandDto)
             .NotNull().WithMessage("Об'єкт бренду має бути переданий в метод.")
             .SetValidator(new RequestBrandDtoValidator()!);
+
+        RuleFor(p => p.BrandDto!.Logo)
+            .NotNull().WithMessage("Лого для бренду є обов'язковим полем.");
     }
 }
