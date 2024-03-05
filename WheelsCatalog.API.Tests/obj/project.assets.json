@@ -1741,6 +1741,7 @@
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "MediatR": "12.2.0",
           "Microsoft.EntityFrameworkCore": "7.0.16",
+          "Newtonsoft.Json": "13.0.1",
           "WheelsCatalog.Domain": "1.0.0"
         },
         "compile": {
