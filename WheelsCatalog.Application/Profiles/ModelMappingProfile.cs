@@ -19,6 +19,7 @@ public class ModelMappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => ModelId.CreateUnique()));
         
         CreateMap<Model, RespondModelDto>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value));
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id.Value))
+            .ForMember(dest => dest.BrandId, opt => opt.MapFrom(src => src.BrandId.Value));
     }
 }

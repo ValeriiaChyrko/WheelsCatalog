@@ -1,0 +1,15 @@
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\bin\Debug\net7.0\WheelsCatalog.Contracts.deps.json
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\bin\Debug\net7.0\WheelsCatalog.Contracts.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\bin\Debug\net7.0\WheelsCatalog.Contracts.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\bin\Debug\net7.0\WheelsCatalog.Domain.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\bin\Debug\net7.0\WheelsCatalog.Domain.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.csproj.AssemblyReference.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.AssemblyInfoInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.AssemblyInfo.cs
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.csproj.CopyComplete
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\refint\WheelsCatalog.Contracts.dll
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\WheelsCatalog.Contracts.pdb
+C:\Users\Valeriia\RiderProjects\Практика\WheelsCatalog\v2\WheelsCatalog\WheelsCatalog.Contracts\obj\Debug\net7.0\ref\WheelsCatalog.Contracts.dll
