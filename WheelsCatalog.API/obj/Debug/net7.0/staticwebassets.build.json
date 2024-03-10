@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NlgJYOyGH4D0lzaBaP55eD/QrSowbUGraobPIZNuWgc=",
+  "Hash": "+7ZyVDX54+iR/Ejcl+qBd32xgPd9XNuy0fq7m4zjYWA=",
   "Source": "WheelsCatalog.API",
   "BasePath": "_content/WheelsCatalog.API",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\images\\new-logo_008ad2"
+    },
+    {
+      "Identity": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\new-logo_069708",
+      "SourceId": "WheelsCatalog.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\",
+      "BasePath": "_content/WheelsCatalog.API",
+      "RelativePath": "src/images/new-logo_069708",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\images\\new-logo_069708"
     },
     {
       "Identity": "C:\\Users\\Valeriia\\RiderProjects\\Практика\\WheelsCatalog\\v2\\WheelsCatalog\\WheelsCatalog.API\\wwwroot\\src\\images\\new-logo_128b6b",
